@@ -1,0 +1,16 @@
+# Netlify-Deploy-Konfiguration für medIQ lab
+# Next.js wird per `output: "export"` statisch nach ./out gebaut.
+
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Saubere URLs / Fallback (statischer Export erzeugt /pfad/index.html)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false

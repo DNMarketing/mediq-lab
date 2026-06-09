@@ -1,0 +1,47 @@
+import type { Metadata } from "next";
+import { LegalShell } from "@/components/LegalShell";
+
+export const metadata: Metadata = {
+  title: "Impressum – medIQ lab",
+  robots: { index: false, follow: true },
+};
+
+export default function ImpressumPage() {
+  return (
+    <LegalShell title="Impressum">
+      {/* TODO: Rechtskonformes Impressum nach § 5 DMG / § 18 MStV einsetzen.
+          Mindestangaben: Anbieter, Anschrift, Kontakt, ggf. USt-IdNr.,
+          Verantwortliche:r i.S.d. Presserechts. */}
+      <p>
+        <strong className="text-slate-200">Angaben gemäß § 5 DDG</strong>
+      </p>
+      <p>
+        [Name / Firma]
+        <br />
+        [Straße &amp; Hausnummer]
+        <br />
+        [PLZ Ort]
+        <br />
+        [Land]
+      </p>
+      <p>
+        <strong className="text-slate-200">Kontakt</strong>
+        <br />
+        E-Mail: [kontakt@…]
+        <br />
+        Telefon: [optional]
+      </p>
+      <p>
+        <strong className="text-slate-200">
+          Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
+        </strong>
+        <br />
+        [Name, Anschrift]
+      </p>
+      <p className="text-slate-500">
+        Platzhalter – bitte vor Veröffentlichung durch vollständige, geprüfte
+        Pflichtangaben ersetzen.
+      </p>
+    </LegalShell>
+  );
+}

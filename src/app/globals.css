@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-ink-950 text-slate-200 antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-white;
+  }
+
+  /* Sichtbarer, markenkonformer Fokus-Ring für Tastatur-Navigation */
+  :focus-visible {
+    outline: none;
+  }
+}
+
+@layer utilities {
+  /* Text-Gradient für Hero-Highlights */
+  .text-gradient {
+    @apply bg-gradient-to-br from-white via-white to-accent-soft bg-clip-text text-transparent;
+  }
+
+  /* Dezenter Glas-Effekt für Karten/Header */
+  .glass {
+    @apply border border-line bg-ink-800/50 backdrop-blur-xl;
+  }
+
+  /* Radialer Glow als Hintergrund-Akzent (sparsam einsetzen) */
+  .glow-radial {
+    background: radial-gradient(
+      60% 60% at 50% 0%,
+      rgba(34, 211, 238, 0.16) 0%,
+      rgba(34, 211, 238, 0) 70%
+    );
+  }
+
+  .glow-violet {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(139, 92, 246, 0.18) 0%,
+      rgba(139, 92, 246, 0) 70%
+    );
+  }
+
+  /* Hairline-Trenner */
+  .hairline {
+    @apply border-line;
+  }
+}
