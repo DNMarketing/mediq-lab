@@ -19,6 +19,13 @@ export const NAV_LINKS = [
 export const LINKEDIN_DIRK = "https://de.linkedin.com/in/dirk-schlenker-b3639578";
 
 /**
+ * Porträtfoto Dirk Schlenker. Datei in `public/` ablegen (Dateiname hier).
+ * Solange die Datei fehlt, zeigt die Karte automatisch den Platzhalter.
+ * TODO: `public/dirk-schlenker.jpg` einsetzen (Bildrechte beachten).
+ */
+export const DIRK_PHOTO: string | null = "dirk-schlenker.jpg";
+
+/**
  * Echte Knappheit – nur befüllen, wenn es stimmt (z. B. Kohorten-Start).
  * Auf `null` setzen, um den Scarcity-Hinweis komplett auszublenden.
  * TODO: echtes Datum der nächsten Kohorte eintragen oder auf null lassen.

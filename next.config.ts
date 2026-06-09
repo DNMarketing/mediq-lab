@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   // Statischer Export → deploy-ready für Netlify (oder jeden Static-Host).
   output: "export",
   basePath,
+  // basePath für den Client verfügbar machen (für <img>-Pfade aus /public).
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   images: {
     // Für statischen Export muss die Next-Image-Optimierung deaktiviert sein.
     unoptimized: true,

@@ -1,8 +1,9 @@
-import { LINKEDIN_DIRK } from "@/lib/config";
+import { DIRK_PHOTO, LINKEDIN_DIRK } from "@/lib/config";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { Stagger, StaggerItem } from "../ui/Motion";
 import { AnatomyBrain } from "../ui/Anatomy";
+import { Portrait } from "../ui/Portrait";
 import { PlaceholderBadge } from "../ui/Badge";
 
 /**
@@ -64,19 +65,9 @@ export function Authority() {
           {/* (a) Gründer Dirk Schlenker */}
           <Reveal className="lg:col-span-5">
             <figure className="overflow-hidden rounded-card shadow-lift glass-dark">
-              {/* Porträt-Platzhalter – ECHTES FOTO EINFÜGEN */}
-              <div className="relative flex aspect-[4/3] items-center justify-center border-b border-line-onDark bg-petrol-800/60">
-                <div className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-teal-400/40 text-teal-300">
-                    <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <circle cx="12" cy="9" r="3.2" />
-                      <path d="M5.5 19a6.5 6.5 0 0 1 13 0" />
-                    </svg>
-                  </div>
-                  <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-teal-300">
-                    Echtes Foto einfügen
-                  </p>
-                </div>
+              {/* Porträt Dirk Schlenker – zeigt /public-Foto, sonst Platzhalter */}
+              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-line-onDark bg-petrol-800/60">
+                <Portrait file={DIRK_PHOTO} alt="Dirk Schlenker, Gründer von medIQ lab" />
               </div>
               <figcaption className="p-7">
                 <div className="flex flex-wrap items-center gap-3">
