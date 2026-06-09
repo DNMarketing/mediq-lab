@@ -16,12 +16,12 @@ const FAQS = [
     a: "Anmeldung und Zahlung erfolgen vollständig und sicher über Skool. Du klickst auf einen der Buttons, landest in der medIQ lab Community auf Skool und wählst dort Community-Abo oder Workshop-Reihe. Diese Website wickelt keine Zahlung ab.",
   },
   {
-    q: "Was ist der Unterschied zwischen Abo und Workshop?",
-    a: "Das Community-Abo ist der günstige monatliche Einstieg: Austausch, Lerngruppen und ausgewählte Inhalte. Die Premium-Workshop-Reihe ist das Hauptprodukt – ein einmaliger Kauf mit dem vollständigen Lernsystem von der Lernsystematik bis zur Examensvorbereitung.",
+    q: "Was kostet das Abo, was die Workshop-Reihe?",
+    a: "Das Community-Abo kostet 20 €/Monat und ist der günstige, jederzeit kündbare Einstieg: Austausch, Lerngruppen und ausgewählte Inhalte. Die Premium-Workshop-Reihe ist das Hauptprodukt – ein einmaliger Kauf von 800 € mit dem vollständigen Lernsystem von der Lernsystematik bis zur Examensvorbereitung. Beides läuft über Skool.",
   },
   {
     q: "Lohnt sich der Preis der Workshop-Reihe wirklich?",
-    a: "Rechne ehrlich gegen: Ein einziges verlorenes Semester kostet dich Monate an Miete und Lebenshaltung plus einen späteren Berufseinstieg. An Privat- und Auslands-Unis kommt ein Wiederholungsjahr von oft 10.000–15.000 € dazu. Gemessen daran ist die Workshop-Reihe eine Investition, die sich schon vermeidet, wenn sie dir ein einziges verlorenes Semester erspart.",
+    a: "Rechne ehrlich gegen: Ein einziges verlorenes Semester kostet dich Monate an Miete und Lebenshaltung plus einen späteren Berufseinstieg. An Privat- und Auslands-Unis kommt ein Wiederholungsjahr von oft 10.000–15.000 € dazu. Gemessen daran sind die 800 € eine Investition, die sich schon vermeidet, wenn sie dir ein einziges verlorenes Semester erspart.",
   },
   {
     q: "Gibt es eine Garantie oder Ratenzahlung?",
@@ -93,7 +93,7 @@ export function FAQ() {
         <div className="lg:col-span-4">
           <Reveal>
             <div className="lg:sticky lg:top-28">
-              <SectionHeading eyebrow="Häufige Fragen" title="Was du noch wissen willst" />
+              <SectionHeading eyebrow="06 — Häufige Fragen" title="Was du noch wissen willst" />
             </div>
           </Reveal>
         </div>

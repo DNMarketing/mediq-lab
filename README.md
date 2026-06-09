@@ -79,39 +79,47 @@ Code mit `TODO`-Kommentaren versehen (`grep -rn "TODO" src`).
 - [ ] **Skool-URL einsetzen** → `src/lib/config.ts` (`SKOOL_URL`). Wirkt auf alle CTAs.
 - [ ] **Kohorten-Datum** setzen oder Scarcity ausblenden → `NEXT_COHORT` in `config.ts`
       (auf `null` setzen, wenn keine echte Knappheit besteht – **keine Fake-Urgency**).
-- [ ] **Authority/Gründer-Story** befüllen → `sections/Authority.tsx` (Foto, Name, Story).
+- [ ] **Demo-Testimonials ersetzen** → `sections/Testimonials.tsx`. Aktuell 3 als
+      `DEMO-TESTIMONIAL`/`Demo-Inhalte` markierte Beispielstimmen. Vor Launch durch echte,
+      mit Einverständnis veröffentlichte Testimonials ersetzen – **Pflicht (UWG Nr. 23c)**.
+- [ ] **Bio Dirk Schlenker** befüllen → `sections/Authority.tsx` (`[TODO: Bio Dirk Schlenker]`).
+- [ ] **Foto Dirk Schlenker** einsetzen → `sections/Authority.tsx`
+      (Porträt-Platzhalter „ECHTES FOTO EINFÜGEN“ – bewusst KEIN Stockfoto).
 - [ ] **Echte Stats** einsetzen → `sections/Stats.tsx` (nur ehrlich belegbare Zahlen!).
-- [ ] **Echte Testimonials** einsetzen → `sections/Testimonials.tsx`
-      (Name, Uni/Semester, Ergebnis – **keine erfundenen Erfolge**, mit Einverständnis).
 - [ ] **Workshop-Module** final beschreiben → `sections/Modules.tsx`.
-- [ ] **Preise** setzen (Abo monatlich / Workshop einmalig) → `sections/Pricing.tsx`.
-- [ ] **Garantie/Ratenzahlung-FAQ** ehrlich befüllen → `sections/FAQ.tsx`.
 - [ ] **VSL-Video** einbinden → `sections/VSL.tsx` (Embed statt Poster-Platzhalter).
-- [ ] **Fotos lizenzieren / ersetzen** → `src/lib/images.ts`. Aktuell hochwertige
-      **Unsplash**-Stockfotos (kostenlos nutzbar, aber austauschbar). Für eine Marke
-      eigene oder redaktionell lizenzierte Aufnahmen einsetzen. Der `<EditorialImage>`-
-      Fallback (SVG) greift nur, falls eine URL nicht lädt.
-- [ ] **Porträt der Gründer:in** einsetzen → `sections/Authority.tsx`
-      (bewusst KEIN Stockfoto – echtes Bild für Vertrauen/Echtheit).
-- [ ] **Vertrauenssignale / Logos** ergänzen → Uni-/Partner-Logos, Siegel
-      (Platz dafür ist im Layout vorgesehen, z. B. unter Hero oder Authority).
+- [ ] **Echte Fotos lizenzieren / ersetzen** → `src/lib/images.ts`. Aktuell kuratierte
+      **Unsplash**-Stockfotos. Für eine Marke eigene/redaktionell lizenzierte Aufnahmen
+      einsetzen. Die animierte Anatomie (Hero, Authority) ist SVG – kein Foto nötig.
+- [ ] **Vertrauenssignale / Logos** ergänzen → Uni-/Partner-Logos, Siegel.
+- [ ] **Garantie/Ratenzahlung-FAQ** ehrlich befüllen → `sections/FAQ.tsx`.
 - [ ] **Impressum & Datenschutz** rechtskonform befüllen →
       `app/impressum/page.tsx`, `app/datenschutz/page.tsx` (**DSGVO-Pflicht**, anwaltlich prüfen).
 - [ ] **Domain** in `layout.tsx` (`metadataBase`) und Footer-Jahr final setzen.
 - [ ] Nach dem Befüllen alle `<PlaceholderBadge>` entfernen.
 
+> **Bereits gesetzt (konkrete Inhalte):** Preise – Community-Abo **20 €/Monat**,
+> Premium-Workshop-Reihe **800 € einmalig** (`sections/Pricing.tsx`, auch in FAQ);
+> Gründer-Name **Dirk Schlenker** (`sections/Authority.tsx`).
+
 ## Design & Guardrails
 
-- **Visuelle Sprache:** seriöse medizinische Professionalität – edel & vertrauensvoll.
-  Helle, warme Papier-Basis · **Petrol/Teal** als Primärfarbe · **Kupfer** als sparsamer
-  Akzent (nur CTAs/Highlights). Serif-Headlines (**Fraunces**) + klare Sans (**IBM Plex Sans**).
-  Editorial-/Magazin-Layout mit asymmetrischen Kompositionen, feinen Trennlinien und Zitaten.
-  Referenz-Anmutung: hochwertige medizinische Fachpublikation / Universitätsklinik.
-- Design-Tokens zentral in `tailwind.config.ts` (Farben, Fonts, Schatten). Bilder mit
-  SVG-Fallback über `components/ui/EditorialImage.tsx`; Linien-Iconografie in `ui/MedIcon.tsx`.
-- **Bewusst NICHT** verwendet: Dark-Mode-Default, Neon-/elektrische Akzente, Gradient-/
-  Glow-Effekte, Grid-/Dot-Pattern, generische Sans als Headline-Schrift.
+- **Visuelle Sprache:** High-Tech-Medizin, premium & seriös. Helle, warme Papier-Basis ·
+  tiefes **Petrol/Tannengrün** (Primär) · **Kupfer** (sparsamer Akzent) · klares klinisches
+  **Teal/Mint** als dritter Tech-Akzent (kein Neon). Serif-Headlines (**Fraunces**) + klare
+  Sans (**IBM Plex Sans**). Editorial-/Magazin-Layout, durchnummerierte Sektionen.
+- **Strategische dunkle Sektionen** (tiefes Petrol + Teal-Glow) für Drama: Authority/Methode
+  (Dirk Schlenker), Stats und Final-CTA. Der Hell-Dunkel-Wechsel gibt Rhythmus.
+- **Medizinische Bildsprache statt Stock-Klischee:** animierte anatomische SVG-Line-Art
+  (Herz, Gehirn, DNA) in `components/ui/Anatomy.tsx`, die sich beim Scrollen „zeichnet“;
+  eine wiederkehrende **EKG-/Vitalkurve** mit laufendem Puls als Signatur-/Divider-Motiv.
+  Fotos nur sehr gezielt (fokussierte Studierende, Anatomie-Modell, Mikroskop).
+- **Animation (Framer Motion):** Scroll-Reveals mit Stagger (`ui/Motion.tsx`), animierte
+  Counter (`ui/Counter.tsx`), Draw-on-Scroll-Anatomie (`pathLength`), Hero-Parallax,
+  Teal-Glow-Hover auf Cards. Alles `prefers-reduced-motion`-sicher, performant, kein Overkill.
+- Design-Tokens zentral in `tailwind.config.ts`. **Bewusst NICHT:** Dark-Mode-Default,
+  Neon, Grid-/Dot-Pattern, generische Sans als Headline.
 - Respektiert `prefers-reduced-motion`, semantisches HTML, Tastatur-Fokus, Skip-Link.
-- **Keine** unrealistischen/rechtlich heiklen Versprechen, **keine** Fake-Verknappung.
+- **Keine** unrealistischen/garantierten Erfolgsversprechen, **keine** Fake-Verknappung.
   Preis-Einwand wird ehrlich entkräftet (verlorenes Semester kostet mehr).
 ```

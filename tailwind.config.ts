@@ -42,6 +42,15 @@ const config: Config = {
           500: "#B0703B", // Standard-Akzent
           600: "#955B2C",
         },
+        // Klinischer dritter Akzent: sauberes medizinisches Teal/Mint (KEIN Neon)
+        teal: {
+          100: "#D9EFEA",
+          300: "#86CABD",
+          400: "#46B3A2", // Tech-Highlights / Glow auf Dunkel
+          500: "#1E9E8F", // Standard
+          600: "#147A6E",
+          700: "#0E5C53",
+        },
         line: {
           DEFAULT: "rgba(24,33,31,0.12)", // feine Trennlinie auf hell
           strong: "rgba(24,33,31,0.20)",
@@ -62,18 +71,37 @@ const config: Config = {
         card: "4px",
       },
       boxShadow: {
-        // dezent, editorial – Tiefe über Rahmen statt starker Schatten
+        // mehrstufige, weiche Tiefe – editorial & premium
         soft: "0 1px 2px rgba(24,33,31,0.04), 0 12px 28px -18px rgba(24,33,31,0.28)",
-        lift: "0 2px 4px rgba(24,33,31,0.05), 0 28px 56px -28px rgba(24,33,31,0.4)",
+        lift: "0 2px 4px rgba(24,33,31,0.05), 0 18px 36px -20px rgba(24,33,31,0.28), 0 40px 72px -36px rgba(24,33,31,0.4)",
+        // feiner klinischer Teal-Glow für Hover/Highlights
+        "glow-teal":
+          "0 0 0 1px rgba(70,179,162,0.30), 0 10px 28px -10px rgba(70,179,162,0.30), 0 30px 60px -28px rgba(24,33,31,0.45)",
+        "glow-teal-sm": "0 0 0 1px rgba(70,179,162,0.25), 0 8px 22px -10px rgba(70,179,162,0.28)",
       },
       keyframes: {
         "fade-up": {
           from: { opacity: "0", transform: "translateY(14px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        // laufender Puls für die EKG-Signaturlinie
+        "ekg-run": {
+          to: { strokeDashoffset: "-2400" },
+        },
+        "pulse-soft": {
+          "0%,100%": { opacity: "0.5" },
+          "50%": { opacity: "1" },
+        },
+        "float-slow": {
+          "0%,100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.7s cubic-bezier(0.21,0.47,0.32,0.98) both",
+        "ekg-run": "ekg-run 4s linear infinite",
+        "pulse-soft": "pulse-soft 3.5s ease-in-out infinite",
+        "float-slow": "float-slow 7s ease-in-out infinite",
       },
     },
   },

@@ -1,6 +1,7 @@
 import { IMAGES } from "@/lib/images";
 import { Section, Eyebrow } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
+import { Stagger, StaggerItem } from "../ui/Motion";
 import { EditorialImage } from "../ui/EditorialImage";
 
 const PAINS = [
@@ -38,7 +39,7 @@ export function Problem() {
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-28">
             <Reveal>
-              <Eyebrow>Du kennst das</Eyebrow>
+              <Eyebrow>01 — Du kennst das</Eyebrow>
               <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">
                 Es liegt nicht daran, dass du zu wenig lernst.
               </h2>
@@ -49,8 +50,8 @@ export function Problem() {
             </Reveal>
             <Reveal delay={0.1}>
               <EditorialImage
-                id={IMAGES.problemLibrary}
-                alt="Stimmungsvoller Bibliotheksgang bei wenig Licht"
+                id={IMAGES.problemStudent}
+                alt="Konzentrierte:r Studierende:r am Laptop"
                 aspect="aspect-[5/4]"
                 className="mt-8 frame"
                 width={900}
@@ -59,11 +60,11 @@ export function Problem() {
           </div>
         </div>
 
-        {/* Pain-Liste */}
+        {/* Pain-Liste mit Stagger */}
         <div className="lg:col-span-7">
-          <ul className="border-t border-line">
-            {PAINS.map((pain, i) => (
-              <Reveal as="li" key={pain.title} delay={(i % 2) * 0.06}>
+          <Stagger as="ul" className="border-t border-line">
+            {PAINS.map((pain) => (
+              <StaggerItem as="li" key={pain.title}>
                 <div className="flex gap-5 border-b border-line py-6">
                   <span
                     className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line-strong text-ink-mute"
@@ -78,9 +79,9 @@ export function Problem() {
                     <p className="mt-1.5 leading-relaxed text-ink-soft">{pain.body}</p>
                   </div>
                 </div>
-              </Reveal>
+              </StaggerItem>
             ))}
-          </ul>
+          </Stagger>
 
           {/* Reframe als Pull-Quote */}
           <Reveal delay={0.1}>

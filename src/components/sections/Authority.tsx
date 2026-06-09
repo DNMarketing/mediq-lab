@@ -1,13 +1,14 @@
-import { IMAGES } from "@/lib/images";
-import { Section, SectionHeading } from "../ui/Section";
+import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
-import { EditorialImage } from "../ui/EditorialImage";
+import { Stagger, StaggerItem } from "../ui/Motion";
+import { AnatomyBrain } from "../ui/Anatomy";
 import { PlaceholderBadge } from "../ui/Badge";
 
 /**
- * Authority / Methode – der zentrale Trust-Anker.
- *  (a) Gründer-/Mentor-Story (Porträt-Platzhalter – NICHT mit Stockfoto füllen)
- *  (b) Wissenschaftlich begründete Lernmethode
+ * Authority / Methode – zentraler Trust-Anker als dramatische DUNKLE Sektion.
+ *  (a) Gründer Dirk Schlenker (Porträt-Platzhalter, Bio als TODO)
+ *  (b) Wissenschaftlich begründete Lernmethode (durchnummeriert, animiert)
+ * Hintergrund: animiertes Gehirn-Line-Art (zeichnet sich) + klinischer Teal-Glow.
  */
 const PRINCIPLES = [
   {
@@ -29,99 +30,114 @@ const PRINCIPLES = [
 
 export function Authority() {
   return (
-    <Section id="methode" tone="light">
-      <Reveal>
-        <SectionHeading
-          eyebrow="Warum medIQ lab"
-          title="Eine Methode mit Fundament — kein Bauchgefühl."
-          subtitle="medIQ lab basiert nicht auf Motivationssprüchen, sondern auf lernpsychologisch belegten Prinzipien. Das ist der Unterschied zwischen härter lernen und klüger lernen."
-        />
-      </Reveal>
+    <section
+      id="methode"
+      className="relative scroll-mt-20 overflow-hidden bg-petrol-900 py-24 text-paper-light sm:py-32"
+    >
+      {/* Hintergrund: Gehirn-Line-Art + Teal-Glow */}
+      <div className="glow-teal-bg pointer-events-none absolute -right-20 top-10 h-[640px] w-[640px]" aria-hidden />
+      <div
+        className="pointer-events-none absolute -right-24 top-1/2 hidden h-[560px] w-[560px] -translate-y-1/2 text-teal-400/15 lg:block"
+        aria-hidden
+      >
+        <AnatomyBrain strokeWidth={1.4} />
+      </div>
 
-      <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:gap-14">
-        {/* (a) Gründer-/Mentor-Story */}
-        <Reveal className="lg:col-span-5">
-          <figure className="overflow-hidden rounded-card border border-line bg-paper shadow-soft">
-            {/* Porträt-Platzhalter – bewusst KEIN Stockfoto (Trust/Echtheit) */}
-            <div className="relative flex aspect-[4/3] items-center justify-center border-b border-line bg-paper-sand">
-              <div className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-line-strong text-ink-mute">
-                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <circle cx="12" cy="9" r="3.2" />
-                    <path d="M5.5 19a6.5 6.5 0 0 1 13 0" />
-                  </svg>
-                </div>
-                <p className="mt-3 text-xs text-ink-mute">Porträt der Gründer:in</p>
-              </div>
-            </div>
-            <figcaption className="p-7">
-              <div className="flex items-center gap-3">
-                <p className="font-serif text-lg font-medium text-ink">[Name der Gründer:in]</p>
-                <PlaceholderBadge />
-              </div>
-              <p className="mt-1 text-sm text-ink-mute">[Rolle · Hintergrund]</p>
-              <p className="mt-4 leading-relaxed text-ink-soft">
-                {/* TODO: Echte Gründer-/Mentor-Story einsetzen – eigener Studienweg,
-                    Wendepunkte, warum diese Methode. Wichtigster Vertrauensbeweis. */}
-                Hier steht die persönliche Geschichte hinter medIQ lab: der eigene Weg
-                durchs Medizinstudium, die Hürden – und warum daraus eine Methode wurde,
-                die heute vielen Studierenden hilft. Authentisch, konkret, nahbar.
-              </p>
-              <div className="mt-6 grid grid-cols-2 gap-4 border-t border-line pt-6">
-                <div>
-                  <p className="font-serif text-2xl font-medium text-petrol-700">[X]</p>
-                  <p className="text-xs text-ink-mute">Jahre Erfahrung</p>
-                </div>
-                <div>
-                  <p className="font-serif text-2xl font-medium text-petrol-700">[X]</p>
-                  <p className="text-xs text-ink-mute">begleitete Studierende</p>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
+      <Container className="relative">
+        <Reveal>
+          <div className="eyebrow text-teal-300">
+            <span className="rule-copper bg-teal-400/80" aria-hidden />
+            02 — Warum medIQ lab
+          </div>
+          <h2 className="mt-5 max-w-2xl font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-paper-light sm:text-[2.7rem]">
+            Eine Methode mit Fundament — kein Bauchgefühl.
+          </h2>
+          <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-paper/70">
+            medIQ lab basiert nicht auf Motivationssprüchen, sondern auf
+            lernpsychologisch belegten Prinzipien. Das ist der Unterschied zwischen
+            härter lernen und klüger lernen.
+          </p>
         </Reveal>
 
-        {/* (b) Prinzipien + Notiz-Motiv */}
-        <div className="lg:col-span-7">
-          <Reveal>
-            <EditorialImage
-              id={IMAGES.methodNotes}
-              alt="Hand schreibt mit Stift Notizen auf Papier"
-              aspect="aspect-[16/7]"
-              className="frame mb-8"
-              width={1100}
-            />
-          </Reveal>
-
-          <ol className="space-y-0">
-            {PRINCIPLES.map((p, i) => (
-              <Reveal as="li" key={p.title} delay={i * 0.08}>
-                <div className="flex gap-6 border-t border-line py-7">
-                  <span className="font-serif text-3xl font-medium leading-none text-copper-500">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+        <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:gap-14">
+          {/* (a) Gründer Dirk Schlenker */}
+          <Reveal className="lg:col-span-5">
+            <figure className="overflow-hidden rounded-card shadow-lift glass-dark">
+              {/* Porträt-Platzhalter – ECHTES FOTO EINFÜGEN */}
+              <div className="relative flex aspect-[4/3] items-center justify-center border-b border-line-onDark bg-petrol-800/60">
+                <div className="text-center">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-teal-400/40 text-teal-300">
+                    <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <circle cx="12" cy="9" r="3.2" />
+                      <path d="M5.5 19a6.5 6.5 0 0 1 13 0" />
+                    </svg>
+                  </div>
+                  <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-teal-300">
+                    Echtes Foto einfügen
+                  </p>
+                </div>
+              </div>
+              <figcaption className="p-7">
+                <div className="flex flex-wrap items-center gap-3">
+                  <p className="font-serif text-xl font-medium text-paper-light">
+                    Dirk Schlenker
+                  </p>
+                  <PlaceholderBadge label="Bio Platzhalter" />
+                </div>
+                <p className="mt-1 text-sm text-teal-300">Gründer von medIQ lab</p>
+                <p className="mt-4 leading-relaxed text-paper/70">
+                  {/* TODO: Bio Dirk Schlenker – persönliche Geschichte, eigener
+                      Studienweg, warum diese Methode. Wichtigster Vertrauensbeweis. */}
+                  [TODO: Bio Dirk Schlenker] — hier kommt die persönliche Geschichte
+                  hinter medIQ lab hin: Werdegang, Erfahrung und warum daraus diese
+                  Methode entstanden ist. Authentisch, konkret, nahbar.
+                </p>
+                <div className="mt-6 grid grid-cols-2 gap-4 border-t border-line-onDark pt-6">
                   <div>
-                    <div className="flex flex-wrap items-baseline gap-x-3">
-                      <h3 className="font-serif text-xl font-medium text-ink">{p.title}</h3>
-                      <span className="text-xs uppercase tracking-[0.18em] text-ink-mute">
-                        {p.sub}
-                      </span>
-                    </div>
-                    <p className="mt-2 leading-relaxed text-ink-soft">{p.body}</p>
+                    <p className="font-serif text-2xl font-medium text-paper-light">[X]</p>
+                    <p className="text-xs text-paper/60">Jahre Erfahrung</p>
+                  </div>
+                  <div>
+                    <p className="font-serif text-2xl font-medium text-paper-light">[X]</p>
+                    <p className="text-xs text-paper/60">begleitete Studierende</p>
                   </div>
                 </div>
-              </Reveal>
-            ))}
-          </ol>
-          <Reveal delay={0.2}>
-            <p className="mt-5 text-xs text-ink-mute">
-              {/* TODO: Optional Studien-Quellen verlinken (z. B. Karpicke & Roediger,
-                  Cepeda et al.), um die Wissenschaftlichkeit zu belegen. */}
-              Tipp: Mit Studien-Quellen belegen, um die Wissenschaftlichkeit sichtbar zu machen.
-            </p>
+              </figcaption>
+            </figure>
           </Reveal>
+
+          {/* (b) Prinzipien – durchnummeriert, animiert */}
+          <div className="lg:col-span-7">
+            <Stagger as="ol" className="space-y-0">
+              {PRINCIPLES.map((p, i) => (
+                <StaggerItem as="li" key={p.title}>
+                  <div className="flex gap-6 border-t border-line-onDark py-7">
+                    <span className="step-num font-serif text-3xl font-medium leading-none text-teal-300">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <div className="flex flex-wrap items-baseline gap-x-3">
+                        <h3 className="font-serif text-xl font-medium text-paper-light">{p.title}</h3>
+                        <span className="text-xs uppercase tracking-[0.18em] text-teal-300/80">
+                          {p.sub}
+                        </span>
+                      </div>
+                      <p className="mt-2 leading-relaxed text-paper/70">{p.body}</p>
+                    </div>
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
+            <Reveal delay={0.15}>
+              <p className="mt-5 text-xs text-paper/50">
+                {/* TODO: Optional Studien-Quellen verlinken (z. B. Karpicke & Roediger,
+                    Cepeda et al.), um die Wissenschaftlichkeit zu belegen. */}
+                Tipp: Mit Studien-Quellen belegen, um die Wissenschaftlichkeit sichtbar zu machen.
+              </p>
+            </Reveal>
+          </div>
         </div>
-      </div>
-    </Section>
+      </Container>
+    </section>
   );
 }

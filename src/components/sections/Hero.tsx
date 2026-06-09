@@ -1,22 +1,36 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { NEXT_COHORT, SKOOL_URL } from "@/lib/config";
-import { IMAGES } from "@/lib/images";
 import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { Pill } from "../ui/Badge";
-import { EditorialImage } from "../ui/EditorialImage";
 import { MedIcon } from "../ui/MedIcon";
+import { AnatomyHeart, EkgLine } from "../ui/Anatomy";
 
 export function Hero() {
   const reduce = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  // dezenter Parallax auf dem Visual
+  const visualY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 90]);
+  const glowY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 140]);
+
   const container = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.08, delayChildren: 0.04 } },
+    show: { transition: { staggerChildren: 0.09, delayChildren: 0.05 } },
   };
   const item = {
-    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 16 },
+    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 18 },
     show: {
       opacity: 1,
       y: 0,
@@ -25,9 +39,13 @@ export function Hero() {
   };
 
   return (
-    <section id="hero" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+    <section
+      id="hero"
+      ref={ref}
+      className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24"
+    >
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-12">
+        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
           {/* Text */}
           <motion.div
             variants={container}
@@ -38,7 +56,10 @@ export function Hero() {
             {NEXT_COHORT && (
               <motion.div variants={item} className="mb-7">
                 <Pill>
-                  <span className="h-1.5 w-1.5 rounded-full bg-copper-500" aria-hidden />
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-50" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500" />
+                  </span>
                   Nächste Kohorte startet am {NEXT_COHORT}
                 </Pill>
               </motion.div>
@@ -51,7 +72,7 @@ export function Hero() {
 
             <motion.h1
               variants={item}
-              className="font-serif text-[2.6rem] font-medium leading-[1.05] tracking-[-0.015em] text-ink sm:text-[4rem]"
+              className="font-serif text-[2.6rem] font-medium leading-[1.04] tracking-[-0.015em] text-ink sm:text-[4rem]"
             >
               Effizienter lernen.
               <br />
@@ -89,32 +110,36 @@ export function Hero() {
             </motion.p>
           </motion.div>
 
-          {/* Visual */}
-          <motion.div
-            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="relative lg:col-span-5"
-          >
-            <div className="relative">
-              <EditorialImage
-                id={IMAGES.heroStudy}
-                alt="Aufgeschlagenes Lehrbuch mit handschriftlichen Notizen vor einem Bücherregal"
-                aspect="aspect-[4/5]"
-                priority
-                className="frame"
-                width={1100}
-              />
-              {/* feine Kupfer-Eckmarke als Editorial-Detail */}
-              <span
-                aria-hidden
-                className="absolute -left-3 -top-3 hidden h-16 w-16 border-l-2 border-t-2 border-copper-500/70 sm:block"
-              />
+          {/* Visual: animiertes anatomisches Herz + EKG + Parallax */}
+          <div className="relative lg:col-span-5">
+            <motion.div
+              style={{ y: glowY }}
+              className="glow-teal-bg pointer-events-none absolute -inset-10 -z-10"
+              aria-hidden
+            />
+            <motion.div style={{ y: visualY }} className="relative mx-auto max-w-md">
+              <div className="relative aspect-square">
+                {/* klinische Ringe */}
+                <div className="absolute inset-0 rounded-full border border-line" aria-hidden />
+                <div className="absolute inset-[8%] rounded-full border border-teal-300/40" aria-hidden />
+                <div
+                  className="absolute inset-[8%] rounded-full bg-paper-light/60 shadow-soft"
+                  aria-hidden
+                />
+                {/* Herz */}
+                <div className="absolute inset-[20%] text-petrol-700">
+                  <AnatomyHeart strokeWidth={1.7} />
+                </div>
+                {/* EKG quer durchs Visual */}
+                <div className="absolute inset-x-[6%] top-[60%] text-petrol-700/70">
+                  <EkgLine beats={3} strokeWidth={1.4} className="h-12" />
+                </div>
+              </div>
 
-              {/* dezente Kennzahl-Karte (überlappend, asymmetrisch) */}
-              <div className="absolute -bottom-6 -left-6 hidden max-w-[14rem] rounded-card border border-line bg-paper-light p-5 shadow-lift sm:block">
+              {/* Glas-Karte (überlappend) */}
+              <div className="absolute -bottom-4 -left-2 max-w-[14.5rem] rounded-card p-5 shadow-lift glass-card sm:-left-6">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-card bg-petrol-50 text-petrol-700">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-card bg-teal-100 text-teal-600">
                     <MedIcon name="repeat" className="h-5 w-5" />
                   </span>
                   <p className="font-serif text-base leading-tight text-ink">
@@ -123,14 +148,19 @@ export function Hero() {
                     Auswendig-Pauken
                   </p>
                 </div>
-                <p className="mt-3 text-xs leading-relaxed text-ink-mute">
+                <p className="mt-3 text-xs leading-relaxed text-ink-soft">
                   Active Recall &amp; Spaced Repetition – lernpsychologisch fundiert.
                 </p>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </Container>
+
+      {/* Signatur: EKG-Vitalkurve als Section-Abschluss */}
+      <div className="mt-16 text-petrol-700/50 sm:mt-24">
+        <EkgLine beats={8} strokeWidth={1.5} className="h-16" />
+      </div>
     </section>
   );
 }

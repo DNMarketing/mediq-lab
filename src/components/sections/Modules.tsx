@@ -1,12 +1,14 @@
 import { IMAGES } from "@/lib/images";
 import { Section, Eyebrow } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
+import { Stagger, StaggerItem } from "../ui/Motion";
 import { EditorialImage } from "../ui/EditorialImage";
 import { MedIcon, type IconName } from "../ui/MedIcon";
 import { PlaceholderBadge } from "../ui/Badge";
 
 /**
- * Workshop-Module ("Was du bekommst") – editoriale Liste statt Karten-Raster.
+ * Workshop-Module ("Was du bekommst") – editoriale Liste mit Stagger-Animation
+ * und Teal-Glow-Hover.
  * TODO: Modul-Titel & -Inhalte final befüllen.
  */
 const MODULES: { icon: IconName; title: string; body: string }[] = [
@@ -28,7 +30,7 @@ export function Modules() {
           <div className="lg:sticky lg:top-28">
             <Reveal>
               <div className="flex items-center gap-3">
-                <Eyebrow>Was du bekommst</Eyebrow>
+                <Eyebrow>03 — Was du bekommst</Eyebrow>
                 <PlaceholderBadge />
               </div>
               <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">
@@ -60,23 +62,26 @@ export function Modules() {
           </div>
         </div>
 
-        {/* Modul-Liste */}
+        {/* Modul-Liste mit Stagger + Glow-Hover */}
         <div className="lg:col-span-8">
-          <ul className="border-t border-line">
+          <Stagger as="ul" className="grid gap-3 sm:grid-cols-2">
             {MODULES.map((m, i) => (
-              <Reveal as="li" key={m.title} delay={(i % 2) * 0.06}>
-                <div className="group flex gap-6 border-b border-line py-7 transition-colors">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-card border border-line bg-paper-light text-petrol-700 transition-colors group-hover:border-petrol-700/40 group-hover:bg-petrol-50">
-                    <MedIcon name={m.icon} className="h-6 w-6" />
-                  </span>
-                  <div className="pt-0.5">
-                    <h3 className="font-serif text-xl font-medium text-ink">{m.title}</h3>
-                    <p className="mt-1.5 leading-relaxed text-ink-soft">{m.body}</p>
+              <StaggerItem as="li" key={m.title}>
+                <div className="group h-full rounded-card border border-line bg-paper-light p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:shadow-glow-teal-sm">
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-card border border-line bg-paper text-petrol-700 transition-colors group-hover:border-teal-400/40 group-hover:bg-teal-100 group-hover:text-teal-600">
+                      <MedIcon name={m.icon} className="h-6 w-6" />
+                    </span>
+                    <span className="step-num font-serif text-sm text-ink-mute">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
+                  <h3 className="mt-5 font-serif text-xl font-medium text-ink">{m.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{m.body}</p>
                 </div>
-              </Reveal>
+              </StaggerItem>
             ))}
-          </ul>
+          </Stagger>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-ink-mute">
               Die vollständigen Inhalte, Lektionen und Materialien findest du im

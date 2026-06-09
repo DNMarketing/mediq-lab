@@ -4,9 +4,12 @@
  * doch nicht lädt, fällt <EditorialImage> automatisch auf eine SVG-
  * Illustration zurück (keine leere Box).
  *
- * TODO (vor Go-Live): Diese Stock-Fotos durch lizenzierte bzw. eigene
- * hochwertige Aufnahmen ersetzen. Unsplash ist kostenlos nutzbar, für eine
- * Marke empfiehlt sich jedoch eigenes/redaktionell lizenziertes Bildmaterial.
+ * Bildsprache: gezielt, hochwertig, echt medizinisch/menschlich – keine
+ * generischen Stockfotos. Das Hero nutzt bewusst animierte anatomische
+ * Line-Art (siehe components/ui/Anatomy.tsx) statt eines Fotos.
+ *
+ * TODO (vor Go-Live): Stock-Fotos durch lizenzierte bzw. eigene Aufnahmen
+ * ersetzen.
  */
 
 export function unsplash(id: string, w = 1600): string {
@@ -14,20 +17,18 @@ export function unsplash(id: string, w = 1600): string {
 }
 
 export const IMAGES = {
-  /** Hero: aufgeschlagenes Lehrbuch mit handschriftlichen Notizen, warm. */
-  heroStudy: "photo-1456513080510-7bf3a84b82f8",
-  /** VSL-Poster: aufgeschlagenes Buch, atmosphärisch. */
-  vslBook: "photo-1532012197267-da84d127e765",
-  /** Problem: stimmungsvoller Bibliotheksgang (nächtliches Lernen). */
-  problemLibrary: "photo-1481627834876-b7833e8f5570",
-  /** Methode: Hand schreibt Notizen mit Stift. */
-  methodNotes: "photo-1450101499163-c8848c66ca85",
-  /** Methode (sekundär): Stapel alter Fachbücher. */
-  methodBooks: "photo-1491841573634-28140fc7ced7",
+  /** Problem: konzentrierte:r Studierende:r am Laptop (menschlich, fokussiert). */
+  problemStudent: "photo-1513258496099-48168024aec0",
+  /** VSL-Poster: anatomisches Skelettmodell auf Grau (klar, premium). */
+  vslSkeleton: "photo-1530210124550-912dc1381cb8",
   /** Module: anatomisches Herzmodell. */
   moduleHeart: "photo-1530026405186-ed1f139313f8",
   /** Module (sekundär): Mikroskop im Labor. */
   moduleMicroscope: "photo-1518152006812-edab29b069ac",
   /** Zugang/Community: lernende Gruppe, warm & menschlich. */
   community: "photo-1522202176988-66273c2fd55f",
+  /** Optionaler Akzent: DNA-Doppelhelix (high-tech). */
+  dna: "photo-1628595351029-c2bf17511435",
+  /** Optionaler Akzent: fluoreszierende Zellen (medizinisches Detail). */
+  cells: "photo-1576086213369-97a306d36557",
 } as const;

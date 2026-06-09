@@ -20,16 +20,19 @@ export function VSL() {
 
       <Reveal delay={0.1}>
         <div className="mx-auto mt-14 max-w-3xl">
-          <figure className="group relative aspect-video overflow-hidden rounded-card border border-line shadow-soft">
+          <figure className="group relative aspect-video overflow-hidden rounded-card border border-line shadow-lift">
             {/* Poster-Bild (Platzhalter für das eigentliche VSL-Embed) */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={unsplash(IMAGES.vslBook, 1400)}
-              alt="Aufgeschlagenes Buch – Poster für das Erklärvideo"
+              src={unsplash(IMAGES.vslSkeleton, 1400)}
+              alt="Anatomisches Skelettmodell – Poster für das Erklärvideo"
               loading="lazy"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-petrol-900/55" aria-hidden />
+            <div
+              className="absolute inset-0 bg-gradient-to-tr from-petrol-900/85 via-petrol-900/60 to-teal-700/30"
+              aria-hidden
+            />
             <div className="relative flex h-full flex-col items-center justify-center gap-5">
               <button
                 type="button"
