@@ -1,5 +1,7 @@
-import { Section, SectionHeading } from "../ui/Section";
+import { IMAGES } from "@/lib/images";
+import { Section, Eyebrow } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
+import { EditorialImage } from "../ui/EditorialImage";
 
 const PAINS = [
   {
@@ -30,45 +32,70 @@ const PAINS = [
 
 export function Problem() {
   return (
-    <Section id="problem">
-      <Reveal>
-        <SectionHeading
-          eyebrow="Du kennst das"
-          title="Es liegt nicht daran, dass du zu wenig lernst."
-          subtitle="Die meisten Medizinstudenten arbeiten hart – nur selten mit einem System, das wirklich trägt. Genau hier setzt medIQ lab an."
-        />
-      </Reveal>
-
-      <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {PAINS.map((pain, i) => (
-          <Reveal as="li" key={pain.title} delay={(i % 3) * 0.08}>
-            <div className="h-full rounded-xl border border-line bg-ink-800/40 p-6 transition-colors hover:border-line-strong">
-              <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full border border-rose-500/30 bg-rose-500/10 text-rose-400">
-                <span aria-hidden>✗</span>
-              </div>
-              <h3 className="font-medium text-white">{pain.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                {pain.body}
+    <Section id="problem" tone="paper">
+      <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        {/* Bild + Intro (sticky, asymmetrisch) */}
+        <div className="lg:col-span-5">
+          <div className="lg:sticky lg:top-28">
+            <Reveal>
+              <Eyebrow>Du kennst das</Eyebrow>
+              <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">
+                Es liegt nicht daran, dass du zu wenig lernst.
+              </h2>
+              <p className="mt-5 max-w-md text-[1.05rem] leading-relaxed text-ink-soft">
+                Die meisten Medizinstudierenden arbeiten hart – nur selten mit einem
+                System, das wirklich trägt. Genau hier setzt medIQ lab an.
               </p>
-            </div>
-          </Reveal>
-        ))}
-      </ul>
-
-      {/* Reframe */}
-      <Reveal delay={0.1}>
-        <div className="relative mt-12 overflow-hidden rounded-2xl border border-accent/20 bg-ink-800/60 p-8 text-center sm:p-12">
-          <div className="glow-radial absolute inset-x-0 top-0 h-full opacity-70" />
-          <p className="relative font-display text-2xl font-medium leading-snug text-white sm:text-3xl">
-            Das ist kein Talent-Problem.
-            <br />
-            <span className="text-gradient">Es ist ein Methoden-Problem.</span>
-          </p>
-          <p className="relative mx-auto mt-4 max-w-xl text-slate-400">
-            Und Methoden kann man lernen – schneller, als du denkst.
-          </p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <EditorialImage
+                id={IMAGES.problemLibrary}
+                alt="Stimmungsvoller Bibliotheksgang bei wenig Licht"
+                aspect="aspect-[5/4]"
+                className="mt-8 frame"
+                width={900}
+              />
+            </Reveal>
+          </div>
         </div>
-      </Reveal>
+
+        {/* Pain-Liste */}
+        <div className="lg:col-span-7">
+          <ul className="border-t border-line">
+            {PAINS.map((pain, i) => (
+              <Reveal as="li" key={pain.title} delay={(i % 2) * 0.06}>
+                <div className="flex gap-5 border-b border-line py-6">
+                  <span
+                    className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line-strong text-ink-mute"
+                    aria-hidden
+                  >
+                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                      <path d="M6 6l12 12M18 6 6 18" />
+                    </svg>
+                  </span>
+                  <div>
+                    <h3 className="font-serif text-xl font-medium text-ink">{pain.title}</h3>
+                    <p className="mt-1.5 leading-relaxed text-ink-soft">{pain.body}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </ul>
+
+          {/* Reframe als Pull-Quote */}
+          <Reveal delay={0.1}>
+            <blockquote className="mt-10 border-l-2 border-copper-500 pl-6">
+              <p className="pull-quote">
+                Das ist kein Talent-Problem. Es ist ein{" "}
+                <span className="italic text-petrol-700">Methoden-Problem</span>.
+              </p>
+              <p className="mt-3 text-ink-soft">
+                Und Methoden kann man lernen – schneller, als du denkst.
+              </p>
+            </blockquote>
+          </Reveal>
+        </div>
+      </div>
     </Section>
   );
 }

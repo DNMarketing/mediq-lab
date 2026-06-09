@@ -86,8 +86,15 @@ Code mit `TODO`-Kommentaren versehen (`grep -rn "TODO" src`).
 - [ ] **Workshop-Module** final beschreiben → `sections/Modules.tsx`.
 - [ ] **Preise** setzen (Abo monatlich / Workshop einmalig) → `sections/Pricing.tsx`.
 - [ ] **Garantie/Ratenzahlung-FAQ** ehrlich befüllen → `sections/FAQ.tsx`.
-- [ ] **VSL-Video** einbinden → `sections/VSL.tsx` (Embed statt Platzhalter).
-- [ ] **Hero-Visual** ersetzen → `sections/Hero.tsx` (Mockup/Foto/Screenshot).
+- [ ] **VSL-Video** einbinden → `sections/VSL.tsx` (Embed statt Poster-Platzhalter).
+- [ ] **Fotos lizenzieren / ersetzen** → `src/lib/images.ts`. Aktuell hochwertige
+      **Unsplash**-Stockfotos (kostenlos nutzbar, aber austauschbar). Für eine Marke
+      eigene oder redaktionell lizenzierte Aufnahmen einsetzen. Der `<EditorialImage>`-
+      Fallback (SVG) greift nur, falls eine URL nicht lädt.
+- [ ] **Porträt der Gründer:in** einsetzen → `sections/Authority.tsx`
+      (bewusst KEIN Stockfoto – echtes Bild für Vertrauen/Echtheit).
+- [ ] **Vertrauenssignale / Logos** ergänzen → Uni-/Partner-Logos, Siegel
+      (Platz dafür ist im Layout vorgesehen, z. B. unter Hero oder Authority).
 - [ ] **Impressum & Datenschutz** rechtskonform befüllen →
       `app/impressum/page.tsx`, `app/datenschutz/page.tsx` (**DSGVO-Pflicht**, anwaltlich prüfen).
 - [ ] **Domain** in `layout.tsx` (`metadataBase`) und Footer-Jahr final setzen.
@@ -95,8 +102,15 @@ Code mit `TODO`-Kommentaren versehen (`grep -rn "TODO" src`).
 
 ## Design & Guardrails
 
-- Dunkle, edle Basis (tiefes Nachtblau/Anthrazit) mit **einem** elektrischen Akzent (Cyan),
-  sparsamer Violett-Glow. Premium/seriös – Referenzen: Linear, Apple Health, Notion.
+- **Visuelle Sprache:** seriöse medizinische Professionalität – edel & vertrauensvoll.
+  Helle, warme Papier-Basis · **Petrol/Teal** als Primärfarbe · **Kupfer** als sparsamer
+  Akzent (nur CTAs/Highlights). Serif-Headlines (**Fraunces**) + klare Sans (**IBM Plex Sans**).
+  Editorial-/Magazin-Layout mit asymmetrischen Kompositionen, feinen Trennlinien und Zitaten.
+  Referenz-Anmutung: hochwertige medizinische Fachpublikation / Universitätsklinik.
+- Design-Tokens zentral in `tailwind.config.ts` (Farben, Fonts, Schatten). Bilder mit
+  SVG-Fallback über `components/ui/EditorialImage.tsx`; Linien-Iconografie in `ui/MedIcon.tsx`.
+- **Bewusst NICHT** verwendet: Dark-Mode-Default, Neon-/elektrische Akzente, Gradient-/
+  Glow-Effekte, Grid-/Dot-Pattern, generische Sans als Headline-Schrift.
 - Respektiert `prefers-reduced-motion`, semantisches HTML, Tastatur-Fokus, Skip-Link.
 - **Keine** unrealistischen/rechtlich heiklen Versprechen, **keine** Fake-Verknappung.
   Preis-Einwand wird ehrlich entkräftet (verlorenes Semester kostet mehr).

@@ -1,30 +1,55 @@
 import { cn } from "@/lib/cn";
 import { Container } from "./Container";
 
+type Tone = "paper" | "light" | "sand" | "petrol";
+
+const toneClasses: Record<Tone, string> = {
+  paper: "bg-paper text-ink",
+  light: "bg-paper-light text-ink",
+  sand: "bg-paper-sand text-ink",
+  petrol: "bg-petrol-900 text-paper-light",
+};
+
 type SectionProps = {
   id?: string;
   className?: string;
   children: React.ReactNode;
-  /** Container weglassen, wenn die Section ihr eigenes Layout steuert. */
   bare?: boolean;
+  tone?: Tone;
 };
 
-export function Section({ id, className, children, bare }: SectionProps) {
+export function Section({
+  id,
+  className,
+  children,
+  bare,
+  tone = "paper",
+}: SectionProps) {
   return (
     <section
       id={id}
-      className={cn("relative scroll-mt-24 py-20 sm:py-28", className)}
+      className={cn(
+        "relative scroll-mt-20 py-24 sm:py-32",
+        toneClasses[tone],
+        className,
+      )}
     >
       {bare ? children : <Container>{children}</Container>}
     </section>
   );
 }
 
-/** Kleine Überschrift über der H2 ("Eyebrow"). */
-export function Eyebrow({ children }: { children: React.ReactNode }) {
+/** Editorial-Eyebrow mit Kupfer-Linie. */
+export function Eyebrow({
+  children,
+  onDark,
+}: {
+  children: React.ReactNode;
+  onDark?: boolean;
+}) {
   return (
-    <div className="mb-4 inline-flex items-center gap-2 text-sm font-medium tracking-wide text-accent">
-      <span className="h-px w-6 bg-accent/60" aria-hidden />
+    <div className={cn("eyebrow", onDark && "text-copper-300")}>
+      <span className={cn("rule-copper", onDark && "bg-copper-300/80")} aria-hidden />
       {children}
     </div>
   );
@@ -35,20 +60,38 @@ export function SectionHeading({
   title,
   subtitle,
   center,
+  onDark,
 }: {
   eyebrow?: string;
   title: React.ReactNode;
   subtitle?: React.ReactNode;
   center?: boolean;
+  onDark?: boolean;
 }) {
   return (
     <div className={cn("max-w-2xl", center && "mx-auto text-center")}>
-      {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="font-display text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
+      {eyebrow && (
+        <div className={cn(center && "flex justify-center")}>
+          <Eyebrow onDark={onDark}>{eyebrow}</Eyebrow>
+        </div>
+      )}
+      <h2
+        className={cn(
+          "mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] sm:text-[2.6rem]",
+          onDark ? "text-paper-light" : "text-ink",
+        )}
+      >
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-lg leading-relaxed text-slate-400">{subtitle}</p>
+        <p
+          className={cn(
+            "mt-5 text-[1.05rem] leading-relaxed",
+            onDark ? "text-paper/70" : "text-ink-soft",
+          )}
+        >
+          {subtitle}
+        </p>
       )}
     </div>
   );

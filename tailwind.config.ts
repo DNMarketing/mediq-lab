@@ -1,61 +1,79 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * Design-Sprache: seriöse medizinische Professionalität – edel & vertrauensvoll.
+ * Helle, warme Basis · Petrol/Teal als Primärfarbe · Kupfer als sparsamer Akzent.
+ * KEIN Dark-Mode-Default, keine Neon-/Glow-/Grid-Motive.
+ */
 const config: Config = {
   content: ["./src/**/*.{ts,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        // Dunkle, edle Basis (tiefes Nachtblau/Anthrazit)
+        // Warme, helle Papier-Basis
+        paper: {
+          DEFAULT: "#F6F2EA", // Haupt-Hintergrund (warmes Off-White)
+          light: "#FBF8F2", // hellere Variante
+          sand: "#EFE9DC", // dezent tiefere Sektion
+          deep: "#E7DFCE", // Rahmen/Felder
+        },
+        // Tiefe, warme Tinte für Text (Teal-Unterton)
         ink: {
-          950: "#05080F", // tiefster Hintergrund
-          900: "#070B14",
-          800: "#0B1120", // Surface
-          700: "#111A2E", // Card
-          600: "#1C2740", // Card hover / Border-stark
+          DEFAULT: "#18211F",
+          soft: "#46524F",
+          mute: "#73807C",
         },
-        // EIN elektrischer Akzent: Cyan
-        accent: {
-          DEFAULT: "#22D3EE",
-          soft: "#67E8F9",
-          deep: "#06B6D4",
-          glow: "#0891B2",
+        // Primärfarbe: edles Petrol/Teal
+        petrol: {
+          50: "#E8F0ED",
+          100: "#CADCD6",
+          300: "#7FA8A0",
+          500: "#2C6F66",
+          600: "#1E5A53",
+          700: "#164A44", // Standard-Primär
+          800: "#103833",
+          900: "#0B2826", // dunkle Sektionen
         },
-        // Sparsamer Sekundär-Akzent (Violett) für Verläufe/Glow
-        violet: {
-          DEFAULT: "#8B5CF6",
-          soft: "#A78BFA",
+        // Akzent: warmes Kupfer/Gold – sparsam, nur Highlights/CTA-Details
+        copper: {
+          100: "#F1E2D3",
+          300: "#D9AC83",
+          400: "#C68B55",
+          500: "#B0703B", // Standard-Akzent
+          600: "#955B2C",
         },
-        line: "rgba(148, 163, 184, 0.12)",
-        "line-strong": "rgba(148, 163, 184, 0.22)",
+        line: {
+          DEFAULT: "rgba(24,33,31,0.12)", // feine Trennlinie auf hell
+          strong: "rgba(24,33,31,0.20)",
+          onDark: "rgba(246,242,234,0.16)", // auf Petrol
+        },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-inter)", "sans-serif"],
+        // Serif mit Charakter für Headlines
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        // Seriöse, klare Sans für Fließtext
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         content: "1200px",
+        prose: "65ch",
+      },
+      borderRadius: {
+        card: "4px",
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(34,211,238,0.15), 0 12px 48px -12px rgba(34,211,238,0.35)",
-        card: "0 1px 0 0 rgba(255,255,255,0.04) inset, 0 24px 48px -24px rgba(0,0,0,0.8)",
-      },
-      backgroundImage: {
-        "grid-faint":
-          "linear-gradient(to right, rgba(148,163,184,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.06) 1px, transparent 1px)",
+        // dezent, editorial – Tiefe über Rahmen statt starker Schatten
+        soft: "0 1px 2px rgba(24,33,31,0.04), 0 12px 28px -18px rgba(24,33,31,0.28)",
+        lift: "0 2px 4px rgba(24,33,31,0.05), 0 28px 56px -28px rgba(24,33,31,0.4)",
       },
       keyframes: {
-        "pulse-glow": {
-          "0%, 100%": { opacity: "0.4" },
-          "50%": { opacity: "0.9" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(14px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        "pulse-glow": "pulse-glow 4s ease-in-out infinite",
-        float: "float 6s ease-in-out infinite",
+        "fade-up": "fade-up 0.7s cubic-bezier(0.21,0.47,0.32,0.98) both",
       },
     },
   },

@@ -4,12 +4,13 @@
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -19,50 +20,42 @@
   }
 
   body {
-    @apply bg-ink-950 text-slate-200 antialiased;
-    font-feature-settings: "ss01", "cv01";
+    @apply bg-paper text-ink antialiased;
+    font-feature-settings: "ss01";
   }
 
   ::selection {
-    @apply bg-accent/30 text-white;
+    @apply bg-petrol-700 text-paper-light;
   }
 
-  /* Sichtbarer, markenkonformer Fokus-Ring für Tastatur-Navigation */
   :focus-visible {
     outline: none;
   }
 }
 
 @layer utilities {
-  /* Text-Gradient für Hero-Highlights */
-  .text-gradient {
-    @apply bg-gradient-to-br from-white via-white to-accent-soft bg-clip-text text-transparent;
+  /* Editorial-Eyebrow: kleine, getrackte Kapitälchen mit Kupfer-Linie */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-copper-600;
   }
 
-  /* Dezenter Glas-Effekt für Karten/Header */
-  .glass {
-    @apply border border-line bg-ink-800/50 backdrop-blur-xl;
+  /* Feine Kupfer-Trennlinie als Design-Element */
+  .rule-copper {
+    @apply h-px w-10 bg-copper-500/70;
   }
 
-  /* Radialer Glow als Hintergrund-Akzent (sparsam einsetzen) */
-  .glow-radial {
-    background: radial-gradient(
-      60% 60% at 50% 0%,
-      rgba(34, 211, 238, 0.16) 0%,
-      rgba(34, 211, 238, 0) 70%
-    );
+  /* Hängende Initiale / großes Zitat */
+  .pull-quote {
+    @apply font-serif text-2xl font-medium leading-snug text-ink sm:text-3xl;
   }
 
-  .glow-violet {
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(139, 92, 246, 0.18) 0%,
-      rgba(139, 92, 246, 0) 70%
-    );
+  /* Sanfter Bild-Rahmen im Editorial-Stil */
+  .frame {
+    @apply rounded-card border border-line bg-paper-light shadow-soft;
   }
 
-  /* Hairline-Trenner */
-  .hairline {
-    @apply border-line;
+  /* Dünne Ziffern für Tabellen/Counter */
+  .nums {
+    font-variant-numeric: tabular-nums lining-nums;
   }
 }

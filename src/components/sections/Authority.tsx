@@ -1,102 +1,122 @@
+import { IMAGES } from "@/lib/images";
 import { Section, SectionHeading } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
+import { EditorialImage } from "../ui/EditorialImage";
 import { PlaceholderBadge } from "../ui/Badge";
 
 /**
  * Authority / Methode – der zentrale Trust-Anker.
- * Enthält zwei Bausteine, die du befüllen musst:
- *  (a) Gründer-/Mentor-Story (links)
- *  (b) Wissenschaftlich begründete Lernmethode (rechts/unten)
- * Beide sind als Platzhalter markiert.
+ *  (a) Gründer-/Mentor-Story (Porträt-Platzhalter – NICHT mit Stockfoto füllen)
+ *  (b) Wissenschaftlich begründete Lernmethode
  */
-
 const PRINCIPLES = [
   {
-    title: "Aktives Abrufen (Active Recall)",
-    body: "Wissen wird gefestigt, indem du es aktiv aus dem Gedächtnis holst – nicht durch passives Wiederlesen. Studien zeigen messbar bessere Behaltensleistung.",
+    title: "Aktives Abrufen",
+    sub: "Active Recall",
+    body: "Wissen festigt sich, indem du es aktiv aus dem Gedächtnis holst – nicht durch passives Wiederlesen. Lernpsychologisch klar belegt.",
   },
   {
-    title: "Verteiltes Lernen (Spaced Repetition)",
-    body: "In wachsenden Abständen wiederholen, statt vor der Prüfung zu pauken. So wandert Stoff ins Langzeitgedächtnis – und bleibt dort.",
+    title: "Verteiltes Lernen",
+    sub: "Spaced Repetition",
+    body: "In wachsenden Abständen wiederholen statt vor der Prüfung pauken. So wandert Stoff ins Langzeitgedächtnis – und bleibt dort.",
   },
   {
     title: "Prüfungsorientierung",
-    body: "Vom Altfragen-Muster rückwärts gedacht: Du lernst gezielt das, was geprüft wird – statt dich in Details zu verlieren.",
+    sub: "Altfragen-Logik",
+    body: "Vom Prüfungsmuster rückwärts gedacht: Du lernst gezielt, was geprüft wird – statt dich in Details zu verlieren.",
   },
 ];
 
 export function Authority() {
   return (
-    <Section id="methode" className="relative">
-      <div aria-hidden className="glow-violet pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px]" />
-
+    <Section id="methode" tone="light">
       <Reveal>
         <SectionHeading
           eyebrow="Warum medIQ lab"
-          title="Eine Methode mit Fundament – kein Bauchgefühl."
+          title="Eine Methode mit Fundament — kein Bauchgefühl."
           subtitle="medIQ lab basiert nicht auf Motivationssprüchen, sondern auf lernpsychologisch belegten Prinzipien. Das ist der Unterschied zwischen härter lernen und klüger lernen."
         />
       </Reveal>
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-5">
+      <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:gap-14">
         {/* (a) Gründer-/Mentor-Story */}
-        <Reveal className="lg:col-span-2">
-          <div className="flex h-full flex-col rounded-2xl border border-line bg-ink-800/50 p-8">
-            <div className="mb-6 flex items-center gap-4">
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-line-strong bg-ink-700">
-                <div className="flex h-full items-center justify-center text-xs text-slate-500">
-                  Foto
+        <Reveal className="lg:col-span-5">
+          <figure className="overflow-hidden rounded-card border border-line bg-paper shadow-soft">
+            {/* Porträt-Platzhalter – bewusst KEIN Stockfoto (Trust/Echtheit) */}
+            <div className="relative flex aspect-[4/3] items-center justify-center border-b border-line bg-paper-sand">
+              <div className="text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-line-strong text-ink-mute">
+                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <circle cx="12" cy="9" r="3.2" />
+                    <path d="M5.5 19a6.5 6.5 0 0 1 13 0" />
+                  </svg>
                 </div>
-              </div>
-              <div>
-                <p className="font-medium text-white">[Name der Gründer:in]</p>
-                <p className="text-sm text-slate-400">[Rolle · Hintergrund]</p>
+                <p className="mt-3 text-xs text-ink-mute">Porträt der Gründer:in</p>
               </div>
             </div>
-            <PlaceholderBadge className="mb-3 self-start" />
-            <p className="text-sm leading-relaxed text-slate-400">
-              {/* TODO: Echte Gründer-/Mentor-Story einsetzen. Wer steckt hinter
-                  medIQ lab? Eigener Studienweg, Hürden, warum diese Methode? Das
-                  ist der wichtigste Vertrauensbeweis – ausführlich und authentisch. */}
-              Hier kommt die persönliche Geschichte hinter medIQ lab hin: der eigene
-              Weg durchs Medizinstudium, die Wendepunkte, und warum daraus eine
-              Methode wurde, die heute hunderten Studierenden hilft. Authentisch,
-              konkret, nahbar – das schafft Vertrauen für ein High-Ticket-Produkt.
-            </p>
-            <div className="mt-6 grid grid-cols-2 gap-3 border-t border-line pt-6">
-              <div>
-                <p className="font-display text-2xl font-semibold text-white">[X]</p>
-                <p className="text-xs text-slate-500">Jahre Erfahrung</p>
+            <figcaption className="p-7">
+              <div className="flex items-center gap-3">
+                <p className="font-serif text-lg font-medium text-ink">[Name der Gründer:in]</p>
+                <PlaceholderBadge />
               </div>
-              <div>
-                <p className="font-display text-2xl font-semibold text-white">[X]</p>
-                <p className="text-xs text-slate-500">begleitete Studierende</p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* (b) Wissenschaftliche Prinzipien */}
-        <div className="grid gap-4 lg:col-span-3">
-          {PRINCIPLES.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.1}>
-              <div className="group flex gap-5 rounded-2xl border border-line bg-ink-800/40 p-6 transition-colors hover:border-accent/30">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent/30 bg-accent/10 font-display text-lg font-semibold text-accent">
-                  {i + 1}
+              <p className="mt-1 text-sm text-ink-mute">[Rolle · Hintergrund]</p>
+              <p className="mt-4 leading-relaxed text-ink-soft">
+                {/* TODO: Echte Gründer-/Mentor-Story einsetzen – eigener Studienweg,
+                    Wendepunkte, warum diese Methode. Wichtigster Vertrauensbeweis. */}
+                Hier steht die persönliche Geschichte hinter medIQ lab: der eigene Weg
+                durchs Medizinstudium, die Hürden – und warum daraus eine Methode wurde,
+                die heute vielen Studierenden hilft. Authentisch, konkret, nahbar.
+              </p>
+              <div className="mt-6 grid grid-cols-2 gap-4 border-t border-line pt-6">
+                <div>
+                  <p className="font-serif text-2xl font-medium text-petrol-700">[X]</p>
+                  <p className="text-xs text-ink-mute">Jahre Erfahrung</p>
                 </div>
                 <div>
-                  <h3 className="font-medium text-white">{p.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-slate-400">
-                    {p.body}
-                  </p>
+                  <p className="font-serif text-2xl font-medium text-petrol-700">[X]</p>
+                  <p className="text-xs text-ink-mute">begleitete Studierende</p>
                 </div>
               </div>
-            </Reveal>
-          ))}
-          <Reveal delay={0.3}>
-            <p className="px-2 text-xs text-slate-600">
-              {/* TODO: Optional Quellen/Studien verlinken, um Wissenschaftlichkeit
-                  zu untermauern (z. B. Karpicke & Roediger, Cepeda et al.). */}
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        {/* (b) Prinzipien + Notiz-Motiv */}
+        <div className="lg:col-span-7">
+          <Reveal>
+            <EditorialImage
+              id={IMAGES.methodNotes}
+              alt="Hand schreibt mit Stift Notizen auf Papier"
+              aspect="aspect-[16/7]"
+              className="frame mb-8"
+              width={1100}
+            />
+          </Reveal>
+
+          <ol className="space-y-0">
+            {PRINCIPLES.map((p, i) => (
+              <Reveal as="li" key={p.title} delay={i * 0.08}>
+                <div className="flex gap-6 border-t border-line py-7">
+                  <span className="font-serif text-3xl font-medium leading-none text-copper-500">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <div className="flex flex-wrap items-baseline gap-x-3">
+                      <h3 className="font-serif text-xl font-medium text-ink">{p.title}</h3>
+                      <span className="text-xs uppercase tracking-[0.18em] text-ink-mute">
+                        {p.sub}
+                      </span>
+                    </div>
+                    <p className="mt-2 leading-relaxed text-ink-soft">{p.body}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
+          <Reveal delay={0.2}>
+            <p className="mt-5 text-xs text-ink-mute">
+              {/* TODO: Optional Studien-Quellen verlinken (z. B. Karpicke & Roediger,
+                  Cepeda et al.), um die Wissenschaftlichkeit zu belegen. */}
               Tipp: Mit Studien-Quellen belegen, um die Wissenschaftlichkeit sichtbar zu machen.
             </p>
           </Reveal>

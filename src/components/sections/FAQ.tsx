@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { Section, SectionHeading } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
+import { MedIcon } from "../ui/MedIcon";
 
 const FAQS = [
   {
@@ -54,16 +55,16 @@ function FaqItem({
         type="button"
         onClick={onToggle}
         aria-expanded={open}
-        className="flex w-full items-center justify-between gap-4 py-5 text-left"
+        className="flex w-full items-center justify-between gap-5 py-5 text-left"
       >
-        <span className="font-medium text-white">{q}</span>
+        <span className="font-serif text-lg font-medium text-ink">{q}</span>
         <span
-          className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line-strong text-accent transition-transform duration-300 ${
-            open ? "rotate-45" : ""
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line-strong text-petrol-700 transition-transform duration-300 ${
+            open ? "rotate-45 bg-petrol-50" : ""
           }`}
           aria-hidden
         >
-          +
+          <MedIcon name="plus" className="h-4 w-4" />
         </span>
       </button>
       <AnimatePresence initial={false}>
@@ -75,7 +76,7 @@ function FaqItem({
             transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="overflow-hidden"
           >
-            <p className="pb-5 pr-10 text-sm leading-relaxed text-slate-400">{a}</p>
+            <p className="max-w-prose pb-6 pr-10 leading-relaxed text-ink-soft">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -87,28 +88,31 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <Section id="faq">
-      <Reveal>
-        <SectionHeading
-          center
-          eyebrow="Häufige Fragen"
-          title="Was du noch wissen willst"
-        />
-      </Reveal>
-
-      <Reveal delay={0.1}>
-        <div className="mx-auto mt-12 max-w-2xl">
-          {FAQS.map((item, i) => (
-            <FaqItem
-              key={item.q}
-              q={item.q}
-              a={item.a}
-              open={openIndex === i}
-              onToggle={() => setOpenIndex(openIndex === i ? null : i)}
-            />
-          ))}
+    <Section id="faq" tone="paper">
+      <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-4">
+          <Reveal>
+            <div className="lg:sticky lg:top-28">
+              <SectionHeading eyebrow="Häufige Fragen" title="Was du noch wissen willst" />
+            </div>
+          </Reveal>
         </div>
-      </Reveal>
+        <div className="lg:col-span-8">
+          <Reveal delay={0.05}>
+            <div className="border-t border-line">
+              {FAQS.map((item, i) => (
+                <FaqItem
+                  key={item.q}
+                  q={item.q}
+                  a={item.a}
+                  open={openIndex === i}
+                  onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                />
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </div>
     </Section>
   );
 }

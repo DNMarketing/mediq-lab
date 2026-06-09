@@ -1,11 +1,14 @@
 import { SKOOL_URL } from "@/lib/config";
+import { IMAGES, unsplash } from "@/lib/images";
 import { Section, SectionHeading } from "../ui/Section";
 import { CTAButton } from "../ui/CTAButton";
 import { Reveal } from "../ui/Reveal";
+import { MedIcon } from "../ui/MedIcon";
+import { PlaceholderBadge } from "../ui/Badge";
 
 export function VSL() {
   return (
-    <Section id="video" className="pt-4 sm:pt-6">
+    <Section id="video" tone="sand">
       <Reveal>
         <SectionHeading
           center
@@ -16,31 +19,35 @@ export function VSL() {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <div className="mx-auto mt-12 max-w-3xl">
-          {/* Video-Embed-Platzhalter (VSL) */}
-          <div className="group relative aspect-video overflow-hidden rounded-2xl border border-line bg-ink-800/60 shadow-card">
-            <div className="absolute inset-0 bg-grid-faint [background-size:40px_40px] opacity-30" />
-            <div className="glow-radial absolute inset-x-0 top-0 h-2/3" />
-            <div className="relative flex h-full flex-col items-center justify-center gap-4">
+        <div className="mx-auto mt-14 max-w-3xl">
+          <figure className="group relative aspect-video overflow-hidden rounded-card border border-line shadow-soft">
+            {/* Poster-Bild (Platzhalter für das eigentliche VSL-Embed) */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={unsplash(IMAGES.vslBook, 1400)}
+              alt="Aufgeschlagenes Buch – Poster für das Erklärvideo"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-petrol-900/55" aria-hidden />
+            <div className="relative flex h-full flex-col items-center justify-center gap-5">
               <button
                 type="button"
                 aria-label="Video abspielen (Platzhalter)"
-                className="flex h-20 w-20 items-center justify-center rounded-full bg-accent text-ink-950 shadow-glow transition-transform duration-200 group-hover:scale-105"
+                className="flex h-[68px] w-[68px] items-center justify-center rounded-full bg-paper-light text-petrol-800 shadow-lift transition-transform duration-200 group-hover:scale-105"
               >
-                <span className="ml-1 text-2xl" aria-hidden>▶</span>
+                <MedIcon name="play" className="ml-0.5 h-7 w-7" />
               </button>
-              <span className="rounded-full border border-line-strong bg-ink-900/70 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-300">
-                ⚠ Platzhalter – VSL-Video einbinden
-              </span>
-              {/* TODO: Video-Embed einsetzen (YouTube/Vimeo/Wistia/Mux-iFrame),
-                  das medIQ lab in ~2 Min erklärt. Diesen Platzhalter ersetzen. */}
+              <PlaceholderBadge label="Platzhalter · VSL-Video einbinden" />
             </div>
-          </div>
+            {/* TODO: Video-Embed einsetzen (YouTube/Vimeo/Wistia/Mux), das
+                medIQ lab in ~2 Min erklärt. Poster-Bild & Overlay ersetzen. */}
+          </figure>
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-9 flex justify-center">
             <CTAButton href={SKOOL_URL} size="lg">
               Jetzt beitreten
-              <span aria-hidden>→</span>
+              <MedIcon name="arrowRight" className="h-4 w-4" />
             </CTAButton>
           </div>
         </div>

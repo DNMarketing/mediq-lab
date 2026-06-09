@@ -23,21 +23,21 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-line bg-ink-950/80 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent",
+          ? "border-b border-line bg-paper/90 backdrop-blur-md"
+          : "border-b border-transparent",
       )}
     >
-      <Container className="flex h-16 items-center justify-between">
+      <Container className="flex h-[72px] items-center justify-between">
         <a href="#hero" className="flex items-center" aria-label="medIQ lab Startseite">
           <Logo />
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Hauptnavigation">
+        <nav className="hidden items-center gap-9 md:flex" aria-label="Hauptnavigation">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-slate-400 transition-colors hover:text-white"
+              className="text-sm text-ink-soft transition-colors hover:text-petrol-700"
             >
               {link.label}
             </a>
@@ -50,42 +50,30 @@ export function Header() {
           </CTAButton>
         </div>
 
-        {/* Mobile Toggle */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-slate-300 md:hidden"
+          className="flex h-10 w-10 items-center justify-center text-ink md:hidden"
           aria-expanded={open}
           aria-label="Menü öffnen"
         >
           <div className="flex flex-col gap-1.5">
-            <span
-              className={cn(
-                "h-0.5 w-5 bg-current transition-transform",
-                open && "translate-y-2 rotate-45",
-              )}
-            />
-            <span className={cn("h-0.5 w-5 bg-current transition-opacity", open && "opacity-0")} />
-            <span
-              className={cn(
-                "h-0.5 w-5 bg-current transition-transform",
-                open && "-translate-y-2 -rotate-45",
-              )}
-            />
+            <span className={cn("h-px w-6 bg-current transition-transform", open && "translate-y-2 rotate-45")} />
+            <span className={cn("h-px w-6 bg-current transition-opacity", open && "opacity-0")} />
+            <span className={cn("h-px w-6 bg-current transition-transform", open && "-translate-y-[7px] -rotate-45")} />
           </div>
         </button>
       </Container>
 
-      {/* Mobile Menu */}
       {open && (
-        <div className="border-t border-line bg-ink-950/95 backdrop-blur-xl md:hidden">
+        <div className="border-t border-line bg-paper-light md:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-300 hover:bg-ink-800 hover:text-white"
+                className="rounded-card px-3 py-2.5 text-sm text-ink-soft hover:bg-paper-sand hover:text-petrol-700"
               >
                 {link.label}
               </a>

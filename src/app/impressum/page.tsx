@@ -13,7 +13,7 @@ export default function ImpressumPage() {
           Mindestangaben: Anbieter, Anschrift, Kontakt, ggf. USt-IdNr.,
           Verantwortliche:r i.S.d. Presserechts. */}
       <p>
-        <strong className="text-slate-200">Angaben gemäß § 5 DDG</strong>
+        <strong className="text-ink">Angaben gemäß § 5 DDG</strong>
       </p>
       <p>
         [Name / Firma]
@@ -25,20 +25,20 @@ export default function ImpressumPage() {
         [Land]
       </p>
       <p>
-        <strong className="text-slate-200">Kontakt</strong>
+        <strong className="text-ink">Kontakt</strong>
         <br />
         E-Mail: [kontakt@…]
         <br />
         Telefon: [optional]
       </p>
       <p>
-        <strong className="text-slate-200">
+        <strong className="text-ink">
           Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
         </strong>
         <br />
         [Name, Anschrift]
       </p>
-      <p className="text-slate-500">
+      <p className="text-ink-mute">
         Platzhalter – bitte vor Veröffentlichung durch vollständige, geprüfte
         Pflichtangaben ersetzen.
       </p>
