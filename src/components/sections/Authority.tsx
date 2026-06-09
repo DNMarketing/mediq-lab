@@ -1,3 +1,4 @@
+import { LINKEDIN_DIRK } from "@/lib/config";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { Stagger, StaggerItem } from "../ui/Motion";
@@ -85,6 +86,17 @@ export function Authority() {
                   <PlaceholderBadge label="Bio Platzhalter" />
                 </div>
                 <p className="mt-1 text-sm text-teal-300">Gründer von medIQ lab</p>
+                <a
+                  href={LINKEDIN_DIRK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-paper/80 transition-colors hover:text-teal-300"
+                >
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
+                    <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.25 8.25h4.5V24h-4.5V8.25Zm7.25 0h4.31v2.15h.06c.6-1.13 2.06-2.32 4.24-2.32 4.53 0 5.37 2.98 5.37 6.86V24h-4.5v-6.99c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V24h-4.5V8.25Z" />
+                  </svg>
+                  LinkedIn-Profil ansehen
+                </a>
                 <p className="mt-4 leading-relaxed text-paper/70">
                   {/* TODO: Bio Dirk Schlenker – persönliche Geschichte, eigener
                       Studienweg, warum diese Methode. Wichtigster Vertrauensbeweis. */}

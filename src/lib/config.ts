@@ -15,6 +15,9 @@ export const NAV_LINKS = [
   { href: "#faq", label: "FAQ" },
 ] as const;
 
+/** LinkedIn-Profil des Gründers Dirk Schlenker (verifiziert vom Kunden). */
+export const LINKEDIN_DIRK = "https://de.linkedin.com/in/dirk-schlenker-b3639578";
+
 /**
  * Echte Knappheit – nur befüllen, wenn es stimmt (z. B. Kohorten-Start).
  * Auf `null` setzen, um den Scarcity-Hinweis komplett auszublenden.
