@@ -66,7 +66,7 @@ export function Authority() {
           <Reveal className="lg:col-span-5">
             <figure className="overflow-hidden rounded-card shadow-lift glass-dark">
               {/* Porträt Dirk Schlenker – zeigt /public-Foto, sonst Platzhalter */}
-              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-line-onDark bg-petrol-800/60">
+              <div className="relative flex aspect-square items-center justify-center overflow-hidden border-b border-line-onDark bg-petrol-800/60">
                 <Portrait file={DIRK_PHOTO} alt="Dirk Schlenker, Gründer von medIQ lab" />
               </div>
               <figcaption className="p-7">
