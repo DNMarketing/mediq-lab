@@ -21,7 +21,7 @@ const config: Config = {
         ink: {
           DEFAULT: "#18211F",
           soft: "#46524F",
-          mute: "#73807C",
+          mute: "#646F6A", // WCAG-AA-tauglich auf heller Papier-Basis (≥4.5:1)
         },
         // Primärfarbe: edles Petrol/Teal
         petrol: {

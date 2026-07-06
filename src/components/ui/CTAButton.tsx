@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "onDark" | "ghost";
+type Variant = "primary" | "secondary" | "onDark" | "onDarkGhost" | "ghost";
 
 const base =
   "inline-flex items-center justify-center gap-2.5 rounded-card font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 disabled:opacity-50";
@@ -20,8 +21,10 @@ const variants: Record<Variant, string> = {
   // Auf dunklen Petrol-Sektionen: Kupfer-CTA mit dunklem Text
   onDark:
     "bg-copper-500 text-petrol-900 hover:bg-copper-400 focus-visible:ring-offset-petrol-900 active:translate-y-px",
-  ghost:
-    "text-ink-soft hover:text-petrol-700 focus-visible:ring-offset-paper",
+  // Auf dunklen Sektionen: dezenter Rahmen-Button
+  onDarkGhost:
+    "border border-line-onDark bg-transparent text-paper-light hover:border-copper-300 hover:text-copper-300 focus-visible:ring-offset-petrol-900 active:translate-y-px",
+  ghost: "text-ink-soft hover:text-petrol-700 focus-visible:ring-offset-paper",
 };
 
 type CTAButtonProps = {
@@ -30,6 +33,7 @@ type CTAButtonProps = {
   variant?: Variant;
   size?: keyof typeof sizes;
   className?: string;
+  /** true = externer Link (neuer Tab). false = interne Route (Next Link). */
   external?: boolean;
 };
 
@@ -41,13 +45,19 @@ export function CTAButton({
   className,
   external = true,
 }: CTAButtonProps) {
+  const classes = cn(base, sizes[size], variants[variant], className);
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <a
-      href={href}
-      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={cn(base, sizes[size], variants[variant], className)}
-    >
+    <Link href={href} className={classes}>
       {children}
-    </a>
+    </Link>
   );
 }

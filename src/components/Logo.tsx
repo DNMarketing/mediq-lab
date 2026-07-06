@@ -19,7 +19,7 @@ export function Logo({
         className,
       )}
     >
-      med<span className="text-copper-500">IQ</span>
+      med<span className="text-copper-600">IQ</span>
       <span
         className={cn(
           "ml-1.5 align-middle font-sans text-[0.6rem] font-semibold uppercase tracking-[0.28em]",

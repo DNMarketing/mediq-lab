@@ -99,9 +99,9 @@ export function Hero() {
                 Jetzt beitreten
                 <MedIcon name="arrowRight" className="h-4 w-4" />
               </CTAButton>
-              <CTAButton href="#video" variant="secondary" size="lg" external={false}>
-                <MedIcon name="play" className="h-4 w-4" />
-                In 2 Minuten verstehen
+              <CTAButton href="/methode" variant="secondary" size="lg" external={false}>
+                So funktioniert die Methode
+                <MedIcon name="arrowRight" className="h-4 w-4" />
               </CTAButton>
             </motion.div>
 

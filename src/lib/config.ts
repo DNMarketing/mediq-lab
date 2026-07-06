@@ -6,24 +6,20 @@
  */
 export const SKOOL_URL = "https://www.skool.com/mediqlab"; // TODO: finale Skool-URL einsetzen
 
-/** Anker-Navigation des One-Pagers. */
+/** Kontakt-E-Mail. TODO: echte Adresse bestätigen/eintragen. */
+export const CONTACT_EMAIL = "kontakt@mediqlab.de"; // TODO: finale Kontakt-E-Mail bestätigen
+
+/** Haupt-Navigation (echte Routen der Multipage-Site). */
 export const NAV_LINKS = [
-  { href: "#methode", label: "Methode" },
-  { href: "#module", label: "Module" },
-  { href: "#ergebnisse", label: "Ergebnisse" },
-  { href: "#zugang", label: "Zugang" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/methode", label: "Methode" },
+  { href: "/programm", label: "Programm" },
+  { href: "/ueber", label: "Über uns" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/kontakt", label: "Kontakt" },
 ] as const;
 
 /** LinkedIn-Profil des Gründers Dirk Schlenker (verifiziert vom Kunden). */
 export const LINKEDIN_DIRK = "https://de.linkedin.com/in/dirk-schlenker-b3639578";
-
-/**
- * Porträtfoto Dirk Schlenker. Datei in `public/` ablegen (Dateiname hier).
- * Solange die Datei fehlt, zeigt die Karte automatisch den Platzhalter.
- * TODO: `public/dirk-schlenker.jpg` einsetzen (Bildrechte beachten).
- */
-export const DIRK_PHOTO: string | null = "dirk-schlenker.jpg";
 
 /**
  * Echte Knappheit – nur befüllen, wenn es stimmt (z. B. Kohorten-Start).

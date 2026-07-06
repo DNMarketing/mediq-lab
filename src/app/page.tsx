@@ -1,33 +1,19 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { VSL } from "@/components/sections/VSL";
 import { Stats } from "@/components/sections/Stats";
-import { Problem } from "@/components/sections/Problem";
-import { Authority } from "@/components/sections/Authority";
-import { Modules } from "@/components/sections/Modules";
+import { ProblemTeaser } from "@/components/home/ProblemTeaser";
+import { MethodTeaser } from "@/components/home/MethodTeaser";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { Pricing } from "@/components/sections/Pricing";
-import { FAQ } from "@/components/sections/FAQ";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { CTABand } from "@/components/sections/CTABand";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <VSL />
-        <Stats />
-        <Problem />
-        <Authority />
-        <Modules />
-        <Testimonials />
-        <Pricing />
-        <FAQ />
-        <FinalCTA />
-      </main>
-      <Footer />
+      <Hero />
+      <Stats />
+      <ProblemTeaser />
+      <MethodTeaser />
+      <Testimonials />
+      <CTABand />
     </>
   );
 }

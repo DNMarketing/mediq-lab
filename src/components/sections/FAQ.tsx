@@ -84,8 +84,28 @@ function FaqItem({
   );
 }
 
-export function FAQ() {
+export function FAQ({ showHeading = true }: { showHeading?: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  if (!showHeading) {
+    return (
+      <Section id="faq" tone="paper">
+        <div className="mx-auto max-w-3xl">
+          <div className="border-t border-line">
+            {FAQS.map((item, i) => (
+              <FaqItem
+                key={item.q}
+                q={item.q}
+                a={item.a}
+                open={openIndex === i}
+                onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+              />
+            ))}
+          </div>
+        </div>
+      </Section>
+    );
+  }
 
   return (
     <Section id="faq" tone="paper">
@@ -93,7 +113,7 @@ export function FAQ() {
         <div className="lg:col-span-4">
           <Reveal>
             <div className="lg:sticky lg:top-28">
-              <SectionHeading eyebrow="06 — Häufige Fragen" title="Was du noch wissen willst" />
+              <SectionHeading eyebrow="Häufige Fragen" title="Was du noch wissen willst" />
             </div>
           </Reveal>
         </div>
