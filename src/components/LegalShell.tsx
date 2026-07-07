@@ -19,7 +19,7 @@ export function LegalShell({
   children: React.ReactNode;
 }) {
   return (
-    <Container className="max-w-3xl pt-32 pb-24 sm:pt-40 sm:pb-28">
+    <Container className="max-w-3xl pt-24 pb-24 sm:pt-40 sm:pb-28">
       <div className="mb-3 flex flex-wrap items-center gap-3">
         <h1 className="font-serif text-[2.2rem] font-medium leading-[1.1] tracking-[-0.01em] text-ink sm:text-[3rem]">
           {title}

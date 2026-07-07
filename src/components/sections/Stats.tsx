@@ -27,7 +27,7 @@ export function Stats() {
       </div>
 
       <Container className="relative">
-        <div className="mb-12 flex items-center justify-center gap-3 text-center">
+        <div className="mb-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center">
           <span className="eyebrow text-teal-300">
             <span className="rule-copper bg-teal-400/80" aria-hidden />
             medIQ lab in Zahlen

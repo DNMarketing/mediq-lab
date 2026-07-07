@@ -31,7 +31,7 @@ export function PageIntro({
   const centered = align === "center" && !visual;
 
   return (
-    <section className={cn("relative overflow-hidden pt-32 sm:pt-40", className)}>
+    <section className={cn("relative overflow-hidden pt-24 sm:pt-40", className)}>
       <Container>
         <div
           className={cn(
@@ -51,7 +51,7 @@ export function PageIntro({
               </div>
             </Reveal>
             <Reveal delay={0.06}>
-              <h1 className="mt-6 font-serif text-[2.6rem] font-medium leading-[1.05] tracking-[-0.015em] text-ink sm:text-[3.7rem]">
+              <h1 className="mt-6 font-serif text-[2.15rem] font-medium leading-[1.08] tracking-[-0.015em] text-ink sm:text-[3.7rem] sm:leading-[1.05]">
                 {title}
               </h1>
             </Reveal>

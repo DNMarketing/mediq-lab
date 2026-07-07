@@ -33,7 +33,10 @@ export function CTABand({
   showCohort?: boolean;
 }) {
   return (
-    <section className="relative overflow-hidden bg-petrol-900 py-24 text-paper-light sm:py-32">
+    <section
+      data-mobilecta="hide"
+      className="relative overflow-hidden bg-petrol-900 py-24 text-paper-light sm:py-32"
+    >
       <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-2/3" aria-hidden />
       <div className="pointer-events-none absolute inset-x-0 top-0 text-teal-400/40">
         <EkgLine beats={8} strokeWidth={1.4} className="h-10" />

@@ -76,7 +76,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center text-ink md:hidden"
+          className="-mr-2 flex h-11 w-11 items-center justify-center text-ink md:hidden"
           aria-expanded={open}
           aria-label={open ? "Menü schließen" : "Menü öffnen"}
         >

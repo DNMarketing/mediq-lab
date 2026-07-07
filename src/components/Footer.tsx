@@ -6,7 +6,10 @@ import { EkgLine } from "./ui/Anatomy";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-line bg-paper">
+    <footer
+      data-mobilecta="hide"
+      className="relative overflow-hidden border-t border-line bg-paper"
+    >
       {/* dezente EKG-Signatur als Markenelement */}
       <div className="pointer-events-none absolute inset-x-0 top-0 text-petrol-700/15" aria-hidden>
         <EkgLine beats={8} strokeWidth={1.4} className="h-8" />

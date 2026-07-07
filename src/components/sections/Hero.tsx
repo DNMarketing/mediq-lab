@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useReducedMotion,
@@ -21,9 +21,17 @@ export function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  // dezenter Parallax auf dem Visual
-  const visualY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 90]);
-  const glowY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 140]);
+  // Parallax nur auf Desktop – auf Mobile (Visual gestapelt) vermeidet das Jank.
+  const [parallaxOn, setParallaxOn] = useState(false);
+  useEffect(() => {
+    const m = window.matchMedia("(min-width: 1024px)");
+    const update = () => setParallaxOn(m.matches && !reduce);
+    update();
+    m.addEventListener("change", update);
+    return () => m.removeEventListener("change", update);
+  }, [reduce]);
+  const visualY = useTransform(scrollYProgress, [0, 1], [0, parallaxOn ? 90 : 0]);
+  const glowY = useTransform(scrollYProgress, [0, 1], [0, parallaxOn ? 140 : 0]);
 
   const container = {
     hidden: {},
@@ -42,7 +50,7 @@ export function Hero() {
     <section
       id="hero"
       ref={ref}
-      className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24"
+      className="relative overflow-hidden pt-24 pb-14 sm:pt-40 sm:pb-24"
     >
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
@@ -72,7 +80,7 @@ export function Hero() {
 
             <motion.h1
               variants={item}
-              className="font-serif text-[2.6rem] font-medium leading-[1.04] tracking-[-0.015em] text-ink sm:text-[4rem]"
+              className="font-serif text-[2.15rem] font-medium leading-[1.06] tracking-[-0.015em] text-ink sm:text-[4rem] sm:leading-[1.04]"
             >
               Effizienter lernen.
               <br />

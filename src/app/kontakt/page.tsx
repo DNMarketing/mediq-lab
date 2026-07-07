@@ -29,6 +29,8 @@ export default function KontaktPage() {
         ekg={false}
       />
 
+      {/* Sticky Mobile-CTA hier ausblenden, damit sie den Formular-Button nicht überdeckt */}
+      <div data-mobilecta="hide">
       <Section tone="paper" className="pt-10 sm:pt-12">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Direkte Kontaktwege */}
@@ -156,6 +158,7 @@ export default function KontaktPage() {
           </div>
         </div>
       </Section>
+      </div>
     </>
   );
 }

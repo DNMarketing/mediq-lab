@@ -3,6 +3,7 @@ import { Fraunces, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { MobileCTABar } from "@/components/MobileCTABar";
 
 // Serif mit Charakter für Headlines
 const serif = Fraunces({
@@ -56,6 +57,7 @@ export default function RootLayout({
         <Header />
         <main id="inhalt">{children}</main>
         <Footer />
+        <MobileCTABar />
       </body>
     </html>
   );
