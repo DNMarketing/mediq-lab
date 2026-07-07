@@ -12,7 +12,7 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Programm",
   description:
-    "Die medIQ lab Workshop-Reihe im Überblick: ein durchdachter Pfad vom Lernsystem bis zum Examen – plus Community-Abo als Einstieg. Anmeldung und Inhalte laufen über Skool.",
+    "Die medIQ lab Workshop-Reihe im Überblick: ein durchdachter Pfad vom Lernsystem bis zum Examen, plus Community-Abo als Einstieg. Anmeldung und Inhalte laufen über Skool.",
 };
 
 const DnaVisual = (
@@ -33,7 +33,7 @@ export default function ProgrammPage() {
         eyebrow="Das Programm"
         title={
           <>
-            Dein vollständiges System —{" "}
+            Dein vollständiges System,{" "}
             <span className="text-petrol-700 italic">vom Lernsystem bis zum Examen.</span>
           </>
         }
@@ -60,7 +60,7 @@ export default function ProgrammPage() {
         eyebrow="Loslegen"
         title={
           <>
-            Zwei Wege rein —{" "}
+            Zwei Wege rein,{" "}
             <span className="italic text-copper-300">ein Ziel.</span>
           </>
         }

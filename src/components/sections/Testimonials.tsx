@@ -8,29 +8,29 @@ import { PlaceholderBadge } from "../ui/Badge";
  *
  * RECHTLICH WICHTIG: Die folgenden Stimmen sind DEMO-Inhalte, damit die
  * Sektion gefüllt & animiert ist. Vor dem Launch MÜSSEN sie durch echte,
- * mit Einverständnis veröffentlichte Testimonials ersetzt werden – erfundene
+ * mit Einverständnis veröffentlichte Testimonials ersetzt werden, erfundene
  * Kundenstimmen sind nach UWG (Nr. 23c / § 5) abmahnbar.
  * TODO: Demo durch echte Testimonials ersetzen (Name, Foto, Uni/Semester).
  */
 const TESTIMONIALS = [
-  // DEMO-TESTIMONIAL – vor Launch durch echtes ersetzen (UWG Nr. 23c)
+  // DEMO-TESTIMONIAL, vor Launch durch echtes ersetzen (UWG Nr. 23c)
   {
     quote:
       "Mit Active Recall habe ich endlich aufgehört, alles dreimal zu lesen. Ich gehe spürbar ruhiger ins Physikum, weil ich weiß, dass der Stoff wirklich sitzt.",
     name: "Lena M.",
     detail: "6. Semester · Uni Mainz",
   },
-  // DEMO-TESTIMONIAL – vor Launch durch echtes ersetzen (UWG Nr. 23c)
+  // DEMO-TESTIMONIAL, vor Launch durch echtes ersetzen (UWG Nr. 23c)
   {
     quote:
-      "Vorher war mein Lernen ein einziges Chaos. Die Struktur aus den Workshops hat mir pro Woche mehrere Stunden gespart – Zeit, die ich jetzt sinnvoll nutze.",
+      "Vorher war mein Lernen ein einziges Chaos. Die Struktur aus den Workshops hat mir pro Woche mehrere Stunden gespart, Zeit, die ich jetzt sinnvoll nutze.",
     name: "Jakob R.",
     detail: "4. Semester · Med Uni Wien",
   },
-  // DEMO-TESTIMONIAL – vor Launch durch echtes ersetzen (UWG Nr. 23c)
+  // DEMO-TESTIMONIAL, vor Launch durch echtes ersetzen (UWG Nr. 23c)
   {
     quote:
-      "Als Studentin im Ausland war ein Wiederholungsjahr meine größte Angst. Mit dem System bin ich gut durch die Prüfungsphase gekommen – ohne verlorenes Jahr.",
+      "Als Studentin im Ausland war ein Wiederholungsjahr meine größte Angst. Mit dem System bin ich gut durch die Prüfungsphase gekommen, ohne verlorenes Jahr.",
     name: "Sophie K.",
     detail: "8. Semester · Semmelweis Budapest",
   },
@@ -41,9 +41,9 @@ export function Testimonials() {
     <Section id="ergebnisse" tone="sand">
       <Reveal>
         <SectionHeading
-          eyebrow="04 — Echte Ergebnisse"
+          eyebrow="Echte Ergebnisse"
           title="Was Mitglieder erreichen"
-          subtitle="Erfahrungen aus der Community – realistisch, ohne Wunder-Versprechen. Ergebnisse sind individuell."
+          subtitle="Erfahrungen aus der Community, realistisch, ohne Wunder-Versprechen. Ergebnisse sind individuell."
         />
       </Reveal>
 

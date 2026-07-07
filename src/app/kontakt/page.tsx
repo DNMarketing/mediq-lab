@@ -8,7 +8,7 @@ import { MedIcon } from "@/components/ui/MedIcon";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Fragen zu medIQ lab, zur Methode oder zur Workshop-Reihe? Schreib uns – oder komm direkt in die Community auf Skool.",
+    "Fragen zu medIQ lab, zur Methode oder zur Workshop-Reihe? Schreib uns, oder komm direkt in die Community auf Skool.",
 };
 
 const inputClass =
@@ -21,7 +21,7 @@ export default function KontaktPage() {
         eyebrow="Kontakt"
         title={
           <>
-            Sprich mit uns —{" "}
+            Sprich mit uns,{" "}
             <span className="text-petrol-700 italic">bevor du dich entscheidest.</span>
           </>
         }
@@ -52,7 +52,7 @@ export default function KontaktPage() {
                     </span>
                     <span className="mt-1 block text-sm leading-relaxed text-ink-soft">
                       Der schnellste Draht: Stell deine Frage direkt in der medIQ&nbsp;lab
-                      Community – oft antworten dir auch andere Mitglieder.
+                      Community, oft antworten dir auch andere Mitglieder.
                     </span>
                     <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-copper-600">
                       Zur Community
@@ -82,7 +82,7 @@ export default function KontaktPage() {
 
                 <p className="text-xs leading-relaxed text-ink-mute">
                   Wir antworten in der Regel innerhalb weniger Werktage. Für Anmeldung und
-                  Zahlung geht es direkt über Skool – diese Seite wickelt keine Zahlung ab.
+                  Zahlung geht es direkt über Skool, diese Seite wickelt keine Zahlung ab.
                 </p>
               </div>
             </Reveal>
@@ -149,7 +149,7 @@ export default function KontaktPage() {
                 <p className="mt-4 text-xs leading-relaxed text-ink-mute">
                   {/* TODO: Netlify Forms im Deploy aktivieren + Empfänger/Benachrichtigung
                       einrichten. Bis dahin ist das Formular nur auf Netlify aktiv. */}
-                  [PLATZHALTER: Formular-Versand] — läuft nach dem Deploy über Netlify Forms.
+                  [PLATZHALTER: Formular-Versand], läuft nach dem Deploy über Netlify Forms.
                   Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zur
                   Bearbeitung deiner Anfrage zu (siehe Datenschutz).
                 </p>

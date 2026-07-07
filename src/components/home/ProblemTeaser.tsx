@@ -6,7 +6,7 @@ import { MedIcon } from "../ui/MedIcon";
 
 /** Kurz-Problem für die Startseite (die ausführliche Version lebt auf /methode). */
 const PAINS = [
-  "Erschlagen von der Stofffülle – und niemand zeigt dir, was wirklich zählt.",
+  "Erschlagen von der Stofffülle, und niemand zeigt dir, was wirklich zählt.",
   "Lernen ohne System: lesen, markieren, vergessen. Fleiß ohne Methode verpufft.",
   "Angst vor Prüfungen, Wiederholungsjahren und verlorenen Semestern.",
 ];
@@ -22,7 +22,7 @@ export function ProblemTeaser() {
               Es liegt nicht daran, dass du zu wenig lernst.
             </h2>
             <p className="mt-5 max-w-md text-[1.05rem] leading-relaxed text-ink-soft">
-              Die meisten Medizinstudierenden arbeiten hart – nur selten mit einem System,
+              Die meisten Medizinstudierenden arbeiten hart, nur selten mit einem System,
               das wirklich trägt. Das ist kein Talent-Problem, sondern ein Methoden-Problem.
             </p>
             <div className="mt-8">

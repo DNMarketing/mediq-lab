@@ -9,7 +9,7 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Antworten auf die häufigsten Fragen zu medIQ lab: Für wen es ist, wie Anmeldung und Zahlung über Skool laufen, was Community-Abo (20 €/Monat) und Workshop-Reihe (800 €) kosten – und was wir bewusst nicht versprechen.",
+    "Antworten auf die häufigsten Fragen zu medIQ lab: Für wen es ist, wie Anmeldung und Zahlung über Skool laufen, was Community-Abo (20 €/Monat) und Workshop-Reihe (800 €) kosten, und was wir bewusst nicht versprechen.",
 };
 
 export default function FaqPage() {
@@ -19,7 +19,7 @@ export default function FaqPage() {
         align="center"
         eyebrow="FAQ"
         title="Was du noch wissen willst"
-        lead="Die häufigsten Fragen zu Ablauf, Zugang, Preisen und dazu, was medIQ lab realistisch leisten kann – ehrlich beantwortet."
+        lead="Die häufigsten Fragen zu Ablauf, Zugang, Preisen und dazu, was medIQ lab realistisch leisten kann, ehrlich beantwortet."
         actions={
           <>
             <CTAButton href={SKOOL_URL} size="lg">
@@ -43,7 +43,7 @@ export default function FaqPage() {
             <span className="italic text-copper-300">Dann los.</span>
           </>
         }
-        subtitle="Wenn deine Frage offen geblieben ist, schreib uns kurz – wir helfen dir weiter, bevor du dich entscheidest."
+        subtitle="Wenn deine Frage offen geblieben ist, schreib uns kurz, wir helfen dir weiter, bevor du dich entscheidest."
         secondaryHref="/kontakt"
         secondaryLabel="Kontakt aufnehmen"
       />

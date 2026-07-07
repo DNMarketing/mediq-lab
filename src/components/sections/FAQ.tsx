@@ -9,7 +9,7 @@ import { MedIcon } from "../ui/MedIcon";
 const FAQS = [
   {
     q: "Für wen ist medIQ lab?",
-    a: "Für Medizinstudierende an staatlichen, privaten und Auslands-Unis – vom ersten Semester bis zum Examen. Wenn du effizienter lernen, Prüfungen sicher bestehen und teure Verzögerungen vermeiden willst, bist du richtig.",
+    a: "Für Medizinstudierende an staatlichen, privaten und Auslands-Unis, vom ersten Semester bis zum Examen. Wenn du effizienter lernen, Prüfungen sicher bestehen und teure Verzögerungen vermeiden willst, bist du richtig.",
   },
   {
     q: "Wie laufen Anmeldung und Zahlung ab?",
@@ -17,23 +17,23 @@ const FAQS = [
   },
   {
     q: "Was kostet das Abo, was die Workshop-Reihe?",
-    a: "Das Community-Abo kostet 20 €/Monat und ist der günstige, jederzeit kündbare Einstieg: Austausch, Lerngruppen und ausgewählte Inhalte. Die Premium-Workshop-Reihe ist das Hauptprodukt – ein einmaliger Kauf von 800 € mit dem vollständigen Lernsystem von der Lernsystematik bis zur Examensvorbereitung. Beides läuft über Skool.",
+    a: "Das Community-Abo kostet 20 €/Monat und ist der günstige, jederzeit kündbare Einstieg: Austausch, Lerngruppen und ausgewählte Inhalte. Die Premium-Workshop-Reihe ist das Hauptprodukt, ein einmaliger Kauf von 800 € mit dem vollständigen Lernsystem von der Lernsystematik bis zur Examensvorbereitung. Beides läuft über Skool.",
   },
   {
     q: "Lohnt sich der Preis der Workshop-Reihe wirklich?",
-    a: "Rechne ehrlich gegen: Ein einziges verlorenes Semester kostet dich Monate an Miete und Lebenshaltung plus einen späteren Berufseinstieg. An Privat- und Auslands-Unis kommt ein Wiederholungsjahr von oft 10.000–15.000 € dazu. Gemessen daran sind die 800 € eine Investition, die sich schon vermeidet, wenn sie dir ein einziges verlorenes Semester erspart.",
+    a: "Rechne ehrlich gegen: Ein einziges verlorenes Semester kostet dich Monate an Miete und Lebenshaltung plus einen späteren Berufseinstieg. An Privat- und Auslands-Unis kommt ein Wiederholungsjahr von oft 10.000 bis 15.000 € dazu. Gemessen daran sind die 800 € eine Investition, die sich schon vermeidet, wenn sie dir ein einziges verlorenes Semester erspart.",
   },
   {
     q: "Gibt es eine Garantie oder Ratenzahlung?",
-    a: "[Platzhalter – TODO: ehrlich befüllen. Falls Ratenzahlung oder eine Zufriedenheits-/Geld-zurück-Regelung über Skool angeboten wird, hier konkret und seriös beschreiben. Keine unhaltbaren Versprechen.]",
+    a: "[Platzhalter, TODO: ehrlich befüllen. Falls Ratenzahlung oder eine Zufriedenheits-/Geld-zurück-Regelung über Skool angeboten wird, hier konkret und seriös beschreiben. Keine unhaltbaren Versprechen.]",
   },
   {
     q: "Funktioniert das auch für Auslandsstudenten?",
-    a: "Ja. Die Methoden sind unabhängig von Standort und Curriculum – Active Recall, Spaced Repetition und Prüfungsstrategie funktionieren in Ungarn, Österreich oder Deutschland gleichermaßen. Alles läuft online über die Community.",
+    a: "Ja. Die Methoden sind unabhängig von Standort und Curriculum, Active Recall, Spaced Repetition und Prüfungsstrategie funktionieren in Ungarn, Österreich oder Deutschland gleichermaßen. Alles läuft online über die Community.",
   },
   {
     q: "Bekomme ich „garantiert bestehen“?",
-    a: "Nein – und jeder, der das verspricht, ist unseriös. Bestehen hängt von dir ab. Was wir liefern, ist ein erprobtes System und eine Community, die deine Chancen messbar verbessern, indem du klüger statt nur härter lernst.",
+    a: "Nein, und jeder, der das verspricht, ist unseriös. Bestehen hängt von dir ab. Was wir liefern, ist ein erprobtes System und eine Community, die deine Chancen messbar verbessern, indem du klüger statt nur härter lernst.",
   },
 ];
 

@@ -32,7 +32,7 @@ function useDrawVariants(duration = 1.8): {
 type AnatomyProps = { className?: string; strokeWidth?: number };
 
 /* ------------------------------------------------------------------ */
-/* Anatomisches Herz – Hero-Signaturmotiv (zeichnet sich).             */
+/* Anatomisches Herz, Hero-Signaturmotiv (zeichnet sich).             */
 /* ------------------------------------------------------------------ */
 export function AnatomyHeart({ className, strokeWidth = 1.6 }: AnatomyProps) {
   const { container, path } = useDrawVariants(2);
@@ -71,7 +71,7 @@ export function AnatomyHeart({ className, strokeWidth = 1.6 }: AnatomyProps) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Gehirn – Methode/Lernen (dunkle Authority-Sektion).                 */
+/* Gehirn, Methode/Lernen (dunkle Authority-Sektion).                 */
 /* ------------------------------------------------------------------ */
 export function AnatomyBrain({ className, strokeWidth = 1.6 }: AnatomyProps) {
   const { container, path } = useDrawVariants(2.2);
@@ -110,7 +110,7 @@ export function AnatomyBrain({ className, strokeWidth = 1.6 }: AnatomyProps) {
 }
 
 /* ------------------------------------------------------------------ */
-/* DNA-Doppelhelix – berechnet, "high-tech"-Akzent.                    */
+/* DNA-Doppelhelix, berechnet, "high-tech"-Akzent.                    */
 /* ------------------------------------------------------------------ */
 export function AnatomyDna({ className, strokeWidth = 1.6 }: AnatomyProps) {
   const { container, path } = useDrawVariants(1.8);
@@ -174,7 +174,7 @@ export function AnatomyDna({ className, strokeWidth = 1.6 }: AnatomyProps) {
 }
 
 /* ------------------------------------------------------------------ */
-/* EKG-/Vitalkurve – wiederkehrendes Signaturelement mit laufendem    */
+/* EKG-/Vitalkurve, wiederkehrendes Signaturelement mit laufendem    */
 /* Puls. Eignet sich als Section-Divider oder Hero-Akzent.            */
 /* ------------------------------------------------------------------ */
 function ekgPath(beats: number, beatW: number, h: number): string {

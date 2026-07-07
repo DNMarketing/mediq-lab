@@ -7,7 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { NEXT_COHORT, SKOOL_URL } from "@/lib/config";
+import { SPOTS_LEFT, SKOOL_URL } from "@/lib/config";
 import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { Pill } from "../ui/Badge";
@@ -21,7 +21,7 @@ export function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  // Parallax nur auf Desktop – auf Mobile (Visual gestapelt) vermeidet das Jank.
+  // Parallax nur auf Desktop, auf Mobile (Visual gestapelt) vermeidet das Jank.
   const [parallaxOn, setParallaxOn] = useState(false);
   useEffect(() => {
     const m = window.matchMedia("(min-width: 1024px)");
@@ -61,14 +61,14 @@ export function Hero() {
             animate="show"
             className="lg:col-span-7"
           >
-            {NEXT_COHORT && (
+            {SPOTS_LEFT && (
               <motion.div variants={item} className="mb-7">
                 <Pill>
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-50" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500" />
                   </span>
-                  Nächste Kohorte startet am {NEXT_COHORT}
+                  Nur noch {SPOTS_LEFT} Plätze frei
                 </Pill>
               </motion.div>
             )}
@@ -93,7 +93,7 @@ export function Hero() {
               variants={item}
               className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"
             >
-              medIQ lab ist das Lern-Ökosystem für Medizinstudierende –
+              medIQ lab ist das Lern-Ökosystem für Medizinstudierende:
               wissenschaftlich fundierte Methodik, klare Prüfungsstrategie und eine
               Community, die dich trägt. Schluss mit verlorenen Semestern, planlosem
               Pauken und der Angst vor der nächsten Prüfung.
@@ -157,7 +157,7 @@ export function Hero() {
                   </p>
                 </div>
                 <p className="mt-3 text-xs leading-relaxed text-ink-soft">
-                  Active Recall &amp; Spaced Repetition – lernpsychologisch fundiert.
+                  Active Recall &amp; Spaced Repetition, lernpsychologisch fundiert.
                 </p>
               </div>
             </motion.div>

@@ -36,7 +36,7 @@ export default function ImpressumPage() {
 
       <section>
         <h2>Vertreten durch</h2>
-        <p>[PLATZHALTER: vertretungsberechtigte Person(en) – bei Gesellschaften]</p>
+        <p>[PLATZHALTER: vertretungsberechtigte Person(en), bei Gesellschaften]</p>
       </section>
 
       <section>
@@ -52,7 +52,7 @@ export default function ImpressumPage() {
       <section>
         <h2>Registereintrag</h2>
         <p>
-          [PLATZHALTER: Registergericht &amp; Registernummer – falls vorhanden, sonst
+          [PLATZHALTER: Registergericht &amp; Registernummer, falls vorhanden, sonst
           Abschnitt entfernen]
         </p>
       </section>
@@ -61,7 +61,7 @@ export default function ImpressumPage() {
         <h2>Umsatzsteuer-ID</h2>
         <p>
           Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:{" "}
-          [PLATZHALTER: USt-IdNr. – falls vorhanden]
+          [PLATZHALTER: USt-IdNr., falls vorhanden]
         </p>
       </section>
 

@@ -21,7 +21,7 @@ export function Footer() {
             <Logo />
             <p className="mt-4 leading-relaxed text-ink-soft">
               Das Lern-Ökosystem für Medizinstudierende. Effizienter lernen, sicher
-              bestehen – und teure Umwege vermeiden.
+              bestehen, und teure Umwege vermeiden.
             </p>
           </div>
 

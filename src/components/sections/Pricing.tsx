@@ -41,8 +41,8 @@ export function Pricing() {
       <Reveal>
         <SectionHeading
           center
-          eyebrow="05 — So kommst du rein"
-          title="Zwei Wege — ein Ziel: sicher durchs Studium"
+          eyebrow="So kommst du rein"
+          title="Zwei Wege, ein Ziel: sicher durchs Studium"
           subtitle="Starte niedrigschwellig in der Community oder geh direkt mit der kompletten Workshop-Reihe den schnellsten Weg. Anmeldung und Zahlung laufen sicher über Skool."
         />
       </Reveal>
@@ -85,7 +85,7 @@ export function Pricing() {
           </div>
         </Reveal>
 
-        {/* (b) Premium-Workshop-Reihe – Hauptprodukt, hervorgehoben */}
+        {/* (b) Premium-Workshop-Reihe, Hauptprodukt, hervorgehoben */}
         <Reveal delay={0.1} className="lg:col-span-3">
           <div className="relative flex h-full flex-col overflow-hidden rounded-card border border-teal-400/30 bg-petrol-900 text-paper-light shadow-glow-teal">
             <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-1/2" aria-hidden />
@@ -120,7 +120,7 @@ export function Pricing() {
               <p className="mt-4 rounded-card border border-line-onDark bg-petrol-800/50 p-4 text-xs leading-relaxed text-paper/80">
                 Zum Vergleich: Ein einziges verlorenes Semester kostet schnell ein
                 Vielfaches an Miete, Lebenshaltung und verlorener Zeit. Im Ausland
-                kommt ein Wiederholungsjahr von 10.000–15.000&nbsp;€ obendrauf. Die
+                kommt ein Wiederholungsjahr von 10.000 bis 15.000&nbsp;€ obendrauf. Die
                 Workshop-Reihe rechnet sich schon, wenn sie dir ein einziges verlorenes
                 Semester erspart.
               </p>

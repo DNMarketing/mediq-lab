@@ -14,7 +14,7 @@ export function VSL() {
           center
           eyebrow="2 Minuten, die sich lohnen"
           title="Schau dir an, wie medIQ lab funktioniert"
-          subtitle="In zwei Minuten zeigen wir dir die Methode hinter medIQ lab – und warum sie dein Studium effizienter macht."
+          subtitle="In zwei Minuten zeigen wir dir die Methode hinter medIQ lab, und warum sie dein Studium effizienter macht."
         />
       </Reveal>
 
@@ -25,7 +25,7 @@ export function VSL() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={unsplash(IMAGES.vslSkeleton, 1400)}
-              alt="Anatomisches Skelettmodell – Poster für das Erklärvideo"
+              alt="Anatomisches Skelettmodell, Poster für das Erklärvideo"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />

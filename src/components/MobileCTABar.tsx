@@ -7,7 +7,7 @@ import { SKOOL_URL } from "@/lib/config";
 import { MedIcon } from "./ui/MedIcon";
 
 /**
- * Sticky Bottom-CTA-Leiste – nur mobil. Hält den primären Skool-CTA durchgängig
+ * Sticky Bottom-CTA-Leiste, nur mobil. Hält den primären Skool-CTA durchgängig
  * daumen-erreichbar (High-Ticket-Conversion). Blendet sich aus, sobald der finale
  * CTA-Block oder der Footer im Blick ist (per `data-mobilecta="hide"`), damit sie
  * keine Links/Buttons dort überdeckt. Respektiert die iOS-Safe-Area.

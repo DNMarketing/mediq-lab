@@ -13,24 +13,24 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "Warum es medIQ lab gibt: Zu viele fähige Medizinstudierende verlieren Semester – nicht aus Faulheit, sondern aus Mangel an Methode. Unsere Mission, unsere Prinzipien.",
+    "Warum es medIQ lab gibt: Zu viele fähige Medizinstudierende verlieren Semester, nicht aus Faulheit, sondern aus Mangel an Methode. Unsere Mission, unsere Prinzipien.",
 };
 
 const VALUES: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "mind",
     title: "Wissenschaft statt Bauchgefühl",
-    body: "Wir bauen auf lernpsychologisch belegte Prinzipien – nicht auf Motivations-Zitate oder das nächste Wundertool.",
+    body: "Wir bauen auf lernpsychologisch belegte Prinzipien, nicht auf Motivations-Zitate oder das nächste Wundertool.",
   },
   {
     icon: "structure",
     title: "Methode statt Talent-Mythos",
-    body: "Bestehen ist kein Frage angeborener Genialität, sondern erlernbarer Systeme. Das nimmt Druck – und macht dich unabhängig.",
+    body: "Bestehen ist keine Frage angeborener Genialität, sondern erlernbarer Systeme. Das nimmt Druck und macht dich unabhängig.",
   },
   {
     icon: "check",
     title: "Ehrlichkeit statt Hype",
-    body: "Keine garantierten Bestehens-Versprechen, keine erfundene Verknappung. Wir sagen, was realistisch ist – und was nicht.",
+    body: "Keine garantierten Bestehens-Versprechen, keine erfundene Verknappung. Wir sagen, was realistisch ist, und was nicht.",
   },
   {
     icon: "community",
@@ -71,7 +71,7 @@ export default function UeberPage() {
                 <p>
                   Jedes verlorene Semester kostet nicht nur Zeit, sondern Geld, Nerven und
                   oft ein Stück Selbstvertrauen. An Privat- und Auslands-Unis kommen schnell
-                  Wiederholungsjahre von 10.000–15.000&nbsp;€ dazu. Das muss nicht sein.
+                  Wiederholungsjahre von 10.000 bis 15.000&nbsp;€ dazu. Das muss nicht sein.
                 </p>
                 <p>
                   Wir glauben: Wer klüger lernt statt nur härter, kommt sicherer und
@@ -81,7 +81,7 @@ export default function UeberPage() {
                 </p>
                 <blockquote className="border-l-2 border-copper-500 pl-6">
                   <p className="pull-quote">
-                    Gute Medizin braucht Menschen, die durchhalten —{" "}
+                    Gute Medizin braucht Menschen, die durchhalten,{" "}
                     <span className="italic text-petrol-700">nicht ausbrennen.</span>
                   </p>
                 </blockquote>
@@ -97,7 +97,7 @@ export default function UeberPage() {
           <SectionHeading
             eyebrow="Was uns leitet"
             title="Vier Prinzipien, die wir ernst meinen"
-            subtitle="Sie stehen nicht nur hier – sie entscheiden, wie wir Inhalte bauen und mit dir kommunizieren."
+            subtitle="Sie stehen nicht nur hier, sie entscheiden, wie wir Inhalte bauen und mit dir kommunizieren."
           />
         </Reveal>
         <Stagger as="ul" className="mt-14 grid gap-5 sm:grid-cols-2">
@@ -117,7 +117,7 @@ export default function UeberPage() {
         </Stagger>
       </Section>
 
-      {/* Wer dahinter steht – bewusst OHNE Personenfoto (abstraktes Markenelement) */}
+      {/* Wer dahinter steht, bewusst OHNE Personenfoto (abstraktes Markenelement) */}
       <Section tone="paper">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
@@ -142,14 +142,14 @@ export default function UeberPage() {
               </h2>
               <div className="mt-5 max-w-2xl space-y-4 leading-relaxed text-ink-soft">
                 <p>
-                  {/* TODO: Echte Bio ergänzen – Werdegang, Bezug zum Medizinstudium /
+                  {/* TODO: Echte Bio ergänzen, Werdegang, Bezug zum Medizinstudium /
                       zur Lernmethodik, warum daraus medIQ lab entstanden ist. */}
-                  [PLATZHALTER: Bio Dirk Schlenker] — hier steht die persönliche Geschichte
+                  [PLATZHALTER: Bio Dirk Schlenker], hier steht die persönliche Geschichte
                   hinter medIQ&nbsp;lab: Werdegang, Erfahrung und warum daraus dieses
                   Lern-Ökosystem entstanden ist. Bewusst nahbar und konkret.
                 </p>
                 <p className="text-sm text-ink-mute">
-                  Hinweis: Auf Personenfotos verzichten wir hier bewusst – im Mittelpunkt
+                  Hinweis: Auf Personenfotos verzichten wir hier bewusst, im Mittelpunkt
                   stehen die Methode und deine Ergebnisse, nicht ein Gesicht.
                 </p>
               </div>

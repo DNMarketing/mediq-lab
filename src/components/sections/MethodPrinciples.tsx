@@ -4,7 +4,7 @@ import { Stagger, StaggerItem } from "../ui/Motion";
 import { AnatomyBrain } from "../ui/Anatomy";
 
 /**
- * Die lernwissenschaftlichen Prinzipien hinter medIQ lab – als dramatische
+ * Die lernwissenschaftlichen Prinzipien hinter medIQ lab, als dramatische
  * DUNKLE Sektion. Zentraler Autoritäts-/Trust-Anker (ersetzt das frühere
  * Gründer-Porträt): die Methode selbst trägt das Vertrauen, nicht ein Gesicht.
  * Hintergrund: animiertes Gehirn-Line-Art (zeichnet sich) + Teal-Glow.
@@ -13,17 +13,17 @@ const PRINCIPLES = [
   {
     title: "Aktives Abrufen",
     sub: "Active Recall",
-    body: "Wissen festigt sich, indem du es aktiv aus dem Gedächtnis holst – nicht durch passives Wiederlesen oder Markieren. Jedes Abrufen ist ein Trainingsreiz, der die Erinnerungsspur stärkt. Deshalb arbeiten wir konsequent mit Fragen, Fällen und Karteikarten statt mit Text-Highlightern.",
+    body: "Wissen festigt sich, indem du es aktiv aus dem Gedächtnis holst, nicht durch passives Wiederlesen oder Markieren. Jedes Abrufen ist ein Trainingsreiz, der die Erinnerungsspur stärkt. Deshalb arbeiten wir konsequent mit Fragen, Fällen und Karteikarten statt mit Text-Highlightern.",
   },
   {
     title: "Verteiltes Lernen",
     sub: "Spaced Repetition",
-    body: "In wachsenden Abständen wiederholen statt kurz vor der Prüfung zu pauken. So arbeitest du gezielt gegen die Vergessenskurve: Der Stoff wandert ins Langzeitgedächtnis – und bleibt dort, auch Monate später im Examen. Ein Algorithmus plant die Wiederholungen, du musst nur dranbleiben.",
+    body: "In wachsenden Abständen wiederholen statt kurz vor der Prüfung zu pauken. So arbeitest du gezielt gegen die Vergessenskurve: Der Stoff wandert ins Langzeitgedächtnis, und bleibt dort, auch Monate später im Examen. Ein Algorithmus plant die Wiederholungen, du musst nur dranbleiben.",
   },
   {
     title: "Prüfungsorientierung",
     sub: "Altfragen-Logik",
-    body: "Vom Prüfungsmuster rückwärts gedacht: Altfragen zeigen, welche Schwerpunkte immer wieder geprüft werden. Statt dich in jedem Detail zu verlieren, lernst du gezielt das, was zählt – und gehst mit einem klaren Bild davon in die Prüfung, was auf dich zukommt.",
+    body: "Vom Prüfungsmuster rückwärts gedacht: Altfragen zeigen, welche Schwerpunkte immer wieder geprüft werden. Statt dich in jedem Detail zu verlieren, lernst du gezielt das, was zählt, und gehst mit einem klaren Bild davon in die Prüfung, was auf dich zukommt.",
   },
 ];
 
@@ -83,7 +83,7 @@ export function MethodPrinciples() {
               {/* TODO: Studien-Quellen verlinken (z. B. Karpicke & Roediger zur
                   Testing-Effekt-Forschung, Cepeda et al. zu Spacing), um die
                   Wissenschaftlichkeit sichtbar und überprüfbar zu machen. */}
-              [PLATZHALTER: Studien-Quellen verlinken] — z. B. Forschung zu Testing-Effekt
+              [PLATZHALTER: Studien-Quellen verlinken], z. B. Forschung zu Testing-Effekt
               (Karpicke &amp; Roediger) und Spacing (Cepeda et al.), um die Prinzipien
               belegbar zu machen.
             </p>

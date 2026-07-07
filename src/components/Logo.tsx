@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
 
 /**
- * Wortmarke "medIQ lab" – Serif mit Kupfer-Akzent auf "IQ".
+ * Wortmarke "medIQ lab", Serif mit Kupfer-Akzent auf "IQ".
  * TODO: Bei Bedarf durch echtes SVG-Logo ersetzen.
  */
 export function Logo({

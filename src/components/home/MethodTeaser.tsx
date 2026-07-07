@@ -10,19 +10,19 @@ const PRINCIPLES: { icon: IconName; title: string; sub: string; body: string }[]
     icon: "mind",
     title: "Aktives Abrufen",
     sub: "Active Recall",
-    body: "Wissen aktiv aus dem Kopf holen statt passiv wiederlesen – so sitzt der Stoff wirklich.",
+    body: "Wissen aktiv aus dem Kopf holen statt passiv wiederlesen, so sitzt der Stoff wirklich.",
   },
   {
     icon: "repeat",
     title: "Verteiltes Lernen",
     sub: "Spaced Repetition",
-    body: "In wachsenden Abständen wiederholen – gegen die Vergessenskurve, rein ins Langzeitgedächtnis.",
+    body: "In wachsenden Abständen wiederholen, gegen die Vergessenskurve, rein ins Langzeitgedächtnis.",
   },
   {
     icon: "exam",
     title: "Prüfungsstrategie",
     sub: "Altfragen-Logik",
-    body: "Vom Prüfungsmuster rückwärts lernen: gezielt das, was geprüft wird – statt alles auf einmal.",
+    body: "Vom Prüfungsmuster rückwärts lernen: gezielt das, was geprüft wird, statt alles auf einmal.",
   },
 ];
 
@@ -33,7 +33,7 @@ export function MethodTeaser() {
         <SectionHeading
           center
           eyebrow="Die Methode"
-          title="Klüger lernen — nicht härter"
+          title="Klüger lernen, nicht härter"
           subtitle="medIQ lab baut auf drei lernpsychologisch gut belegten Prinzipien. Keine Motivationssprüche, sondern Methoden, die man lernen kann."
         />
       </Reveal>

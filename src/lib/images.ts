@@ -4,7 +4,7 @@
  * doch nicht lädt, fällt <EditorialImage> automatisch auf eine SVG-
  * Illustration zurück (keine leere Box).
  *
- * Bildsprache: gezielt, hochwertig, echt medizinisch/menschlich – keine
+ * Bildsprache: gezielt, hochwertig, echt medizinisch/menschlich, keine
  * generischen Stockfotos. Das Hero nutzt bewusst animierte anatomische
  * Line-Art (siehe components/ui/Anatomy.tsx) statt eines Fotos.
  *

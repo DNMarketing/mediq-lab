@@ -12,7 +12,7 @@ const sizes = {
 };
 
 const variants: Record<Variant, string> = {
-  // Primär: tiefes Petrol, warmweißer Text – höchstes Vertrauen, klare Hierarchie
+  // Primär: tiefes Petrol, warmweißer Text, höchstes Vertrauen, klare Hierarchie
   primary:
     "bg-petrol-700 text-paper-light hover:bg-petrol-800 focus-visible:ring-offset-paper active:translate-y-px",
   // Sekundär: dezenter Rahmen auf hell

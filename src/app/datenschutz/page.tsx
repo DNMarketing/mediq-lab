@@ -27,7 +27,7 @@ export default function DatenschutzPage() {
         <p>
           Verantwortlich im Sinne der DSGVO ist:
           <br />
-          [PLATZHALTER: Name, Anschrift – siehe Impressum]
+          [PLATZHALTER: Name, Anschrift, siehe Impressum]
           <br />
           E-Mail: {CONTACT_EMAIL}
         </p>
@@ -102,7 +102,7 @@ export default function DatenschutzPage() {
         <p>
           Diese Website setzt keine Tracking- oder Analyse-Cookies und bindet keine
           Analyse-Dienste ein. [PLATZHALTER: aktualisieren, falls künftig Tools wie
-          Analytics oder ein Pixel ergänzt werden – dann ist eine Consent-Lösung nötig.]
+          Analytics oder ein Pixel ergänzt werden, dann ist eine Consent-Lösung nötig.]
         </p>
       </section>
 

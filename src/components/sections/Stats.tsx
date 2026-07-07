@@ -5,7 +5,7 @@ import { PlaceholderBadge } from "../ui/Badge";
 import { EkgLine } from "../ui/Anatomy";
 
 /**
- * Stats-Band – dramatische dunkle Petrol-Sektion mit klinischem Teal-Glow.
+ * Stats-Band, dramatische dunkle Petrol-Sektion mit klinischem Teal-Glow.
  * WICHTIG: Nur ehrlich belegbare Kennzahlen. Alle Werte sind Platzhalter.
  * TODO: Echte Zahlen einsetzen (keine erfundenen Statistiken!).
  */

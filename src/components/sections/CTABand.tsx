@@ -1,4 +1,4 @@
-import { NEXT_COHORT, SKOOL_URL } from "@/lib/config";
+import { SPOTS_LEFT, SKOOL_URL } from "@/lib/config";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { CTAButton } from "../ui/CTAButton";
@@ -14,7 +14,7 @@ export function CTABand({
   eyebrow = "medIQ lab",
   title = (
     <>
-      Lern ab heute klüger —{" "}
+      Lern ab heute klüger,{" "}
       <span className="italic text-copper-300">nicht härter.</span>
     </>
   ),
@@ -22,7 +22,7 @@ export function CTABand({
   note = "Start & Zahlung sicher über Skool · Community-Abo jederzeit kündbar · keine versteckten Kosten",
   secondaryHref = "/programm",
   secondaryLabel = "Programm & Preise",
-  showCohort = true,
+  showSpots = true,
 }: {
   eyebrow?: string;
   title?: React.ReactNode;
@@ -30,7 +30,7 @@ export function CTABand({
   note?: React.ReactNode;
   secondaryHref?: string;
   secondaryLabel?: string;
-  showCohort?: boolean;
+  showSpots?: boolean;
 }) {
   return (
     <section
@@ -44,11 +44,11 @@ export function CTABand({
       <Container className="relative">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
-            {showCohort && NEXT_COHORT && (
+            {showSpots && SPOTS_LEFT && (
               <div className="mb-7 flex justify-center">
                 <Pill onDark>
                   <span className="h-1.5 w-1.5 rounded-full bg-copper-300" aria-hidden />
-                  Nächste Kohorte startet am {NEXT_COHORT}
+                  Nur noch {SPOTS_LEFT} Plätze frei
                 </Pill>
               </div>
             )}

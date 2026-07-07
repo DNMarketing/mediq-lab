@@ -19,7 +19,7 @@ type EditorialImageProps = {
 /**
  * Editorial-Bild mit sauberem SVG-Fallback. Lädt ein Unsplash-Foto; schlägt
  * der Ladevorgang fehl, wird eine feine medizinische Linien-Illustration
- * gezeigt – niemals eine leere Box.
+ * gezeigt, niemals eine leere Box.
  */
 export function EditorialImage({
   id,

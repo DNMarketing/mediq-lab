@@ -14,7 +14,7 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Methode",
   description:
-    "Die Lernmethode hinter medIQ lab: Active Recall, Spaced Repetition und Prüfungsstrategie – lernpsychologisch fundiert. Klüger lernen statt härter, für ein sicheres Medizinstudium.",
+    "Die Lernmethode hinter medIQ lab: Active Recall, Spaced Repetition und Prüfungsstrategie, lernpsychologisch fundiert. Klüger lernen statt härter, für ein sicheres Medizinstudium.",
 };
 
 const PRACTICE: { icon: IconName; title: string; body: string }[] = [
@@ -26,17 +26,17 @@ const PRACTICE: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "structure",
     title: "Persönliche Lernpläne & Wochenstruktur",
-    body: "Aus Prinzipien wird ein Plan: eine Wochenstruktur, die neben Klinik und Nebenjob durchhält – statt guter Vorsätze, die nach zwei Wochen kippen.",
+    body: "Aus Prinzipien wird ein Plan: eine Wochenstruktur, die neben Klinik und Nebenjob durchhält, statt guter Vorsätze, die nach zwei Wochen kippen.",
   },
   {
     icon: "exam",
     title: "Altfragen-Analyse & Prüfungssimulation",
-    body: "Prüfungsmuster erkennen, Schwerpunkte ableiten, unter realistischen Bedingungen üben – damit die Prüfung kein Blindflug wird.",
+    body: "Prüfungsmuster erkennen, Schwerpunkte ableiten, unter realistischen Bedingungen üben, damit die Prüfung kein Blindflug wird.",
   },
   {
     icon: "mind",
     title: "Werkzeuge für den Kopf",
-    body: "Prüfungsangst, Druck und Aufschieben begegnest du mit Methoden, die im Ernstfall funktionieren – nicht mit „reiß dich zusammen“.",
+    body: "Prüfungsangst, Druck und Aufschieben begegnest du mit Methoden, die im Ernstfall funktionieren, nicht mit „reiß dich zusammen“.",
   },
 ];
 
@@ -60,11 +60,11 @@ export default function MethodePage() {
         eyebrow="Die Methode"
         title={
           <>
-            Eine Methode mit Fundament —{" "}
+            Eine Methode mit Fundament,{" "}
             <span className="text-petrol-700 italic">kein Bauchgefühl.</span>
           </>
         }
-        lead="medIQ lab ist keine Sammlung von Motivationssprüchen. Dahinter steht, wie Lernen nachweislich funktioniert – und wie du dir das im Medizinstudium konsequent zunutze machst."
+        lead="medIQ lab ist keine Sammlung von Motivationssprüchen. Dahinter steht, wie Lernen nachweislich funktioniert, und wie du dir das im Medizinstudium konsequent zunutze machst."
         visual={BrainVisual}
         actions={
           <>
@@ -137,7 +137,7 @@ export default function MethodePage() {
             <span className="italic text-copper-300">Methode.</span>
           </>
         }
-        subtitle="Die Prinzipien sind die halbe Miete – die andere Hälfte ist die Umsetzung mit System und Community. Genau dafür gibt es medIQ lab."
+        subtitle="Die Prinzipien sind die halbe Miete, die andere Hälfte ist die Umsetzung mit System und Community. Genau dafür gibt es medIQ lab."
         secondaryHref="/programm"
         secondaryLabel="Programm & Preise"
       />

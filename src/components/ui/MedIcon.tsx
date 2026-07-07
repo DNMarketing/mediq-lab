@@ -2,7 +2,7 @@ import { cn } from "@/lib/cn";
 
 /**
  * Feine, einheitliche Linien-Iconografie (kein Emoji-Stil).
- * 24×24, 1.6er Strichstärke – ruhig und medizinisch-sachlich.
+ * 24×24, 1.6er Strichstärke, ruhig und medizinisch-sachlich.
  */
 export type IconName =
   | "structure"
@@ -20,7 +20,7 @@ export type IconName =
   | "plus";
 
 const PATHS: Record<IconName, React.ReactNode> = {
-  // Lernsystematik – geschichtete Struktur
+  // Lernsystematik, geschichtete Struktur
   structure: (
     <>
       <path d="M12 3 3 7.5 12 12l9-4.5L12 3Z" />
@@ -28,7 +28,7 @@ const PATHS: Record<IconName, React.ReactNode> = {
       <path d="M3 16.5 12 21l9-4.5" />
     </>
   ),
-  // Spaced Repetition – Wiederholungs-Zyklus
+  // Spaced Repetition, Wiederholungs-Zyklus
   repeat: (
     <>
       <path d="M4 9a8 8 0 0 1 13.3-3.3L20 8" />
@@ -37,7 +37,7 @@ const PATHS: Record<IconName, React.ReactNode> = {
       <path d="M4 20v-4h4" />
     </>
   ),
-  // Prüfungsstrategie – Dokument mit Häkchen
+  // Prüfungsstrategie, Dokument mit Häkchen
   exam: (
     <>
       <path d="M6 3h9l4 4v14H6V3Z" />
@@ -45,21 +45,21 @@ const PATHS: Record<IconName, React.ReactNode> = {
       <path d="m9 13 1.8 1.8L14 11.5" />
     </>
   ),
-  // Zeitmanagement – Uhr
+  // Zeitmanagement, Uhr
   clock: (
     <>
       <circle cx="12" cy="12" r="8.5" />
       <path d="M12 7.5V12l3 2" />
     </>
   ),
-  // Examens-Prep – Meilenstein/Fahne
+  // Examens-Prep, Meilenstein/Fahne
   milestone: (
     <>
       <path d="M6 21V4" />
       <path d="M6 5h11l-2.2 3L17 11H6" />
     </>
   ),
-  // Mentale Belastung – Kopf/Geist
+  // Mentale Belastung, Kopf/Geist
   mind: (
     <>
       <path d="M14.5 20v-2.2a5.5 5.5 0 1 0-6.6-7.6" />
@@ -68,7 +68,7 @@ const PATHS: Record<IconName, React.ReactNode> = {
       <circle cx="13" cy="10.5" r="0.6" fill="currentColor" stroke="none" />
     </>
   ),
-  // Community – Menschen
+  // Community, Menschen
   community: (
     <>
       <circle cx="9" cy="8" r="3" />

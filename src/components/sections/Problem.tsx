@@ -7,15 +7,15 @@ import { EditorialImage } from "../ui/EditorialImage";
 const PAINS = [
   {
     title: "Erschlagen von der Stofffülle",
-    body: "Tausende Seiten, hunderte Vorlesungen – und niemand zeigt dir, was wirklich prüfungsrelevant ist.",
+    body: "Tausende Seiten, hunderte Vorlesungen, und niemand zeigt dir, was wirklich prüfungsrelevant ist.",
   },
   {
     title: "Lernen ohne System",
-    body: "Du liest, markierst, liest nochmal – und vergisst es bis zur Prüfung wieder. Fleiß ohne Methode verpufft.",
+    body: "Du liest, markierst, liest nochmal, und vergisst es bis zur Prüfung wieder. Fleiß ohne Methode verpufft.",
   },
   {
     title: "Prüfungsangst & Blackouts",
-    body: "Du kannst den Stoff eigentlich – aber unter Druck ist plötzlich alles weg.",
+    body: "Du kannst den Stoff eigentlich, aber unter Druck ist plötzlich alles weg.",
   },
   {
     title: "Drohende Wiederholungsprüfungen",
@@ -27,7 +27,7 @@ const PAINS = [
   },
   {
     title: "Hohe Studiengebühren im Ausland",
-    body: "An Privat- und Auslands-Unis kostet ein Wiederholungsjahr schnell 10.000–15.000 € – zusätzlich.",
+    body: "An Privat- und Auslands-Unis kostet ein Wiederholungsjahr schnell 10.000 bis 15.000 €, zusätzlich.",
   },
 ];
 
@@ -39,12 +39,12 @@ export function Problem() {
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-28">
             <Reveal>
-              <Eyebrow>01 — Du kennst das</Eyebrow>
+              <Eyebrow>Du kennst das</Eyebrow>
               <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">
                 Es liegt nicht daran, dass du zu wenig lernst.
               </h2>
               <p className="mt-5 max-w-md text-[1.05rem] leading-relaxed text-ink-soft">
-                Die meisten Medizinstudierenden arbeiten hart – nur selten mit einem
+                Die meisten Medizinstudierenden arbeiten hart, nur selten mit einem
                 System, das wirklich trägt. Genau hier setzt medIQ lab an.
               </p>
             </Reveal>
@@ -91,7 +91,7 @@ export function Problem() {
                 <span className="italic text-petrol-700">Methoden-Problem</span>.
               </p>
               <p className="mt-3 text-ink-soft">
-                Und Methoden kann man lernen – schneller, als du denkst.
+                Und Methoden kann man lernen, schneller, als du denkst.
               </p>
             </blockquote>
           </Reveal>

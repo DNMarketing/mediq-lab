@@ -3,7 +3,7 @@ import { PlaceholderBadge } from "./ui/Badge";
 
 /**
  * Inhalts-Gerüst für Rechtstexte (/impressum, /datenschutz). Header & Footer
- * kommen aus dem Root-Layout. Struktur ist vollständig angelegt – die
+ * kommen aus dem Root-Layout. Struktur ist vollständig angelegt, die
  * konkreten Pflichtangaben sind als [PLATZHALTER] markiert und vor dem
  * Go-Live rechtskonform zu befüllen (anwaltlich prüfen lassen).
  */

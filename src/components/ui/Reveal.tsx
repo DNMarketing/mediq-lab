@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
-  /** Verzögerung in Sekunden – für gestaffelte Listen. */
+  /** Verzögerung in Sekunden, für gestaffelte Listen. */
   delay?: number;
   /** Bewegungsrichtung beim Einblenden (dezent halten). */
   y?: number;
