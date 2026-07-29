@@ -30,4 +30,4 @@ export const LINKEDIN_DIRK = "https://de.linkedin.com/in/dirk-schlenker-b3639578
  * komplett auszublenden, wenn es keine echte Begrenzung gibt.
  * TODO: echte Zahl freier Plätze eintragen oder auf null setzen.
  */
-export const SPOTS_LEFT: string | null = "[X]";
+export const SPOTS_LEFT: string | null = "10";
