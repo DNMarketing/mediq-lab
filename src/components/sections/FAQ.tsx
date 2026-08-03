@@ -9,7 +9,7 @@ import { MedIcon } from "../ui/MedIcon";
 const FAQS = [
   {
     q: "Für wen ist medIQ lab?",
-    a: "Für Medizinstudierende an staatlichen, privaten und Auslands-Unis, vom ersten Semester bis zum Examen. Wenn du effizienter lernen, Prüfungen sicher bestehen und teure Verzögerungen vermeiden willst, bist du richtig.",
+    a: "Vor allem für Medizinstudierende im EU-Ausland, zum Beispiel an Unis in Ungarn, Österreich, der Slowakei oder Kroatien, vom ersten Semester bis zum Examen. Genau dort ist der Druck oft am größten und ein Wiederholungsjahr am teuersten. Wenn du effizienter lernen, Prüfungen sicher bestehen und teure Verzögerungen vermeiden willst, bist du richtig.",
   },
   {
     q: "Wie laufen Anmeldung und Zahlung ab?",
@@ -28,8 +28,8 @@ const FAQS = [
     a: "[Platzhalter, TODO: ehrlich befüllen. Falls Ratenzahlung oder eine Zufriedenheits-/Geld-zurück-Regelung über Skool angeboten wird, hier konkret und seriös beschreiben. Keine unhaltbaren Versprechen.]",
   },
   {
-    q: "Funktioniert das auch für Auslandsstudenten?",
-    a: "Ja. Die Methoden sind unabhängig von Standort und Curriculum, Active Recall, Spaced Repetition und Prüfungsstrategie funktionieren in Ungarn, Österreich oder Deutschland gleichermaßen. Alles läuft online über die Community.",
+    q: "Funktioniert das auch für Studierende in Deutschland?",
+    a: "Ja. medIQ lab ist auf das Medizinstudium im Ausland ausgerichtet, aber die Methoden sind unabhängig von Standort und Curriculum: Active Recall, Spaced Repetition und Prüfungsstrategie funktionieren an einer deutschen Uni genauso wie in Ungarn oder Österreich. Alles läuft online über die Community.",
   },
   {
     q: "Bekomme ich „garantiert bestehen“?",

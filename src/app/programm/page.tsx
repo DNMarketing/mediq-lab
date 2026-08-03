@@ -12,7 +12,7 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Programm",
   description:
-    "Die medIQ lab Workshop-Reihe im Überblick: ein durchdachter Pfad vom Lernsystem bis zum Examen, plus Community-Abo als Einstieg. Anmeldung und Inhalte laufen über Skool.",
+    "Die medIQ lab Workshop-Reihe für Medizinstudierende im Ausland: ein durchdachter Pfad vom Lernsystem bis zum Examen, plus Community-Abo als Einstieg. Anmeldung und Inhalte laufen über Skool.",
 };
 
 const DnaVisual = (
@@ -37,7 +37,7 @@ export default function ProgrammPage() {
             <span className="text-petrol-700 italic">vom Lernsystem bis zum Examen.</span>
           </>
         }
-        lead="Zwei Wege, ein Ziel: sicher durchs Studium. Steig niedrigschwellig über die Community ein oder geh mit der Premium-Workshop-Reihe direkt den schnellsten Weg. Für Studierende an staatlichen, privaten und Auslands-Unis."
+        lead="Zwei Wege, ein Ziel: sicher durchs Studium im Ausland. Steig niedrigschwellig über die Community ein oder geh mit der Premium-Workshop-Reihe direkt den schnellsten Weg. Für Medizinstudierende an EU-Auslands-Unis, ob privat oder staatlich."
         visual={DnaVisual}
         actions={
           <>

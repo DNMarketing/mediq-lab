@@ -2,7 +2,6 @@ import { Container } from "../ui/Container";
 import { Counter } from "../ui/Counter";
 import { Stagger, StaggerItem } from "../ui/Motion";
 import { PlaceholderBadge } from "../ui/Badge";
-import { EkgLine } from "../ui/Anatomy";
 
 /**
  * Stats-Band, dramatische dunkle Petrol-Sektion mit klinischem Teal-Glow.
@@ -21,10 +20,6 @@ export function Stats() {
     <section className="relative overflow-hidden bg-petrol-900 py-20 text-paper-light sm:py-24">
       {/* klinischer Teal-Glow */}
       <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-2/3" aria-hidden />
-      {/* EKG-Signatur oben */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 text-teal-400/50">
-        <EkgLine beats={8} strokeWidth={1.4} className="h-10" />
-      </div>
 
       <Container className="relative">
         <div className="mb-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center">

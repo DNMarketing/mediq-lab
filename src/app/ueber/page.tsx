@@ -13,7 +13,7 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "Warum es medIQ lab gibt: Zu viele fähige Medizinstudierende verlieren Semester, nicht aus Faulheit, sondern aus Mangel an Methode. Unsere Mission, unsere Prinzipien.",
+    "Warum es medIQ lab gibt: Zu viele fähige Medizinstudierende im Ausland verlieren Semester, nicht aus Faulheit, sondern aus Mangel an Methode. Unsere Mission, unsere Prinzipien.",
 };
 
 const VALUES: { icon: IconName; title: string; body: string }[] = [
@@ -51,7 +51,7 @@ export default function UeberPage() {
             <span className="text-petrol-700 italic">an der Methode scheitern.</span>
           </>
         }
-        lead="medIQ lab ist aus einer einfachen Beobachtung entstanden: Die meisten, die im Medizinstudium straucheln, sind nicht zu wenig fähig oder zu faul. Ihnen fehlt ein System, das trägt. Genau das wollen wir liefern."
+        lead="medIQ lab ist aus einer einfachen Beobachtung entstanden: Die meisten, die im Medizinstudium im Ausland straucheln, sind nicht zu wenig fähig oder zu faul. Ihnen fehlt ein System, das trägt. Genau das wollen wir liefern."
       />
 
       {/* Mission / Belief */}

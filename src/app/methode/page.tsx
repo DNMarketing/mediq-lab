@@ -14,7 +14,7 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Methode",
   description:
-    "Die Lernmethode hinter medIQ lab: Active Recall, Spaced Repetition und Prüfungsstrategie, lernpsychologisch fundiert. Klüger lernen statt härter, für ein sicheres Medizinstudium.",
+    "Die Lernmethode hinter medIQ lab: Active Recall, Spaced Repetition und Prüfungsstrategie, lernpsychologisch fundiert. Klüger lernen statt härter, für ein sicheres Medizinstudium im Ausland.",
 };
 
 const PRACTICE: { icon: IconName; title: string; body: string }[] = [

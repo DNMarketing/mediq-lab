@@ -8,7 +8,7 @@ import { MedIcon } from "../ui/MedIcon";
 const PAINS = [
   "Erschlagen von der Stofffülle, und niemand zeigt dir, was wirklich zählt.",
   "Lernen ohne System: lesen, markieren, vergessen. Fleiß ohne Methode verpufft.",
-  "Angst vor Prüfungen, Wiederholungsjahren und verlorenen Semestern.",
+  "Angst vor Prüfungen und einem Wiederholungsjahr, das im Ausland schnell 10.000 bis 15.000 € kostet.",
 ];
 
 export function ProblemTeaser() {
@@ -22,8 +22,8 @@ export function ProblemTeaser() {
               Es liegt nicht daran, dass du zu wenig lernst.
             </h2>
             <p className="mt-5 max-w-md text-[1.05rem] leading-relaxed text-ink-soft">
-              Die meisten Medizinstudierenden arbeiten hart, nur selten mit einem System,
-              das wirklich trägt. Das ist kein Talent-Problem, sondern ein Methoden-Problem.
+              Die meisten Medizinstudierenden im Ausland arbeiten hart, nur selten mit einem
+              System, das wirklich trägt. Das ist kein Talent-Problem, sondern ein Methoden-Problem.
             </p>
             <div className="mt-8">
               <CTAButton href="/methode" variant="secondary" external={false}>

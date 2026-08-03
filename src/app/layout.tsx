@@ -25,15 +25,15 @@ const sans = IBM_Plex_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mediqlab.de"), // TODO: finale Domain eintragen
   title: {
-    default: "medIQ lab: Effizienter lernen. Sicher bestehen. Medizinstudium.",
+    default: "medIQ lab: Effizienter lernen. Sicher bestehen. Medizinstudium im Ausland.",
     template: "%s · medIQ lab",
   },
   description:
-    "Das Online-Lern-Ökosystem für Medizinstudierende: wissenschaftlich fundierte Lernmethoden, Prüfungsstrategie und eine Community, die dich durchs Studium trägt. Verlorene Semester und teure Wiederholungsjahre vermeiden.",
+    "Das Online-Lern-Ökosystem für Medizinstudierende im EU-Ausland: wissenschaftlich fundierte Lernmethoden, Prüfungsstrategie und eine Community, die dich durchs Studium trägt. Teure Wiederholungsjahre im Ausland vermeiden und sicher bestehen.",
   openGraph: {
     title: "medIQ lab: Effizienter lernen. Sicher bestehen.",
     description:
-      "Wissenschaftlich fundiert durchs Medizinstudium. Workshop-Reihe + Community für Studierende an staatlichen, privaten und Auslands-Unis.",
+      "Wissenschaftlich fundiert durchs Medizinstudium im Ausland. Workshop-Reihe + Community für Medizinstudierende an EU-Auslands-Unis.",
     type: "website",
     locale: "de_DE",
   },

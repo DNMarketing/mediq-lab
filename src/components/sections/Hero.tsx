@@ -75,7 +75,7 @@ export function Hero() {
 
             <motion.div variants={item} className="eyebrow mb-6">
               <span className="rule-copper" aria-hidden />
-              Für Medizinstudierende
+              Für Medizinstudierende im Ausland
             </motion.div>
 
             <motion.h1
@@ -93,10 +93,10 @@ export function Hero() {
               variants={item}
               className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"
             >
-              medIQ lab ist das Lern-Ökosystem für Medizinstudierende:
+              medIQ lab ist das Lern-Ökosystem für Medizinstudierende im EU-Ausland:
               wissenschaftlich fundierte Methodik, klare Prüfungsstrategie und eine
-              Community, die dich trägt. Schluss mit verlorenen Semestern, planlosem
-              Pauken und der Angst vor der nächsten Prüfung.
+              Community, die dich trägt. Damit du fern der Heimat sicher bestehst,
+              statt ein teures Wiederholungsjahr zu riskieren.
             </motion.p>
 
             <motion.div
@@ -114,7 +114,7 @@ export function Hero() {
             </motion.div>
 
             <motion.p variants={item} className="mt-6 text-sm text-ink-mute">
-              Für staatliche, private &amp; Auslands-Unis · Start über Skool · jederzeit kündbar
+              Für Medizinstudierende an Auslands-Unis in der EU · Start über Skool · jederzeit kündbar
             </motion.p>
           </motion.div>
 
