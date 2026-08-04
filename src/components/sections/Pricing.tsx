@@ -92,10 +92,9 @@ export function Pricing() {
             {/* warmes Community-Bild als edler Kopf */}
             <div className="relative">
               <EditorialImage
-                id={IMAGES.community}
+                src={IMAGES.community}
                 alt="Lernende Gruppe im Gespräch"
                 aspect="aspect-[16/7]"
-                width={1000}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-petrol-900 via-petrol-900/55 to-transparent" aria-hidden />
               <span className="absolute right-5 top-5 rounded-full bg-teal-500 px-3 py-1 text-xs font-semibold text-paper-light">

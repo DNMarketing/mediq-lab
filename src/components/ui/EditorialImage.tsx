@@ -2,14 +2,11 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/cn";
-import { unsplash } from "@/lib/images";
 
 type EditorialImageProps = {
-  /** Unsplash-Foto-ID (siehe lib/images.ts). */
-  id: string;
+  /** Lokaler Bildpfad aus `lib/images.ts` (self-hosted, siehe public/img). */
+  src: string;
   alt: string;
-  /** Breite für die Unsplash-Auslieferung. */
-  width?: number;
   className?: string;
   /** Tailwind aspect-Klasse, z. B. "aspect-[4/5]". */
   aspect?: string;
@@ -17,14 +14,13 @@ type EditorialImageProps = {
 };
 
 /**
- * Editorial-Bild mit sauberem SVG-Fallback. Lädt ein Unsplash-Foto; schlägt
- * der Ladevorgang fehl, wird eine feine medizinische Linien-Illustration
- * gezeigt, niemals eine leere Box.
+ * Editorial-Bild mit sauberem SVG-Fallback. Lädt ein lokal gehostetes Foto;
+ * schlägt der Ladevorgang fehl, wird eine feine medizinische Linien-
+ * Illustration gezeigt, niemals eine leere Box.
  */
 export function EditorialImage({
-  id,
+  src,
   alt,
-  width = 1400,
   className,
   aspect = "aspect-[4/5]",
   priority = false,
@@ -38,7 +34,7 @@ export function EditorialImage({
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={unsplash(id, width)}
+          src={src}
           alt={alt}
           loading={priority ? "eager" : "lazy"}
           decoding="async"

@@ -43,20 +43,18 @@ export function Modules() {
             </Reveal>
             <Reveal delay={0.1}>
               <EditorialImage
-                id={IMAGES.moduleHeart}
+                src={IMAGES.moduleHeart}
                 alt="Anatomisches Herzmodell"
                 aspect="aspect-[4/3]"
                 className="mt-8 frame"
-                width={760}
               />
             </Reveal>
             <Reveal delay={0.15}>
               <EditorialImage
-                id={IMAGES.moduleMicroscope}
+                src={IMAGES.moduleMicroscope}
                 alt="Mikroskop im Labor"
                 aspect="aspect-[4/3]"
                 className="mt-4 hidden frame lg:block"
-                width={760}
               />
             </Reveal>
           </div>

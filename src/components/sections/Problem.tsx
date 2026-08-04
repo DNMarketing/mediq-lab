@@ -50,11 +50,10 @@ export function Problem() {
             </Reveal>
             <Reveal delay={0.1}>
               <EditorialImage
-                id={IMAGES.problemStudent}
+                src={IMAGES.problemStudent}
                 alt="Konzentrierte:r Studierende:r am Laptop"
                 aspect="aspect-[5/4]"
                 className="mt-8 frame"
-                width={900}
               />
             </Reveal>
           </div>

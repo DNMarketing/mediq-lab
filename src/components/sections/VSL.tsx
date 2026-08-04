@@ -1,5 +1,5 @@
 import { SKOOL_URL } from "@/lib/config";
-import { IMAGES, unsplash } from "@/lib/images";
+import { IMAGES } from "@/lib/images";
 import { Section, SectionHeading } from "../ui/Section";
 import { CTAButton } from "../ui/CTAButton";
 import { Reveal } from "../ui/Reveal";
@@ -24,7 +24,7 @@ export function VSL() {
             {/* Poster-Bild (Platzhalter für das eigentliche VSL-Embed) */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={unsplash(IMAGES.vslSkeleton, 1400)}
+              src={IMAGES.vslSkeleton}
               alt="Anatomisches Skelettmodell, Poster für das Erklärvideo"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

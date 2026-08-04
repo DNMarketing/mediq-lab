@@ -69,11 +69,17 @@ export default function DatenschutzPage() {
       </section>
 
       <section>
-        <h2>5. Schriftarten</h2>
+        <h2>5. Schriftarten und Bilder (self-hosted)</h2>
         <p>
           Die verwendeten Schriften (Fraunces, IBM Plex Sans) werden lokal mit der Website
           ausgeliefert (self-hosted, via next/font). Beim Seitenaufruf wird dafür keine
           Verbindung zu Servern Dritter (z. B. Google Fonts) hergestellt.
+        </p>
+        <p>
+          Auch alle Bilder werden lokal von dieser Website ausgeliefert; es werden keine
+          externen Bild-Dienste oder CDNs (z. B. Unsplash) eingebunden. Insgesamt baut die
+          Seite beim Aufruf keine automatischen Verbindungen zu Dritt-Servern auf und setzt
+          keine Cookies.
         </p>
       </section>
 
