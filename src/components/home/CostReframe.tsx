@@ -1,6 +1,5 @@
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
-import { EkgLine } from "../ui/Anatomy";
 
 /**
  * Dunkles Wert-/Stakes-Band (ersetzt das frühere Platzhalter-„in Zahlen"-Band).
@@ -11,9 +10,6 @@ export function CostReframe() {
   return (
     <section className="relative overflow-hidden bg-petrol-900 py-20 text-paper-light sm:py-28">
       <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-2/3" aria-hidden />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 text-teal-400/25" aria-hidden>
-        <EkgLine beats={8} strokeWidth={1.3} className="h-8" />
-      </div>
 
       <Container className="relative">
         <Reveal>
