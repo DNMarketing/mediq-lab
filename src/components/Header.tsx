@@ -69,7 +69,7 @@ export function Header() {
 
         <div className="hidden md:block">
           <CTAButton href={SKOOL_URL} size="md">
-            Jetzt beitreten
+            Jetzt Platz sichern
           </CTAButton>
         </div>
 
@@ -105,7 +105,7 @@ export function Header() {
               </Link>
             ))}
             <CTAButton href={SKOOL_URL} size="lg" className="mt-2 w-full">
-              Jetzt beitreten
+              Jetzt Platz sichern
             </CTAButton>
           </Container>
         </div>

@@ -69,7 +69,7 @@ export function CTABand({
 
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <CTAButton href={SKOOL_URL} variant="onDark" size="lg" className="w-full sm:w-auto">
-                Jetzt beitreten
+                Jetzt Platz sichern
                 <MedIcon name="arrowRight" className="h-4 w-4" />
               </CTAButton>
               {secondaryHref && (

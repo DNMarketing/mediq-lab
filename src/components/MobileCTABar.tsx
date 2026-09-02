@@ -58,7 +58,7 @@ export function MobileCTABar() {
           rel="noopener noreferrer"
           className="inline-flex flex-1 items-center justify-center gap-2 rounded-card bg-petrol-700 px-5 py-3 text-[15px] font-medium text-paper-light transition-colors hover:bg-petrol-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper active:translate-y-px"
         >
-          Jetzt beitreten
+          Jetzt Platz sichern
           <MedIcon name="arrowRight" className="h-4 w-4" />
         </a>
       </div>

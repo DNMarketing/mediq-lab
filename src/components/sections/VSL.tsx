@@ -47,7 +47,7 @@ export function VSL() {
 
           <div className="mt-9 flex justify-center">
             <CTAButton href={SKOOL_URL} size="lg">
-              Jetzt beitreten
+              Jetzt Platz sichern
               <MedIcon name="arrowRight" className="h-4 w-4" />
             </CTAButton>
           </div>

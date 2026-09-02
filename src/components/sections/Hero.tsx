@@ -78,7 +78,7 @@ export function Hero() {
               className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
               <CTAButton href={SKOOL_URL} size="lg">
-                Jetzt beitreten
+                Jetzt Platz sichern
                 <MedIcon name="arrowRight" className="h-4 w-4" />
               </CTAButton>
               <CTAButton href="/methode" variant="secondary" size="lg" external={false}>
