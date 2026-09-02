@@ -12,6 +12,7 @@ export function LegalShell({
   intro,
   updated = null,
   showBadge = true,
+  seal,
   children,
 }: {
   title: string;
@@ -20,6 +21,8 @@ export function LegalShell({
   updated?: string | null;
   /** „Platzhalter"-Badge am Titel; für fertige Seiten auf false. */
   showBadge?: boolean;
+  /** Optionales Siegel; wird oben und unten (außerhalb des Prosa-Stylings) gezeigt. */
+  seal?: React.ReactNode;
   children: React.ReactNode;
 }) {
   return (
@@ -31,10 +34,12 @@ export function LegalShell({
         {showBadge && <PlaceholderBadge />}
       </div>
       {updated && <p className="text-sm text-ink-mute">Zuletzt aktualisiert: {updated}</p>}
+      {seal && <div className="mt-8 flex justify-center sm:justify-start">{seal}</div>}
       {intro && <div className="mt-6 leading-relaxed text-ink-soft">{intro}</div>}
-      <div className="mt-10 space-y-8 leading-relaxed text-ink-soft [&_h2]:font-serif [&_h2]:text-xl [&_h2]:font-medium [&_h2]:text-ink [&_h2]:mb-2 [&_h3]:font-medium [&_h3]:text-ink [&_h3]:mt-4 [&_h3]:mb-1 [&_p]:mt-2 [&_ul]:mt-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-petrol-700 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-copper-600">
+      <div className="mt-10 space-y-6 leading-relaxed text-ink-soft [&_h2]:mt-10 [&_h2]:font-serif [&_h2]:text-xl [&_h2]:font-medium [&_h2]:text-ink [&_h2]:mb-2 [&_h3]:mt-6 [&_h3]:font-medium [&_h3]:text-ink [&_h3]:mb-1 [&_h4]:mt-4 [&_h4]:font-medium [&_h4]:text-ink-soft [&_p]:mt-2 [&_ul]:mt-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_strong]:text-ink [&_a]:text-petrol-700 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-copper-600 [&_a]:break-words">
         {children}
       </div>
+      {seal && <div className="mt-14 flex justify-center border-t border-line pt-10 sm:justify-start">{seal}</div>}
     </Container>
   );
 }

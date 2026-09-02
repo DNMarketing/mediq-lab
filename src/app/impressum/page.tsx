@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalShell } from "@/components/LegalShell";
+import { Erecht24Seal } from "@/components/ui/Erecht24Seal";
 
 export const metadata: Metadata = {
   title: "Impressum",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <LegalShell title="Impressum" showBadge={false}>
+    <LegalShell title="Impressum" showBadge={false} seal={<Erecht24Seal type="impressum" />}>
       <section>
         <p>
           Dirk Schlenker
