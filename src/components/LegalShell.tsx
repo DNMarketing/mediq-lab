@@ -10,12 +10,16 @@ import { PlaceholderBadge } from "./ui/Badge";
 export function LegalShell({
   title,
   intro,
-  updated = "[PLATZHALTER: Datum letzte Aktualisierung]",
+  updated = null,
+  showBadge = true,
   children,
 }: {
   title: string;
   intro?: React.ReactNode;
-  updated?: string;
+  /** Datum-Zeile; `null`/leer = ausblenden. */
+  updated?: string | null;
+  /** „Platzhalter"-Badge am Titel; für fertige Seiten auf false. */
+  showBadge?: boolean;
   children: React.ReactNode;
 }) {
   return (
@@ -24,9 +28,9 @@ export function LegalShell({
         <h1 className="font-serif text-[2.2rem] font-medium leading-[1.1] tracking-[-0.01em] text-ink sm:text-[3rem]">
           {title}
         </h1>
-        <PlaceholderBadge />
+        {showBadge && <PlaceholderBadge />}
       </div>
-      <p className="text-sm text-ink-mute">Zuletzt aktualisiert: {updated}</p>
+      {updated && <p className="text-sm text-ink-mute">Zuletzt aktualisiert: {updated}</p>}
       {intro && <div className="mt-6 leading-relaxed text-ink-soft">{intro}</div>}
       <div className="mt-10 space-y-8 leading-relaxed text-ink-soft [&_h2]:font-serif [&_h2]:text-xl [&_h2]:font-medium [&_h2]:text-ink [&_h2]:mb-2 [&_h3]:font-medium [&_h3]:text-ink [&_h3]:mt-4 [&_h3]:mb-1 [&_p]:mt-2 [&_ul]:mt-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_a]:text-petrol-700 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-copper-600">
         {children}
