@@ -93,10 +93,9 @@ export function Hero() {
               variants={item}
               className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"
             >
-              medIQ lab ist das Lern-Ökosystem für Medizinstudierende im EU-Ausland:
-              wissenschaftlich fundierte Methodik, klare Prüfungsstrategie und eine
-              Community, die dich trägt. Damit du fern der Heimat sicher bestehst,
-              statt ein teures Wiederholungsjahr zu riskieren.
+              Fundierte Lernmethodik, klare Prüfungsstrategie und eine Community, die
+              dich trägt. Damit dir im Ausland kein teures Wiederholungsjahr
+              dazwischenkommt.
             </motion.p>
 
             <motion.div
