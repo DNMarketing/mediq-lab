@@ -6,8 +6,8 @@
  */
 export const SKOOL_URL = "https://www.skool.com/mediqlab"; // TODO: finale Skool-URL einsetzen
 
-/** Kontakt-E-Mail (identisch mit Impressum). */
-export const CONTACT_EMAIL = "info@mediqlab.de";
+/** Kontakt-E-Mail (mit Bindestrich, lt. Kunde verbindlich). */
+export const CONTACT_EMAIL = "info@mediq-lab.de";
 
 /** Haupt-Navigation (echte Routen der Multipage-Site). */
 export const NAV_LINKS = [

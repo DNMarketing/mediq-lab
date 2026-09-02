@@ -23,7 +23,7 @@ const sans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.mediqlab.de"), // finale Domain (ohne Bindestrich, lt. Impressum)
+  metadataBase: new URL("https://www.mediq-lab.de"), // finale Domain (mit Bindestrich, lt. Kunde)
   title: {
     default: "medIQ lab: Effizienter lernen. Sicher bestehen. Medizinstudium im Ausland.",
     template: "%s · medIQ lab",

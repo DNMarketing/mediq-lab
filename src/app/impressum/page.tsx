@@ -41,7 +41,7 @@ export default function ImpressumPage() {
         <p>
           Telefon: 01776007804
           <br />
-          E-Mail: info@mediqlab.de
+          E-Mail: info@mediq-lab.de
         </p>
       </section>
 
