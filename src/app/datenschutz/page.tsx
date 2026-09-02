@@ -11,14 +11,13 @@ export default function DatenschutzPage() {
   return (
     <LegalShell
       title="Datenschutzerklärung"
+      showBadge={false}
       intro={
         <p>
-          Diese Erklärung informiert über die Verarbeitung personenbezogener Daten beim
-          Besuch dieser Website nach DSGVO. Die Struktur ist vollständig angelegt;
-          konkrete Angaben (z. B. Verantwortliche Stelle) sind als{" "}
-          <strong className="text-ink">[PLATZHALTER]</strong> markiert. Vor
-          Veröffentlichung durch eine rechtssichere Fassung ersetzen (anwaltlich prüfen
-          oder geprüften Generator nutzen).
+          Diese Website verarbeitet so wenige Daten wie möglich. Sie setzt{" "}
+          <strong className="text-ink">keine Cookies</strong> und bindet{" "}
+          <strong className="text-ink">keine Tracking-, Analyse- oder Werbedienste</strong>{" "}
+          ein. Ein Cookie- oder Consent-Banner ist daher nicht erforderlich.
         </p>
       }
     >
@@ -27,93 +26,81 @@ export default function DatenschutzPage() {
         <p>
           Verantwortlich im Sinne der DSGVO ist:
           <br />
-          [PLATZHALTER: Name, Anschrift, siehe Impressum]
+          Dirk Schlenker
+          <br />
+          Albert-Einstein-Straße 7
+          <br />
+          97990 Weikersheim
+          <br />
+          Telefon: +491755896457
           <br />
           E-Mail: {CONTACT_EMAIL}
         </p>
       </section>
 
       <section>
-        <h2>2. Hosting</h2>
+        <h2>2. Keine Cookies, kein Tracking</h2>
         <p>
-          Diese Website wird als statische Seite über [PLATZHALTER: Netlify, Netlify Inc.]
-          ausgeliefert. Beim Aufruf verarbeitet der Hoster technisch notwendige Daten
-          (u. a. IP-Adresse, Zeitpunkt, abgerufene Datei, User-Agent) in Server-Logfiles.
-          Rechtsgrundlage ist unser berechtigtes Interesse an einem sicheren, stabilen
-          Betrieb (Art. 6 Abs. 1 lit. f DSGVO). Sofern der Hoster Daten außerhalb der EU
-          (z. B. USA) verarbeitet, erfolgt dies auf Grundlage geeigneter Garantien
-          [PLATZHALTER: Standardvertragsklauseln / Data Privacy Framework bestätigen].
+          Diese Website setzt keinerlei Cookies und verwendet keine Analyse-, Tracking-
+          oder Werbe-Tools (z. B. Google Analytics, Meta-Pixel o. Ä.). Es findet keine
+          Reichweitenmessung und keine Profilbildung statt.
+        </p>
+        <p>
+          Schriften und Bilder werden lokal von dieser Website ausgeliefert (self-hosted).
+          Es werden keine externen Dienste, CDNs oder Schriftarten Dritter (z. B. Google
+          Fonts, Unsplash) eingebunden. Beim reinen Aufruf der Seite baut dein Browser
+          daher keine Verbindung zu Servern Dritter auf.
         </p>
       </section>
 
       <section>
-        <h2>3. Server-Logfiles</h2>
+        <h2>3. Hosting und Server-Logfiles</h2>
         <p>
-          Es werden folgende Daten protokolliert: IP-Adresse, Datum und Uhrzeit,
-          angefragte URL, Referrer, Browser-/Betriebssystem-Kennung. Eine Zusammenführung
-          mit anderen Daten oder eine Identifizierung einzelner Personen findet nicht
-          statt. Speicherdauer: [PLATZHALTER: Angabe ergänzen].
+          Die Website wird bei einem Hosting-Dienstleister (Auftragsverarbeiter) als
+          statische Seite bereitgestellt. Beim Aufruf verarbeitet der Hoster technisch
+          notwendige Zugriffsdaten in Server-Logfiles: IP-Adresse, Datum und Uhrzeit,
+          angefragte Datei/URL, Referrer sowie Browser- und Betriebssystem-Kennung. Diese
+          Daten sind für die sichere, stabile Auslieferung der Seite erforderlich; eine
+          Zusammenführung mit anderen Daten oder eine Identifizierung einzelner Personen
+          erfolgt nicht.
+        </p>
+        <p>
+          Rechtsgrundlage ist unser berechtigtes Interesse an einem sicheren und
+          funktionsfähigen Betrieb (Art. 6 Abs. 1 lit. f DSGVO). Sofern der Hoster Daten in
+          einem Drittland (z. B. USA) verarbeitet, geschieht dies auf Grundlage geeigneter
+          Garantien (Standardvertragsklauseln).
         </p>
       </section>
 
       <section>
-        <h2>4. Kontaktaufnahme (Formular &amp; E-Mail)</h2>
+        <h2>4. Kontaktaufnahme (Formular und E-Mail)</h2>
         <p>
-          Wenn du uns über das Kontaktformular oder per E-Mail kontaktierst, verarbeiten
-          wir die angegebenen Daten (Name, E-Mail-Adresse, Nachricht) zur Bearbeitung
-          deiner Anfrage. Das Formular wird über [PLATZHALTER: Netlify Forms] verarbeitet.
-          Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw.
-          lit. f (berechtigtes Interesse an der Beantwortung). Die Daten werden gelöscht,
-          sobald sie nicht mehr erforderlich sind [PLATZHALTER: Frist ergänzen].
+          Wenn du uns über das Kontaktformular oder per E-Mail kontaktierst, verarbeiten wir
+          die von dir angegebenen Daten (Name, E-Mail-Adresse und deine Nachricht)
+          ausschließlich zur Bearbeitung deiner Anfrage. Zur Übermittlung des Formulars kann
+          ein Formular-Dienstleister als Auftragsverarbeiter eingesetzt werden.
+        </p>
+        <p>
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Beantwortung einer Anfrage / vor-
+          vertragliche Maßnahmen) bzw. lit. f (berechtigtes Interesse an der Kommunikation).
+          Wir löschen die Daten, sobald sie zur Bearbeitung nicht mehr erforderlich sind und
+          keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
         </p>
       </section>
 
       <section>
-        <h2>5. Schriftarten und Bilder (self-hosted)</h2>
+        <h2>5. Weiterleitung zu Skool</h2>
         <p>
-          Die verwendeten Schriften (Fraunces, IBM Plex Sans) werden lokal mit der Website
-          ausgeliefert (self-hosted, via next/font). Beim Seitenaufruf wird dafür keine
-          Verbindung zu Servern Dritter (z. B. Google Fonts) hergestellt.
-        </p>
-        <p>
-          Auch alle Bilder werden lokal von dieser Website ausgeliefert; es werden keine
-          externen Bild-Dienste oder CDNs (z. B. Unsplash) eingebunden. Insgesamt baut die
-          Seite beim Aufruf keine automatischen Verbindungen zu Dritt-Servern auf und setzt
-          keine Cookies.
+          Anmeldung, Community und Zahlung erfolgen extern auf skool.com. Mit dem Klick auf
+          einen entsprechenden Button verlässt du diese Website; ab dann gilt die
+          Datenschutzerklärung von Skool. Auf die dortige Verarbeitung haben wir keinen
+          Einfluss. Dasselbe gilt für andere externe Links (z. B. LinkedIn): Erst mit deinem
+          Klick wird eine Verbindung zum jeweiligen Anbieter aufgebaut.
         </p>
       </section>
 
       <section>
-        <h2>6. Eingebettete Inhalte (Video)</h2>
-        <p>
-          Sofern ein Erklärvideo eines Drittanbieters (z. B. YouTube/Vimeo) eingebettet
-          wird, kann beim Abspielen eine Verbindung zu dessen Servern aufgebaut werden; es
-          gelten dessen Datenschutzbestimmungen. [PLATZHALTER: Anbieter, Rechtsgrundlage
-          und ggf. Consent-Lösung ergänzen, sobald ein Video eingebunden ist.]
-        </p>
-      </section>
-
-      <section>
-        <h2>7. Weiterleitung zu Skool</h2>
-        <p>
-          Anmeldung und Zahlung erfolgen extern auf skool.com. Mit dem Klick auf einen
-          entsprechenden Button verlässt du diese Website; ab dann gilt die
-          Datenschutzerklärung von Skool. Wir haben keinen Einfluss auf die dortige
-          Verarbeitung.
-        </p>
-      </section>
-
-      <section>
-        <h2>8. Cookies &amp; Analyse</h2>
-        <p>
-          Diese Website setzt keine Tracking- oder Analyse-Cookies und bindet keine
-          Analyse-Dienste ein. [PLATZHALTER: aktualisieren, falls künftig Tools wie
-          Analytics oder ein Pixel ergänzt werden, dann ist eine Consent-Lösung nötig.]
-        </p>
-      </section>
-
-      <section>
-        <h2>9. Deine Rechte</h2>
+        <h2>6. Deine Rechte</h2>
         <p>Dir stehen nach DSGVO folgende Rechte zu:</p>
         <ul>
           <li>Auskunft über die verarbeiteten Daten (Art. 15)</li>
@@ -121,26 +108,19 @@ export default function DatenschutzPage() {
           <li>Löschung (Art. 17) und Einschränkung der Verarbeitung (Art. 18)</li>
           <li>Datenübertragbarkeit (Art. 20)</li>
           <li>Widerspruch gegen die Verarbeitung (Art. 21)</li>
-          <li>Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft (Art. 7 Abs. 3)</li>
           <li>Beschwerde bei einer Aufsichtsbehörde (Art. 77)</li>
         </ul>
         <p>
           Zur Ausübung genügt eine formlose Nachricht an {CONTACT_EMAIL}. Zuständige
-          Aufsichtsbehörde: [PLATZHALTER: Behörde nach Sitz ergänzen].
-        </p>
-      </section>
-
-      <section>
-        <h2>10. Aktualität und Änderungen</h2>
-        <p>
-          Diese Datenschutzerklärung wird angepasst, sobald sich rechtliche oder
-          technische Rahmenbedingungen ändern. [PLATZHALTER: Stand/Version pflegen.]
+          Aufsichtsbehörde ist der Landesbeauftragte für den Datenschutz und die
+          Informationsfreiheit Baden-Württemberg (LfDI BW).
         </p>
       </section>
 
       <p className="text-sm text-ink-mute">
-        Hinweis: Dieser Text ist ein strukturierter Entwurf und ersetzt keine
-        Rechtsberatung. Vor Veröffentlichung rechtssicher finalisieren.
+        Stand: aktuelle Fassung. Wir passen diese Erklärung an, sobald sich die
+        Verarbeitung ändert (etwa wenn künftig ein Video oder ein weiterer Dienst
+        eingebunden wird). Im Zweifel bitte rechtlich prüfen lassen.
       </p>
     </LegalShell>
   );
