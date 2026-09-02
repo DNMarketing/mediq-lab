@@ -1,37 +1,16 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { SPOTS_LEFT, SKOOL_URL } from "@/lib/config";
+import { IMAGES } from "@/lib/images";
 import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { Pill } from "../ui/Badge";
 import { MedIcon } from "../ui/MedIcon";
-import { AnatomyHeart, EkgLine } from "../ui/Anatomy";
+import { EkgLine } from "../ui/Anatomy";
 
 export function Hero() {
   const reduce = useReducedMotion();
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  // Parallax nur auf Desktop, auf Mobile (Visual gestapelt) vermeidet das Jank.
-  const [parallaxOn, setParallaxOn] = useState(false);
-  useEffect(() => {
-    const m = window.matchMedia("(min-width: 1024px)");
-    const update = () => setParallaxOn(m.matches && !reduce);
-    update();
-    m.addEventListener("change", update);
-    return () => m.removeEventListener("change", update);
-  }, [reduce]);
-  const visualY = useTransform(scrollYProgress, [0, 1], [0, parallaxOn ? 90 : 0]);
-  const glowY = useTransform(scrollYProgress, [0, 1], [0, parallaxOn ? 140 : 0]);
 
   const container = {
     hidden: {},
@@ -47,19 +26,15 @@ export function Hero() {
   };
 
   return (
-    <section
-      id="hero"
-      ref={ref}
-      className="relative overflow-hidden pt-24 pb-14 sm:pt-40 sm:pb-24"
-    >
+    <section id="hero" className="relative overflow-hidden pt-24 pb-14 sm:pt-40 sm:pb-24">
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Text */}
           <motion.div
             variants={container}
             initial="hidden"
             animate="show"
-            className="lg:col-span-7"
+            className="lg:col-span-6"
           >
             {SPOTS_LEFT && (
               <motion.div variants={item} className="mb-7">
@@ -80,7 +55,7 @@ export function Hero() {
 
             <motion.h1
               variants={item}
-              className="font-serif text-[2.15rem] font-medium leading-[1.06] tracking-[-0.015em] text-ink sm:text-[4rem] sm:leading-[1.04]"
+              className="font-serif text-[2.15rem] font-medium leading-[1.06] tracking-[-0.015em] text-ink sm:text-[3.7rem] sm:leading-[1.04]"
             >
               Effizienter lernen.
               <br />
@@ -117,50 +92,41 @@ export function Hero() {
             </motion.p>
           </motion.div>
 
-          {/* Visual: animiertes anatomisches Herz + EKG + Parallax */}
-          <div className="relative lg:col-span-5">
-            <motion.div
-              style={{ y: glowY }}
-              className="glow-teal-bg pointer-events-none absolute -inset-10 -z-10"
-              aria-hidden
-            />
-            <motion.div style={{ y: visualY }} className="relative mx-auto max-w-md">
-              <div className="relative aspect-square">
-                {/* klinische Ringe */}
-                <div className="absolute inset-0 rounded-full border border-line" aria-hidden />
-                <div className="absolute inset-[8%] rounded-full border border-teal-300/40" aria-hidden />
-                <div
-                  className="absolute inset-[8%] rounded-full bg-paper-light/60 shadow-soft"
-                  aria-hidden
-                />
-                {/* Herz */}
-                <div className="absolute inset-[20%] text-petrol-700">
-                  <AnatomyHeart strokeWidth={1.7} />
-                </div>
-                {/* EKG quer durchs Visual */}
-                <div className="absolute inset-x-[6%] top-[60%] text-petrol-700/70">
-                  <EkgLine beats={3} strokeWidth={1.4} className="h-12" />
-                </div>
+          {/* Video (Erklärvideo / VSL) */}
+          <motion.div
+            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="relative lg:col-span-6"
+          >
+            <div className="glow-teal-bg pointer-events-none absolute -inset-8 -z-10" aria-hidden />
+            <figure className="group relative aspect-video overflow-hidden rounded-card border border-line shadow-lift">
+              {/* Poster (Platzhalter für das eigentliche Video-Embed) */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={IMAGES.community}
+                alt="Vorschau: Erklärvideo zu medIQ lab"
+                loading="eager"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-tr from-petrol-900/85 via-petrol-900/55 to-teal-700/25"
+                aria-hidden
+              />
+              <div className="relative flex h-full flex-col items-center justify-center gap-4">
+                <button
+                  type="button"
+                  aria-label="Video abspielen"
+                  className="flex h-[64px] w-[64px] items-center justify-center rounded-full bg-paper-light text-petrol-800 shadow-lift transition-transform duration-200 group-hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                >
+                  <MedIcon name="play" className="ml-0.5 h-6 w-6" />
+                </button>
+                <p className="text-sm font-medium text-paper-light">In 2 Minuten verstehen</p>
               </div>
-
-              {/* Glas-Karte (überlappend) */}
-              <div className="absolute -bottom-4 -left-2 max-w-[14.5rem] rounded-card p-5 shadow-lift glass-card sm:-left-6">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-card bg-teal-100 text-teal-600">
-                    <MedIcon name="repeat" className="h-5 w-5" />
-                  </span>
-                  <p className="font-serif text-base leading-tight text-ink">
-                    Methode statt
-                    <br />
-                    Auswendig-Pauken
-                  </p>
-                </div>
-                <p className="mt-3 text-xs leading-relaxed text-ink-soft">
-                  Active Recall &amp; Spaced Repetition, lernpsychologisch fundiert.
-                </p>
-              </div>
-            </motion.div>
-          </div>
+              {/* TODO: Video-Embed einsetzen (YouTube erweiterter Datenschutzmodus / Vimeo),
+                  Poster & Overlay ersetzen. Datenschutz deckt YouTube bereits ab. */}
+            </figure>
+          </motion.div>
         </div>
       </Container>
 
