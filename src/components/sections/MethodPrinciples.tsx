@@ -80,12 +80,9 @@ export function MethodPrinciples() {
           </Stagger>
           <Reveal delay={0.15}>
             <p className="mt-8 max-w-2xl border-t border-line-onDark pt-6 text-sm leading-relaxed text-paper/50">
-              {/* TODO: Studien-Quellen verlinken (z. B. Karpicke & Roediger zur
-                  Testing-Effekt-Forschung, Cepeda et al. zu Spacing), um die
-                  Wissenschaftlichkeit sichtbar und überprüfbar zu machen. */}
-              [PLATZHALTER: Studien-Quellen verlinken], z. B. Forschung zu Testing-Effekt
-              (Karpicke &amp; Roediger) und Spacing (Cepeda et al.), um die Prinzipien
-              belegbar zu machen.
+              Diese Prinzipien stützen sich auf etablierte lernpsychologische Forschung,
+              unter anderem zum Testing-Effekt (Karpicke &amp; Roediger) und zum verteilten
+              Lernen (Cepeda et al.).
             </p>
           </Reveal>
         </div>

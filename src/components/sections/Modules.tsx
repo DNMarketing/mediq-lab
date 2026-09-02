@@ -4,7 +4,6 @@ import { Reveal } from "../ui/Reveal";
 import { Stagger, StaggerItem } from "../ui/Motion";
 import { EditorialImage } from "../ui/EditorialImage";
 import { MedIcon, type IconName } from "../ui/MedIcon";
-import { PlaceholderBadge } from "../ui/Badge";
 
 /**
  * Workshop-Module ("Was du bekommst"), editoriale Liste mit Stagger-Animation
@@ -29,10 +28,7 @@ export function Modules() {
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">
             <Reveal>
-              <div className="flex items-center gap-3">
-                <Eyebrow>Was du bekommst</Eyebrow>
-                <PlaceholderBadge />
-              </div>
+              <Eyebrow>Was du bekommst</Eyebrow>
               <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">
                 Die Workshop-Module
               </h2>

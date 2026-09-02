@@ -4,7 +4,6 @@ import { Section, SectionHeading } from "../ui/Section";
 import { CTAButton } from "../ui/CTAButton";
 import { Reveal } from "../ui/Reveal";
 import { MedIcon } from "../ui/MedIcon";
-import { PlaceholderBadge } from "../ui/Badge";
 
 export function VSL() {
   return (
@@ -36,12 +35,11 @@ export function VSL() {
             <div className="relative flex h-full flex-col items-center justify-center gap-5">
               <button
                 type="button"
-                aria-label="Video abspielen (Platzhalter)"
+                aria-label="Video abspielen"
                 className="flex h-[68px] w-[68px] items-center justify-center rounded-full bg-paper-light text-petrol-800 shadow-lift transition-transform duration-200 group-hover:scale-105"
               >
                 <MedIcon name="play" className="ml-0.5 h-7 w-7" />
               </button>
-              <PlaceholderBadge label="Platzhalter · VSL-Video einbinden" />
             </div>
             {/* TODO: Video-Embed einsetzen (YouTube/Vimeo/Wistia/Mux), das
                 medIQ lab in ~2 Min erklärt. Poster-Bild & Overlay ersetzen. */}

@@ -147,9 +147,7 @@ export default function KontaktPage() {
                 </button>
 
                 <p className="mt-4 text-xs leading-relaxed text-ink-mute">
-                  {/* TODO: Netlify Forms im Deploy aktivieren + Empfänger/Benachrichtigung
-                      einrichten. Bis dahin ist das Formular nur auf Netlify aktiv. */}
-                  [PLATZHALTER: Formular-Versand], läuft nach dem Deploy über Netlify Forms.
+                  {/* Formularversand läuft über Netlify Forms (siehe Datenschutz). */}
                   Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zur
                   Bearbeitung deiner Anfrage zu (siehe Datenschutz).
                 </p>

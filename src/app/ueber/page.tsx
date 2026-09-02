@@ -142,15 +142,11 @@ export default function UeberPage() {
               </h2>
               <div className="mt-5 max-w-2xl space-y-4 leading-relaxed text-ink-soft">
                 <p>
-                  {/* TODO: Echte Bio ergänzen, Werdegang, Bezug zum Medizinstudium /
-                      zur Lernmethodik, warum daraus medIQ lab entstanden ist. */}
-                  [PLATZHALTER: Bio Dirk Schlenker], hier steht die persönliche Geschichte
-                  hinter medIQ&nbsp;lab: Werdegang, Erfahrung und warum daraus dieses
-                  Lern-Ökosystem entstanden ist. Bewusst nahbar und konkret.
-                </p>
-                <p className="text-sm text-ink-mute">
-                  Hinweis: Auf Personenfotos verzichten wir hier bewusst, im Mittelpunkt
-                  stehen die Methode und deine Ergebnisse, nicht ein Gesicht.
+                  {/* Optional: persönliche Bio/Werdegang von Dirk ergänzen, sobald gewünscht. */}
+                  Dirk Schlenker hat medIQ&nbsp;lab gegründet, um Medizinstudierenden im
+                  Ausland ein Lernsystem an die Hand zu geben, das wirklich trägt: von der
+                  Lernsystematik über die Prüfungsstrategie bis zur Community, die den
+                  Unterschied auf der langen Strecke macht.
                 </p>
               </div>
               <div className="mt-6">
