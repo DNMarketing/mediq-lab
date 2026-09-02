@@ -32,7 +32,7 @@ export default function DatenschutzPage() {
           <br />
           97990 Weikersheim
           <br />
-          Telefon: +491755896457
+          Telefon: 01776007804
           <br />
           E-Mail: {CONTACT_EMAIL}
         </p>

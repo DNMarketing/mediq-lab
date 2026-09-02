@@ -38,7 +38,7 @@ export default function ImpressumPage() {
       <section>
         <h2>Kontakt</h2>
         <p>
-          Telefon: +491755896457
+          Telefon: 01776007804
           <br />
           E-Mail: info@mediqlab.de
         </p>
