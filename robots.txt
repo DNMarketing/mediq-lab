@@ -1,0 +1,5 @@
+# Preview – Suchmaschinen ausschließen.
+# Vor dem echten Go-Live: "Disallow: /" entfernen bzw. auf "Allow: /" umstellen
+# und in src/app/layout.tsx robots auf { index: true, follow: true } setzen.
+User-agent: *
+Disallow: /
