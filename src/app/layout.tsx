@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileCTABar } from "@/components/MobileCTABar";
+import { MedIQChat } from "@/components/MedIQChat";
 
 // Serif mit Charakter für Headlines
 const serif = Fraunces({
@@ -59,6 +60,7 @@ export default function RootLayout({
         <main id="inhalt">{children}</main>
         <Footer />
         <MobileCTABar />
+        <MedIQChat />
       </body>
     </html>
   );
