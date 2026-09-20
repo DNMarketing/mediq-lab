@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { SKOOL_URL, LINKEDIN_DIRK } from "@/lib/config";
+import { SKOOL_URL } from "@/lib/config";
+import { img } from "@/lib/images";
 import { PageIntro } from "@/components/ui/PageIntro";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { MedIcon, type IconName } from "@/components/ui/MedIcon";
-import { EkgLine } from "@/components/ui/Anatomy";
-import { Logo } from "@/components/Logo";
 import { Section, SectionHeading, Eyebrow } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { Stagger, StaggerItem } from "@/components/ui/Motion";
@@ -117,50 +116,43 @@ export default function UeberPage() {
         </Stagger>
       </Section>
 
-      {/* Wer dahinter steht, bewusst OHNE Personenfoto (abstraktes Markenelement) */}
+      {/* Wer dahinter steht: Faith & Hannah */}
       <Section tone="paper">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
-            {/* Abstraktes Markenelement statt Porträt */}
+          <div className="lg:col-span-6">
             <Reveal>
-              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-card border border-line bg-petrol-900 shadow-lift">
-                <div className="glow-teal-bg pointer-events-none absolute inset-0" aria-hidden />
-                <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 text-teal-400/40" aria-hidden>
-                  <EkgLine beats={4} strokeWidth={1.5} className="h-16" />
-                </div>
-                <div className="relative scale-150">
-                  <Logo onDark />
-                </div>
+              <div className="overflow-hidden rounded-card border border-line shadow-lift">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img("team/faith-hannah.jpg")}
+                  alt="Faith und Hannah, das Gesicht von medIQ lab"
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[3/2] w-full object-cover"
+                />
               </div>
             </Reveal>
           </div>
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             <Reveal delay={0.05}>
               <Eyebrow>Wer dahinter steht</Eyebrow>
               <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
-                Gegründet von Dirk Schlenker
+                Faith und Hannah
               </h2>
               <div className="mt-5 max-w-2xl space-y-4 leading-relaxed text-ink-soft">
                 <p>
-                  {/* Optional: persönliche Bio/Werdegang von Dirk ergänzen, sobald gewünscht. */}
-                  Dirk Schlenker hat medIQ&nbsp;lab gegründet, um Medizinstudierenden im
-                  Ausland ein Lernsystem an die Hand zu geben, das wirklich trägt: von der
+                  Faith und Hannah sind das Gesicht von medIQ&nbsp;lab. Sie wissen aus
+                  eigener Erfahrung, wie sich das Medizinstudium im Ausland anfühlt, und
+                  haben daraus ein Lernsystem gebaut, das wirklich trägt: von der
                   Lernsystematik über die Prüfungsstrategie bis zur Community, die den
                   Unterschied auf der langen Strecke macht.
                 </p>
               </div>
-              <div className="mt-6">
-                <a
-                  href={LINKEDIN_DIRK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-petrol-700 transition-colors hover:text-copper-600"
-                >
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
-                    <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.25 8.25h4.5V24h-4.5V8.25Zm7.25 0h4.31v2.15h.06c.6-1.13 2.06-2.32 4.24-2.32 4.53 0 5.37 2.98 5.37 6.86V24h-4.5v-6.99c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V24h-4.5V8.25Z" />
-                  </svg>
-                  Dirk Schlenker auf LinkedIn
-                </a>
+              <div className="mt-7">
+                <CTAButton href="/team" variant="secondary" external={false}>
+                  Das ganze Team ansehen
+                  <MedIcon name="arrowRight" className="h-4 w-4" />
+                </CTAButton>
               </div>
             </Reveal>
           </div>

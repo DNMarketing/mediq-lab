@@ -13,13 +13,11 @@ export const CONTACT_EMAIL = "info@mediq-lab.de";
 export const NAV_LINKS = [
   { href: "/methode", label: "Methode" },
   { href: "/programm", label: "Programm" },
+  { href: "/team", label: "Team" },
   { href: "/ueber", label: "Über uns" },
   { href: "/faq", label: "FAQ" },
   { href: "/kontakt", label: "Kontakt" },
 ] as const;
-
-/** LinkedIn-Profil des Gründers Dirk Schlenker (verifiziert vom Kunden). */
-export const LINKEDIN_DIRK = "https://de.linkedin.com/in/dirk-schlenker-b3639578";
 
 /**
  * Verknappungs-Hinweis für die Conversion: freie Plätze der aktuellen Runde.
