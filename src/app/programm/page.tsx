@@ -12,7 +12,7 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Programm",
   description:
-    "Die medIQ lab Workshop-Reihe für Medizinstudierende im Ausland: ein durchdachter Pfad vom Lernsystem bis zum Examen, plus Community-Abo als Einstieg. Anmeldung und Inhalte laufen über Skool.",
+    "Die medIQ lab Mitgliedschaft für Medizinstudierende in Deutschland und im EU-Ausland: Workshops, Lernzettel, KI-Lernapp, Prüfungssimulationen und Community, alles in einem Preis. Anmeldung und Inhalte laufen über Skool.",
 };
 
 const DnaVisual = (
@@ -37,7 +37,7 @@ export default function ProgrammPage() {
             <span className="text-petrol-700 italic">vom Lernsystem bis zum Examen.</span>
           </>
         }
-        lead="Zwei Wege, ein Ziel: sicher durchs Studium im Ausland. Steig niedrigschwellig über die Community ein oder geh mit der Premium-Workshop-Reihe direkt den schnellsten Weg. Für Medizinstudierende an EU-Auslands-Unis, ob privat oder staatlich."
+        lead="Eine Mitgliedschaft, alles drin: Workshops, Lernzettel, unsere eigene KI-Lernapp, mündliche Prüfungssimulationen, Vorträge von Ärzt:innen und eine Community, die dich trägt. Für Medizinstudierende in Deutschland und im EU-Ausland, ob privat oder staatlich."
         visual={DnaVisual}
         actions={
           <>
@@ -60,11 +60,11 @@ export default function ProgrammPage() {
         eyebrow="Loslegen"
         title={
           <>
-            Zwei Wege rein,{" "}
-            <span className="italic text-copper-300">ein Ziel.</span>
+            Ein Preis,{" "}
+            <span className="italic text-copper-300">alles drin.</span>
           </>
         }
-        subtitle="Anmeldung, Zahlung und alle Workshop-Inhalte laufen sicher über Skool. Diese Seite informiert dich und leitet dich dorthin weiter."
+        subtitle="Anmeldung, Zahlung und alle Inhalte laufen sicher über Skool. Diese Seite informiert dich und leitet dich dorthin weiter."
         secondaryHref="/faq"
         secondaryLabel="Offene Fragen? Zur FAQ"
       />

@@ -14,14 +14,14 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Methode",
   description:
-    "Die Lernmethode hinter medIQ lab: Active Recall, Spaced Repetition und Prüfungsstrategie, lernpsychologisch fundiert. Klüger lernen statt härter, für ein sicheres Medizinstudium im Ausland.",
+    "Die Methode hinter medIQ lab: vier Säulen aus Lernmethode, Prüfungsstrategie, KI-Lernapp und Community, lernpsychologisch fundiert. Klüger lernen statt härter, in Deutschland und im Ausland.",
 };
 
 const PRACTICE: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "repeat",
-    title: "Anki & Karteikarten, richtig aufgesetzt",
-    body: "Active Recall und Spaced Repetition werden konkret: Karten, die den Stoff wirklich abprüfen, mit einem Wiederholungsplan, der dich bis zum Examen trägt.",
+    title: "Anki, Karteikarten & KI-Lernapp",
+    body: "Active Recall und Spaced Repetition werden konkret: Karten, die den Stoff wirklich abprüfen, fertige Lernzettel und unsere KI-Lernapp, die dich beim Abfragen und Wiederholen bis zum Examen begleitet.",
   },
   {
     icon: "structure",
@@ -30,8 +30,8 @@ const PRACTICE: { icon: IconName; title: string; body: string }[] = [
   },
   {
     icon: "exam",
-    title: "Altfragen-Analyse & Prüfungssimulation",
-    body: "Prüfungsmuster erkennen, Schwerpunkte ableiten, unter realistischen Bedingungen üben, damit die Prüfung kein Blindflug wird.",
+    title: "Altfragen-Analyse & mündliche Prüfungssimulation",
+    body: "Prüfungsmuster erkennen, Schwerpunkte ableiten und die mündliche Prüfung unter realistischen Bedingungen proben, damit sie kein Blindflug wird.",
   },
   {
     icon: "mind",

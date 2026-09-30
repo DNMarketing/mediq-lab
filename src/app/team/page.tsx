@@ -9,14 +9,14 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Team",
   description:
-    "Die Menschen hinter medIQ lab: Faith und Hannah als Gesicht des Lern-Ökosystems, plus ein Team aus Coaching und Social Media, das dich durchs Medizinstudium im Ausland begleitet.",
+    "Die Menschen hinter medIQ lab: Faith und Hannah, Medizinstudentinnen und Gründerinnen, plus ein Team aus Coaching und Social Media, das dich durchs Medizinstudium begleitet, in Deutschland und im Ausland.",
 };
 
 type Member = { name: string; role: string; file: string };
 
 const LEADS: Member[] = [
-  { name: "Faith", role: "Gründerin", file: "faith.jpg" },
-  { name: "Hannah", role: "Gründerin", file: "hannah.jpg" },
+  { name: "Faith", role: "Gründerin & Medizinstudentin", file: "faith.jpg" },
+  { name: "Hannah", role: "Gründerin & Medizinstudentin", file: "hannah.jpg" },
 ];
 
 const TEAM: Member[] = [
@@ -58,7 +58,7 @@ export default function TeamPage() {
             <span className="text-petrol-700 italic">medIQ lab.</span>
           </>
         }
-        lead="Kein anonymes Programm, sondern ein Team, das selbst weiß, wie sich das Medizinstudium im Ausland anfühlt und dich mit Methode, Coaching und einer starken Community begleitet."
+        lead="Kein anonymes Programm, sondern ein Team, das selbst mitten im Medizinstudium steckt, weiß, wie es sich anfühlt, und dich mit Methode, Coaching und einer starken Community begleitet."
       />
 
       {/* Gründerinnen / Gesicht von medIQ lab */}

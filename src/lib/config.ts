@@ -20,12 +20,22 @@ export const NAV_LINKS = [
 ] as const;
 
 /**
- * Verknappungs-Hinweis für die Conversion: freie Plätze der aktuellen Runde.
- * Erscheint als Pill im Hero und im Abschluss-CTA.
- *
- * WICHTIG: Nur mit einer ECHTEN Zahl befüllen. Erfundene Knappheit ist
- * unzulässig (Fake-Verknappung, UWG). Auf `null` setzen, um den Hinweis
- * komplett auszublenden, wenn es keine echte Begrenzung gibt.
- * TODO: echte Zahl freier Plätze eintragen oder auf null setzen.
+ * Preise der Mitgliedschaft (ein Produkt, alles inklusive), lt. Gründerinnen
+ * Stand 2026-09-30. Jährlich 399 € oder monatlich 49,99 €.
+ * yearlyPerMonth/yearlySaving sind gerundete Einordnungen (399/12 ≈ 33,25;
+ * 12 × 49,99 = 599,88 → rund 200 € Ersparnis).
+ * TODO: klären, ob 399 € nur fürs erste Jahr gilt (danach gestaffelt?).
  */
-export const SPOTS_LEFT: string | null = "10";
+export const PRICING = {
+  yearly: "399",
+  monthly: "49,99",
+  yearlyPerMonth: "33",
+  yearlySaving: "200",
+} as const;
+
+/**
+ * Verknappungs-Hinweis (Pill im Hero und im Abschluss-CTA).
+ * Auf `null`: ausgeblendet. Die Jahresmitgliedschaft hat keine echte
+ * Platzbegrenzung, erfundene Knappheit wäre unzulässig (UWG).
+ */
+export const SPOTS_LEFT: string | null = null;

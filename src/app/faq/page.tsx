@@ -9,7 +9,7 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Antworten auf die häufigsten Fragen zu medIQ lab: Für wen es ist, wie Anmeldung und Zahlung über Skool laufen, was Community-Abo (20 €/Monat) und Workshop-Reihe (800 €) kosten, und was wir bewusst nicht versprechen.",
+    "Antworten auf die häufigsten Fragen zu medIQ lab: Für wen es ist (Deutschland und EU-Ausland), wie Anmeldung und Zahlung über Skool laufen, was die Mitgliedschaft kostet (399 €/Jahr oder 49,99 €/Monat), und was wir bewusst nicht versprechen.",
 };
 
 export default function FaqPage() {

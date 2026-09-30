@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { SKOOL_URL } from "@/lib/config";
+import { SKOOL_URL, PRICING } from "@/lib/config";
 
 /**
  * medIQ lab Berater – ein leichter, scriptgesteuerter Conversion-Chat (kein
@@ -55,8 +55,8 @@ const TREE: Record<string, Node> = {
   },
   cost: {
     bot: [
-      "Verständlich, gerade im Ausland.",
-      "Ein Wiederholungsjahr kostet dort schnell 10.000 bis 15.000 €. Das komplette System kostet einen Bruchteil und soll dir genau das ersparen.",
+      "Verständlich, das ist die teuerste Art, Zeit zu verlieren.",
+      `Ein Wiederholungsjahr kostet an Privat- und Auslands-Unis schnell 10.000 bis 20.000 €. Ein Jahr medIQ lab: ${PRICING.yearly} €, und es soll dir genau das ersparen.`,
     ],
     ctas: [{ label: "Programm & Preise", href: "/programm" }, JOIN],
     options: [
@@ -66,9 +66,9 @@ const TREE: Record<string, Node> = {
   },
   price: {
     bot: [
-      "Zwei Wege rein:",
-      "Community-Abo: 20 €/Monat, jederzeit kündbar.",
-      "Komplette Workshop-Reihe: 800 € einmalig.",
+      "Ein Preis, alles drin:",
+      `${PRICING.yearly} € im Jahr, das sind rund ${PRICING.yearlyPerMonth} € im Monat. Oder ${PRICING.monthly} € monatlich, wenn du flexibel bleiben willst.`,
+      "Inklusive: Community, alle Workshops, Lernzettel, KI-Lernapp, Prüfungssimulationen und Vorträge von Ärzt:innen.",
       "Anmeldung läuft sicher über Skool.",
     ],
     ctas: [{ label: "Programm ansehen", href: "/programm" }, JOIN],
@@ -76,8 +76,8 @@ const TREE: Record<string, Node> = {
   },
   who: {
     bot: [
-      "Vor allem für Medizinstudierende im EU-Ausland, zum Beispiel in Ungarn, Österreich, der Slowakei oder Kroatien, vom ersten Semester bis zum Examen.",
-      "Die Methoden funktionieren aber überall, auch in Deutschland.",
+      "Für Medizinstudierende in Deutschland und im EU-Ausland, ob staatlich oder privat, vom ersten Semester bis zum Examen.",
+      "Wenn du viel lernst und trotzdem das Gefühl hast, es reicht nicht: genau für dich.",
     ],
     ctas: [JOIN],
     options: [

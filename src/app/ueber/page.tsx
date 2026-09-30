@@ -8,11 +8,12 @@ import { Section, SectionHeading, Eyebrow } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { Stagger, StaggerItem } from "@/components/ui/Motion";
 import { CTABand } from "@/components/sections/CTABand";
+import { PillarGrid } from "@/components/sections/PillarGrid";
 
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "Warum es medIQ lab gibt: Zu viele fähige Medizinstudierende im Ausland verlieren Semester, nicht aus Faulheit, sondern aus Mangel an Methode. Unsere Mission, unsere Prinzipien.",
+    "Warum es medIQ lab gibt: Zu viele fähige Medizinstudierende verlieren Semester, nicht aus Faulheit, sondern aus Mangel an Methode. Unsere Mission, unsere vier Säulen, unsere Prinzipien.",
 };
 
 const VALUES: { icon: IconName; title: string; body: string }[] = [
@@ -50,7 +51,7 @@ export default function UeberPage() {
             <span className="text-petrol-700 italic">an der Methode scheitern.</span>
           </>
         }
-        lead="medIQ lab ist aus einer einfachen Beobachtung entstanden: Die meisten, die im Medizinstudium im Ausland straucheln, sind nicht zu wenig fähig oder zu faul. Ihnen fehlt ein System, das trägt. Genau das wollen wir liefern."
+        lead="medIQ lab ist aus einer einfachen Beobachtung entstanden: Die meisten, die im Medizinstudium straucheln, sind nicht zu wenig fähig oder zu faul. Ihnen fehlt ein System, das trägt. Genau das wollen wir liefern, in Deutschland und im Ausland."
       />
 
       {/* Mission / Belief */}
@@ -70,13 +71,14 @@ export default function UeberPage() {
                 <p>
                   Jedes verlorene Semester kostet nicht nur Zeit, sondern Geld, Nerven und
                   oft ein Stück Selbstvertrauen. An Privat- und Auslands-Unis kommen schnell
-                  Wiederholungsjahre von 10.000 bis 15.000&nbsp;€ dazu. Das muss nicht sein.
+                  Wiederholungsjahre von 10.000 bis 20.000&nbsp;€ dazu. Das muss nicht sein.
                 </p>
                 <p>
                   Wir glauben: Wer klüger lernt statt nur härter, kommt sicherer und
                   gesünder durchs Studium. Deshalb bündelt medIQ&nbsp;lab bewährte
-                  Lernmethoden, klare Prüfungsstrategie und eine Community zu einem
-                  Ökosystem, das dich vom ersten Semester bis zum Examen begleitet.
+                  Lernmethoden, klare Prüfungsstrategie, eine eigene KI-Lernapp und eine
+                  Community zu einem Ökosystem, das dich vom ersten Semester bis zum
+                  Examen begleitet.
                 </p>
                 <blockquote className="border-l-2 border-copper-500 pl-6">
                   <p className="pull-quote">
@@ -90,8 +92,29 @@ export default function UeberPage() {
         </div>
       </Section>
 
-      {/* Werte */}
+      {/* Die vier Säulen (gleicher Kern wie /programm) */}
       <Section tone="sand">
+        <Reveal>
+          <SectionHeading
+            center
+            eyebrow="Was medIQ lab ist"
+            title="Vier Säulen, eine Mitgliedschaft"
+            subtitle="Es bleibt nicht beim Lernen. Workshops, Lernzettel, unsere eigene KI-Lernapp, Prüfungssimulationen und Vorträge von Ärzt:innen, alles in einem Preis."
+          />
+        </Reveal>
+        <PillarGrid className="mt-12" />
+        <Reveal delay={0.15}>
+          <div className="mt-10 flex justify-center">
+            <CTAButton href="/programm" external={false}>
+              Programm &amp; Preis ansehen
+              <MedIcon name="arrowRight" className="h-4 w-4" />
+            </CTAButton>
+          </div>
+        </Reveal>
+      </Section>
+
+      {/* Werte */}
+      <Section tone="paper">
         <Reveal>
           <SectionHeading
             eyebrow="Was uns leitet"
@@ -117,7 +140,7 @@ export default function UeberPage() {
       </Section>
 
       {/* Wer dahinter steht: Faith & Hannah */}
-      <Section tone="paper">
+      <Section tone="sand">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
             <Reveal>
@@ -141,11 +164,12 @@ export default function UeberPage() {
               </h2>
               <div className="mt-5 max-w-2xl space-y-4 leading-relaxed text-ink-soft">
                 <p>
-                  Faith und Hannah sind das Gesicht von medIQ&nbsp;lab. Sie wissen aus
-                  eigener Erfahrung, wie sich das Medizinstudium im Ausland anfühlt, und
-                  haben daraus ein Lernsystem gebaut, das wirklich trägt: von der
-                  Lernsystematik über die Prüfungsstrategie bis zur Community, die den
-                  Unterschied auf der langen Strecke macht.
+                  Faith und Hannah sind Medizinstudentinnen und die Gründerinnen von
+                  medIQ&nbsp;lab. Sie wissen aus eigener Erfahrung, wie sich das
+                  Medizinstudium anfühlt, und haben daraus ein Lernsystem gebaut, das
+                  wirklich trägt: von der Lernmethode über die Prüfungsstrategie und die
+                  KI-Lernapp bis zur Community, die den Unterschied auf der langen
+                  Strecke macht.
                 </p>
               </div>
               <div className="mt-7">

@@ -8,7 +8,7 @@ import { MedIcon } from "@/components/ui/MedIcon";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Fragen zu medIQ lab, zur Methode oder zur Workshop-Reihe? Schreib uns, oder komm direkt in die Community auf Skool.",
+    "Fragen zu medIQ lab, zur Methode oder zur Mitgliedschaft? Schreib uns, oder komm direkt in die Community auf Skool.",
 };
 
 const inputClass =
@@ -25,7 +25,7 @@ export default function KontaktPage() {
             <span className="text-petrol-700 italic">bevor du dich entscheidest.</span>
           </>
         }
-        lead="Ob Frage zur Methode, zur Workshop-Reihe oder zum Zugang: Wir antworten dir ehrlich und ohne Verkaufsdruck. Am schnellsten erreichst du uns direkt in der Community."
+        lead="Ob Frage zur Methode, zur Mitgliedschaft, zum Campus-Rabatt oder zum Zugang: Wir antworten dir ehrlich und ohne Verkaufsdruck. Am schnellsten erreichst du uns direkt in der Community."
         ekg={false}
       />
 
@@ -128,7 +128,7 @@ export default function KontaktPage() {
                     <label htmlFor="thema" className="mb-1.5 block text-sm font-medium text-ink">
                       Worum geht’s? <span className="text-ink-mute">(optional)</span>
                     </label>
-                    <input id="thema" name="thema" type="text" placeholder="z. B. Frage zur Workshop-Reihe" className={inputClass} />
+                    <input id="thema" name="thema" type="text" placeholder="z. B. Frage zur Mitgliedschaft" className={inputClass} />
                   </div>
                   <div className="sm:col-span-2">
                     <label htmlFor="nachricht" className="mb-1.5 block text-sm font-medium text-ink">

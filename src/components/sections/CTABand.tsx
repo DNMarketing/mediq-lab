@@ -1,4 +1,4 @@
-import { SPOTS_LEFT, SKOOL_URL } from "@/lib/config";
+import { SPOTS_LEFT, SKOOL_URL, PRICING } from "@/lib/config";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { CTAButton } from "../ui/CTAButton";
@@ -19,7 +19,7 @@ export function CTABand({
     </>
   ),
   subtitle = "Jedes Semester, das du jetzt sicherst, ist Zeit und Geld, das du nicht verlierst. Tritt der medIQ lab Community bei und bring dein Lernsystem auf ein neues Level.",
-  note = "Start & Zahlung sicher über Skool · Community-Abo jederzeit kündbar · keine versteckten Kosten",
+  note = `Start & Zahlung sicher über Skool · ${PRICING.yearly} €/Jahr oder ${PRICING.monthly} €/Monat · alles inklusive`,
   secondaryHref = "/programm",
   secondaryLabel = "Programm & Preise",
   showSpots = true,

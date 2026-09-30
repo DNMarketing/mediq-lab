@@ -8,7 +8,7 @@ import { MedIcon } from "../ui/MedIcon";
 const PAINS = [
   { lead: "Erschlagen von der Stofffülle", rest: ", und niemand zeigt dir, was wirklich geprüft wird." },
   { lead: "Lesen, markieren, wieder vergessen", rest: ". Fleiß ohne System verpufft." },
-  { lead: "Ein Fehlversuch im Ausland", rest: ", und ein Wiederholungsjahr kostet schnell 10.000 bis 15.000 €." },
+  { lead: "Ein Fehlversuch", rest: ", und ein Wiederholungsjahr kostet an Privat- und Auslands-Unis schnell 10.000 bis 20.000 €." },
 ];
 
 export function ProblemTeaser() {
@@ -22,7 +22,7 @@ export function ProblemTeaser() {
             <span className="italic text-petrol-700">zu wenig lernst.</span>
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-            Die meisten scheitern im Ausland nicht am Fleiß, sondern am{" "}
+            Die meisten scheitern nicht am Fleiß, sondern am{" "}
             <span className="font-medium text-ink">fehlenden System.</span>
           </p>
         </Reveal>

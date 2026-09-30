@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
+import { PRICING } from "@/lib/config";
 import { Section, SectionHeading } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import { MedIcon } from "../ui/MedIcon";
@@ -9,27 +10,27 @@ import { MedIcon } from "../ui/MedIcon";
 const FAQS = [
   {
     q: "Für wen ist medIQ lab?",
-    a: "Vor allem für Medizinstudierende im EU-Ausland, zum Beispiel an Unis in Ungarn, Österreich, der Slowakei oder Kroatien, vom ersten Semester bis zum Examen. Genau dort ist der Druck oft am größten und ein Wiederholungsjahr am teuersten. Wenn du effizienter lernen, Prüfungen sicher bestehen und teure Verzögerungen vermeiden willst, bist du richtig.",
+    a: "Für Medizinstudierende in Deutschland und im EU-Ausland, ob staatliche oder private Uni, vom ersten Semester bis zum Examen. Wenn du viel lernst und trotzdem das Gefühl hast, es reicht nicht, wenn du Prüfungen sicher bestehen und teure Verzögerungen vermeiden willst, bist du richtig.",
+  },
+  {
+    q: "Funktioniert das auch, wenn ich in Deutschland studiere?",
+    a: "Ja, ausdrücklich. medIQ lab ist für beides gebaut. Die Methoden sind unabhängig von Standort und Curriculum, und Lernzettel, Prüfungssimulationen, KI-Lernapp und Community nutzt du online, egal ob du in Heidelberg, Wien oder Pécs studierst.",
+  },
+  {
+    q: "Was kostet die Mitgliedschaft?",
+    a: `${PRICING.yearly} € im Jahr, alles inklusive: Community, alle Workshops, Lernzettel, die KI-Lernapp, Prüfungssimulationen und Vorträge. Wenn du lieber monatlich zahlst, sind es ${PRICING.monthly} € im Monat. Es gibt keine versteckten Extras und keine Upsells.`,
+  },
+  {
+    q: "Gibt es Ratenzahlung, Rabatte oder eine Garantie?",
+    a: `Ratenzahlung ja: Statt ${PRICING.yearly} € im Jahr kannst du ${PRICING.monthly} € monatlich zahlen. Außerdem gibt es einen Campus-Rabatt, sprich uns dazu einfach in der Community oder über die Kontaktseite an. Eine Bestehens-Garantie gibt es nicht, weil sie niemand seriös geben kann.`,
+  },
+  {
+    q: "Lohnt sich der Preis wirklich?",
+    a: `Rechne ehrlich gegen: Ein einziges verlorenes Semester kostet dich Monate an Miete und Lebenshaltung plus einen späteren Berufseinstieg. An Privat- und Auslands-Unis kommt ein Wiederholungsjahr von oft 10.000 bis 20.000 € dazu. Gemessen daran sind ${PRICING.yearly} € im Jahr eine Investition, die sich schon rechnet, wenn sie dir ein einziges verlorenes Semester erspart.`,
   },
   {
     q: "Wie laufen Anmeldung und Zahlung ab?",
-    a: "Anmeldung und Zahlung erfolgen vollständig und sicher über Skool. Du klickst auf einen der Buttons, landest in der medIQ lab Community auf Skool und wählst dort Community-Abo oder Workshop-Reihe. Diese Website wickelt keine Zahlung ab.",
-  },
-  {
-    q: "Was kostet das Abo, was die Workshop-Reihe?",
-    a: "Das Community-Abo kostet 20 €/Monat und ist der günstige, jederzeit kündbare Einstieg: Austausch, Lerngruppen und ausgewählte Inhalte. Die Premium-Workshop-Reihe ist das Hauptprodukt, ein einmaliger Kauf von 800 € mit dem vollständigen Lernsystem von der Lernsystematik bis zur Examensvorbereitung. Beides läuft über Skool.",
-  },
-  {
-    q: "Lohnt sich der Preis der Workshop-Reihe wirklich?",
-    a: "Rechne ehrlich gegen: Ein einziges verlorenes Semester kostet dich Monate an Miete und Lebenshaltung plus einen späteren Berufseinstieg. An Privat- und Auslands-Unis kommt ein Wiederholungsjahr von oft 10.000 bis 15.000 € dazu. Gemessen daran sind die 800 € eine Investition, die sich schon vermeidet, wenn sie dir ein einziges verlorenes Semester erspart.",
-  },
-  {
-    q: "Gibt es eine Garantie oder Ratenzahlung?",
-    a: "[Platzhalter, TODO: ehrlich befüllen. Falls Ratenzahlung oder eine Zufriedenheits-/Geld-zurück-Regelung über Skool angeboten wird, hier konkret und seriös beschreiben. Keine unhaltbaren Versprechen.]",
-  },
-  {
-    q: "Funktioniert das auch für Studierende in Deutschland?",
-    a: "Ja. medIQ lab ist auf das Medizinstudium im Ausland ausgerichtet, aber die Methoden sind unabhängig von Standort und Curriculum: Active Recall, Spaced Repetition und Prüfungsstrategie funktionieren an einer deutschen Uni genauso wie in Ungarn oder Österreich. Alles läuft online über die Community.",
+    a: "Anmeldung und Zahlung erfolgen vollständig und sicher über Skool. Du klickst auf einen der Buttons, landest in der medIQ lab Community auf Skool und wählst dort jährliche oder monatliche Zahlung. Diese Website wickelt keine Zahlung ab.",
   },
   {
     q: "Bekomme ich „garantiert bestehen“?",

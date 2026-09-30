@@ -1,26 +1,19 @@
-import { SKOOL_URL } from "@/lib/config";
+import { SKOOL_URL, PRICING } from "@/lib/config";
 import { Section, SectionHeading } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import { CTAButton } from "../ui/CTAButton";
 import { MedIcon } from "../ui/MedIcon";
 
-function Check({ onDark }: { onDark?: boolean }) {
-  return (
-    <span aria-hidden className={onDark ? "mt-0.5 shrink-0 text-teal-300" : "mt-0.5 shrink-0 text-teal-600"}>
-      <MedIcon name="check" className="h-[17px] w-[17px]" strokeWidth={2} />
-    </span>
-  );
-}
-
-const COMMUNITY = ["Community, Lerngruppen & Q&A", "Ausgewählte Methoden-Inhalte", "Niedrige Schwelle, jederzeit kündbar"];
-const WORKSHOP = [
-  "Das komplette Lernsystem bis zum Examen",
-  "Prüfungsstrategie, Anki-Setups & Lernpläne",
-  "Community-Zugang inklusive",
-  "Lebenslanger Zugang zu allen Inhalten",
+const INCLUDED = [
+  "Community, Lerngruppen & Q&A",
+  "Alle Workshops, kein Upsell",
+  "Fertige Lernzettel",
+  "Eigene KI-Lernapp",
+  "Mündliche Prüfungssimulationen",
+  "Vorträge von Ärzt:innen & Coaching",
 ];
 
-/** Kompakte Angebots-Section auf der Startseite: Preis/Angebot ohne Extra-Klick sichtbar. */
+/** Kompakte Angebots-Section auf der Startseite: ein Produkt, zwei Zahlweisen. */
 export function OfferTeaser() {
   return (
     <Section tone="sand">
@@ -28,75 +21,76 @@ export function OfferTeaser() {
         <SectionHeading
           center
           eyebrow="So kommst du rein"
-          title="Zwei Wege, ein Ziel"
-          subtitle="Steig niedrigschwellig über die Community ein oder geh direkt mit der kompletten Workshop-Reihe. Anmeldung und Zahlung laufen sicher über Skool."
+          title="Ein Preis, alles drin"
+          subtitle="Keine Pakete, keine Upsells: eine Mitgliedschaft mit Workshops, Lernzetteln, KI-Lernapp, Prüfungssimulationen und Community. Du wählst nur, wie du zahlst."
         />
       </Reveal>
 
-      <div className="mx-auto mt-12 grid max-w-4xl items-stretch gap-5 md:grid-cols-2">
-        {/* Community-Abo */}
-        <Reveal>
-          <div className="flex h-full flex-col rounded-card border border-line bg-paper-light p-7 shadow-soft">
-            <div className="flex items-center justify-between">
-              <h3 className="font-serif text-xl font-medium text-ink">Community-Abo</h3>
-              <span className="rounded-full border border-line px-3 py-1 text-xs text-ink-mute">Einstieg</span>
-            </div>
-            <div className="mt-4 flex items-end gap-1.5">
-              <span className="font-serif text-4xl font-medium text-ink">20&nbsp;€</span>
-              <span className="mb-1.5 text-sm text-ink-mute">/ Monat</span>
-            </div>
-            <ul className="mt-6 space-y-3">
-              {COMMUNITY.map((f) => (
-                <li key={f} className="flex gap-3 text-sm text-ink-soft">
-                  <Check />
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <div className="flex-1" />
-            <CTAButton href={SKOOL_URL} variant="secondary" className="mt-7 w-full">
-              Community beitreten
-            </CTAButton>
-          </div>
-        </Reveal>
+      <Reveal delay={0.1}>
+        <div className="relative mx-auto mt-12 max-w-3xl overflow-hidden rounded-card border border-teal-400/30 bg-petrol-900 p-6 text-paper-light shadow-glow-teal sm:p-9">
+          <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-1/2" aria-hidden />
 
-        {/* Premium-Workshop-Reihe (hervorgehoben) */}
-        <Reveal delay={0.1}>
-          <div className="relative flex h-full flex-col overflow-hidden rounded-card border border-teal-400/30 bg-petrol-900 p-7 text-paper-light shadow-glow-teal">
-            <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-1/2" aria-hidden />
-            <div className="relative flex items-center justify-between">
-              <h3 className="font-serif text-xl font-medium">Workshop-Reihe</h3>
-              <span className="rounded-full bg-teal-500 px-3 py-1 text-xs font-semibold text-paper-light">
-                Empfohlen
-              </span>
+          <div className="relative grid gap-4 sm:grid-cols-2">
+            {/* Jährlich (empfohlen) */}
+            <div className="rounded-card border border-teal-400/40 bg-petrol-800/60 p-5">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium">Jährlich</span>
+                <span className="rounded-full bg-teal-500 px-3 py-1 text-xs font-semibold text-paper-light">
+                  Empfohlen
+                </span>
+              </div>
+              <div className="mt-3 flex items-end gap-1.5">
+                <span className="font-serif text-4xl font-medium">{PRICING.yearly}&nbsp;€</span>
+                <span className="mb-1.5 text-sm text-paper/70">/ Jahr</span>
+              </div>
+              <p className="mt-2 text-xs leading-relaxed text-paper/70">
+                Entspricht rund {PRICING.yearlyPerMonth}&nbsp;€ im Monat. Du sparst rund{" "}
+                {PRICING.yearlySaving}&nbsp;€ gegenüber monatlicher Zahlung.
+              </p>
             </div>
-            <div className="relative mt-4 flex items-end gap-2">
-              <span className="font-serif text-4xl font-medium">800&nbsp;€</span>
-              <span className="mb-1.5 text-sm text-paper/70">einmalig</span>
+
+            {/* Monatlich */}
+            <div className="rounded-card border border-line-onDark p-5">
+              <span className="text-sm font-medium">Monatlich</span>
+              <div className="mt-3 flex items-end gap-1.5">
+                <span className="font-serif text-4xl font-medium">{PRICING.monthly}&nbsp;€</span>
+                <span className="mb-1.5 text-sm text-paper/70">/ Monat</span>
+              </div>
+              <p className="mt-2 text-xs leading-relaxed text-paper/70">
+                Gleicher Inhalt, volle Flexibilität.
+              </p>
             </div>
-            <ul className="relative mt-6 space-y-3">
-              {WORKSHOP.map((f) => (
-                <li key={f} className="flex gap-3 text-sm text-paper/90">
-                  <Check onDark />
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <div className="relative flex-1" />
-            <CTAButton href={SKOOL_URL} variant="onDark" className="relative mt-7 w-full">
-              Workshop-Reihe sichern
+          </div>
+
+          <ul className="relative mt-7 grid gap-2.5 sm:grid-cols-2">
+            {INCLUDED.map((f) => (
+              <li key={f} className="flex gap-3 text-sm text-paper/90">
+                <span aria-hidden className="mt-0.5 shrink-0 text-teal-300">
+                  <MedIcon name="check" className="h-[17px] w-[17px]" strokeWidth={2} />
+                </span>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <div className="relative mt-8 flex flex-col gap-3 sm:flex-row">
+            <CTAButton href={SKOOL_URL} variant="onDark" size="lg" className="w-full sm:flex-1">
+              Jetzt Platz sichern
               <MedIcon name="arrowRight" className="h-4 w-4" />
             </CTAButton>
+            <CTAButton
+              href="/programm"
+              variant="onDarkGhost"
+              size="lg"
+              external={false}
+              className="w-full sm:w-auto"
+            >
+              Alle Details ansehen
+            </CTAButton>
           </div>
-        </Reveal>
-      </div>
-
-      <Reveal delay={0.15}>
-        <div className="mt-8 text-center">
-          <CTAButton href="/programm" variant="ghost" external={false}>
-            Alle Details &amp; Inhalte ansehen
-            <MedIcon name="arrowRight" className="h-4 w-4" />
-          </CTAButton>
+          <p className="relative mt-4 text-center text-xs text-paper/60">
+            Anmeldung &amp; Zahlung sicher über Skool · keine versteckten Kosten
+          </p>
         </div>
       </Reveal>
     </Section>

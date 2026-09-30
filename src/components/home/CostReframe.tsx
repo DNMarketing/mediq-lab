@@ -1,10 +1,11 @@
+import { PRICING } from "@/lib/config";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 
 /**
  * Dunkles Wert-/Stakes-Band (ersetzt das frühere Platzhalter-„in Zahlen"-Band).
  * Ehrliches Preis-Argument statt erfundener Statistiken: reale Kosten eines
- * Auslands-Wiederholungsjahrs gegen den Einstiegspreis.
+ * Wiederholungsjahrs gegen den Jahrespreis der Mitgliedschaft.
  */
 export function CostReframe() {
   return (
@@ -20,12 +21,12 @@ export function CostReframe() {
             </span>
 
             <p className="mt-7 font-serif text-[1.9rem] font-medium leading-[1.18] tracking-[-0.01em] text-paper-light sm:text-[2.5rem]">
-              Ein verlorenes Jahr im Ausland:{" "}
-              <span className="whitespace-nowrap text-teal-300">10.000 bis 15.000 €.</span>
+              Ein verlorenes Jahr:{" "}
+              <span className="whitespace-nowrap text-teal-300">10.000 bis 20.000 €.</span>
             </p>
             <p className="mt-3 font-serif text-[1.9rem] font-medium leading-[1.18] tracking-[-0.01em] text-paper-light sm:text-[2.5rem]">
-              Dein Lernsystem:{" "}
-              <span className="whitespace-nowrap text-copper-300">ab 20 € im Monat.</span>
+              Ein Jahr medIQ lab:{" "}
+              <span className="whitespace-nowrap text-copper-300">{PRICING.yearly} €.</span>
             </p>
 
             <p className="mx-auto mt-7 max-w-lg text-[1.05rem] leading-relaxed text-paper/75">

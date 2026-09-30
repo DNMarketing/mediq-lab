@@ -6,17 +6,18 @@ import { EditorialImage } from "../ui/EditorialImage";
 import { MedIcon, type IconName } from "../ui/MedIcon";
 
 /**
- * Workshop-Module ("Was du bekommst"), editoriale Liste mit Stagger-Animation
- * und Teal-Glow-Hover.
- * TODO: Modul-Titel & -Inhalte final befüllen.
+ * Was in der Mitgliedschaft steckt ("Was du bekommst"), editoriale Liste mit
+ * Stagger-Animation und Teal-Glow-Hover.
+ * TODO: Titel & Inhalte gegen den finalen Content-Plan abgleichen.
  */
 const MODULES: { icon: IconName; title: string; body: string }[] = [
-  { icon: "structure", title: "Lernsystematik", body: "Dein persönliches Lernsystem, von der Stoffplanung bis zur Wochenstruktur, die wirklich durchhält." },
+  { icon: "structure", title: "Lernsystematik & Wochenstruktur", body: "Dein persönliches Lernsystem, von der Stoffplanung bis zur Wochenstruktur, die neben Klinik und Nebenjob wirklich durchhält." },
   { icon: "repeat", title: "Anki & Spaced Repetition", body: "Karteikarten richtig bauen und einsetzen. Einmal lernen, bis zum Examen behalten." },
   { icon: "exam", title: "Prüfungsstrategie & Altfragen", body: "Altfragen-Muster lesen, Schwerpunkte erkennen, gezielt das Prüfungsrelevante lernen." },
-  { icon: "clock", title: "Zeitmanagement", body: "Prioritäten setzen, Aufschieben durchbrechen, Lernzeit schützen, auch neben Klinik und Nebenjob." },
-  { icon: "milestone", title: "Physikum- & Staatsexamen-Prep", body: "Strukturierte Lernpläne für die großen Hürden, mit klarem Countdown statt Last-Minute-Panik." },
-  { icon: "mind", title: "Mentale Belastung", body: "Prüfungsangst, Druck und Selbstzweifel begegnen, mit Werkzeugen, die im Ernstfall funktionieren." },
+  { icon: "milestone", title: "Mündliche Prüfungssimulation", body: "Die mündliche Prüfung unter echten Bedingungen proben: echte Fragen, Zeitdruck, ehrliches Feedback, bevor es drauf ankommt." },
+  { icon: "mind", title: "KI-Lernapp & Lernzettel", body: "Unsere eigene KI-Lernapp zum Abfragen und Wiederholen plus fertige Lernzettel zu prüfungsrelevanten Themen." },
+  { icon: "clock", title: "Mentale Belastung & Coaching", body: "Prüfungsangst, Druck und Selbstzweifel begegnen, mit Coaching und Werkzeugen, die im Ernstfall funktionieren." },
+  { icon: "milestone", title: "Vorträge von Ärzt:innen", body: "Einblicke aus der Praxis: Ärztinnen und Ärzte erzählen, worauf es später wirklich ankommt, und beantworten deine Fragen." },
   { icon: "community", title: "Community & Accountability", body: "Lerngruppen, Austausch und Verbindlichkeit, damit du dranbleibst, auch wenn die Motivation schwankt." },
 ];
 
@@ -30,11 +31,12 @@ export function Modules() {
             <Reveal>
               <Eyebrow>Was du bekommst</Eyebrow>
               <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">
-                Die Workshop-Module
+                Alles, was in der Mitgliedschaft steckt
               </h2>
               <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">
-                Ein durchdachter Pfad, vom Lernsystem bis zum Examen. Jedes Modul löst
-                ein konkretes Problem im Studienalltag.
+                Es bleibt nicht beim Lernen. Workshops, Lernzettel, KI-Lernapp,
+                Prüfungssimulationen und Vorträge aus der Praxis, alles in einem Preis.
+                Jeder Baustein löst ein konkretes Problem im Studienalltag.
               </p>
             </Reveal>
             <Reveal delay={0.1}>

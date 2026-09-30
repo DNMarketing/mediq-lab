@@ -27,7 +27,7 @@ const PAINS = [
   },
   {
     title: "Hohe Studiengebühren im Ausland",
-    body: "An Privat- und Auslands-Unis kostet ein Wiederholungsjahr schnell 10.000 bis 15.000 €, zusätzlich.",
+    body: "An Privat- und Auslands-Unis kostet ein Wiederholungsjahr schnell 10.000 bis 20.000 €, zusätzlich.",
   },
 ];
 

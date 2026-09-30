@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
+import { PRICING } from "@/lib/config";
 import { Section, SectionHeading } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import { CTAButton } from "../ui/CTAButton";
@@ -10,20 +11,20 @@ import { MedIcon } from "../ui/MedIcon";
 /** Kompakte Einwand-FAQ auf der Startseite: nimmt Kaufbremsen direkt vor dem CTA. */
 const FAQS = [
   {
-    q: "Lohnt sich der Preis der Workshop-Reihe wirklich?",
-    a: "Rechne ehrlich gegen: Ein verlorenes Semester kostet Monate an Miete und Lebenshaltung, im Ausland kommt ein Wiederholungsjahr von 10.000 bis 15.000 € dazu. Gemessen daran rechnen sich die 800 € schon, wenn sie dir ein einziges verlorenes Semester ersparen.",
+    q: "Lohnt sich der Preis wirklich?",
+    a: `Rechne ehrlich gegen: Ein verlorenes Semester kostet Monate an Miete und Lebenshaltung, an Privat- und Auslands-Unis kommt ein Wiederholungsjahr von 10.000 bis 20.000 € dazu. Gemessen daran rechnen sich ${PRICING.yearly} € im Jahr schon, wenn sie dir ein einziges verlorenes Semester ersparen.`,
   },
   {
     q: "Bekomme ich „garantiert bestehen“?",
     a: "Nein, und jeder, der das verspricht, ist unseriös. Bestehen hängt von dir ab. Was wir liefern, ist ein erprobtes System und eine Community, die deine Chancen messbar verbessern, indem du klüger statt nur härter lernst.",
   },
   {
-    q: "Funktioniert das auch für Studierende in Deutschland?",
-    a: "Ja. medIQ lab ist auf das Studium im Ausland ausgerichtet, aber die Methoden sind unabhängig von Standort und Curriculum. Active Recall, Spaced Repetition und Prüfungsstrategie funktionieren an einer deutschen Uni genauso wie in Ungarn oder Österreich.",
+    q: "Ich studiere in Deutschland, passt das?",
+    a: "Ja, ausdrücklich. medIQ lab ist für Medizinstudierende in Deutschland und im EU-Ausland gebaut. Die Methoden sind unabhängig von Standort und Curriculum, und Lernzettel, KI-Lernapp, Prüfungssimulationen und Community nutzt du online.",
   },
   {
     q: "Wie laufen Anmeldung und Zahlung ab?",
-    a: "Vollständig und sicher über Skool. Du klickst auf einen Button, landest in der medIQ lab Community und wählst dort Community-Abo oder Workshop-Reihe. Diese Website wickelt keine Zahlung ab.",
+    a: "Vollständig und sicher über Skool. Du klickst auf einen Button, landest in der medIQ lab Community und wählst dort jährliche oder monatliche Zahlung. Diese Website wickelt keine Zahlung ab.",
   },
 ];
 

@@ -50,7 +50,7 @@ export function Hero() {
 
             <motion.div variants={item} className="eyebrow mb-6">
               <span className="rule-copper" aria-hidden />
-              Für Medizinstudierende im Ausland
+              Für Medizinstudierende in Deutschland &amp; im Ausland
             </motion.div>
 
             <motion.h1
@@ -68,9 +68,9 @@ export function Hero() {
               variants={item}
               className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"
             >
-              Fundierte Lernmethodik, klare Prüfungsstrategie und eine Community, die
-              dich trägt. Damit dir im Ausland kein teures Wiederholungsjahr
-              dazwischenkommt.
+              Fundierte Lernmethodik, klare Prüfungsstrategie, eigene KI-Lernapp und
+              eine Community, die dich trägt. Damit dir kein teures Wiederholungsjahr
+              dazwischenkommt, egal ob du in Deutschland oder im Ausland studierst.
             </motion.p>
 
             <motion.div
@@ -88,7 +88,7 @@ export function Hero() {
             </motion.div>
 
             <motion.p variants={item} className="mt-6 text-sm text-ink-mute">
-              Für Medizinstudierende an Auslands-Unis in der EU · Start über Skool · jederzeit kündbar
+              Für Medizinstudierende in Deutschland &amp; im EU-Ausland · Start über Skool · jährlich oder monatlich
             </motion.p>
           </motion.div>
 
