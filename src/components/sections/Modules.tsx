@@ -1,4 +1,4 @@
-import { PILLARS } from "@/lib/pillars";
+import { FORMATS } from "@/lib/formats";
 import { IMAGES } from "@/lib/images";
 import { Section, Eyebrow } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
@@ -7,8 +7,9 @@ import { EditorialImage } from "../ui/EditorialImage";
 import { MedIcon } from "../ui/MedIcon";
 
 /**
- * Was in der Mitgliedschaft steckt: die vier Säulen mit den konkreten
- * Inhalten aus dem Content-Plan, plus KI-Lernapp als Extra-Callout.
+ * Was in der Mitgliedschaft steckt: die vier Formate aus dem Content-Plan
+ * (Workshops, Videoreihen, Live Events, Downloads), plus KI-Lernapp als
+ * Extra-Callout. Die inhaltlichen vier Säulen stehen auf /methode.
  */
 export function Modules() {
   return (
@@ -20,12 +21,12 @@ export function Modules() {
             <Reveal>
               <Eyebrow>Was du bekommst</Eyebrow>
               <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">
-                Vier Säulen, alles in einer Mitgliedschaft
+                Alles, was in der Mitgliedschaft steckt
               </h2>
               <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">
-                Es bleibt nicht beim Lernen. Workshops, Videoreihen, wöchentliche Live
-                Events und fertige Downloads, dazu unsere eigene KI-Lernapp. Alles in
-                einem Preis.
+                So werden die vier Säulen konkret: Workshop-Reihe, Videoreihen,
+                wöchentliche Live Events und fertige Downloads, dazu unsere eigene
+                KI-Lernapp. Alles in einem Preis.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -47,10 +48,10 @@ export function Modules() {
           </div>
         </div>
 
-        {/* Die vier Säulen mit Inhalten */}
+        {/* Die vier Formate mit Inhalten */}
         <div className="lg:col-span-8">
           <Stagger as="ul" className="grid gap-3 sm:grid-cols-2">
-            {PILLARS.map((p, i) => (
+            {FORMATS.map((p, i) => (
               <StaggerItem as="li" key={p.title}>
                 <div className="group flex h-full flex-col rounded-card border border-line bg-paper-light p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:shadow-glow-teal-sm">
                   <div className="flex items-center justify-between">

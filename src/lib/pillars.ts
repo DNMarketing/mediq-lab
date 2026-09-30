@@ -1,10 +1,12 @@
 import type { IconName } from "@/components/ui/MedIcon";
 
 /**
- * Die vier Säulen von medIQ lab, 1:1 aus dem „Content Plan MedIQ Community"
- * der Gründerinnen (Stand 2026-09-30): Workshop-Reihe, Videoreihen,
- * Live Events, Downloads. Einzige Quelle für Startseite (MethodTeaser),
- * /methode (MethodPrinciples), /programm (Modules) und /ueber (PillarGrid).
+ * Die vier Säulen des Studienerfolgs, wie medIQ lab sie auf Instagram
+ * (@mediq.lab, Posts „Säule 1–4" + „Eine Idee wird zum Konzept") definiert:
+ * Lernsystem, Prüfungsstrategie, Stress & Resilienz, Netzwerk.
+ * Einzige Quelle für Startseite (MethodTeaser), /methode (MethodPrinciples)
+ * und /ueber (PillarGrid). Die Formate (Workshops, Videos, Live Events,
+ * Downloads) liegen getrennt in `lib/formats.ts`.
  */
 export type Pillar = {
   icon: IconName;
@@ -14,66 +16,69 @@ export type Pillar = {
   short: string;
   /** Langfassung für die dunkle Methoden-Sektion auf /methode. */
   body: string;
-  /** Konkrete Inhalte aus dem Content-Plan (/programm, /methode). */
+  /** Womit die Säule konkret eingelöst wird (Formate aus dem Content-Plan). */
   items: string[];
 };
 
 export const PILLARS: Pillar[] = [
   {
-    icon: "mind",
-    title: "Workshop-Reihe",
-    sub: "Etwa zweimal pro Semester, live",
+    icon: "structure",
+    title: "Lernsystem",
+    sub: "Säule 1",
     short:
-      "Live-Workshops zu Lernstrategien, Stress & Resilienz und Finanzen. Das Fundament, auf dem alles andere aufbaut.",
+      "Ein individuelles Lernsystem, das zu deinem Studienalltag passt: klare Strukturen, eingeplante Erholung, regelmäßige Reflexion.",
     body:
-      "Das Fundament: In den Workshops lernst du, wie Lernen nachweislich funktioniert, Active Recall, Spaced Repetition, Prüfungsstrategie, und setzt es direkt auf deinen Stoff um. Dazu kommen Workshops zu Stress & Resilienz und zu Finanzen, Versicherungen und allem, was das Studium sonst noch mitbringt. Etwa zweimal pro Semester, live.",
+      "Ein nachhaltiges Lernsystem ist die Grundlage für langfristigen Studienerfolg. Es geht nicht nur darum, was du lernst, sondern wie du dein Lernen strukturierst, planst und an neue Herausforderungen anpasst. Wir helfen dir, ein Lernsystem zu entwickeln, das zu deinem Alltag passt: klare Lernstrukturen, eingeplante Erholungsphasen und regelmäßige Reflexion, damit dein Pensum langfristig effektiv und gesund bleibt.",
     items: [
-      "2 bis 3 Workshops zu Lernstrategien",
-      "Workshop Stress & Resilienz",
-      "Workshop Finanzen, Versicherungen & Co.",
+      "Lernstrategie-Workshops",
+      "Videoreihe Lernstrategien & Lernapps",
+      "Lernplanerstellung live",
+      "Semesterplaner",
     ],
   },
   {
-    icon: "play",
-    title: "Videoreihen",
-    sub: "Ergänzend zu jedem Workshop",
+    icon: "exam",
+    title: "Prüfungsstrategie",
+    sub: "Säule 2",
     short:
-      "Videoreihen, die jedes Workshop-Thema vertiefen: Lernstrategien, Lernapps, Resilienz, Finanzen. Jederzeit abrufbar.",
+      "Ein strukturierter Prüfungsfahrplan mit realistischen Etappen, gezielten Wiederholungen und Simulation, bevor es ernst wird.",
     body:
-      "Zu jedem Workshop gibt es eine Videoreihe, die das Thema vertieft: Lernstrategien, Lernapps und die Optimierung deines Studiums, Stress & Resilienz, Finanzen und Versicherungen. Du schaust, wann es in deinen Wochenplan passt, und kannst jederzeit zurückspringen.",
+      "Eine erfolgreiche Prüfungsvorbereitung beginnt lange vor dem Prüfungstag. Eine klare Strategie hilft, den Stoff sinnvoll zu priorisieren, den Überblick zu behalten und Wissen zum richtigen Zeitpunkt sicher abzurufen. Gemeinsam entwickeln wir deinen Prüfungsfahrplan mit realistischen Etappenzielen, planen Wiederholungen gezielt und passen die Strategie laufend an deinen Stand an.",
     items: [
-      "Lernstrategien, Lernapps & Optimierung des Studiums",
-      "Stress & Resilienz",
-      "Finanzen, Versicherungen & Co.",
+      "Prüfungsfahrplan & Altfragen-Logik",
+      "Mündliche Prüfungssimulation",
+      "Live-Quiz, z. B. Anatomie",
+      "Klausur-Leitfaden",
+    ],
+  },
+  {
+    icon: "mind",
+    title: "Stress & Resilienz",
+    sub: "Säule 3",
+    short:
+      "Effizient lernen, ohne deine mentale Gesundheit zu gefährden: Umgang mit Prüfungsangst, aktive Pausen, Mindset-Tools.",
+    body:
+      "Riesige Stoffmengen in kurzer Zeit, Versagensängste, oft weit weg von Familie und gewohntem Umfeld, und das Gefühl, nie genug getan zu haben. Wir vermitteln Methoden, mit denen du effizient lernst, ohne deine mentale Gesundheit zu gefährden: resilient mit Prüfungsangst und Rückschlägen umgehen, aktive Pausen und Mindset-Tools fest im Alltag verankern. Kein kurzfristiges Durchpowern, sondern gesund und motiviert bis zur Approbation.",
+    items: [
+      "Workshop Stress & Resilienz",
+      "Videoreihe Stress & Resilienz",
+      "Coaching bei Prüfungsangst",
+      "Aktive Pausen & Mindset-Tools",
     ],
   },
   {
     icon: "community",
-    title: "Live Events",
-    sub: "Jede Woche",
+    title: "Netzwerk",
+    sub: "Säule 4",
     short:
-      "Study Together und Community-Café jede Woche, dazu Q&As, Live-Quiz, Gastvorträge von Ärzt:innen und mündliche Prüfungssimulation.",
+      "Eine Community aus Medizinstudierenden in Deutschland und an EU-Unis, die sich pusht, Wissen teilt und Tipps aus höheren Semestern weitergibt.",
     body:
-      "Hier passiert der Alltag: Study Together mindestens einmal pro Woche, Community-Café zum lockeren Austausch, Lernplanerstellung, Q&As und Live-Quiz. Dazu Gastvorträge von Ärztinnen und Ärzten, mündliche Prüfungssimulationen unter echten Bedingungen und eine High-Yield Hour zu den Themen, die die Community gerade beschäftigen.",
+      "Welche Fachrichtung passt zu mir? Wo macht man gute Famulaturen oder das PJ? Ohne Kontakte bleibt das oft Ratschlag-Lotterie, und ein Studium im Ausland ohne gewachsenes Umfeld bringt zusätzliche Hürden. Wir schaffen eine Community aus Medizinstudierenden in Deutschland und an EU-Universitäten, die sich gegenseitig pusht, motiviert und Wissen teilt: in Lern-Sessions, Austauschgruppen und mit erprobten Tipps aus höheren Semestern.",
     items: [
-      "Study Together, mindestens 1× pro Woche",
-      "Community-Café, 1× pro Woche",
-      "Lernplanerstellung & Q&As",
-      "Live-Quiz, z. B. Anatomie",
+      "Study Together, jede Woche",
+      "Community-Café, jede Woche",
       "Gastvorträge von Ärztinnen & Ärzten",
-      "Mündliche Prüfungssimulation",
-      "High-Yield Hour zu Themen aus der Community",
-      "Klinische Fallbesprechungen (folgt)",
+      "High-Yield Hour & Q&As",
     ],
-  },
-  {
-    icon: "structure",
-    title: "Downloads",
-    sub: "Sofort nutzbar",
-    short:
-      "Semesterplaner, Lernzettel und Klausur-Leitfaden, fertig zum Loslegen. Material, das dir Stunden spart.",
-    body:
-      "Fertiges Material, das dir Stunden spart: ein Semesterplaner, Lernzettel zu prüfungsrelevanten Themen (der erste: Muskeln und Skelett) und ein Klausur-Leitfaden. Sofort nutzbar, laufend erweitert.",
-    items: ["Semesterplaner", "Lernzettel, Start: Muskeln & Skelett", "Klausur-Leitfaden"],
   },
 ];

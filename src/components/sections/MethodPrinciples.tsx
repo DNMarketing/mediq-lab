@@ -5,9 +5,9 @@ import { Stagger, StaggerItem } from "../ui/Motion";
 import { AnatomyBrain } from "../ui/Anatomy";
 
 /**
- * Die vier Säulen von medIQ lab als dramatische DUNKLE Sektion. Zentraler
- * Autoritäts-/Trust-Anker: die Methode selbst trägt das Vertrauen.
- * Inhalte zentral in `lib/pillars.ts`.
+ * Die vier Säulen des Studienerfolgs (Lernsystem, Prüfungsstrategie,
+ * Stress & Resilienz, Netzwerk) als dramatische DUNKLE Sektion. Zentraler
+ * Autoritäts-/Trust-Anker. Inhalte zentral in `lib/pillars.ts`.
  * Hintergrund: animiertes Gehirn-Line-Art (zeichnet sich) + Teal-Glow.
  */
 export function MethodPrinciples() {
@@ -29,13 +29,13 @@ export function MethodPrinciples() {
             Die vier Säulen
           </div>
           <h2 className="mt-5 max-w-2xl font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-paper-light sm:text-[2.7rem]">
-            Vier Säulen, ein System, das trägt.
+            Dein Studienerfolg steht auf vier Säulen.
           </h2>
           <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-paper/70">
-            medIQ lab basiert nicht auf Motivationssprüchen, sondern auf lernpsychologisch
-            belegten Methoden, die in Workshops, Videoreihen, wöchentlichen Live Events
-            und fertigem Material zu einem System werden. Das ist der Unterschied
-            zwischen härter lernen und klüger lernen.
+            Lernsystem, Prüfungsstrategie, Stress &amp; Resilienz und Netzwerk. Sie bilden
+            die Grundlage für nachhaltigen Studienerfolg, und wir helfen dir, jede
+            einzelne gezielt zu verbessern. Das ist der Unterschied zwischen härter
+            lernen und klüger lernen.
           </p>
         </Reveal>
 

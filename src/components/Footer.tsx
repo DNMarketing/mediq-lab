@@ -19,6 +19,9 @@ export function Footer() {
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div className="max-w-xs">
             <Logo />
+            <p className="mt-3 font-serif text-sm italic text-petrol-700">
+              master your exams. become a physician.
+            </p>
             <p className="mt-4 leading-relaxed text-ink-soft">
               Das Lern-Ökosystem für Medizinstudierende. Effizienter lernen, sicher
               bestehen, und teure Umwege vermeiden.

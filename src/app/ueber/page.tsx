@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { SKOOL_URL } from "@/lib/config";
 import { img } from "@/lib/images";
 import { PageIntro } from "@/components/ui/PageIntro";
 import { CTAButton } from "@/components/ui/CTAButton";
@@ -13,8 +12,46 @@ import { PillarGrid } from "@/components/sections/PillarGrid";
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "Warum es medIQ lab gibt: Zu viele fähige Medizinstudierende verlieren Semester, nicht aus Faulheit, sondern aus Mangel an Methode. Unsere Mission, unsere vier Säulen, unsere Prinzipien.",
+    "Wir stellen uns vor: Faith und Hannah, zwei Medizinstudentinnen mit einer gemeinsamen Mission, das Medizinstudium strukturierter, effektiver und ein Stück stressfreier zu machen. Unsere Mission, unsere vier Säulen, unsere Prinzipien.",
 };
+
+/** Aus dem Instagram-Post „Wir stellen uns vor" (@mediq.lab). */
+const FOUNDERS: {
+  name: string;
+  file: string;
+  year: string;
+  subjects: string[];
+  motivation: string;
+}[] = [
+  {
+    name: "Hannah",
+    file: "hannah.jpg",
+    year: "4. Studienjahr",
+    subjects: ["Physiologie", "Simulation Medicine"],
+    motivation:
+      "Meine Motivation ist die Vision, das Medizinstudium durch gezielte Unterstützung stressfreier, effizienter und erfolgreicher zu meistern. Ich möchte anderen Studierenden genau die Werkzeuge und das Wissen an die Hand geben, die ich mir selbst zu Beginn meines Studiums gewünscht hätte. Denn niemand sollte sich im extremen Lernalltag alleine durchkämpfen müssen.",
+  },
+  {
+    name: "Faith",
+    file: "faith.jpg",
+    year: "4. Studienjahr",
+    subjects: ["Simulation Medicine", "Pathophysiologie"],
+    motivation:
+      "Meine Motivation ist es, Studierende so zu unterstützen, dass möglichst wenige von ihnen durch Prüfungen fallen. Gerade im ersten Studienjahr testen viele mühsam verschiedene Ansätze aus. Wer früh die passende Lernstrategie findet, senkt die eigene Durchfallquote, und spart wertvolle Zeit, Geld und Nerven.",
+  },
+];
+
+const MISSION: { icon: IconName; text: string }[] = [
+  { icon: "structure", text: "Gemeinsam mit dir deinen eigenen Lernweg finden." },
+  {
+    icon: "community",
+    text: "Einen Raum schaffen, in dem ihr euch gegenseitig unterstützt und voneinander lernt.",
+  },
+  {
+    icon: "clock",
+    text: "Eine Study-Life-Balance schaffen, die später im Beruf zur Work-Life-Balance wird.",
+  },
+];
 
 const VALUES: { icon: IconName; title: string; body: string }[] = [
   {
@@ -44,18 +81,110 @@ export default function UeberPage() {
     <>
       <PageIntro
         align="center"
-        eyebrow="Über medIQ lab"
+        eyebrow="Wir stellen uns vor"
         title={
           <>
-            Damit kluge Köpfe nicht{" "}
-            <span className="text-petrol-700 italic">an der Methode scheitern.</span>
+            Studieren muss man{" "}
+            <span className="text-petrol-700 italic">nicht alleine.</span>
           </>
         }
-        lead="medIQ lab ist aus einer einfachen Beobachtung entstanden: Die meisten, die im Medizinstudium straucheln, sind nicht zu wenig fähig oder zu faul. Ihnen fehlt ein System, das trägt. Genau das wollen wir liefern, in Deutschland und im Ausland."
+        lead="Hinter medIQ lab stehen Faith und Hannah, zwei Medizinstudentinnen mit einer gemeinsamen Idee: das Medizinstudium strukturierter, effektiver und vor allem ein Stück stressfreier zu machen."
       />
 
-      {/* Mission / Belief */}
+      {/* Wer wir sind: gemeinsames Foto + Kurzvorstellung */}
       <Section tone="paper">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-6">
+            <Reveal>
+              <div className="overflow-hidden rounded-card border border-line shadow-lift">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img("team/faith-hannah.jpg")}
+                  alt="Faith und Hannah, die Gründerinnen von medIQ lab"
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[3/2] w-full object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
+          <div className="lg:col-span-6">
+            <Reveal delay={0.05}>
+              <Eyebrow>Wer wir sind</Eyebrow>
+              <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
+                Faith und Hannah
+              </h2>
+              <div className="mt-5 max-w-2xl space-y-4 leading-relaxed text-ink-soft">
+                <p>
+                  Wir sind zwei Medizinstudentinnen mit der gleichen Mission: Studierenden
+                  das Lernen einfacher, strukturierter und effektiver zu machen.
+                </p>
+                <p>
+                  Wir wissen aus eigener Erfahrung, wie sich das Medizinstudium anfühlt,
+                  und haben daraus ein System gebaut, das wirklich trägt: vom Lernsystem
+                  über die Prüfungsstrategie bis zur Community, die den Unterschied auf
+                  der langen Strecke macht.
+                </p>
+                <blockquote className="border-l-2 border-copper-500 pl-6">
+                  <p className="pull-quote">
+                    Mehr als Lernen.{" "}
+                    <span className="italic text-petrol-700">Eine Community.</span>
+                  </p>
+                </blockquote>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* Einzelprofile */}
+        <Stagger as="ul" className="mt-14 grid gap-5 md:grid-cols-2">
+          {FOUNDERS.map((f) => (
+            <StaggerItem as="li" key={f.name}>
+              <article className="flex h-full flex-col gap-6 rounded-card border border-line bg-paper-light p-6 shadow-soft sm:flex-row sm:p-7">
+                <div className="shrink-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={img("team/" + f.file)}
+                    alt={`${f.name}, Gründerin von medIQ lab`}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-40 w-32 rounded-card object-cover object-top sm:h-44 sm:w-36"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-serif text-2xl font-medium text-ink">{f.name}</h3>
+                  <dl className="mt-3 space-y-1.5 text-sm text-ink-soft">
+                    <div className="flex gap-2">
+                      <dt className="shrink-0 font-medium text-ink">Studienjahr:</dt>
+                      <dd>{f.year}</dd>
+                    </div>
+                    <div className="flex gap-2">
+                      <dt className="shrink-0 font-medium text-ink">Lieblingsfächer:</dt>
+                      <dd>{f.subjects.join(", ")}</dd>
+                    </div>
+                  </dl>
+                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-copper-600">
+                    Das motiviert mich
+                  </p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{f.motivation}</p>
+                </div>
+              </article>
+            </StaggerItem>
+          ))}
+        </Stagger>
+
+        <Reveal delay={0.1}>
+          <div className="mt-8 text-center">
+            <CTAButton href="/team" variant="ghost" external={false}>
+              Das ganze Team ansehen
+              <MedIcon name="arrowRight" className="h-4 w-4" />
+            </CTAButton>
+          </div>
+        </Reveal>
+      </Section>
+
+      {/* Mission */}
+      <Section tone="sand">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Reveal>
@@ -63,43 +192,47 @@ export default function UeberPage() {
               <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">
                 Weniger verlorene Semester. Mehr sichere Abschlüsse.
               </h2>
+              <p className="mt-5 max-w-md leading-relaxed text-ink-soft">
+                Jedes verlorene Semester kostet nicht nur Zeit, sondern Geld, Nerven und
+                oft ein Stück Selbstvertrauen. An Privat- und Auslands-Unis kommen
+                schnell Wiederholungsjahre von 10.000 bis 20.000&nbsp;€ dazu. Das muss
+                nicht sein.
+              </p>
             </Reveal>
           </div>
           <div className="lg:col-span-7">
-            <Reveal delay={0.05}>
-              <div className="max-w-2xl space-y-5 text-lg leading-relaxed text-ink-soft">
-                <p>
-                  Jedes verlorene Semester kostet nicht nur Zeit, sondern Geld, Nerven und
-                  oft ein Stück Selbstvertrauen. An Privat- und Auslands-Unis kommen schnell
-                  Wiederholungsjahre von 10.000 bis 20.000&nbsp;€ dazu. Das muss nicht sein.
+            <Stagger as="ul" className="space-y-3">
+              {MISSION.map((m) => (
+                <StaggerItem as="li" key={m.text}>
+                  <div className="flex items-start gap-4 rounded-card border border-line bg-paper-light p-5 shadow-soft">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-petrol-700 text-paper-light">
+                      <MedIcon name={m.icon} className="h-5 w-5" />
+                    </span>
+                    <p className="pt-2 text-lg leading-snug text-ink">{m.text}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
+            <Reveal delay={0.1}>
+              <blockquote className="mt-8 border-l-2 border-copper-500 pl-6">
+                <p className="pull-quote">
+                  Gute Medizin braucht Menschen, die durchhalten,{" "}
+                  <span className="italic text-petrol-700">nicht ausbrennen.</span>
                 </p>
-                <p>
-                  Wir glauben: Wer klüger lernt statt nur härter, kommt sicherer und
-                  gesünder durchs Studium. Deshalb bündelt medIQ&nbsp;lab bewährte
-                  Lernmethoden, klare Prüfungsstrategie, eine eigene KI-Lernapp und eine
-                  Community zu einem Ökosystem, das dich vom ersten Semester bis zum
-                  Examen begleitet.
-                </p>
-                <blockquote className="border-l-2 border-copper-500 pl-6">
-                  <p className="pull-quote">
-                    Gute Medizin braucht Menschen, die durchhalten,{" "}
-                    <span className="italic text-petrol-700">nicht ausbrennen.</span>
-                  </p>
-                </blockquote>
-              </div>
+              </blockquote>
             </Reveal>
           </div>
         </div>
       </Section>
 
-      {/* Die vier Säulen (gleicher Kern wie /programm) */}
-      <Section tone="sand">
+      {/* Die vier Säulen des Studienerfolgs */}
+      <Section tone="paper">
         <Reveal>
           <SectionHeading
             center
-            eyebrow="Was medIQ lab ist"
-            title="Vier Säulen, eine Mitgliedschaft"
-            subtitle="Es bleibt nicht beim Lernen. Workshop-Reihe, Videoreihen, wöchentliche Live Events und fertige Downloads, dazu unsere eigene KI-Lernapp, alles in einem Preis."
+            eyebrow="Unser Konzept"
+            title="Die vier Säulen des Studienerfolgs"
+            subtitle="Lernsystem, Prüfungsstrategie, Stress & Resilienz und Netzwerk. Sie bilden die Grundlage für nachhaltigen Studienerfolg, und wir helfen dir, jede einzelne gezielt zu verbessern."
           />
         </Reveal>
         <PillarGrid className="mt-12" />
@@ -114,7 +247,7 @@ export default function UeberPage() {
       </Section>
 
       {/* Werte */}
-      <Section tone="paper">
+      <Section tone="sand">
         <Reveal>
           <SectionHeading
             eyebrow="Was uns leitet"
@@ -137,50 +270,6 @@ export default function UeberPage() {
             </StaggerItem>
           ))}
         </Stagger>
-      </Section>
-
-      {/* Wer dahinter steht: Faith & Hannah */}
-      <Section tone="sand">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-6">
-            <Reveal>
-              <div className="overflow-hidden rounded-card border border-line shadow-lift">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img("team/faith-hannah.jpg")}
-                  alt="Faith und Hannah, das Gesicht von medIQ lab"
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-[3/2] w-full object-cover"
-                />
-              </div>
-            </Reveal>
-          </div>
-          <div className="lg:col-span-6">
-            <Reveal delay={0.05}>
-              <Eyebrow>Wer dahinter steht</Eyebrow>
-              <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.4rem]">
-                Faith und Hannah
-              </h2>
-              <div className="mt-5 max-w-2xl space-y-4 leading-relaxed text-ink-soft">
-                <p>
-                  Faith und Hannah sind Medizinstudentinnen und die Gründerinnen von
-                  medIQ&nbsp;lab. Sie wissen aus eigener Erfahrung, wie sich das
-                  Medizinstudium anfühlt, und haben daraus ein Lernsystem gebaut, das
-                  wirklich trägt: von der Lernmethode über die Prüfungsstrategie und die
-                  KI-Lernapp bis zur Community, die den Unterschied auf der langen
-                  Strecke macht.
-                </p>
-              </div>
-              <div className="mt-7">
-                <CTAButton href="/team" variant="secondary" external={false}>
-                  Das ganze Team ansehen
-                  <MedIcon name="arrowRight" className="h-4 w-4" />
-                </CTAButton>
-              </div>
-            </Reveal>
-          </div>
-        </div>
       </Section>
 
       <CTABand
