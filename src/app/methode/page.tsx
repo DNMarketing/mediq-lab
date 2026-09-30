@@ -98,7 +98,7 @@ export default function MethodePage() {
               <Reveal delay={0.1}>
                 <div className="mt-8">
                   <CTAButton href="/programm" external={false}>
-                    Alle Workshop-Module
+                    Alle Inhalte ansehen
                     <MedIcon name="arrowRight" className="h-4 w-4" />
                   </CTAButton>
                 </div>
