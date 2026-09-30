@@ -5,12 +5,12 @@ import { CTAButton } from "../ui/CTAButton";
 import { MedIcon } from "../ui/MedIcon";
 
 const INCLUDED = [
-  "Community, Lerngruppen & Q&A",
-  "Alle Workshops, kein Upsell",
-  "Fertige Lernzettel",
+  "Workshop-Reihe, etwa 2× pro Semester",
+  "Videoreihen zu Lernstrategien, Resilienz & Finanzen",
+  "Study Together & Community-Café, jede Woche",
+  "Gastvorträge von Ärzt:innen & Prüfungssimulation",
+  "Semesterplaner, Lernzettel & Klausur-Leitfaden",
   "Eigene KI-Lernapp",
-  "Mündliche Prüfungssimulationen",
-  "Vorträge von Ärzt:innen & Coaching",
 ];
 
 /** Kompakte Angebots-Section auf der Startseite: ein Produkt, zwei Zahlweisen. */
@@ -22,7 +22,7 @@ export function OfferTeaser() {
           center
           eyebrow="So kommst du rein"
           title="Ein Preis, alles drin"
-          subtitle="Keine Pakete, keine Upsells: eine Mitgliedschaft mit Workshops, Lernzetteln, KI-Lernapp, Prüfungssimulationen und Community. Du wählst nur, wie du zahlst."
+          subtitle="Keine Pakete, keine Upsells: eine Mitgliedschaft mit Workshops, Videoreihen, wöchentlichen Live Events, Downloads und KI-Lernapp. Du wählst nur, wie du zahlst."
         />
       </Reveal>
 

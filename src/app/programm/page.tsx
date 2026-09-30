@@ -12,7 +12,7 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Programm",
   description:
-    "Die medIQ lab Mitgliedschaft für Medizinstudierende in Deutschland und im EU-Ausland: Workshops, Lernzettel, KI-Lernapp, Prüfungssimulationen und Community, alles in einem Preis. Anmeldung und Inhalte laufen über Skool.",
+    "Die medIQ lab Mitgliedschaft für Medizinstudierende in Deutschland und im EU-Ausland: Workshop-Reihe, Videoreihen, wöchentliche Live Events, Downloads und KI-Lernapp, alles in einem Preis. Anmeldung und Inhalte laufen über Skool.",
 };
 
 const DnaVisual = (
@@ -37,7 +37,7 @@ export default function ProgrammPage() {
             <span className="text-petrol-700 italic">vom Lernsystem bis zum Examen.</span>
           </>
         }
-        lead="Eine Mitgliedschaft, alles drin: Workshops, Lernzettel, unsere eigene KI-Lernapp, mündliche Prüfungssimulationen, Vorträge von Ärzt:innen und eine Community, die dich trägt. Für Medizinstudierende in Deutschland und im EU-Ausland, ob privat oder staatlich."
+        lead="Eine Mitgliedschaft, alles drin: Workshop-Reihe, Videoreihen, wöchentliche Live Events wie Study Together und Community-Café, Gastvorträge von Ärzt:innen, mündliche Prüfungssimulationen, Downloads und unsere eigene KI-Lernapp. Für Medizinstudierende in Deutschland und im EU-Ausland, ob privat oder staatlich."
         visual={DnaVisual}
         actions={
           <>

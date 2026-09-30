@@ -33,8 +33,9 @@ export function MethodPrinciples() {
           </h2>
           <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-paper/70">
             medIQ lab basiert nicht auf Motivationssprüchen, sondern auf lernpsychologisch
-            belegten Methoden, einer klaren Prüfungsstrategie, eigenen Werkzeugen und einer
-            Community. Das ist der Unterschied zwischen härter lernen und klüger lernen.
+            belegten Methoden, die in Workshops, Videoreihen, wöchentlichen Live Events
+            und fertigem Material zu einem System werden. Das ist der Unterschied
+            zwischen härter lernen und klüger lernen.
           </p>
         </Reveal>
 
@@ -56,6 +57,16 @@ export function MethodPrinciples() {
                       </span>
                     </div>
                     <p className="mt-3 leading-relaxed text-paper/70">{p.body}</p>
+                    <ul className="mt-4 flex flex-wrap gap-2">
+                      {p.items.map((it) => (
+                        <li
+                          key={it}
+                          className="rounded-full border border-line-onDark px-3 py-1 text-xs text-paper/80"
+                        >
+                          {it}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </StaggerItem>
@@ -63,7 +74,7 @@ export function MethodPrinciples() {
           </Stagger>
           <Reveal delay={0.15}>
             <p className="mt-8 max-w-2xl border-t border-line-onDark pt-6 text-sm leading-relaxed text-paper/50">
-              Die Lernmethode stützt sich auf etablierte lernpsychologische Forschung,
+              Die Lernstrategie-Workshops stützen sich auf etablierte lernpsychologische Forschung,
               unter anderem zum Testing-Effekt (Karpicke &amp; Roediger) und zum verteilten
               Lernen (Cepeda et al.).
             </p>

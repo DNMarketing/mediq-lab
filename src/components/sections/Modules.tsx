@@ -1,26 +1,15 @@
+import { PILLARS } from "@/lib/pillars";
 import { IMAGES } from "@/lib/images";
 import { Section, Eyebrow } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import { Stagger, StaggerItem } from "../ui/Motion";
 import { EditorialImage } from "../ui/EditorialImage";
-import { MedIcon, type IconName } from "../ui/MedIcon";
+import { MedIcon } from "../ui/MedIcon";
 
 /**
- * Was in der Mitgliedschaft steckt ("Was du bekommst"), editoriale Liste mit
- * Stagger-Animation und Teal-Glow-Hover.
- * TODO: Titel & Inhalte gegen den finalen Content-Plan abgleichen.
+ * Was in der Mitgliedschaft steckt: die vier Säulen mit den konkreten
+ * Inhalten aus dem Content-Plan, plus KI-Lernapp als Extra-Callout.
  */
-const MODULES: { icon: IconName; title: string; body: string }[] = [
-  { icon: "structure", title: "Lernsystematik & Wochenstruktur", body: "Dein persönliches Lernsystem, von der Stoffplanung bis zur Wochenstruktur, die neben Klinik und Nebenjob wirklich durchhält." },
-  { icon: "repeat", title: "Anki & Spaced Repetition", body: "Karteikarten richtig bauen und einsetzen. Einmal lernen, bis zum Examen behalten." },
-  { icon: "exam", title: "Prüfungsstrategie & Altfragen", body: "Altfragen-Muster lesen, Schwerpunkte erkennen, gezielt das Prüfungsrelevante lernen." },
-  { icon: "milestone", title: "Mündliche Prüfungssimulation", body: "Die mündliche Prüfung unter echten Bedingungen proben: echte Fragen, Zeitdruck, ehrliches Feedback, bevor es drauf ankommt." },
-  { icon: "mind", title: "KI-Lernapp & Lernzettel", body: "Unsere eigene KI-Lernapp zum Abfragen und Wiederholen plus fertige Lernzettel zu prüfungsrelevanten Themen." },
-  { icon: "clock", title: "Mentale Belastung & Coaching", body: "Prüfungsangst, Druck und Selbstzweifel begegnen, mit Coaching und Werkzeugen, die im Ernstfall funktionieren." },
-  { icon: "milestone", title: "Vorträge von Ärzt:innen", body: "Einblicke aus der Praxis: Ärztinnen und Ärzte erzählen, worauf es später wirklich ankommt, und beantworten deine Fragen." },
-  { icon: "community", title: "Community & Accountability", body: "Lerngruppen, Austausch und Verbindlichkeit, damit du dranbleibst, auch wenn die Motivation schwankt." },
-];
-
 export function Modules() {
   return (
     <Section id="module" tone="paper">
@@ -31,12 +20,12 @@ export function Modules() {
             <Reveal>
               <Eyebrow>Was du bekommst</Eyebrow>
               <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">
-                Alles, was in der Mitgliedschaft steckt
+                Vier Säulen, alles in einer Mitgliedschaft
               </h2>
               <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">
-                Es bleibt nicht beim Lernen. Workshops, Lernzettel, KI-Lernapp,
-                Prüfungssimulationen und Vorträge aus der Praxis, alles in einem Preis.
-                Jeder Baustein löst ein konkretes Problem im Studienalltag.
+                Es bleibt nicht beim Lernen. Workshops, Videoreihen, wöchentliche Live
+                Events und fertige Downloads, dazu unsere eigene KI-Lernapp. Alles in
+                einem Preis.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -58,30 +47,62 @@ export function Modules() {
           </div>
         </div>
 
-        {/* Modul-Liste mit Stagger + Glow-Hover */}
+        {/* Die vier Säulen mit Inhalten */}
         <div className="lg:col-span-8">
           <Stagger as="ul" className="grid gap-3 sm:grid-cols-2">
-            {MODULES.map((m, i) => (
-              <StaggerItem as="li" key={m.title}>
-                <div className="group h-full rounded-card border border-line bg-paper-light p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:shadow-glow-teal-sm">
+            {PILLARS.map((p, i) => (
+              <StaggerItem as="li" key={p.title}>
+                <div className="group flex h-full flex-col rounded-card border border-line bg-paper-light p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:shadow-glow-teal-sm">
                   <div className="flex items-center justify-between">
                     <span className="flex h-12 w-12 items-center justify-center rounded-card border border-line bg-paper text-petrol-700 transition-colors group-hover:border-teal-400/40 group-hover:bg-teal-100 group-hover:text-teal-600">
-                      <MedIcon name={m.icon} className="h-6 w-6" />
+                      <MedIcon name={p.icon} className="h-6 w-6" />
                     </span>
                     <span className="step-num font-serif text-sm text-ink-mute">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <h3 className="mt-5 font-serif text-xl font-medium text-ink">{m.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{m.body}</p>
+                  <h3 className="mt-5 font-serif text-xl font-medium text-ink">{p.title}</h3>
+                  <span className="mt-1 text-xs uppercase tracking-[0.16em] text-teal-600">
+                    {p.sub}
+                  </span>
+                  <ul className="mt-4 space-y-2">
+                    {p.items.map((it) => (
+                      <li key={it} className="flex gap-2.5 text-sm leading-snug text-ink-soft">
+                        <span aria-hidden className="mt-0.5 shrink-0 text-teal-600">
+                          <MedIcon name="check" className="h-4 w-4" strokeWidth={2} />
+                        </span>
+                        {it}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </StaggerItem>
             ))}
           </Stagger>
+
+          {/* KI-Lernapp als Extra */}
+          <Reveal delay={0.1}>
+            <div className="mt-3 flex gap-4 rounded-card border border-teal-400/30 bg-teal-100/40 p-6">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-card bg-teal-100 text-teal-600">
+                <MedIcon name="repeat" className="h-6 w-6" />
+              </span>
+              <div>
+                <h3 className="font-serif text-xl font-medium text-ink">
+                  Plus: unsere eigene KI-Lernapp
+                </h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
+                  Abfragen, wiederholen, strukturieren: Die medIQ&nbsp;lab KI-Lernapp
+                  begleitet dich zwischen den Events und ist in der Mitgliedschaft
+                  enthalten.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-ink-mute">
-              Die vollständigen Inhalte, Lektionen und Materialien findest du im
-              geschützten Bereich, direkt in der medIQ&nbsp;lab Community auf Skool.
+              Alle Termine, Aufzeichnungen und Materialien findest du im geschützten
+              Bereich, direkt in der medIQ&nbsp;lab Community auf Skool.
             </p>
           </Reveal>
         </div>

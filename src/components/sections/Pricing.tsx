@@ -21,13 +21,14 @@ function Check({ onDark }: { onDark?: boolean }) {
 
 /** Ein Produkt, alles inklusive. Gilt für beide Zahlweisen. */
 const INCLUDED = [
-  "Community auf Skool: Austausch, Lerngruppen & Q&A",
-  "Alle Workshops: Lernsystem, Prüfungsstrategie, Zeitmanagement",
-  "Fertige Lernzettel zu prüfungsrelevanten Themen",
-  "Unsere eigene KI-Lernapp zum Abfragen & Wiederholen",
-  "Mündliche Prüfungssimulationen mit Feedback",
-  "Vorträge von Ärztinnen & Ärzten aus der Praxis",
-  "Coaching bei Prüfungsangst & mentaler Belastung",
+  "Workshop-Reihe: Lernstrategien, Stress & Resilienz, Finanzen",
+  "Videoreihen ergänzend zu jedem Workshop",
+  "Study Together & Community-Café, jede Woche",
+  "Q&As, Live-Quiz & Lernplanerstellung",
+  "Gastvorträge von Ärztinnen & Ärzten",
+  "Mündliche Prüfungssimulationen",
+  "Semesterplaner, Lernzettel & Klausur-Leitfaden",
+  "Unsere eigene KI-Lernapp",
 ];
 
 export function Pricing() {

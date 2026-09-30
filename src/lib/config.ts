@@ -24,7 +24,6 @@ export const NAV_LINKS = [
  * Stand 2026-09-30. Jährlich 399 € oder monatlich 49,99 €.
  * yearlyPerMonth/yearlySaving sind gerundete Einordnungen (399/12 ≈ 33,25;
  * 12 × 49,99 = 599,88 → rund 200 € Ersparnis).
- * TODO: klären, ob 399 € nur fürs erste Jahr gilt (danach gestaffelt?).
  */
 export const PRICING = {
   yearly: "399",

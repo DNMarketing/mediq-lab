@@ -14,7 +14,7 @@ import { CTABand } from "@/components/sections/CTABand";
 export const metadata: Metadata = {
   title: "Methode",
   description:
-    "Die Methode hinter medIQ lab: vier Säulen aus Lernmethode, Prüfungsstrategie, KI-Lernapp und Community, lernpsychologisch fundiert. Klüger lernen statt härter, in Deutschland und im Ausland.",
+    "Die Methode hinter medIQ lab: vier Säulen aus Workshop-Reihe, Videoreihen, Live Events und Downloads, lernpsychologisch fundiert. Klüger lernen statt härter, in Deutschland und im Ausland.",
 };
 
 const PRACTICE: { icon: IconName; title: string; body: string }[] = [

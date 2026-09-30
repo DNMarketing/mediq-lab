@@ -13,7 +13,7 @@ export function MethodTeaser() {
           center
           eyebrow="Die vier Säulen"
           title="Klüger lernen, nicht härter"
-          subtitle="medIQ lab steht auf vier Säulen: Lernmethode, Prüfungsstrategie, KI-Lernapp und Community. Keine Motivationssprüche, sondern ein System, das du lernen kannst."
+          subtitle="medIQ lab steht auf vier Säulen: Workshop-Reihe, Videoreihen, wöchentliche Live Events und Downloads. Keine Motivationssprüche, sondern ein System, das dich durchs Semester trägt."
         />
       </Reveal>
 

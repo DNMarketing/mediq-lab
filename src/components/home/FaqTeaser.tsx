@@ -20,7 +20,7 @@ const FAQS = [
   },
   {
     q: "Ich studiere in Deutschland, passt das?",
-    a: "Ja, ausdrücklich. medIQ lab ist für Medizinstudierende in Deutschland und im EU-Ausland gebaut. Die Methoden sind unabhängig von Standort und Curriculum, und Lernzettel, KI-Lernapp, Prüfungssimulationen und Community nutzt du online.",
+    a: "Ja, ausdrücklich. medIQ lab ist für Medizinstudierende in Deutschland und im EU-Ausland gebaut. Die Methoden sind unabhängig von Standort und Curriculum, und Workshops, Live Events, Downloads und KI-Lernapp nutzt du online.",
   },
   {
     q: "Wie laufen Anmeldung und Zahlung ab?",

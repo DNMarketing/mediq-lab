@@ -99,7 +99,7 @@ export default function UeberPage() {
             center
             eyebrow="Was medIQ lab ist"
             title="Vier Säulen, eine Mitgliedschaft"
-            subtitle="Es bleibt nicht beim Lernen. Workshops, Lernzettel, unsere eigene KI-Lernapp, Prüfungssimulationen und Vorträge von Ärzt:innen, alles in einem Preis."
+            subtitle="Es bleibt nicht beim Lernen. Workshop-Reihe, Videoreihen, wöchentliche Live Events und fertige Downloads, dazu unsere eigene KI-Lernapp, alles in einem Preis."
           />
         </Reveal>
         <PillarGrid className="mt-12" />

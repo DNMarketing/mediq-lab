@@ -14,11 +14,11 @@ const FAQS = [
   },
   {
     q: "Funktioniert das auch, wenn ich in Deutschland studiere?",
-    a: "Ja, ausdrücklich. medIQ lab ist für beides gebaut. Die Methoden sind unabhängig von Standort und Curriculum, und Lernzettel, Prüfungssimulationen, KI-Lernapp und Community nutzt du online, egal ob du in Heidelberg, Wien oder Pécs studierst.",
+    a: "Ja, ausdrücklich. medIQ lab ist für beides gebaut. Die Methoden sind unabhängig von Standort und Curriculum, und Workshops, Live Events, Downloads und KI-Lernapp nutzt du online, egal ob du in Heidelberg, Wien oder Pécs studierst.",
   },
   {
     q: "Was kostet die Mitgliedschaft?",
-    a: `${PRICING.yearly} € im Jahr, alles inklusive: Community, alle Workshops, Lernzettel, die KI-Lernapp, Prüfungssimulationen und Vorträge. Wenn du lieber monatlich zahlst, sind es ${PRICING.monthly} € im Monat. Es gibt keine versteckten Extras und keine Upsells.`,
+    a: `${PRICING.yearly} € im Jahr, alles inklusive: Workshop-Reihe, Videoreihen, wöchentliche Live Events wie Study Together und Community-Café, Gastvorträge, Prüfungssimulationen, Downloads und die KI-Lernapp. Wenn du lieber monatlich zahlst, sind es ${PRICING.monthly} € im Monat. Es gibt keine versteckten Extras und keine Upsells.`,
   },
   {
     q: "Gibt es Ratenzahlung, Rabatte oder eine Garantie?",
