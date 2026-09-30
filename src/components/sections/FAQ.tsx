@@ -18,11 +18,11 @@ const FAQS = [
   },
   {
     q: "Was kostet die Mitgliedschaft?",
-    a: `${PRICING.yearly} € im Jahr, alles inklusive: Workshop-Reihe, Videoreihen, wöchentliche Live Events wie Study Together und Community-Café, Gastvorträge, Prüfungssimulationen, Downloads und die KI-Lernapp. Wenn du lieber monatlich zahlst, sind es ${PRICING.monthly} € im Monat. Es gibt keine versteckten Extras und keine Upsells.`,
+    a: `${PRICING.yearly} € im Jahr, alles inklusive: Community, Workshop-Reihe, Videoreihen, wöchentliche Live Events wie Study Together und Community-Café, Gastvorträge, Prüfungssimulationen, Downloads und die KI-Lernapp. Es gibt keine versteckten Extras und keine Upsells.`,
   },
   {
-    q: "Gibt es Ratenzahlung, Rabatte oder eine Garantie?",
-    a: `Ratenzahlung ja: Statt ${PRICING.yearly} € im Jahr kannst du ${PRICING.monthly} € monatlich zahlen. Außerdem gibt es einen Campus-Rabatt, sprich uns dazu einfach in der Community oder über die Kontaktseite an. Eine Bestehens-Garantie gibt es nicht, weil sie niemand seriös geben kann.`,
+    q: "Gibt es Rabatte oder eine Garantie?",
+    a: "Es gibt einen Campus-Rabatt, sprich uns dazu einfach in der Community oder über die Kontaktseite an. Eine Bestehens-Garantie gibt es nicht, weil sie niemand seriös geben kann.",
   },
   {
     q: "Lohnt sich der Preis wirklich?",
@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: "Wie laufen Anmeldung und Zahlung ab?",
-    a: "Anmeldung und Zahlung erfolgen vollständig und sicher über Skool. Du klickst auf einen der Buttons, landest in der medIQ lab Community auf Skool und wählst dort jährliche oder monatliche Zahlung. Diese Website wickelt keine Zahlung ab.",
+    a: "Anmeldung und Zahlung erfolgen vollständig und sicher über Skool. Du klickst auf einen der Buttons, landest in der medIQ lab Community auf Skool und schließt dort die Jahresmitgliedschaft ab. Diese Website wickelt keine Zahlung ab.",
   },
   {
     q: "Bekomme ich „garantiert bestehen“?",

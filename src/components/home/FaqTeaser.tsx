@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     q: "Wie laufen Anmeldung und Zahlung ab?",
-    a: "Vollständig und sicher über Skool. Du klickst auf einen Button, landest in der medIQ lab Community und wählst dort jährliche oder monatliche Zahlung. Diese Website wickelt keine Zahlung ab.",
+    a: "Vollständig und sicher über Skool. Du klickst auf einen Button, landest in der medIQ lab Community und schließt dort die Jahresmitgliedschaft ab. Diese Website wickelt keine Zahlung ab.",
   },
 ];
 

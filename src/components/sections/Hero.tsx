@@ -88,7 +88,7 @@ export function Hero() {
             </motion.div>
 
             <motion.p variants={item} className="mt-6 text-sm text-ink-mute">
-              Für Medizinstudierende in Deutschland &amp; im EU-Ausland · Start über Skool · jährlich oder monatlich
+              Für Medizinstudierende in Deutschland &amp; im EU-Ausland · 399 € im Jahr, alles inklusive · Start über Skool
             </motion.p>
           </motion.div>
 

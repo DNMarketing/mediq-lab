@@ -67,8 +67,8 @@ const TREE: Record<string, Node> = {
   price: {
     bot: [
       "Ein Preis, alles drin:",
-      `${PRICING.yearly} € im Jahr, das sind rund ${PRICING.yearlyPerMonth} € im Monat. Oder ${PRICING.monthly} € monatlich, wenn du flexibel bleiben willst.`,
-      "Inklusive: Workshop-Reihe, Videoreihen, wöchentliche Live Events, Gastvorträge von Ärzt:innen, Prüfungssimulationen, Downloads und KI-Lernapp.",
+      `${PRICING.yearly} € im Jahr, das sind rund ${PRICING.yearlyPerMonth} € im Monat. Community und alle Workshops sind enthalten.`,
+      "Dazu: Videoreihen, wöchentliche Live Events, Gastvorträge von Ärzt:innen, Prüfungssimulationen, Downloads und KI-Lernapp.",
       "Anmeldung läuft sicher über Skool.",
     ],
     ctas: [{ label: "Programm ansehen", href: "/programm" }, JOIN],

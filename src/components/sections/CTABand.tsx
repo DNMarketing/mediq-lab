@@ -19,7 +19,7 @@ export function CTABand({
     </>
   ),
   subtitle = "Jedes Semester, das du jetzt sicherst, ist Zeit und Geld, das du nicht verlierst. Tritt der medIQ lab Community bei und bring dein Lernsystem auf ein neues Level.",
-  note = `Start & Zahlung sicher über Skool · ${PRICING.yearly} €/Jahr oder ${PRICING.monthly} €/Monat · alles inklusive`,
+  note = `Start & Zahlung sicher über Skool · ${PRICING.yearly} € im Jahr, alles inklusive · keine versteckten Kosten`,
   secondaryHref = "/programm",
   secondaryLabel = "Programm & Preise",
   showSpots = true,

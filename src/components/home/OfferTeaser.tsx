@@ -5,6 +5,7 @@ import { CTAButton } from "../ui/CTAButton";
 import { MedIcon } from "../ui/MedIcon";
 
 const INCLUDED = [
+  "Zugang zur Community auf Skool",
   "Workshop-Reihe, etwa 2× pro Semester",
   "Videoreihen zu Lernstrategien, Resilienz & Finanzen",
   "Study Together & Community-Café, jede Woche",
@@ -13,7 +14,7 @@ const INCLUDED = [
   "Eigene KI-Lernapp",
 ];
 
-/** Kompakte Angebots-Section auf der Startseite: ein Produkt, zwei Zahlweisen. */
+/** Kompakte Angebots-Section auf der Startseite: ein Produkt, ein Preis. */
 export function OfferTeaser() {
   return (
     <Section tone="sand">
@@ -22,7 +23,7 @@ export function OfferTeaser() {
           center
           eyebrow="So kommst du rein"
           title="Ein Preis, alles drin"
-          subtitle="Keine Pakete, keine Upsells: eine Mitgliedschaft mit Workshops, Videoreihen, wöchentlichen Live Events, Downloads und KI-Lernapp. Du wählst nur, wie du zahlst."
+          subtitle="Keine Pakete, keine Upsells: eine Jahresmitgliedschaft mit Community, Workshops, Videoreihen, wöchentlichen Live Events, Downloads und KI-Lernapp."
         />
       </Reveal>
 
@@ -30,39 +31,30 @@ export function OfferTeaser() {
         <div className="relative mx-auto mt-12 max-w-3xl overflow-hidden rounded-card border border-teal-400/30 bg-petrol-900 p-6 text-paper-light shadow-glow-teal sm:p-9">
           <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-1/2" aria-hidden />
 
-          <div className="relative grid gap-4 sm:grid-cols-2">
-            {/* Jährlich (empfohlen) */}
-            <div className="rounded-card border border-teal-400/40 bg-petrol-800/60 p-5">
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">Jährlich</span>
+          <div className="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <div className="flex items-center gap-3">
+                <h3 className="font-serif text-2xl font-medium">Jahresmitgliedschaft</h3>
                 <span className="rounded-full bg-teal-500 px-3 py-1 text-xs font-semibold text-paper-light">
-                  Empfohlen
+                  Alles inklusive
                 </span>
               </div>
-              <div className="mt-3 flex items-end gap-1.5">
-                <span className="font-serif text-4xl font-medium">{PRICING.yearly}&nbsp;€</span>
-                <span className="mb-1.5 text-sm text-paper/70">/ Jahr</span>
-              </div>
-              <p className="mt-2 text-xs leading-relaxed text-paper/70">
-                Entspricht rund {PRICING.yearlyPerMonth}&nbsp;€ im Monat. Du sparst rund{" "}
-                {PRICING.yearlySaving}&nbsp;€ gegenüber monatlicher Zahlung.
+              <p className="mt-2 text-sm text-paper/75">
+                Community und alle Workshops, ein Jahr lang, ein Preis.
               </p>
             </div>
-
-            {/* Monatlich */}
-            <div className="rounded-card border border-line-onDark p-5">
-              <span className="text-sm font-medium">Monatlich</span>
-              <div className="mt-3 flex items-end gap-1.5">
-                <span className="font-serif text-4xl font-medium">{PRICING.monthly}&nbsp;€</span>
-                <span className="mb-1.5 text-sm text-paper/70">/ Monat</span>
+            <div className="shrink-0">
+              <div className="flex items-end gap-1.5">
+                <span className="font-serif text-5xl font-medium">{PRICING.yearly}&nbsp;€</span>
+                <span className="mb-2 text-sm text-paper/70">/ Jahr</span>
               </div>
-              <p className="mt-2 text-xs leading-relaxed text-paper/70">
-                Gleicher Inhalt, volle Flexibilität.
+              <p className="mt-1 text-xs text-paper/60">
+                Entspricht rund {PRICING.yearlyPerMonth}&nbsp;€ im Monat.
               </p>
             </div>
           </div>
 
-          <ul className="relative mt-7 grid gap-2.5 sm:grid-cols-2">
+          <ul className="relative mt-7 grid gap-2.5 border-t border-line-onDark pt-7 sm:grid-cols-2">
             {INCLUDED.map((f) => (
               <li key={f} className="flex gap-3 text-sm text-paper/90">
                 <span aria-hidden className="mt-0.5 shrink-0 text-teal-300">

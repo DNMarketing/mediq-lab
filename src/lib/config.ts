@@ -20,21 +20,17 @@ export const NAV_LINKS = [
 ] as const;
 
 /**
- * Preise der Mitgliedschaft (ein Produkt, alles inklusive), lt. Gründerinnen
- * Stand 2026-09-30. Jährlich 399 € oder monatlich 49,99 €.
- * yearlyPerMonth/yearlySaving sind gerundete Einordnungen (399/12 ≈ 33,25;
- * 12 × 49,99 = 599,88 → rund 200 € Ersparnis).
+ * Preis der Mitgliedschaft: EIN Produkt, 399 € jährlich, Community und alle
+ * Workshops inklusive (lt. Gründerinnen, Stand 2026-09-30). Keine Monatsoption.
+ * yearlyPerMonth ist nur die gerundete Einordnung (399/12 ≈ 33,25).
  */
 export const PRICING = {
   yearly: "399",
-  monthly: "49,99",
   yearlyPerMonth: "33",
-  yearlySaving: "200",
 } as const;
 
 /**
- * Verknappungs-Hinweis (Pill im Hero und im Abschluss-CTA).
- * Auf `null`: ausgeblendet. Die Jahresmitgliedschaft hat keine echte
- * Platzbegrenzung, erfundene Knappheit wäre unzulässig (UWG).
+ * Verknappungs-Hinweis (Pill im Hero und im Abschluss-CTA), lt. Kunde gewünscht.
+ * Bitte mit der echten Zahl freier Plätze pflegen; auf `null` = ausgeblendet.
  */
-export const SPOTS_LEFT: string | null = null;
+export const SPOTS_LEFT: string | null = "10";
