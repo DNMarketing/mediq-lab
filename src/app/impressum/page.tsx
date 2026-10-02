@@ -12,7 +12,14 @@ export default function ImpressumPage() {
     <LegalShell title="Impressum" showBadge={false} seal={<Erecht24Seal type="impressum" />}>
       <section>
         <p>
-          Dirk Schlenker
+          medIQ LAB ist eine Marke der schlenker advisory GmbH, Amtsgericht Ulm, HRB 751751,
+          Geschäftsführerin Tanja Schlenker USt-ID: DE462052494
+        </p>
+      </section>
+
+      <section>
+        <p>
+          schlenker advisory GmbH
           <br />
           Albert-Einstein-Straße 7
           <br />
@@ -24,7 +31,7 @@ export default function ImpressumPage() {
         <p>
           Handelsregister: HRB 751751
           <br />
-          Registergericht: Amtsgericht Stuttgart
+          Registergericht: Amtsgericht Ulm
         </p>
       </section>
 
@@ -32,7 +39,7 @@ export default function ImpressumPage() {
         <p>
           <strong className="text-ink">Vertreten durch:</strong>
           <br />
-          Dirk Schlenker
+          Geschäftsführerin Tanja Schlenker
         </p>
       </section>
 
