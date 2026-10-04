@@ -2,12 +2,12 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { SPOTS_LEFT, SKOOL_URL } from "@/lib/config";
-import { IMAGES } from "@/lib/images";
 import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { Pill } from "../ui/Badge";
 import { MedIcon } from "../ui/MedIcon";
 import { AnatomyHeart, EkgLine } from "../ui/Anatomy";
+import { VideoPlayer } from "../ui/VideoPlayer";
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -96,38 +96,14 @@ export function Hero() {
           <div className="relative lg:col-span-5">
             <div className="glow-teal-bg pointer-events-none absolute -inset-8 -z-10" aria-hidden />
 
-            {/* Handy/Tablet: Erklärvideo (VSL) */}
+            {/* Handy/Tablet: Vorstellungsvideo (Hochformat, self-hosted) */}
             <motion.div
               initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="lg:hidden"
             >
-              <figure className="group relative aspect-video overflow-hidden rounded-card border border-line shadow-lift">
-                {/* Poster (Platzhalter für das eigentliche Video-Embed) */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={IMAGES.community}
-                  alt="Vorschau: Erklärvideo zu medIQ lab"
-                  loading="eager"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div
-                  className="absolute inset-0 bg-gradient-to-tr from-petrol-900/85 via-petrol-900/55 to-teal-700/25"
-                  aria-hidden
-                />
-                <div className="relative flex h-full flex-col items-center justify-center gap-4">
-                  <button
-                    type="button"
-                    aria-label="Video abspielen"
-                    className="flex h-[64px] w-[64px] items-center justify-center rounded-full bg-paper-light text-petrol-800 shadow-lift transition-transform duration-200 group-hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-                  >
-                    <MedIcon name="play" className="ml-0.5 h-6 w-6" />
-                  </button>
-                  <p className="text-sm font-medium text-paper-light">In 2 Minuten verstehen</p>
-                </div>
-                {/* TODO: Video-Embed einsetzen (YouTube erweiterter Datenschutzmodus / Vimeo). */}
-              </figure>
+              <VideoPlayer className="mx-auto max-w-[20rem]" />
             </motion.div>
 
             {/* Desktop: animiertes anatomisches Herz + EKG + Glas-Karte */}

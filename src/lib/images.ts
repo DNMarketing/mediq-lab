@@ -20,6 +20,19 @@ export function img(file: string): string {
   return `${BASE}/img/${file}`;
 }
 
+/**
+ * Vorstellungsvideo (Hochformat 9:16, 86 s), SELF-HOSTED in `public/video/`:
+ * keine Verbindung zu YouTube/Vimeo beim Seitenaufruf. Zwei Renditionen,
+ * der Player wählt nach Bildschirmbreite. Quelle: Drive „Med/medIQ_lab_Vorstellungsvideo_4K.mp4".
+ */
+export const VIDEO = {
+  src1080: `${BASE}/video/vorstellung-1080.mp4`,
+  src720: `${BASE}/video/vorstellung-720.mp4`,
+  poster: img("vorstellung-poster.jpg"),
+  /** Laufzeit in Sekunden (für Texte wie „In 90 Sekunden"). */
+  seconds: 86,
+} as const;
+
 export const IMAGES = {
   /** Problem: konzentrierte:r Studierende:r am Laptop. */
   problemStudent: img("problem-student.jpg"),
