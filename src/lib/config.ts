@@ -1,10 +1,10 @@
 /**
  * Zentrale Konfiguration für medIQ lab.
  *
- * TODO: Finale Skool-URL hier eintragen. Alle Kauf-/Beitritts-CTAs der Seite
- * verlinken auf diese eine Konstante, einmal ändern genügt.
+ * Alle Kauf-/Beitritts-CTAs der Seite verlinken auf diese eine Konstante.
+ * Finale Skool-URL (lt. Kunde, 2026-10-04).
  */
-export const SKOOL_URL = "https://www.skool.com/mediqlab"; // TODO: finale Skool-URL einsetzen
+export const SKOOL_URL = "https://www.skool.com/med-iq-lab-9744/about";
 
 /** Kontakt-E-Mail (mit Bindestrich, lt. Kunde verbindlich). */
 export const CONTACT_EMAIL = "info@mediq-lab.de";
