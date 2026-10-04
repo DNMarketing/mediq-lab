@@ -33,4 +33,4 @@ export const PRICING = {
  * Verknappungs-Hinweis (Pill im Hero und im Abschluss-CTA), lt. Kunde gewünscht.
  * Bitte mit der echten Zahl freier Plätze pflegen; auf `null` = ausgeblendet.
  */
-export const SPOTS_LEFT: string | null = "10";
+export const SPOTS_LEFT: string | null = null;
