@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
   },
-  // Preview: nicht indexieren. Vor dem echten Go-Live auf { index: true, follow: true } setzen.
-  robots: { index: false, follow: false },
+  // Live seit 2026-10-04: indexieren erlaubt.
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
