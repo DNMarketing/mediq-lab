@@ -4,15 +4,28 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
-import { NAV_LINKS, SKOOL_URL } from "@/lib/config";
+import { SKOOL_URL } from "@/lib/config";
+import { localeHref, stripLocale, type Locale } from "@/i18n/config";
+import type { Dict } from "@/i18n/de";
 import { CTAButton } from "./ui/CTAButton";
 import { Container } from "./ui/Container";
 import { Logo } from "./Logo";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
-export function Header() {
+const NAV: { key: keyof Dict["nav"]; path: string }[] = [
+  { key: "methode", path: "/methode" },
+  { key: "programm", path: "/programm" },
+  { key: "team", path: "/team" },
+  { key: "ueber", path: "/ueber" },
+  { key: "faq", path: "/faq" },
+  { key: "kontakt", path: "/kontakt" },
+];
+
+export function Header({ lang, nav, common }: { lang: Locale; nav: Dict["nav"]; common: Dict["common"] }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { path: current } = stripLocale(pathname || "/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -24,42 +37,33 @@ export function Header() {
   // Route bei Navigation schließen
   useEffect(() => setOpen(false), [pathname]);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (path: string) => (path === "/" ? current === "/" : current.startsWith(path));
 
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled || open
-          ? "border-b border-line bg-paper/90 backdrop-blur-md"
-          : "border-b border-transparent",
+        scrolled || open ? "border-b border-line bg-paper/90 backdrop-blur-md" : "border-b border-transparent",
       )}
     >
       <Container className="flex h-[72px] items-center justify-between">
-        <Link href="/" className="flex items-center" title="Zur Startseite">
+        <Link href={localeHref(lang, "/")} className="flex items-center" title={common.toHome}>
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex" aria-label="Hauptnavigation">
-          {NAV_LINKS.map((link) => {
-            const active = isActive(link.href);
+        <nav className="hidden items-center gap-9 md:flex" aria-label={common.mainNav}>
+          {NAV.map((link) => {
+            const active = isActive(link.path);
             return (
               <Link
-                key={link.href}
-                href={link.href}
+                key={link.key}
+                href={localeHref(lang, link.path)}
                 aria-current={active ? "page" : undefined}
-                className={cn(
-                  "relative text-sm transition-colors hover:text-petrol-700",
-                  active ? "text-petrol-700" : "text-ink-soft",
-                )}
+                className={cn("relative text-sm transition-colors hover:text-petrol-700", active ? "text-petrol-700" : "text-ink-soft")}
               >
-                {link.label}
+                {nav[link.key]}
                 <span
-                  className={cn(
-                    "absolute -bottom-1.5 left-0 h-px bg-copper-500 transition-all duration-300",
-                    active ? "w-full" : "w-0",
-                  )}
+                  className={cn("absolute -bottom-1.5 left-0 h-px bg-copper-500 transition-all duration-300", active ? "w-full" : "w-0")}
                   aria-hidden
                 />
               </Link>
@@ -67,9 +71,10 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-3 md:flex">
+          <LanguageSwitcher lang={lang} label={common.language} />
           <CTAButton href={SKOOL_URL} size="md">
-            Jetzt Platz sichern
+            {common.join}
           </CTAButton>
         </div>
 
@@ -78,7 +83,7 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           className="-mr-2 flex h-11 w-11 items-center justify-center text-ink md:hidden"
           aria-expanded={open}
-          aria-label={open ? "Menü schließen" : "Menü öffnen"}
+          aria-label={open ? common.menuClose : common.menuOpen}
         >
           <div className="flex flex-col gap-1.5">
             <span className={cn("h-px w-6 bg-current transition-transform", open && "translate-y-2 rotate-45")} />
@@ -91,21 +96,24 @@ export function Header() {
       {open && (
         <div className="border-t border-line bg-paper-light md:hidden">
           <Container className="flex flex-col gap-1 py-4">
-            {NAV_LINKS.map((link) => (
+            {NAV.map((link) => (
               <Link
-                key={link.href}
-                href={link.href}
-                aria-current={isActive(link.href) ? "page" : undefined}
+                key={link.key}
+                href={localeHref(lang, link.path)}
+                aria-current={isActive(link.path) ? "page" : undefined}
                 className={cn(
                   "rounded-card px-3 py-2.5 text-sm transition-colors hover:bg-paper-sand hover:text-petrol-700",
-                  isActive(link.href) ? "bg-paper-sand text-petrol-700" : "text-ink-soft",
+                  isActive(link.path) ? "bg-paper-sand text-petrol-700" : "text-ink-soft",
                 )}
               >
-                {link.label}
+                {nav[link.key]}
               </Link>
             ))}
-            <CTAButton href={SKOOL_URL} size="lg" className="mt-2 w-full">
-              Jetzt Platz sichern
+            <div className="mt-3 border-t border-line px-3 pt-4">
+              <LanguageSwitcher lang={lang} label={common.language} variant="chips" />
+            </div>
+            <CTAButton href={SKOOL_URL} size="lg" className="mt-3 w-full">
+              {common.join}
             </CTAButton>
           </Container>
         </div>

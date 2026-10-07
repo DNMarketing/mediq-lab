@@ -1,4 +1,6 @@
-import { SPOTS_LEFT, SKOOL_URL, PRICING } from "@/lib/config";
+import { SKOOL_URL } from "@/lib/config";
+import { localeHref, type Locale } from "@/i18n/config";
+import { Rich } from "@/i18n/Rich";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { CTAButton } from "../ui/CTAButton";
@@ -6,37 +8,30 @@ import { Pill } from "../ui/Badge";
 import { MedIcon } from "../ui/MedIcon";
 import { EkgLine } from "../ui/Anatomy";
 
+export type CTAText = { eyebrow: string; title: string; subtitle: string; secondary: string };
+
 /**
  * Wiederkehrender dunkler Abschluss-CTA (Petrol + Teal-Glow + EKG-Signatur).
  * Auf jeder Seite präsent, damit der Skool-Weg immer schnell erreichbar ist.
  */
 export function CTABand({
-  eyebrow = "medIQ lab",
-  title = (
-    <>
-      Lern ab heute klüger,{" "}
-      <span className="italic text-copper-300">nicht härter.</span>
-    </>
-  ),
-  subtitle = "Jedes Semester, das du jetzt sicherst, ist Zeit und Geld, das du nicht verlierst. Tritt der medIQ lab Community bei und bring dein Lernsystem auf ein neues Level.",
-  note = `Start & Zahlung sicher über Skool · ${PRICING.yearly} € im Jahr, alles inklusive · keine versteckten Kosten`,
-  secondaryHref = "/programm",
-  secondaryLabel = "Programm & Preise",
-  showSpots = true,
+  lang,
+  t,
+  note,
+  join,
+  spotsLabel,
+  secondaryPath = "/programm",
 }: {
-  eyebrow?: string;
-  title?: React.ReactNode;
-  subtitle?: React.ReactNode;
-  note?: React.ReactNode;
-  secondaryHref?: string;
-  secondaryLabel?: string;
-  showSpots?: boolean;
+  lang: Locale;
+  t: CTAText;
+  note: string;
+  join: string;
+  spotsLabel: string | null;
+  /** Interne Route des Sekundär-Buttons, z. B. "/faq"; null = kein Sekundär-Button. */
+  secondaryPath?: string | null;
 }) {
   return (
-    <section
-      data-mobilecta="hide"
-      className="relative overflow-hidden bg-petrol-900 py-24 text-paper-light sm:py-32"
-    >
+    <section data-mobilecta="hide" className="relative overflow-hidden bg-petrol-900 py-24 text-paper-light sm:py-32">
       <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-2/3" aria-hidden />
       <div className="pointer-events-none absolute inset-x-0 top-0 text-teal-400/40">
         <EkgLine beats={8} strokeWidth={1.4} className="h-10" />
@@ -44,11 +39,11 @@ export function CTABand({
       <Container className="relative">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
-            {showSpots && SPOTS_LEFT && (
+            {spotsLabel && (
               <div className="mb-7 flex justify-center">
                 <Pill onDark>
                   <span className="h-1.5 w-1.5 rounded-full bg-copper-300" aria-hidden />
-                  Nur noch {SPOTS_LEFT} Plätze frei
+                  {spotsLabel}
                 </Pill>
               </div>
             )}
@@ -56,31 +51,23 @@ export function CTABand({
             <div className="flex justify-center">
               <span className="eyebrow text-copper-300">
                 <span className="rule-copper bg-copper-300/80" aria-hidden />
-                {eyebrow}
+                {t.eyebrow}
               </span>
             </div>
 
             <h2 className="mt-5 font-serif text-[2.2rem] font-medium leading-[1.1] tracking-[-0.01em] text-paper-light sm:text-[3.2rem]">
-              {title}
+              <Rich text={t.title} em="italic text-copper-300" />
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-paper/75">
-              {subtitle}
-            </p>
+            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-paper/75">{t.subtitle}</p>
 
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <CTAButton href={SKOOL_URL} variant="onDark" size="lg" className="w-full sm:w-auto">
-                Jetzt Platz sichern
+                {join}
                 <MedIcon name="arrowRight" className="h-4 w-4" />
               </CTAButton>
-              {secondaryHref && (
-                <CTAButton
-                  href={secondaryHref}
-                  external={false}
-                  variant="onDarkGhost"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  {secondaryLabel}
+              {secondaryPath && (
+                <CTAButton href={localeHref(lang, secondaryPath)} external={false} variant="onDarkGhost" size="lg" className="w-full sm:w-auto">
+                  {t.secondary}
                 </CTAButton>
               )}
             </div>

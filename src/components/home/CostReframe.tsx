@@ -1,13 +1,14 @@
-import { PRICING } from "@/lib/config";
+import { fill } from "@/i18n/config";
+import type { Dict } from "@/i18n/de";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 
 /**
- * Dunkles Wert-/Stakes-Band (ersetzt das frühere Platzhalter-„in Zahlen"-Band).
- * Ehrliches Preis-Argument statt erfundener Statistiken: reale Kosten eines
- * Wiederholungsjahrs gegen den Jahrespreis der Mitgliedschaft.
+ * Dunkles Wert-/Stakes-Band: reale Kosten eines Wiederholungsjahrs gegen den
+ * Jahrespreis der Mitgliedschaft. Ehrliches Argument statt erfundener Statistik.
  */
-export function CostReframe() {
+export function CostReframe({ t, money }: { t: Dict["cost"]; money: Dict["money"] }) {
+  const h = "font-serif text-[1.9rem] font-medium leading-[1.18] tracking-[-0.01em] text-paper-light sm:text-[2.5rem]";
   return (
     <section className="relative overflow-hidden bg-petrol-900 py-20 text-paper-light sm:py-28">
       <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-2/3" aria-hidden />
@@ -17,22 +18,17 @@ export function CostReframe() {
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow justify-center text-teal-300">
               <span className="rule-copper bg-teal-400/80" aria-hidden />
-              Was auf dem Spiel steht
+              {t.eyebrow}
             </span>
 
-            <p className="mt-7 font-serif text-[1.9rem] font-medium leading-[1.18] tracking-[-0.01em] text-paper-light sm:text-[2.5rem]">
-              Ein verlorenes Jahr:{" "}
-              <span className="whitespace-nowrap text-teal-300">10.000 bis 20.000 €.</span>
+            <p className={`mt-7 ${h}`}>
+              {t.line1} <span className="whitespace-nowrap text-teal-300">{fill(t.value1, money)}</span>
             </p>
-            <p className="mt-3 font-serif text-[1.9rem] font-medium leading-[1.18] tracking-[-0.01em] text-paper-light sm:text-[2.5rem]">
-              Ein Jahr medIQ lab:{" "}
-              <span className="whitespace-nowrap text-copper-300">{PRICING.yearly} €.</span>
+            <p className={`mt-3 ${h}`}>
+              {t.line2} <span className="whitespace-nowrap text-copper-300">{fill(t.value2, money)}</span>
             </p>
 
-            <p className="mx-auto mt-7 max-w-lg text-[1.05rem] leading-relaxed text-paper/75">
-              Die Frage ist nicht, ob du dir medIQ&nbsp;lab leisten kannst, sondern ob du
-              dir ein verlorenes Jahr leisten willst.
-            </p>
+            <p className="mx-auto mt-7 max-w-lg text-[1.05rem] leading-relaxed text-paper/75">{t.text}</p>
           </div>
         </Reveal>
       </Container>

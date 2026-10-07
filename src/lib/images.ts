@@ -25,13 +25,32 @@ export function img(file: string): string {
  * keine Verbindung zu YouTube/Vimeo beim Seitenaufruf. Zwei Renditionen,
  * der Player wählt nach Bildschirmbreite. Quelle: Drive „Med/medIQ_lab_Vorstellungsvideo_4K.mp4".
  */
-export const VIDEO = {
-  src1080: `${BASE}/video/vorstellung-1080.mp4`,
-  src720: `${BASE}/video/vorstellung-720.mp4`,
-  poster: img("vorstellung-poster.jpg"),
-  /** Laufzeit in Sekunden (für Texte wie „In 90 Sekunden"). */
-  seconds: 86,
-} as const;
+export type VideoSet = { src1080: string; src720: string; poster: string; seconds: number };
+
+function videoSet(suffix: string, seconds: number): VideoSet {
+  return {
+    src1080: `${BASE}/video/vorstellung${suffix}-1080.mp4`,
+    src720: `${BASE}/video/vorstellung${suffix}-720.mp4`,
+    poster: img(`vorstellung${suffix}-poster.jpg`),
+    seconds,
+  };
+}
+
+export const VIDEO = videoSet("", 86);
+
+/**
+ * Sprachfassungen des Videos. Sobald z. B. die englische Fassung da ist:
+ * Dateien `public/video/vorstellung-en-{1080,720}.mp4` + `public/img/vorstellung-en-poster.jpg`
+ * ablegen und hier `en: videoSet("-en", <Sekunden>)` eintragen. Fehlt eine
+ * Sprache, läuft das deutsche Video.
+ */
+const VIDEO_BY_LANG: Partial<Record<string, VideoSet>> = {
+  de: VIDEO,
+};
+
+export function videoFor(lang: string): VideoSet {
+  return VIDEO_BY_LANG[lang] ?? VIDEO;
+}
 
 export const IMAGES = {
   /** Problem: konzentrierte:r Studierende:r am Laptop. */

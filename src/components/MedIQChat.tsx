@@ -2,95 +2,82 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { SKOOL_URL, PRICING } from "@/lib/config";
+import { SKOOL_URL } from "@/lib/config";
+import { fill, localeHref, type Locale } from "@/i18n/config";
+import type { Dict } from "@/i18n/de";
 
 /**
  * medIQ lab Berater – ein leichter, scriptgesteuerter Conversion-Chat (kein
  * Backend/LLM). Qualifiziert den Besucher entlang seiner Pain-Points und führt
  * bei jedem Schritt Richtung Anmeldung (Skool) bzw. zu den passenden Seiten.
- * Nur clientseitig, Marken-Design, respektiert prefers-reduced-motion.
+ * Texte kommen aus dem Wörterbuch (`chat`), Struktur ist sprachunabhängig.
  */
 
+type T = Dict["chat"];
 type CTA = { label: string; href: string; external?: boolean; primary?: boolean };
 type Option = { label: string; next: string };
 type Node = { bot: string[]; ctas?: CTA[]; options?: Option[] };
 
-const JOIN: CTA = { label: "Jetzt Platz sichern", href: SKOOL_URL, external: true, primary: true };
-
-const TREE: Record<string, Node> = {
-  start: {
-    bot: [
-      "Hey 👋 Ich zeig dir in unter einer Minute, ob medIQ lab zu dir passt.",
-      "Was trifft gerade am ehesten auf dich zu?",
-    ],
-    options: [
-      { label: "Angst vor der nächsten Prüfung", next: "fear" },
-      { label: "Ich lerne viel, es bleibt nichts hängen", next: "method" },
-      { label: "Kein Wiederholungsjahr riskieren", next: "cost" },
-      { label: "Was kostet das?", next: "price" },
-      { label: "Für wen ist das?", next: "who" },
-    ],
-  },
-  fear: {
-    bot: [
-      "Kenn ich, und es ist fast nie ein Wissensproblem.",
-      "In medIQ lab bekommst du Prüfungsstrategie, Altfragen-Logik und konkrete Werkzeuge gegen den Druck, damit du ruhiger reingehst.",
-    ],
-    ctas: [{ label: "So funktioniert die Methode", href: "/methode" }, JOIN],
-    options: [
-      { label: "Was kostet das?", next: "price" },
-      { label: "Passt das zu mir?", next: "who" },
-    ],
-  },
-  method: {
-    bot: [
-      "Dann liegt es fast immer an der Methode, nicht am Fleiß.",
-      "Mit aktivem Abrufen und Spaced Repetition sitzt der Stoff wirklich, statt dreimal gelesen und wieder weg.",
-    ],
-    ctas: [{ label: "Die Methode ansehen", href: "/methode" }, JOIN],
-    options: [
-      { label: "Was kostet das?", next: "price" },
-      { label: "Passt das zu mir?", next: "who" },
-    ],
-  },
-  cost: {
-    bot: [
-      "Verständlich, das ist die teuerste Art, Zeit zu verlieren.",
-      `Ein Wiederholungsjahr kostet an Privat- und Auslands-Unis schnell 10.000 bis 20.000 €. Ein Jahr medIQ lab: ${PRICING.yearly} €, und es soll dir genau das ersparen.`,
-    ],
-    ctas: [{ label: "Programm & Preise", href: "/programm" }, JOIN],
-    options: [
-      { label: "Was kostet das genau?", next: "price" },
-      { label: "Passt das zu mir?", next: "who" },
-    ],
-  },
-  price: {
-    bot: [
-      "Ein Preis, alles drin:",
-      `${PRICING.yearly} € im Jahr, das sind rund ${PRICING.yearlyPerMonth} € im Monat. Community und alle Workshops sind enthalten.`,
-      "Dazu: Videoreihen, wöchentliche Live Events, Gastvorträge von Ärzt:innen, Prüfungssimulationen, Downloads und KI-Lernapp.",
-      "Anmeldung läuft sicher über Skool.",
-    ],
-    ctas: [{ label: "Programm ansehen", href: "/programm" }, JOIN],
-    options: [{ label: "Passt das zu mir?", next: "who" }],
-  },
-  who: {
-    bot: [
-      "Für Medizinstudierende in Deutschland und im EU-Ausland, ob staatlich oder privat, vom ersten Semester bis zum Examen.",
-      "Wenn du viel lernst und trotzdem das Gefühl hast, es reicht nicht: genau für dich.",
-    ],
-    ctas: [JOIN],
-    options: [
-      { label: "Lieber persönlich fragen", next: "contact" },
-      { label: "Nochmal von vorn", next: "start" },
-    ],
-  },
-  contact: {
-    bot: ["Klar. Schreib uns einfach über die Kontaktseite, wir antworten ehrlich und ohne Verkaufsdruck."],
-    ctas: [{ label: "Zur Kontaktseite", href: "/kontakt" }, JOIN],
-    options: [{ label: "Nochmal von vorn", next: "start" }],
-  },
-};
+function buildTree(lang: Locale, t: T, join: string, money: Dict["money"]): Record<string, Node> {
+  const JOIN: CTA = { label: join, href: SKOOL_URL, external: true, primary: true };
+  const page = (p: string) => localeHref(lang, p);
+  const lines = (arr: string[]) => arr.map((s) => fill(s, money));
+  const o = t.options;
+  return {
+    start: {
+      bot: lines(t.nodes.start),
+      options: [
+        { label: o.fear, next: "fear" },
+        { label: o.method, next: "method" },
+        { label: o.cost, next: "cost" },
+        { label: o.price, next: "price" },
+        { label: o.who, next: "who" },
+      ],
+    },
+    fear: {
+      bot: lines(t.nodes.fear),
+      ctas: [{ label: t.cta.methode, href: page("/methode") }, JOIN],
+      options: [
+        { label: o.price, next: "price" },
+        { label: o.fit, next: "who" },
+      ],
+    },
+    method: {
+      bot: lines(t.nodes.method),
+      ctas: [{ label: t.cta.methode2, href: page("/methode") }, JOIN],
+      options: [
+        { label: o.price, next: "price" },
+        { label: o.fit, next: "who" },
+      ],
+    },
+    cost: {
+      bot: lines(t.nodes.cost),
+      ctas: [{ label: t.cta.programm, href: page("/programm") }, JOIN],
+      options: [
+        { label: o.priceExact, next: "price" },
+        { label: o.fit, next: "who" },
+      ],
+    },
+    price: {
+      bot: lines(t.nodes.price),
+      ctas: [{ label: t.cta.programm2, href: page("/programm") }, JOIN],
+      options: [{ label: o.fit, next: "who" }],
+    },
+    who: {
+      bot: lines(t.nodes.who),
+      ctas: [JOIN],
+      options: [
+        { label: o.contact, next: "contact" },
+        { label: o.restart, next: "start" },
+      ],
+    },
+    contact: {
+      bot: lines(t.nodes.contact),
+      ctas: [{ label: t.cta.kontakt, href: page("/kontakt") }, JOIN],
+      options: [{ label: o.restart, next: "start" }],
+    },
+  };
+}
 
 type Msg = { from: "bot" | "user"; lines?: string[]; text?: string; ctas?: CTA[] };
 
@@ -116,9 +103,7 @@ function CtaButtons({ ctas }: { ctas: CTA[] }) {
             target="_blank"
             rel="noopener noreferrer"
             className={`inline-flex items-center justify-center gap-2 rounded-card px-4 py-2.5 text-sm font-medium transition-colors ${
-              c.primary
-                ? "bg-copper-500 text-petrol-900 hover:bg-copper-400"
-                : "border border-line-strong text-ink hover:border-petrol-700 hover:text-petrol-700"
+              c.primary ? "bg-copper-500 text-petrol-900 hover:bg-copper-400" : "border border-line-strong text-ink hover:border-petrol-700 hover:text-petrol-700"
             }`}
           >
             {c.label}
@@ -137,13 +122,16 @@ function CtaButtons({ ctas }: { ctas: CTA[] }) {
   );
 }
 
-export function MedIQChat() {
+export function MedIQChat({ lang, t, join, money }: { lang: Locale; t: T; join: string; money: Dict["money"] }) {
   const [open, setOpen] = useState(false);
   const [teaser, setTeaser] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
   const [options, setOptions] = useState<Option[]>([]);
   const [typing, setTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const treeRef = useRef<Record<string, Node> | null>(null);
+  if (!treeRef.current) treeRef.current = buildTree(lang, t, join, money);
+  const TREE = treeRef.current;
 
   // Teaser nach kurzer Zeit, nur wenn noch nie geöffnet.
   useEffect(() => {
@@ -152,8 +140,8 @@ export function MedIQChat() {
       seen = localStorage.getItem("mediq_chat_seen") === "1";
     } catch {}
     if (seen) return;
-    const t = setTimeout(() => setTeaser(true), 7000);
-    return () => clearTimeout(t);
+    const id = setTimeout(() => setTeaser(true), 7000);
+    return () => clearTimeout(id);
   }, []);
 
   useEffect(() => {
@@ -197,13 +185,13 @@ export function MedIQChat() {
               onClick={openChat}
               className="max-w-[15rem] rounded-card border border-line bg-paper-light px-4 py-3 text-left text-sm leading-snug text-ink shadow-lift"
             >
-              Passt medIQ&nbsp;lab zu dir? Frag mich, ich helf dir in unter einer Minute. 👋
+              {t.teaser}
             </button>
           )}
           <button
             type="button"
             onClick={openChat}
-            aria-label="medIQ lab Berater öffnen"
+            aria-label={t.open}
             className="relative flex h-14 w-14 items-center justify-center rounded-full bg-petrol-700 text-paper-light shadow-lift transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
           >
             <span className="absolute -right-0.5 -top-0.5 flex h-3.5 w-3.5">
@@ -226,15 +214,15 @@ export function MedIQChat() {
               </svg>
             </span>
             <div className="flex-1">
-              <p className="font-serif text-base font-medium leading-none">medIQ lab Berater</p>
+              <p className="font-serif text-base font-medium leading-none">{t.name}</p>
               <p className="mt-1 flex items-center gap-1.5 text-xs text-paper/70">
-                <span className="h-1.5 w-1.5 rounded-full bg-teal-400" /> Antwortet sofort
+                <span className="h-1.5 w-1.5 rounded-full bg-teal-400" /> {t.status}
               </p>
             </div>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              aria-label="Chat schließen"
+              aria-label={t.close}
               className="flex h-8 w-8 items-center justify-center rounded-full text-paper/80 transition-colors hover:bg-white/10 hover:text-paper-light"
             >
               <CloseIcon />
@@ -292,7 +280,7 @@ export function MedIQChat() {
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-card bg-copper-500 px-4 py-2.5 text-sm font-semibold text-petrol-900 transition-colors hover:bg-copper-400"
             >
-              Jetzt Platz sichern
+              {join}
             </a>
           </div>
         </div>

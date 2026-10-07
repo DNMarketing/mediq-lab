@@ -1,17 +1,19 @@
-import { FORMATS } from "@/lib/formats";
 import { IMAGES } from "@/lib/images";
+import type { Dict } from "@/i18n/de";
 import { Section, Eyebrow } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import { Stagger, StaggerItem } from "../ui/Motion";
 import { EditorialImage } from "../ui/EditorialImage";
-import { MedIcon } from "../ui/MedIcon";
+import { MedIcon, type IconName } from "../ui/MedIcon";
+
+/** Icons der vier Formate (Reihenfolge wie im Wörterbuch). */
+const FORMAT_ICONS: IconName[] = ["milestone", "play", "community", "structure"];
 
 /**
  * Was in der Mitgliedschaft steckt: die vier Formate aus dem Content-Plan
- * (Workshops, Videoreihen, Live Events, Downloads), plus KI-Lernapp als
- * Extra-Callout. Die inhaltlichen vier Säulen stehen auf /methode.
+ * (Workshops, Videoreihen, Live Events, Downloads), plus KI-Lernapp als Extra.
  */
-export function Modules() {
+export function Modules({ t, formats }: { t: Dict["pageProgramm"]["modules"]; formats: Dict["pageProgramm"]["formats"] }) {
   return (
     <Section id="module" tone="paper">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -19,31 +21,15 @@ export function Modules() {
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">
             <Reveal>
-              <Eyebrow>Was du bekommst</Eyebrow>
-              <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">
-                Alles, was in der Mitgliedschaft steckt
-              </h2>
-              <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">
-                So werden die vier Säulen konkret: Workshop-Reihe, Videoreihen,
-                wöchentliche Live Events und fertige Downloads, dazu unsere eigene
-                KI-Lernapp. Alles in einem Preis.
-              </p>
+              <Eyebrow>{t.eyebrow}</Eyebrow>
+              <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">{t.title}</h2>
+              <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">{t.lead}</p>
             </Reveal>
             <Reveal delay={0.1}>
-              <EditorialImage
-                src={IMAGES.moduleHeart}
-                alt="Anatomisches Herzmodell"
-                aspect="aspect-[4/3]"
-                className="mt-8 frame"
-              />
+              <EditorialImage src={IMAGES.moduleHeart} alt={t.imgHeart} aspect="aspect-[4/3]" className="mt-8 frame" />
             </Reveal>
             <Reveal delay={0.15}>
-              <EditorialImage
-                src={IMAGES.moduleMicroscope}
-                alt="Mikroskop im Labor"
-                aspect="aspect-[4/3]"
-                className="mt-4 hidden frame lg:block"
-              />
+              <EditorialImage src={IMAGES.moduleMicroscope} alt={t.imgMicroscope} aspect="aspect-[4/3]" className="mt-4 hidden frame lg:block" />
             </Reveal>
           </div>
         </div>
@@ -51,21 +37,17 @@ export function Modules() {
         {/* Die vier Formate mit Inhalten */}
         <div className="lg:col-span-8">
           <Stagger as="ul" className="grid gap-3 sm:grid-cols-2">
-            {FORMATS.map((p, i) => (
+            {formats.map((p, i) => (
               <StaggerItem as="li" key={p.title}>
                 <div className="group flex h-full flex-col rounded-card border border-line bg-paper-light p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:shadow-glow-teal-sm">
                   <div className="flex items-center justify-between">
                     <span className="flex h-12 w-12 items-center justify-center rounded-card border border-line bg-paper text-petrol-700 transition-colors group-hover:border-teal-400/40 group-hover:bg-teal-100 group-hover:text-teal-600">
-                      <MedIcon name={p.icon} className="h-6 w-6" />
+                      <MedIcon name={FORMAT_ICONS[i]} className="h-6 w-6" />
                     </span>
-                    <span className="step-num font-serif text-sm text-ink-mute">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
+                    <span className="step-num font-serif text-sm text-ink-mute">{String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <h3 className="mt-5 font-serif text-xl font-medium text-ink">{p.title}</h3>
-                  <span className="mt-1 text-xs uppercase tracking-[0.16em] text-teal-600">
-                    {p.sub}
-                  </span>
+                  <span className="mt-1 text-xs uppercase tracking-[0.16em] text-teal-600">{p.sub}</span>
                   <ul className="mt-4 space-y-2">
                     {p.items.map((it) => (
                       <li key={it} className="flex gap-2.5 text-sm leading-snug text-ink-soft">
@@ -88,23 +70,14 @@ export function Modules() {
                 <MedIcon name="repeat" className="h-6 w-6" />
               </span>
               <div>
-                <h3 className="font-serif text-xl font-medium text-ink">
-                  Plus: unsere eigene KI-Lernapp
-                </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                  Abfragen, wiederholen, strukturieren: Die medIQ&nbsp;lab KI-Lernapp
-                  begleitet dich zwischen den Events und ist in der Mitgliedschaft
-                  enthalten.
-                </p>
+                <h3 className="font-serif text-xl font-medium text-ink">{t.appTitle}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{t.appBody}</p>
               </div>
             </div>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-xl text-sm leading-relaxed text-ink-mute">
-              Alle Termine, Aufzeichnungen und Materialien findest du im geschützten
-              Bereich, direkt in der medIQ&nbsp;lab Community auf Skool.
-            </p>
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-ink-mute">{t.note}</p>
           </Reveal>
         </div>
       </div>

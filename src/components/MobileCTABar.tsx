@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SKOOL_URL } from "@/lib/config";
+import { localeHref, stripLocale, type Locale } from "@/i18n/config";
+import type { Dict } from "@/i18n/de";
 import { MedIcon } from "./ui/MedIcon";
 
 /**
@@ -12,15 +14,13 @@ import { MedIcon } from "./ui/MedIcon";
  * CTA-Block oder der Footer im Blick ist (per `data-mobilecta="hide"`), damit sie
  * keine Links/Buttons dort überdeckt. Respektiert die iOS-Safe-Area.
  */
-export function MobileCTABar() {
+export function MobileCTABar({ lang, t, join }: { lang: Locale; t: Dict["mobileBar"]; join: string }) {
   const [hidden, setHidden] = useState(false);
   const pathname = usePathname();
-  const onProgramm = pathname?.startsWith("/programm");
+  const onProgramm = stripLocale(pathname || "/").path.startsWith("/programm");
 
   useEffect(() => {
-    const targets = Array.from(
-      document.querySelectorAll('[data-mobilecta="hide"]'),
-    );
+    const targets = Array.from(document.querySelectorAll('[data-mobilecta="hide"]'));
     if (targets.length === 0) return;
     const visible = new Set<Element>();
     const io = new IntersectionObserver(
@@ -33,7 +33,7 @@ export function MobileCTABar() {
       },
       { rootMargin: "0px 0px -20% 0px" },
     );
-    targets.forEach((t) => io.observe(t));
+    targets.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
 
@@ -46,10 +46,10 @@ export function MobileCTABar() {
       <div className="flex items-center gap-2.5 px-4 pt-3">
         {!onProgramm && (
           <Link
-            href="/programm"
+            href={localeHref(lang, "/programm")}
             className="inline-flex shrink-0 items-center justify-center rounded-card border border-line-strong px-4 py-3 text-sm font-medium text-ink transition-colors hover:border-petrol-700 hover:text-petrol-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
           >
-            Programm
+            {t.programm}
           </Link>
         )}
         <a
@@ -58,7 +58,7 @@ export function MobileCTABar() {
           rel="noopener noreferrer"
           className="inline-flex flex-1 items-center justify-center gap-2 rounded-card bg-petrol-700 px-5 py-3 text-[15px] font-medium text-paper-light transition-colors hover:bg-petrol-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper active:translate-y-px"
         >
-          Jetzt Platz sichern
+          {join}
           <MedIcon name="arrowRight" className="h-4 w-4" />
         </a>
       </div>

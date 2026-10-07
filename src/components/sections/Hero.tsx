@@ -1,7 +1,10 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { SPOTS_LEFT, SKOOL_URL } from "@/lib/config";
+import { SKOOL_URL } from "@/lib/config";
+import { fill, localeHref, type Locale } from "@/i18n/config";
+import type { Dict } from "@/i18n/de";
+import { Rich } from "@/i18n/Rich";
 import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { Pill } from "../ui/Badge";
@@ -9,7 +12,21 @@ import { MedIcon } from "../ui/MedIcon";
 import { AnatomyHeart, EkgLine } from "../ui/Anatomy";
 import { VideoPlayer } from "../ui/VideoPlayer";
 
-export function Hero() {
+export function Hero({
+  lang,
+  t,
+  video,
+  money,
+  join,
+  spotsLabel,
+}: {
+  lang: Locale;
+  t: Dict["hero"];
+  video: Dict["video"];
+  money: Dict["money"];
+  join: string;
+  spotsLabel: string | null;
+}) {
   const reduce = useReducedMotion();
 
   const container = {
@@ -30,65 +47,48 @@ export function Hero() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
           {/* Text */}
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="lg:col-span-7"
-          >
-            {SPOTS_LEFT && (
+          <motion.div variants={container} initial="hidden" animate="show" className="lg:col-span-7">
+            {spotsLabel && (
               <motion.div variants={item} className="mb-7">
                 <Pill>
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-50" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500" />
                   </span>
-                  Nur noch {SPOTS_LEFT} Plätze frei
+                  {spotsLabel}
                 </Pill>
               </motion.div>
             )}
 
             <motion.div variants={item} className="eyebrow mb-6">
               <span className="rule-copper" aria-hidden />
-              Für Medizinstudierende in Deutschland &amp; im Ausland
+              {t.eyebrow}
             </motion.div>
 
             <motion.h1
               variants={item}
               className="font-serif text-[2.15rem] font-medium leading-[1.06] tracking-[-0.015em] text-ink sm:text-[4rem] sm:leading-[1.04]"
             >
-              Effizienter lernen.
-              <br />
-              Sicher bestehen.
-              <br />
-              <span className="text-petrol-700 italic">Keine verlorenen Jahre.</span>
+              <Rich text={t.title} />
             </motion.h1>
 
-            <motion.p
-              variants={item}
-              className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"
-            >
-              Fundierte Lernmethodik, klare Prüfungsstrategie, eigene KI-Lernapp und
-              eine Community, die dich trägt. Damit dir kein teures Wiederholungsjahr
-              dazwischenkommt, egal ob du in Deutschland oder im Ausland studierst.
+            <motion.p variants={item} className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft">
+              {t.lead}
             </motion.p>
 
-            <motion.div
-              variants={item}
-              className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
-            >
+            <motion.div variants={item} className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <CTAButton href={SKOOL_URL} size="lg">
-                Jetzt Platz sichern
+                {join}
                 <MedIcon name="arrowRight" className="h-4 w-4" />
               </CTAButton>
-              <CTAButton href="/methode" variant="secondary" size="lg" external={false}>
-                So funktioniert die Methode
+              <CTAButton href={localeHref(lang, "/methode")} variant="secondary" size="lg" external={false}>
+                {t.ctaMethod}
                 <MedIcon name="arrowRight" className="h-4 w-4" />
               </CTAButton>
             </motion.div>
 
             <motion.p variants={item} className="mt-6 text-sm text-ink-mute">
-              Für Medizinstudierende in Deutschland &amp; im EU-Ausland · 399 € im Jahr, alles inklusive · Start über Skool
+              {fill(t.note, money)}
             </motion.p>
           </motion.div>
 
@@ -103,7 +103,7 @@ export function Hero() {
               transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="lg:hidden"
             >
-              <VideoPlayer className="mx-auto max-w-[20rem]" />
+              <VideoPlayer lang={lang} t={video} className="mx-auto max-w-[20rem]" />
             </motion.div>
 
             {/* Desktop: animiertes anatomisches Herz + EKG + Glas-Karte */}
@@ -131,14 +131,10 @@ export function Hero() {
                     <MedIcon name="repeat" className="h-5 w-5" />
                   </span>
                   <p className="font-serif text-base leading-tight text-ink">
-                    Methode statt
-                    <br />
-                    Auswendig-Pauken
+                    <Rich text={t.cardTitle} />
                   </p>
                 </div>
-                <p className="mt-3 text-xs leading-relaxed text-ink-soft">
-                  Active Recall &amp; Spaced Repetition, lernpsychologisch fundiert.
-                </p>
+                <p className="mt-3 text-xs leading-relaxed text-ink-soft">{t.cardBody}</p>
               </div>
             </motion.div>
           </div>

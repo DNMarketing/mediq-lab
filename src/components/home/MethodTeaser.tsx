@@ -1,3 +1,5 @@
+import { localeHref, type Locale } from "@/i18n/config";
+import type { Dict } from "@/i18n/de";
 import { Section, SectionHeading } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import { CTAButton } from "../ui/CTAButton";
@@ -5,24 +7,19 @@ import { MedIcon } from "../ui/MedIcon";
 import { PillarGrid } from "../sections/PillarGrid";
 
 /** Kurz-Methode für die Startseite (vier Säulen) → führt auf /methode. */
-export function MethodTeaser() {
+export function MethodTeaser({ lang, t, pillars }: { lang: Locale; t: Dict["methodTeaser"]; pillars: Dict["pillars"] }) {
   return (
     <Section tone="sand">
       <Reveal>
-        <SectionHeading
-          center
-          eyebrow="Die vier Säulen"
-          title="Klüger lernen, nicht härter"
-          subtitle="Dein Studienerfolg steht auf vier Säulen: Lernsystem, Prüfungsstrategie, Stress & Resilienz und Netzwerk. Keine Motivationssprüche, sondern ein System, das dich durchs Studium trägt."
-        />
+        <SectionHeading center eyebrow={t.eyebrow} title={t.title} subtitle={t.subtitle} />
       </Reveal>
 
-      <PillarGrid className="mt-14" />
+      <PillarGrid pillars={pillars} className="mt-14" />
 
       <Reveal delay={0.15}>
         <div className="mt-10 flex justify-center">
-          <CTAButton href="/methode" external={false} size="lg">
-            Die ganze Methode ansehen
+          <CTAButton href={localeHref(lang, "/methode")} external={false} size="lg">
+            {t.cta}
             <MedIcon name="arrowRight" className="h-4 w-4" />
           </CTAButton>
         </div>
