@@ -43,13 +43,23 @@ Das Formular wird von Netlify erkannt (Felder name, email, thema, nachricht). Ei
 **Noch offen:** Benachrichtigung per E-Mail einrichten: Netlify → Site configuration → Forms → Form notifications → „Email notification" → Zieladresse eintragen.
 Optional: nach dem Absenden auf eine Danke-Seite leiten (`action="/danke/"` am `<form>` + Seite `src/app/danke/page.tsx` anlegen).
 
+## Mehrsprachigkeit
+
+Deutsch liegt im Root (`/programm/`), Englisch/Französisch/Italienisch unter `/en/`, `/fr/`, `/it/`. Jede Seite wird statisch in allen Sprachen gebaut, mit `canonical` + `hreflang`.
+
+- **Texte ändern:** `src/i18n/de.ts` (Deutsch), `en.ts`, `fr.ts`, `it.ts`. Alle vier haben dieselbe Struktur; fehlt ein Schlüssel, bricht der Build mit einem TypeScript-Fehler (gewollt).
+- **Auszeichnung in Texten:** `*so*` = kursive Hervorhebung, `\n` = Zeilenumbruch, `{yearly}` / `{monthly}` / `{lost}` = Preise aus `money` derselben Sprache.
+- **Sprache hinzufügen:** `src/i18n/config.ts` → `LOCALES` + `LOCALE_NAMES` + `LOCALE_TAGS` ergänzen, `src/i18n/<xx>.ts` nach Vorlage anlegen, in `src/i18n/index.ts` registrieren. Routen entstehen automatisch.
+- **Video in anderer Sprache:** Dateien `public/video/vorstellung-en-1080.mp4`, `-720.mp4` und `public/img/vorstellung-en-poster.jpg` ablegen, dann in `src/lib/images.ts` bei `VIDEO_BY_LANG` die Zeile `en: videoSet("-en", <Sekunden>)` eintragen. Fehlt eine Sprache, läuft das deutsche Video.
+- **Rechtstexte** (Impressum, Datenschutz) bleiben bewusst Deutsch; nicht-deutsche Seiten zeigen oben einen Hinweis (`legal.notice`).
+- Technik: `src/app/(de)/` und `src/app/[lang]/` sind zwei Root-Layouts mit gemeinsamer `RootShell`. Seiteninhalte liegen in `src/views/`, die Routen sind nur dünne Wrapper.
+
 ## Wo steht was
 
 | Was | Datei |
 |---|---|
 | Skool-URL, Preis (399 €), Navigation, Kontakt-E-Mail, Plätze-Pill | `src/lib/config.ts` |
-| Die 4 Säulen (Lernsystem, Prüfungsstrategie, Stress & Resilienz, Netzwerk) | `src/lib/pillars.ts` |
-| Formate (Workshops, Videoreihen, Live Events, Downloads) | `src/lib/formats.ts` |
+| Alle Texte der Seite, je Sprache (Säulen, Formate, FAQ, Chatbot, …) | `src/i18n/{de,en,fr,it}.ts` |
 | Bilder/Video-Pfade | `src/lib/images.ts` (Dateien in `public/img/`, `public/video/`) |
 | Startseite | `src/app/page.tsx` + `src/components/home/*` |
 | Programm (Video, Formate, Preis) | `src/app/programm/page.tsx`, `src/components/sections/{VSL,Modules,Pricing}.tsx` |
