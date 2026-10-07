@@ -78,10 +78,12 @@ export function Header({ lang, nav, common }: { lang: Locale; nav: Dict["nav"]; 
           </CTAButton>
         </div>
 
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher lang={lang} label={common.language} compact />
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="-mr-2 flex h-11 w-11 items-center justify-center text-ink md:hidden"
+          className="-mr-2 flex h-11 w-11 items-center justify-center text-ink"
           aria-expanded={open}
           aria-label={open ? common.menuClose : common.menuOpen}
         >
@@ -91,6 +93,7 @@ export function Header({ lang, nav, common }: { lang: Locale; nav: Dict["nav"]; 
             <span className={cn("h-px w-6 bg-current transition-transform", open && "-translate-y-[7px] -rotate-45")} />
           </div>
         </button>
+        </div>
       </Container>
 
       {open && (

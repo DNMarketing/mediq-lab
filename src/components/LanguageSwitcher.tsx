@@ -20,10 +20,13 @@ export function LanguageSwitcher({
   lang,
   label,
   variant = "dropdown",
+  compact = false,
 }: {
   lang: Locale;
   label: string;
   variant?: "dropdown" | "chips";
+  /** Nur Sprachkürzel statt Name (Handy-Header). */
+  compact?: boolean;
 }) {
   const pathname = usePathname() || "/";
   const { path } = stripLocale(pathname);
@@ -79,18 +82,21 @@ export function LanguageSwitcher({
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={label}
-        className="inline-flex h-9 items-center gap-1.5 rounded-card border border-line-strong px-2.5 text-xs font-medium uppercase tracking-[0.12em] text-ink-soft transition-colors hover:border-petrol-700 hover:text-petrol-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+        className={cn(
+          "inline-flex items-center gap-2 rounded-card border border-copper-500/50 bg-copper-100/70 font-semibold text-copper-600 shadow-soft transition-all duration-200 hover:border-copper-500 hover:bg-copper-100 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper",
+          compact ? "h-10 px-3 text-xs uppercase tracking-[0.12em]" : "h-10 px-3.5 text-sm",
+        )}
       >
         <GlobeIcon />
-        {lang}
-        <svg viewBox="0 0 24 24" className={cn("h-3 w-3 transition-transform", open && "rotate-180")} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+        {compact ? lang : LOCALE_NAMES[lang]}
+        <svg viewBox="0 0 24 24" className={cn("h-3.5 w-3.5 transition-transform", open && "rotate-180")} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden>
           <path d="M6 9l6 6 6-6" />
         </svg>
       </button>
       {open && (
         <ul
           role="menu"
-          className="absolute right-0 top-[calc(100%+6px)] z-50 min-w-[10rem] overflow-hidden rounded-card border border-line bg-paper-light py-1 shadow-lift"
+          className="absolute right-0 top-[calc(100%+8px)] z-50 min-w-[11rem] overflow-hidden rounded-card border border-copper-500/30 bg-paper-light py-1 shadow-lift"
         >
           {LOCALES.map((l) => (
             <li key={l} role="none">
@@ -101,8 +107,8 @@ export function LanguageSwitcher({
                 lang={l}
                 aria-current={l === lang ? "true" : undefined}
                 className={cn(
-                  "flex items-center justify-between px-3.5 py-2 text-sm transition-colors hover:bg-paper-sand hover:text-petrol-700",
-                  l === lang ? "text-petrol-700" : "text-ink-soft",
+                  "flex items-center justify-between px-4 py-2.5 text-sm transition-colors hover:bg-copper-100/60 hover:text-copper-600",
+                  l === lang ? "font-semibold text-copper-600" : "text-ink-soft",
                 )}
               >
                 {LOCALE_NAMES[l]}
