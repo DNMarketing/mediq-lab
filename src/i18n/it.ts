@@ -356,7 +356,7 @@ export const it: Dict = {
       blurb: "Il tuo sistema completo per un intero anno accademico. Community e tutti i workshop sono inclusi, non c'è nulla da aggiungere.",
       perYear: "/ anno",
       perMonth: "Equivale a circa {monthly} al mese.",
-      compare: "Per confronto: un solo semestre perso costa presto molte volte tanto in affitto, spese di vita e tempo perso. In un'università privata o all'estero si aggiunge un anno di ripetizione da {lost}. L'abbonamento si ripaga già se ti risparmia un solo semestre perso.",
+      compare: "Per confronto: un solo semestre perso costa presto molte volte tanto in affitto, spese di vita e tempo perso. In un'università privata o all'estero si aggiunge un anno di ripetizione {lost}. L'abbonamento si ripaga già se ti risparmia un solo semestre perso.",
       included: [
         "Accesso alla community medIQ lab su Skool",
         "Serie di workshop: strategie di studio, stress & resilienza, finanze",
@@ -417,7 +417,7 @@ export const it: Dict = {
     mission: {
       eyebrow: "La nostra missione",
       title: "Meno semestri persi. Più lauree raggiunte con sicurezza.",
-      lead: "Ogni semestre perso costa non solo tempo, ma denaro, nervi e spesso un po' di fiducia in sé. In un'università privata o all'estero si aggiungono presto anni di ripetizione da {lost}. Non deve andare così.",
+      lead: "Ogni semestre perso costa non solo tempo, ma denaro, nervi e spesso un po' di fiducia in sé. In un'università privata o all'estero si aggiungono presto anni di ripetizione {lost}. Non deve andare così.",
       points: [
         "Trovare insieme a te il tuo percorso di studio.",
         "Creare uno spazio in cui vi sostenete a vicenda e imparate gli uni dagli altri.",
@@ -508,7 +508,7 @@ export const it: Dict = {
       },
       {
         q: "Il prezzo vale davvero la pena?",
-        a: "Fai i conti onestamente: un solo semestre perso ti costa mesi di affitto e spese di vita più un ingresso più tardivo nel lavoro. In un'università privata o all'estero si aggiunge un anno di ripetizione spesso da {lost}. In confronto, {yearly} all'anno sono un investimento che si ripaga già se ti risparmia un solo semestre perso.",
+        a: "Fai i conti onestamente: un solo semestre perso ti costa mesi di affitto e spese di vita più un ingresso più tardivo nel lavoro. In un'università privata o all'estero si aggiunge un anno di ripetizione spesso {lost}. In confronto, {yearly} all'anno sono un investimento che si ripaga già se ti risparmia un solo semestre perso.",
       },
       {
         q: "Come funzionano iscrizione e pagamento?",

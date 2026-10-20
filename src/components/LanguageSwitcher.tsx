@@ -21,15 +21,18 @@ export function LanguageSwitcher({
   label,
   variant = "dropdown",
   compact = false,
+  fixedPath,
 }: {
   lang: Locale;
   label: string;
   variant?: "dropdown" | "chips";
   /** Nur Sprachkürzel statt Name (Handy-Header). */
   compact?: boolean;
+  /** Fester sprachfreier Zielpfad (z. B. "/" auf der 404-Seite, wo usePathname() "/_not-found" liefert). */
+  fixedPath?: string;
 }) {
   const pathname = usePathname() || "/";
-  const { path } = stripLocale(pathname);
+  const path = fixedPath ?? stripLocale(pathname).path;
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 

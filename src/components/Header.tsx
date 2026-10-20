@@ -21,7 +21,18 @@ const NAV: { key: keyof Dict["nav"]; path: string }[] = [
   { key: "kontakt", path: "/kontakt" },
 ];
 
-export function Header({ lang, nav, common }: { lang: Locale; nav: Dict["nav"]; common: Dict["common"] }) {
+export function Header({
+  lang,
+  nav,
+  common,
+  langPath,
+}: {
+  lang: Locale;
+  nav: Dict["nav"];
+  common: Dict["common"];
+  /** Fester Pfad für den Sprachumschalter (404-Seite). */
+  langPath?: string;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -72,14 +83,14 @@ export function Header({ lang, nav, common }: { lang: Locale; nav: Dict["nav"]; 
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <LanguageSwitcher lang={lang} label={common.language} />
+          <LanguageSwitcher lang={lang} label={common.language} fixedPath={langPath} />
           <CTAButton href={SKOOL_URL} size="md">
             {common.join}
           </CTAButton>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <LanguageSwitcher lang={lang} label={common.language} compact />
+          <LanguageSwitcher lang={lang} label={common.language} compact fixedPath={langPath} />
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
@@ -113,7 +124,7 @@ export function Header({ lang, nav, common }: { lang: Locale; nav: Dict["nav"]; 
               </Link>
             ))}
             <div className="mt-3 border-t border-line px-3 pt-4">
-              <LanguageSwitcher lang={lang} label={common.language} variant="chips" />
+              <LanguageSwitcher lang={lang} label={common.language} variant="chips" fixedPath={langPath} />
             </div>
             <CTAButton href={SKOOL_URL} size="lg" className="mt-3 w-full">
               {common.join}

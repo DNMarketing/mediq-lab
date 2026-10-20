@@ -16,13 +16,16 @@ import { SITE_URL } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Seite nicht gefunden · medIQ lab",
-  robots: { index: false, follow: true },
+  // Kein robots: Next setzt auf der Fehlerseite selbst noindex.
+  // Bilder explizit, sonst löst Next das Datei-OG-Bild ohne metadataBase auf (localhost:3000).
+  openGraph: { images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }] },
+  twitter: { card: "summary_large_image", images: ["/opengraph-image.png"] },
 };
 
 export default function GlobalNotFound() {
   const d = getDict("de");
   return (
-    <RootShell lang="de">
+    <RootShell lang="de" langPath="/">
       <PageIntro
         eyebrow="Fehler 404"
         title="Diese Seite gibt es nicht."

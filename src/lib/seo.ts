@@ -30,7 +30,7 @@ export function rootMetadata(lang: Locale): Metadata {
     },
     robots: { index: true, follow: true },
     // Google Search Console, Property https://www.mediq-lab.de/ (Bestätigung per HTML-Tag)
-    verification: { google: "B-iuK58g4-ZkM_4X_UitervXJnl8RZ9lQL2S1o5BPOE" },
+    verification: { google: "EHkQesIief2QwQWce9SkAZXGMfT4yvwsjgt9PGsZ6IQ" },
   };
 }
 

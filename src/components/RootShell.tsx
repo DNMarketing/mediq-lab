@@ -10,7 +10,16 @@ import { MedIQChat } from "./MedIQChat";
  * Sprachen unter /[lang]). Setzt <html lang>, Fonts, Header/Footer, Sticky-CTA
  * und Chat in der jeweiligen Sprache.
  */
-export function RootShell({ lang, children }: { lang: Locale; children: React.ReactNode }) {
+export function RootShell({
+  lang,
+  children,
+  langPath,
+}: {
+  lang: Locale;
+  children: React.ReactNode;
+  /** Fester Pfad für den Sprachumschalter (404-Seite). */
+  langPath?: string;
+}) {
   const d = getDict(lang);
   return (
     <html lang={LOCALE_TAGS[lang]} className={`${serif.variable} ${sans.variable}`}>
@@ -23,7 +32,7 @@ export function RootShell({ lang, children }: { lang: Locale; children: React.Re
         >
           {d.common.skip}
         </a>
-        <Header lang={lang} nav={d.nav} common={d.common} />
+        <Header lang={lang} nav={d.nav} common={d.common} langPath={langPath} />
         <main id="inhalt">{children}</main>
         <Footer lang={lang} t={d.footer} nav={d.nav} />
         <MobileCTABar lang={lang} t={d.mobileBar} join={d.common.join} />
