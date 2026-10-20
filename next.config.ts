@@ -16,7 +16,8 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true,
   // Eigene 404-Seite trotz zwei Root-Layouts ((de) und [lang]): src/app/global-not-found.tsx
-  experimental: { globalNotFound: true },
+  // inlineCss: CSS (~8 KB komprimiert) direkt ins HTML statt render-blockierender Datei (mobiler LCP).
+  experimental: { globalNotFound: true, inlineCss: true },
 };
 
 export default nextConfig;

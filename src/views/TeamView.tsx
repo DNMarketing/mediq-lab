@@ -1,5 +1,5 @@
 import { img } from "@/lib/images";
-import { fill, type Locale } from "@/i18n/config";
+import { fill, localePath, type Locale } from "@/i18n/config";
 import { getDict, Rich } from "@/i18n";
 import { pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/ui/PageIntro";
@@ -10,7 +10,9 @@ import { CTABand } from "@/components/sections/CTABand";
 import { spotsLabel } from "./HomeView";
 import { Picture } from "@/components/ui/Picture";
 
-function TeamCard({ name, role, file }: { name: string; role: string; file: string }) {
+type FounderDetails = { year: string; subjects: string[]; labels: { year: string; subjects: string; more: string }; href: string };
+
+function TeamCard({ name, role, file, details }: { name: string; role: string; file: string; details?: FounderDetails }) {
   return (
     <figure className="group h-full overflow-hidden rounded-card border border-line bg-paper-light shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:shadow-lift">
       <div className="relative aspect-[4/5] overflow-hidden bg-paper-sand">
@@ -25,6 +27,24 @@ function TeamCard({ name, role, file }: { name: string; role: string; file: stri
       <figcaption className="p-5">
         <p className="font-serif text-xl font-medium text-ink">{name}</p>
         <p className="mt-1 text-sm leading-snug text-ink-soft">{role}</p>
+        {details && (
+          <>
+            {/* Qualifikation aus dem Profil auf /ueber/ (gleiche Quelle, keine doppelten Texte) */}
+            <dl className="mt-3 space-y-1 text-sm text-ink-soft">
+              <div className="flex gap-2">
+                <dt className="shrink-0 font-medium text-ink">{details.labels.year}</dt>
+                <dd>{details.year}</dd>
+              </div>
+              <div className="flex gap-2">
+                <dt className="shrink-0 font-medium text-ink">{details.labels.subjects}</dt>
+                <dd>{details.subjects.join(", ")}</dd>
+              </div>
+            </dl>
+            <a href={details.href} className="mt-3 inline-block text-sm font-medium text-copper-600 transition-colors hover:text-copper-500">
+              {details.labels.more} →
+            </a>
+          </>
+        )}
       </figcaption>
     </figure>
   );
@@ -55,11 +75,20 @@ export function TeamView({ lang }: { lang: Locale }) {
           </div>
         </Reveal>
         <Stagger className="mx-auto grid max-w-2xl gap-5 sm:grid-cols-2">
-          {t.leads.map((m) => (
-            <StaggerItem key={m.name}>
-              <TeamCard {...m} />
-            </StaggerItem>
-          ))}
+          {t.leads.map((m) => {
+            const f = d.pageUeber.founders.find((x) => x.name === m.name);
+            const details = f && {
+              year: f.year,
+              subjects: f.subjects,
+              labels: { year: d.pageUeber.labels.year, subjects: d.pageUeber.labels.subjects, more: d.pageUeber.labels.motivation },
+              href: localePath(lang, "/ueber"),
+            };
+            return (
+              <StaggerItem key={m.name}>
+                <TeamCard {...m} details={details} />
+              </StaggerItem>
+            );
+          })}
         </Stagger>
       </Section>
 
