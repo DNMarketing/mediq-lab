@@ -55,8 +55,6 @@ export function videoFor(lang: string): VideoSet {
 export const IMAGES = {
   /** Problem: konzentrierte:r Studierende:r am Laptop. */
   problemStudent: img("problem-student.jpg"),
-  /** VSL-Poster: anatomisches Skelettmodell. */
-  vslSkeleton: img("vsl-skeleton.jpg"),
   /** Module: anatomisches Herzmodell. */
   moduleHeart: img("module-heart.jpg"),
   /** Module (sekundär): Mikroskop im Labor. */

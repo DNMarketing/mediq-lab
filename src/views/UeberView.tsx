@@ -11,6 +11,7 @@ import { Stagger, StaggerItem } from "@/components/ui/Motion";
 import { CTABand } from "@/components/sections/CTABand";
 import { PillarGrid } from "@/components/sections/PillarGrid";
 import { spotsLabel } from "./HomeView";
+import { Picture } from "@/components/ui/Picture";
 
 const MISSION_ICONS: IconName[] = ["structure", "community", "clock"];
 const VALUE_ICONS: IconName[] = ["mind", "structure", "check", "community"];
@@ -33,8 +34,7 @@ export function UeberView({ lang }: { lang: Locale }) {
           <div className="lg:col-span-6">
             <Reveal>
               <div className="overflow-hidden rounded-card border border-line shadow-lift">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img("team/faith-hannah.jpg")} alt={t.who.imgAlt} loading="lazy" decoding="async" className="aspect-[3/2] w-full object-cover" />
+                <Picture src={img("team/faith-hannah.jpg")} alt={t.who.imgAlt} loading="lazy" decoding="async" className="aspect-[3/2] w-full object-cover" />
               </div>
             </Reveal>
           </div>
@@ -61,8 +61,7 @@ export function UeberView({ lang }: { lang: Locale }) {
             <StaggerItem as="li" key={f.name}>
               <article className="flex h-full flex-col gap-6 rounded-card border border-line bg-paper-light p-6 shadow-soft sm:flex-row sm:p-7">
                 <div className="shrink-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Picture
                     src={img("team/" + f.file)}
                     alt={fill(t.labels.founderAlt, { name: f.name })}
                     loading="lazy"

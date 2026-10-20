@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 type RevealProps = {
@@ -29,7 +29,7 @@ export function Reveal({
   as = "div",
 }: RevealProps) {
   const reduce = useReducedMotion();
-  const MotionTag = motion[as];
+  const MotionTag = m[as];
   const from = fade ? (reduce ? { opacity: 0 } : { opacity: 0, y }) : reduce ? false : { y };
   const to = fade ? (reduce ? { opacity: 1 } : { opacity: 1, y: 0 }) : { y: 0 };
 

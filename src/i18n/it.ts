@@ -8,13 +8,13 @@ export const it: Dict = {
   },
 
   meta: {
-    titleDefault: "medIQ lab: Studiare meglio. Superare gli esami con sicurezza. Per studenti di medicina in Germania e nell'UE.",
+    titleDefault: "medIQ lab: metodo e community per studenti di medicina",
     titleTemplate: "%s · medIQ lab",
     description:
-      "Sistema di studio per studenti di medicina in Germania e nell'UE: metodi fondati sulla scienza, strategia d'esame, app con IA e community in un abbonamento.",
-    ogTitle: "medIQ lab: Studiare meglio. Superare gli esami con sicurezza.",
+      "Community di studio per studenti di medicina in Germania e nell'UE: workshop su strategie di studio e resilienza, eventi live settimanali e schemi.",
+    ogTitle: "medIQ lab: community di studio per medicina",
     ogDescription:
-      "Un percorso di medicina su basi scientifiche, in Germania e all'estero. Workshop, schemi, app IA e community in un unico abbonamento.",
+      "Metodo e community per studenti di medicina in Germania e all'estero: workshop, serie video, schemi ed eventi live ogni settimana su Skool.",
   },
 
   common: {
@@ -46,7 +46,7 @@ export const it: Dict = {
     start: "Inizia",
     joinCommunity: "Entra nella community →",
     programmPreise: "Programma & prezzi",
-    legal: "Note legali",
+    legal: "Informazioni legali",
     impressum: "Note legali",
     datenschutz: "Privacy",
     rights: "© 2026 medIQ lab. Tutti i diritti riservati.",
@@ -56,11 +56,11 @@ export const it: Dict = {
   hero: {
     eyebrow: "Per studenti di medicina in Germania & all'estero",
     title: "Studiare meglio.\nSuperare gli esami con sicurezza.\n*Nessun anno perso.*",
-    lead: "Un metodo di studio fondato sulla scienza, una strategia d'esame chiara, la nostra app IA e una community che ti sostiene. Perché nessun costoso anno di ripetizione ti rallenti, che tu studi in Germania o all'estero.",
+    lead: "Un metodo di studio basato sulla ricerca, una strategia d'esame chiara, la nostra app IA e una community che ti sostiene. Perché nessun costoso anno di ripetizione ti rallenti, che tu studi in Germania o all'estero.",
     ctaMethod: "Come funziona il metodo",
     note: "Per studenti di medicina in Germania & nell'UE · {yearly} all'anno, tutto incluso · iscrizione tramite Skool",
     cardTitle: "Metodo invece di\nimparare a memoria",
-    cardBody: "Active recall & ripetizione spaziata, fondati sulla psicologia dell'apprendimento.",
+    cardBody: "Richiamo attivo & ripetizione spaziata, fondati sulla psicologia dell'apprendimento.",
   },
 
   problemTeaser: {
@@ -70,10 +70,10 @@ export const it: Dict = {
     pains: [
       { lead: "Sommerso dalla quantità di materia", rest: ", e nessuno ti mostra cosa viene davvero chiesto all'esame." },
       { lead: "Leggere, evidenziare, dimenticare", rest: ". L'impegno senza sistema svanisce." },
-      { lead: "Un tentativo fallito", rest: ", e un anno di ripetizione in un'università privata o all'estero costa presto {lost}." },
+      { lead: "Un tentativo fallito ha conseguenze", rest: ": un esame di recupero, più pressione e, nel peggiore dei casi, un anno di ripetizione, che in un'università privata o all'estero può costare facilmente {lost}." },
     ],
     quote: "Non un problema di talento. Un *problema di metodo.*",
-    cta: "Perché è così",
+    cta: "Da dove nasce il problema",
   },
 
   methodTeaser: {
@@ -102,21 +102,21 @@ export const it: Dict = {
       title: "Stress & resilienza",
       sub: "Pilastro 3",
       short: "Studiare in modo efficiente senza mettere a rischio la salute mentale: gestire l'ansia da esame, pause attive, strumenti di mindset.",
-      body: "Enormi quantità di materia in poco tempo, paura di fallire, spesso lontano dalla famiglia e dall'ambiente abituale, e la sensazione di non aver mai fatto abbastanza. Insegniamo metodi per studiare in modo efficiente senza compromettere la salute mentale: affrontare con resilienza l'ansia da esame e le battute d'arresto, ancorare pause attive e strumenti di mindset nella quotidianità. Non uno sprint estenuante, ma arrivare all'abilitazione in salute e motivati.",
+      body: "Enormi quantità di materia in poco tempo, paura di fallire, spesso lontano dalla famiglia e dall'ambiente abituale, e la sensazione di non aver mai fatto abbastanza. Insegniamo metodi per studiare in modo efficiente senza compromettere la salute mentale: affrontare con resilienza l'ansia da esame e le battute d'arresto, ancorare pause attive e strumenti di mindset nella quotidianità. Non uno sprint estenuante, ma arrivare all'abilitazione in salute e motivati. I nostri workshop non sostituiscono un trattamento psicologico o medico. Se l'ansia ti blocca in modo persistente, rivolgiti al servizio di consulenza psicologica della tua università o all'ente per il diritto allo studio.",
       items: ["Workshop stress & resilienza", "Serie video stress & resilienza", "Coaching per l'ansia da esame", "Pause attive & strumenti di mindset"],
     },
     {
       title: "Rete",
       sub: "Pilastro 4",
       short: "Una community di studenti di medicina in Germania e nelle università dell'UE che si spronano, condividono conoscenze e passano i consigli degli anni superiori.",
-      body: "Quale specializzazione fa per me? Dove si trovano buoni tirocini? Senza contatti è spesso una lotteria di consigli, e studiare all'estero senza una cerchia consolidata aggiunge ostacoli. Creiamo una community di studenti di medicina in Germania e nelle università dell'UE che si spronano, si motivano e condividono: sessioni di studio, gruppi di scambio e consigli collaudati degli anni superiori.",
+      body: "Quale specializzazione fa per me? Dove si trovano buoni tirocini? Senza contatti, i buoni consigli sono spesso questione di fortuna, e studiare all'estero senza una cerchia consolidata aggiunge ostacoli. Creiamo una community di studenti di medicina in Germania e nelle università dell'UE che si spronano, si motivano e condividono: sessioni di studio, gruppi di scambio e consigli collaudati degli anni superiori.",
       items: ["Study Together, ogni settimana", "Community Café, ogni settimana", "Conferenze di medici ospiti", "High-yield hour & Q&A"],
     },
   ],
 
   cost: {
     eyebrow: "Cosa c'è in gioco",
-    line1: "Un anno perso:",
+    line1: "Un anno di ripetizione in un'università privata o all'estero può costare facilmente",
     value1: "{lost}.",
     line2: "Un anno di medIQ lab:",
     value2: "{yearly}.",
@@ -151,11 +151,11 @@ export const it: Dict = {
     items: [
       {
         q: "Il prezzo vale davvero la pena?",
-        a: "Fai i conti onestamente: un semestre perso costa mesi di affitto e spese di vita, e in un'università privata o all'estero un anno di ripetizione aggiunge {lost}. In confronto, {yearly} all'anno si ripagano già se ti risparmiano un solo semestre perso.",
+        a: "Fai i conti onestamente: un semestre perso costa mesi di affitto e spese di vita, e in un'università privata o all'estero un anno di ripetizione può costare facilmente {lost}. In confronto, {yearly} all'anno si ripagano già se ti risparmiano un solo semestre perso.",
       },
       {
         q: "Garantite che supererò l'esame?",
-        a: "No, e chiunque lo prometta non è serio. Superare l'esame dipende da te. Quello che offriamo è un sistema collaudato e una community che migliorano sensibilmente le tue possibilità, insegnandoti a studiare in modo più intelligente, non solo più duro.",
+        a: "No, e chiunque lo prometta non è serio. Superare l'esame dipende da te. Ti offriamo un sistema di studio basato su principi ben studiati dalla ricerca sull'apprendimento e una community che ti aiuta a non mollare.",
       },
       {
         q: "Studio in Germania, fa al caso mio?",
@@ -172,7 +172,7 @@ export const it: Dict = {
   cta: {
     eyebrow: "medIQ lab",
     title: "Studia in modo più intelligente da oggi, *non più duro.*",
-    subtitle: "Ogni semestre che metti al sicuro ora è tempo e denaro che non perdi. Entra nella community medIQ lab e porta il tuo sistema di studio a un nuovo livello.",
+    subtitle: "Ogni semestre che metti al sicuro ora è tempo e denaro che non perdi. Entra nella community medIQ lab e costruisci il tuo sistema di studio con workshop, eventi live settimanali e schemi.",
     note: "Iscrizione & pagamento sicuri tramite Skool · {yearly} all'anno, tutto incluso · nessun costo nascosto",
     secondary: "Programma & prezzi",
   },
@@ -186,9 +186,9 @@ export const it: Dict = {
   },
 
   chat: {
-    name: "Consulente medIQ lab",
-    status: "Risponde subito",
-    open: "Apri il consulente medIQ lab",
+    name: "Assistente medIQ lab",
+    status: "Chat automatica, risponde subito",
+    open: "Apri l'assistente medIQ lab",
     close: "Chiudi la chat",
     teaser: "medIQ lab fa per te? Chiedimelo, ti aiuto in meno di un minuto. 👋",
     cta: {
@@ -206,22 +206,22 @@ export const it: Dict = {
       priceExact: "Quanto costa esattamente?",
       who: "Per chi è?",
       fit: "Fa al caso mio?",
-      contact: "Preferisco chiedere di persona",
+      contact: "Preferisco chiedere a una persona vera",
       restart: "Ricomincia",
     },
     nodes: {
       start: ["Ehi 👋 In meno di un minuto ti mostro se medIQ lab fa per te.", "Cosa ti descrive meglio in questo momento?"],
       fear: [
-        "Lo conosco bene, e quasi mai è un problema di conoscenze.",
+        "Conosco bene questa sensazione, e quasi mai è un problema di conoscenze.",
         "Con medIQ lab ottieni strategia d'esame, logica delle domande passate e strumenti concreti contro la pressione, per entrare più tranquillo.",
       ],
       method: [
         "Allora è quasi sempre il metodo, non l'impegno.",
-        "Con active recall e ripetizione spaziata la materia resta davvero, invece di essere letta tre volte e dimenticata.",
+        "Con il richiamo attivo e la ripetizione spaziata ricordi la materia più a lungo, invece di leggerla tre volte e dimenticarla.",
       ],
       cost: [
         "Comprensibile, è il modo più costoso di perdere tempo.",
-        "Un anno di ripetizione in un'università privata o all'estero costa presto {lost}. Un anno di medIQ lab: {yearly}, ed è pensato per risparmiarti proprio questo.",
+        "Un anno di ripetizione in un'università privata o all'estero può costare facilmente {lost}. Un anno di medIQ lab: {yearly}, ed è pensato per risparmiarti proprio questo.",
       ],
       price: [
         "Un prezzo, tutto incluso:",
@@ -238,13 +238,13 @@ export const it: Dict = {
   },
 
   pageMethode: {
-    title: "Metodo",
+    title: "Metodo di studio per medicina: i 4 pilastri",
     description:
-      "Il metodo dietro medIQ lab: i quattro pilastri del successo negli studi, sistema di studio, strategia d'esame, stress & resilienza e rete, fondati sulla psicologia dell'apprendimento. Studiare in modo più intelligente invece che più duro, in Germania e all'estero.",
+      "Come medIQ lab porta il richiamo attivo e la ripetizione spaziata negli studi di medicina: sistema di studio, strategia d'esame, stress e rete.",
     intro: {
       eyebrow: "Il metodo",
       title: "Un metodo con fondamenta, *non intuito.*",
-      lead: "medIQ lab non è una raccolta di frasi motivazionali. Dietro c'è il modo in cui l'apprendimento funziona in modo dimostrato, e come sfruttarlo con costanza nel percorso di medicina.",
+      lead: "medIQ lab non è una raccolta di frasi motivazionali. Si basa su come funziona l'apprendimento e su come sfruttarlo con costanza nel percorso di medicina.",
       ctaProgramm: "Vedi il programma",
     },
     problem: {
@@ -256,9 +256,9 @@ export const it: Dict = {
         { title: "Sommerso dalla quantità di materia", body: "Migliaia di pagine, centinaia di lezioni, e nessuno ti mostra cosa conta davvero per l'esame." },
         { title: "Studiare senza sistema", body: "Leggi, evidenzi, rileggi, e lo dimentichi prima dell'esame. L'impegno senza metodo svanisce." },
         { title: "Ansia da esame & vuoti di memoria", body: "La materia la sai, ma sotto pressione all'improvviso sparisce tutto." },
-        { title: "Recuperi che incombono", body: "Un tentativo fallito e tutto il semestre vacilla. La paura studia con te." },
+        { title: "Recuperi che incombono", body: "Un tentativo fallito e tutto il semestre vacilla. E la paura ti accompagna in ogni ripasso." },
         { title: "Semestri & anni di vita persi", body: "Ogni semestre perso significa: più affitto, più spese di vita, ingresso più tardivo nel lavoro." },
-        { title: "Tasse universitarie alte all'estero", body: "In un'università privata o all'estero un anno di ripetizione costa presto {lost}, in aggiunta a tutto il resto." },
+        { title: "Tasse universitarie alte all'estero", body: "In un'università privata o all'estero un anno di ripetizione può costare facilmente {lost}, in aggiunta a tutto il resto." },
       ],
       quote: "Non è un problema di talento. È un *problema di metodo*.",
       quoteSub: "E un metodo si può imparare, più in fretta di quanto pensi.",
@@ -267,7 +267,7 @@ export const it: Dict = {
       eyebrow: "I quattro pilastri",
       title: "Il tuo successo negli studi poggia su quattro pilastri.",
       lead: "Sistema di studio, strategia d'esame, stress & resilienza e rete. Sono la base di un successo duraturo, e ti aiutiamo a migliorare ciascuno in modo mirato. È la differenza tra studiare più duro e studiare in modo più intelligente.",
-      research: "I workshop sulle strategie di studio si basano sulla ricerca consolidata in psicologia dell'apprendimento, tra cui l'effetto test (Karpicke & Roediger) e l'apprendimento distribuito (Cepeda et al.).",
+      research: "I workshop sulle strategie di studio si basano su studi dedicati al richiamo attivo ([Roediger & Karpicke 2006](https://doi.org/10.1111/j.1467-9280.2006.01693.x); [Karpicke & Roediger 2008](https://doi.org/10.1126/science.1152408)) e su una meta-analisi sull'apprendimento distribuito ([Cepeda et al. 2006](https://doi.org/10.1037/0033-2909.132.3.354)).",
     },
     practice: {
       eyebrow: "In pratica",
@@ -275,7 +275,7 @@ export const it: Dict = {
       subtitle: "I principi da soli non superano un esame. Con medIQ lab diventano strumenti concreti che applichi dal primo giorno.",
       cta: "Vedi tutti i contenuti",
       items: [
-        { title: "Anki, flashcard & app IA", body: "Active recall e ripetizione spaziata diventano concreti: schede che verificano davvero la materia, schemi pronti e la nostra app IA che ti accompagna nel ripasso fino agli esami finali." },
+        { title: "Anki, flashcard & app IA", body: "Richiamo attivo e ripetizione spaziata diventano concreti: schede che verificano davvero la materia, schemi pronti e la nostra app IA che ti accompagna nel ripasso fino agli esami finali." },
         { title: "Piani di studio personali & struttura settimanale", body: "I principi diventano un piano: una struttura settimanale che regge accanto a tirocinio e lavoro part-time, invece di buoni propositi che crollano dopo due settimane." },
         { title: "Analisi delle domande passate & simulazione dell'orale", body: "Riconoscere gli schemi d'esame, ricavarne le priorità e provare l'orale in condizioni realistiche, perché non sia più un salto nel buio." },
         { title: "Strumenti per la mente", body: "Ansia da esame, pressione e procrastinazione le affronti con metodi che funzionano quando conta, non con un « datti una regolata »." },
@@ -290,14 +290,14 @@ export const it: Dict = {
   },
 
   pageProgramm: {
-    title: "Programma",
+    title: "Programma e prezzo per studenti di medicina",
     description:
-      "L'abbonamento medIQ lab per studenti di medicina in Germania e nell'UE: serie di workshop, serie video, eventi live settimanali, download e app IA, tutto in un unico prezzo. Iscrizione e contenuti tramite Skool.",
+      "Workshop circa due volte a semestre, Study Together e Community Café ogni settimana, simulazioni dell'orale e schemi in un abbonamento annuale.",
     intro: {
       eyebrow: "Il programma",
       title: "Il tuo sistema completo, *dal sistema di studio agli esami finali.*",
       lead: "Un abbonamento, tutto incluso: serie di workshop, serie video, eventi live settimanali come Study Together e Community Café, conferenze di medici, simulazioni dell'orale, download e la nostra app IA. Per studenti di medicina in Germania e nell'UE, in università private o pubbliche.",
-      ctaMethod: "Prima vedi il metodo",
+      ctaMethod: "Scopri prima il metodo",
     },
     vsl: {
       eyebrow: "90 secondi che valgono la pena",
@@ -356,7 +356,7 @@ export const it: Dict = {
       blurb: "Il tuo sistema completo per un intero anno accademico. Community e tutti i workshop sono inclusi, non c'è nulla da aggiungere.",
       perYear: "/ anno",
       perMonth: "Equivale a circa {monthly} al mese.",
-      compare: "Per confronto: un solo semestre perso costa presto molte volte tanto in affitto, spese di vita e tempo perso. In un'università privata o all'estero si aggiunge un anno di ripetizione {lost}. L'abbonamento si ripaga già se ti risparmia un solo semestre perso.",
+      compare: "Per confronto: un solo semestre perso può costare facilmente molto di più in affitto, spese di vita e tempo perso. In un'università privata o all'estero un anno di ripetizione può costare facilmente {lost} in più. L'abbonamento si ripaga già se ti risparmia un solo semestre perso.",
       included: [
         "Accesso alla community medIQ lab su Skool",
         "Serie di workshop: strategie di studio, stress & resilienza, finanze",
@@ -373,16 +373,16 @@ export const it: Dict = {
     },
     cta: {
       eyebrow: "Inizia",
-      title: "Un prezzo, *tutto incluso.*",
+      title: "Pronto? *Allora entra nella community.*",
       subtitle: "Iscrizione, pagamento e tutti i contenuti passano in sicurezza da Skool. Questa pagina ti informa e ti indirizza lì.",
       secondary: "Domande aperte? Vai alle FAQ",
     },
   },
 
   pageUeber: {
-    title: "Chi siamo",
+    title: "Chi siamo: due studentesse di medicina",
     description:
-      "Ci presentiamo: Faith e Hannah, due studentesse di medicina con una missione comune, rendere il percorso di medicina più strutturato, più efficace e un po' meno stressante. La nostra missione, i nostri quattro pilastri, i nostri principi.",
+      "Faith e Hannah, studentesse di medicina al 4° anno, hanno fondato medIQ lab. Perché l'abbiamo creato, per chi è e i principi che ci guidano.",
     intro: {
       eyebrow: "Ci presentiamo",
       title: "Studiare non dovrebbe essere *un percorso solitario.*",
@@ -411,13 +411,13 @@ export const it: Dict = {
         file: "faith.jpg",
         year: "4° anno",
         subjects: ["Simulation Medicine", "Fisiopatologia"],
-        motivation: "La mia motivazione è sostenere gli studenti perché il minor numero possibile di loro venga bocciato agli esami. Soprattutto al primo anno, molti provano faticosamente approcci diversi. Chi trova presto la strategia di studio giusta riduce il proprio tasso di bocciatura, e risparmia tempo, denaro e nervi preziosi.",
+        motivation: "La mia motivazione è sostenere gli studenti perché il minor numero possibile di loro venga bocciato agli esami. Soprattutto al primo anno, molti provano faticosamente approcci diversi. Chi trova presto la strategia di studio giusta viene bocciato meno spesso e si risparmia tempo, denaro e stress.",
       },
     ],
     mission: {
       eyebrow: "La nostra missione",
       title: "Meno semestri persi. Più lauree raggiunte con sicurezza.",
-      lead: "Ogni semestre perso costa non solo tempo, ma denaro, nervi e spesso un po' di fiducia in sé. In un'università privata o all'estero si aggiungono presto anni di ripetizione {lost}. Non deve andare così.",
+      lead: "Ogni semestre perso costa non solo tempo, ma denaro, nervi e spesso un po' di fiducia in sé. In un'università privata o all'estero un anno di ripetizione può costare facilmente {lost}. Non deve andare così.",
       points: [
         "Trovare insieme a te il tuo percorso di studio.",
         "Creare uno spazio in cui vi sostenete a vicenda e imparate gli uni dagli altri.",
@@ -439,7 +439,7 @@ export const it: Dict = {
         { title: "Scienza invece di intuito", body: "Ci basiamo su principi validati dalla psicologia dell'apprendimento, non su citazioni motivazionali o sul prossimo strumento miracoloso." },
         { title: "Metodo invece del mito del talento", body: "Superare gli esami non è questione di genio innato ma di sistemi che si imparano. Questo toglie pressione e ti rende indipendente." },
         { title: "Onestà invece di hype", body: "Nessuna promessa di superamento garantito, nessuna scarsità inventata. Diciamo cosa è realistico, e cosa no." },
-        { title: "Insieme invece che da soli", body: "Lo studio è una maratona. Una community che ti sostiene e ti tiene responsabile fa la differenza sulla lunga distanza." },
+        { title: "Insieme invece che da soli", body: "Lo studio è una maratona. Una community che ti sostiene e ti aiuta a restare costante fa la differenza sulla lunga distanza." },
       ],
     },
     cta: {
@@ -451,13 +451,13 @@ export const it: Dict = {
   },
 
   pageTeam: {
-    title: "Team",
+    title: "Il team: le fondatrici Faith e Hannah",
     description:
-      "Le persone dietro medIQ lab: Faith e Hannah, studentesse di medicina e fondatrici, più un team di coaching e social media che ti accompagna nel percorso di medicina, in Germania e all'estero.",
+      "Le fondatrici Faith e Hannah, la coach Daniela, Jessi e Lisi per i social media: scopri chi fa cosa dietro le quinte di medIQ lab.",
     intro: {
       eyebrow: "Il team",
       title: "Le persone dietro *medIQ lab.*",
-      lead: "Non un programma anonimo, ma un team che è esso stesso nel pieno degli studi di medicina, sa cosa si prova, e ti accompagna con metodo, coaching e una community solida.",
+      lead: "Dietro medIQ lab ci sono Faith e Hannah, studentesse di medicina. Le supportano Daniela per rilassamento e coaching, Jessi e Lisi per i social media.",
     },
     faceEyebrow: "Il volto di medIQ lab",
     teamEyebrow: "Dietro le quinte",
@@ -467,7 +467,7 @@ export const it: Dict = {
       { name: "Hannah", role: "Fondatrice & studentessa di medicina", file: "hannah.jpg" },
     ],
     team: [
-      { name: "Daniela", role: "Naturopata, terapeuta del rilassamento, life & business coach", file: "daniela.jpg" },
+      { name: "Daniela", role: "Heilpraktikerin (operatrice sanitaria non medico, abilitata in Germania), terapeuta del rilassamento, life & business coach", file: "daniela.jpg" },
       { name: "Jessi", role: "Social media", file: "jessi.jpg" },
       { name: "Lisi", role: "Social media", file: "lisi.jpg" },
     ],
@@ -480,12 +480,12 @@ export const it: Dict = {
   },
 
   pageFaq: {
-    title: "FAQ",
+    title: "FAQ: costi, iscrizione e funzionamento",
     description:
-      "Risposte alle domande più frequenti su medIQ lab: per chi è (Germania e UE), come funzionano iscrizione e pagamento tramite Skool, quanto costa l'abbonamento annuale (399 €, tutto incluso), e cosa deliberatamente non promettiamo.",
+      "Quanto costa medIQ lab, come funziona l'iscrizione tramite Skool, se c'è uno sconto campus e perché non garantiamo il superamento degli esami.",
     intro: {
       eyebrow: "FAQ",
-      title: "Cosa vuoi ancora sapere",
+      title: "Domande frequenti su medIQ lab",
       lead: "Le domande più frequenti su procedura, accesso, prezzi e su cosa medIQ lab può realisticamente offrire, con risposte oneste.",
       ctaContact: "Non trovi la tua domanda? Contattaci",
     },
@@ -496,19 +496,19 @@ export const it: Dict = {
       },
       {
         q: "Funziona anche se studio in Germania?",
-        a: "Sì, espressamente. medIQ lab è pensato per entrambi. I metodi funzionano indipendentemente da sede e piano di studi, e workshop, eventi live, download e app IA si usano online, che tu studi a Heidelberg, Vienna o Pécs.",
+        a: "Sì, assolutamente. medIQ lab è pensato per entrambi. I metodi funzionano indipendentemente da sede e piano di studi, e workshop, eventi live, download e app IA si usano online, che tu studi a Heidelberg, Vienna o Pécs.",
       },
       {
         q: "Quanto costa l'abbonamento?",
-        a: "{yearly} all'anno, tutto incluso: community, serie di workshop, serie video, eventi live settimanali come Study Together e Community Café, conferenze, simulazioni d'esame, download e app IA. Nessun extra nascosto e nessun upsell.",
+        a: "{yearly} all'anno, tutto incluso: community, serie di workshop, serie video, eventi live settimanali come Study Together e Community Café, conferenze, simulazioni d'esame, download e app IA. Nessun extra nascosto e nessun upsell. Trovi tutti i formati nel dettaglio nel [programma dell'abbonamento](/it/programm/).",
       },
       {
         q: "Ci sono sconti o una garanzia?",
-        a: "C'è uno sconto campus, chiedicelo semplicemente nella community o dalla pagina contatti. Non esiste una garanzia di superamento, perché nessuno può darla seriamente.",
+        a: "C'è uno sconto campus, chiedicelo semplicemente nella community o dalla [pagina contatti](/it/kontakt/). Non esiste una garanzia di superamento, perché nessuno può darla seriamente.",
       },
       {
         q: "Il prezzo vale davvero la pena?",
-        a: "Fai i conti onestamente: un solo semestre perso ti costa mesi di affitto e spese di vita più un ingresso più tardivo nel lavoro. In un'università privata o all'estero si aggiunge un anno di ripetizione spesso {lost}. In confronto, {yearly} all'anno sono un investimento che si ripaga già se ti risparmia un solo semestre perso.",
+        a: "Fai i conti onestamente: un solo semestre perso ti costa mesi di affitto e spese di vita più un ingresso più tardivo nel lavoro. In un'università privata o all'estero un anno di ripetizione può costare facilmente {lost} in più. In confronto, {yearly} all'anno sono un investimento che si ripaga già se ti risparmia un solo semestre perso.",
       },
       {
         q: "Come funzionano iscrizione e pagamento?",
@@ -516,7 +516,7 @@ export const it: Dict = {
       },
       {
         q: "Garantite che supererò l'esame?",
-        a: "No, e chiunque lo prometta non è serio. Superare l'esame dipende da te. Quello che offriamo è un sistema collaudato e una community che migliorano sensibilmente le tue possibilità, insegnandoti a studiare in modo più intelligente, non solo più duro.",
+        a: "No, e chiunque lo prometta non è serio. Superare l'esame dipende da te. Ti offriamo un sistema di studio basato su principi ben studiati dalla ricerca sull'apprendimento e una community che ti aiuta a non mollare.",
       },
     ],
     cta: {
@@ -528,8 +528,8 @@ export const it: Dict = {
   },
 
   pageKontakt: {
-    title: "Contatti",
-    description: "Domande su medIQ lab, sul metodo o sull'abbonamento? Scrivici, oppure entra direttamente nella community su Skool.",
+    title: "Contatti: domande sull'abbonamento",
+    description: "Scrivici tramite il modulo o a info@mediq-lab.de. Di norma rispondiamo entro pochi giorni lavorativi, più in fretta nella community su Skool.",
     intro: {
       eyebrow: "Contatti",
       title: "Parla con noi *prima di decidere.*",
@@ -537,7 +537,7 @@ export const it: Dict = {
     },
     community: {
       title: "Community su Skool",
-      body: "La linea più diretta: fai la tua domanda nella community medIQ lab, spesso rispondono anche altri membri.",
+      body: "Il modo più rapido: fai la tua domanda nella community medIQ lab, spesso rispondono anche altri membri.",
       cta: "Vai alla community",
     },
     email: { title: "E-mail", body: "Preferisci il classico? Scrivici direttamente." },

@@ -7,6 +7,9 @@ export const serif = Fraunces({
   display: "swap",
   style: ["normal", "italic"],
   axes: ["opsz"],
+  // Nicht vorladen: Die zwei Fraunces-Dateien (~150 KB) konkurrierten mit der Fließtextschrift,
+  // die auf dem Handy das LCP-Element trägt. Optik unverändert (Fallback mit angepassten Metriken, dann Swap).
+  preload: false,
 });
 
 // Seriöse, klare Sans für Fließtext

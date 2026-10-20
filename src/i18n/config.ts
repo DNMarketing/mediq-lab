@@ -20,7 +20,7 @@ export const LOCALE_NAMES: Record<Locale, string> = {
 
 /** BCP-47 für <html lang> und OpenGraph. */
 export const LOCALE_TAGS: Record<Locale, string> = {
-  de: "de-DE",
+  de: "de",
   en: "en",
   fr: "fr",
   it: "it",

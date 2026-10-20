@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { useId, useState } from "react";
 import { fill, localeHref, type Locale } from "@/i18n/config";
+import { Rich } from "@/i18n/Rich";
 import type { Dict } from "@/i18n/de";
 import { Section, SectionHeading } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
@@ -24,16 +25,20 @@ function FaqRow({ q, a, open, onToggle }: { q: string; a: string; open: boolean;
         </span>
       </button>
       {/* Antwort immer im HTML (für Google und KI-Crawler), nur optisch eingeklappt */}
-      <motion.div
+      <m.div
         id={panelId}
         initial={false}
         animate={open ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
         transition={{ duration: reduce ? 0 : 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
         className="overflow-hidden"
         aria-hidden={!open}
+        // inert: Links in eingeklappten Antworten nicht per Tab erreichbar (React 19 zur Laufzeit, Typen noch 18)
+        {...({ inert: !open } as Record<string, unknown>)}
       >
-        <p className="pb-6 pr-8 leading-relaxed text-ink-soft">{a}</p>
-      </motion.div>
+        <p className="pb-6 pr-8 leading-relaxed text-ink-soft">
+          <Rich text={a} />
+        </p>
+      </m.div>
     </div>
   );
 }

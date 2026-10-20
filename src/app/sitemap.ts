@@ -1,31 +1,25 @@
 import type { MetadataRoute } from "next";
-import { LOCALES, LOCALE_TAGS, localeHref } from "@/i18n/config";
-import { SITE_URL } from "@/lib/seo";
+import { LOCALES, LOCALE_TAGS } from "@/i18n/config";
+import { absoluteUrl } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
-/** Statische Sitemap: alle öffentlichen Routen in allen Sprachen, mit hreflang-Alternativen. */
-export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-  const routes: { path: string; priority: number }[] = [
-    { path: "/", priority: 1 },
-    { path: "/programm", priority: 0.9 },
-    { path: "/methode", priority: 0.8 },
-    { path: "/ueber", priority: 0.7 },
-    { path: "/team", priority: 0.6 },
-    { path: "/faq", priority: 0.6 },
-    { path: "/kontakt", priority: 0.5 },
-  ];
-  const abs = (lang: (typeof LOCALES)[number], path: string) => `${SITE_URL}${localeHref(lang, path)}/`.replace(/\/\/$/, "/");
+/**
+ * Statische Sitemap: alle öffentlichen Routen in allen Sprachen, mit hreflang-Alternativen und x-default.
+ * Kein lastmod: ein Build-Datum ohne inhaltliche Änderung ist kein verlässliches Signal (Google ignoriert es dann).
+ * changefreq und priority wertet Google nicht aus.
+ */
+const ROUTES = ["/", "/programm", "/methode", "/ueber", "/team", "/faq", "/kontakt"];
 
-  return routes.flatMap((r) =>
+export default function sitemap(): MetadataRoute.Sitemap {
+  return ROUTES.flatMap((path) =>
     LOCALES.map((lang) => ({
-      url: abs(lang, r.path),
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: lang === "de" ? r.priority : Math.max(0.3, r.priority - 0.2),
+      url: absoluteUrl(lang, path),
       alternates: {
-        languages: Object.fromEntries(LOCALES.map((l) => [LOCALE_TAGS[l], abs(l, r.path)])),
+        languages: {
+          ...Object.fromEntries(LOCALES.map((l) => [LOCALE_TAGS[l], absoluteUrl(l, path)])),
+          "x-default": absoluteUrl("de", path),
+        },
       },
     })),
   );

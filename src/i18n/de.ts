@@ -12,13 +12,13 @@ export const de = {
   },
 
   meta: {
-    titleDefault: "medIQ lab: Effizienter lernen. Sicher bestehen. Für Medizinstudierende in DE & EU-Ausland.",
+    titleDefault: "medIQ lab: Lernsystem und Community fürs Medizinstudium",
     titleTemplate: "%s · medIQ lab",
     description:
-      "Lernsystem für Medizinstudierende in Deutschland und im EU-Ausland: fundierte Lernmethoden, Prüfungsstrategie, KI-Lernapp und Community in einer Mitgliedschaft.",
-    ogTitle: "medIQ lab: Effizienter lernen. Sicher bestehen.",
+      "Lern-Community für Medizinstudierende in Deutschland und im EU-Ausland: Workshops zu Lernstrategien und Resilienz, wöchentliche Live-Events, Lernzettel.",
+    ogTitle: "medIQ lab: Lern-Community fürs Medizinstudium",
     ogDescription:
-      "Wissenschaftlich fundiert durchs Medizinstudium, in Deutschland und im Ausland. Workshops, Lernzettel, KI-Lernapp und Community in einer Mitgliedschaft.",
+      "Lernsystem und Community für Medizinstudierende in Deutschland und im Ausland: Workshops, Videoreihen, Lernzettel und wöchentliche Live-Events auf Skool.",
   },
 
   common: {
@@ -76,7 +76,7 @@ export const de = {
     pains: [
       { lead: "Erschlagen von der Stofffülle", rest: ", und niemand zeigt dir, was wirklich geprüft wird." },
       { lead: "Lesen, markieren, wieder vergessen", rest: ". Fleiß ohne System verpufft." },
-      { lead: "Ein Fehlversuch", rest: ", und ein Wiederholungsjahr kostet an Privat- und Auslands-Unis schnell {lost}." },
+      { lead: "Ein Fehlversuch zieht Kreise", rest: ": Wiederholungsprüfung, mehr Druck, im schlimmsten Fall ein Wiederholungsjahr, das an Privat- und Auslands-Unis schnell {lost} kostet." },
     ],
     quote: "Kein Talent-Problem. Ein *Methoden-Problem.*",
     cta: "Warum das so ist",
@@ -109,7 +109,7 @@ export const de = {
       title: "Stress & Resilienz",
       sub: "Säule 3",
       short: "Effizient lernen, ohne deine mentale Gesundheit zu gefährden: Umgang mit Prüfungsangst, aktive Pausen, Mindset-Tools.",
-      body: "Riesige Stoffmengen in kurzer Zeit, Versagensängste, oft weit weg von Familie und gewohntem Umfeld, und das Gefühl, nie genug getan zu haben. Wir vermitteln Methoden, mit denen du effizient lernst, ohne deine mentale Gesundheit zu gefährden: resilient mit Prüfungsangst und Rückschlägen umgehen, aktive Pausen und Mindset-Tools fest im Alltag verankern. Kein kurzfristiges Durchpowern, sondern gesund und motiviert bis zur Approbation.",
+      body: "Riesige Stoffmengen in kurzer Zeit, Versagensängste, oft weit weg von Familie und gewohntem Umfeld, und das Gefühl, nie genug getan zu haben. Wir vermitteln Methoden, mit denen du effizient lernst, ohne deine mentale Gesundheit zu gefährden: resilient mit Prüfungsangst und Rückschlägen umgehen, aktive Pausen und Mindset-Tools fest im Alltag verankern. Kein kurzfristiges Durchpowern, sondern gesund und motiviert bis zur Approbation. Unsere Workshops ersetzen keine psychologische oder ärztliche Behandlung. Wenn Angst dich dauerhaft blockiert, wende dich an die psychologische Beratung deiner Hochschule oder deines Studierendenwerks.",
       items: ["Workshop Stress & Resilienz", "Videoreihe Stress & Resilienz", "Coaching bei Prüfungsangst", "Aktive Pausen & Mindset-Tools"],
     },
     {
@@ -123,7 +123,7 @@ export const de = {
 
   cost: {
     eyebrow: "Was auf dem Spiel steht",
-    line1: "Ein verlorenes Jahr:",
+    line1: "Ein Wiederholungsjahr an einer Privat- oder Auslandsuni kostet schnell",
     value1: "{lost}.",
     line2: "Ein Jahr medIQ lab:",
     value2: "{yearly}.",
@@ -134,7 +134,7 @@ export const de = {
     eyebrow: "So kommst du rein",
     title: "Ein Preis, alles drin",
     subtitle:
-      "Keine Pakete, keine Upsells: eine Jahresmitgliedschaft mit Community, Workshops, Videoreihen, wöchentlichen Live Events, Downloads und KI-Lernapp.",
+      "Keine Pakete, keine Upsells: eine Jahresmitgliedschaft mit Community, Workshops, Videoreihen, wöchentlichen Live-Events, Downloads und KI-Lernapp.",
     plan: "Jahresmitgliedschaft",
     badge: "Alles inklusive",
     blurb: "Community und alle Workshops, ein Jahr lang, ein Preis.",
@@ -159,15 +159,15 @@ export const de = {
     items: [
       {
         q: "Lohnt sich der Preis wirklich?",
-        a: "Rechne ehrlich gegen: Ein verlorenes Semester kostet Monate an Miete und Lebenshaltung, an Privat- und Auslands-Unis kommt ein Wiederholungsjahr von {lost} dazu. Gemessen daran rechnen sich {yearly} im Jahr schon, wenn sie dir ein einziges verlorenes Semester ersparen.",
+        a: "Rechne ehrlich gegen: Ein verlorenes Semester kostet Monate an Miete und Lebenshaltung, und an Privat- und Auslands-Unis kostet ein Wiederholungsjahr schnell {lost}. Gemessen daran rechnen sich {yearly} im Jahr schon, wenn sie dir ein einziges verlorenes Semester ersparen.",
       },
       {
         q: "Bekomme ich „garantiert bestehen“?",
-        a: "Nein, und jeder, der das verspricht, ist unseriös. Bestehen hängt von dir ab. Was wir liefern, ist ein erprobtes System und eine Community, die deine Chancen messbar verbessern, indem du klüger statt nur härter lernst.",
+        a: "Nein, und jeder, der das verspricht, ist unseriös. Bestehen hängt von dir ab. Wir liefern ein Lernsystem nach Prinzipien, die die Lernforschung gut untersucht hat, und eine Community, die dir hilft dranzubleiben.",
       },
       {
         q: "Ich studiere in Deutschland, passt das?",
-        a: "Ja, ausdrücklich. medIQ lab ist für Medizinstudierende in Deutschland und im EU-Ausland gebaut. Die Methoden sind unabhängig von Standort und Curriculum, und Workshops, Live Events, Downloads und KI-Lernapp nutzt du online.",
+        a: "Ja, ausdrücklich. medIQ lab ist für Medizinstudierende in Deutschland und im EU-Ausland gebaut. Die Methoden sind unabhängig von Standort und Curriculum, und Workshops, Live-Events, Downloads und KI-Lernapp nutzt du online.",
       },
       {
         q: "Wie laufen Anmeldung und Zahlung ab?",
@@ -181,7 +181,7 @@ export const de = {
     eyebrow: "medIQ lab",
     title: "Lern ab heute klüger, *nicht härter.*",
     subtitle:
-      "Jedes Semester, das du jetzt sicherst, ist Zeit und Geld, das du nicht verlierst. Tritt der medIQ lab Community bei und bring dein Lernsystem auf ein neues Level.",
+      "Jedes Semester, das du jetzt sicherst, ist Zeit und Geld, das du nicht verlierst. Tritt der medIQ lab Community bei und bau dein Lernsystem mit Workshops, wöchentlichen Live-Events und Lernzetteln auf.",
     note: "Start & Zahlung sicher über Skool · {yearly} im Jahr, alles inklusive · keine versteckten Kosten",
     secondary: "Programm & Preise",
   },
@@ -195,9 +195,9 @@ export const de = {
   },
 
   chat: {
-    name: "medIQ lab Berater",
-    status: "Antwortet sofort",
-    open: "medIQ lab Berater öffnen",
+    name: "medIQ lab Assistent",
+    status: "Automatischer Chat, antwortet sofort",
+    open: "medIQ lab Assistent öffnen",
     close: "Chat schließen",
     teaser: "Passt medIQ lab zu dir? Frag mich, ich helf dir in unter einer Minute. 👋",
     cta: {
@@ -226,7 +226,7 @@ export const de = {
       ],
       method: [
         "Dann liegt es fast immer an der Methode, nicht am Fleiß.",
-        "Mit aktivem Abrufen und Spaced Repetition sitzt der Stoff wirklich, statt dreimal gelesen und wieder weg.",
+        "Mit aktivem Abrufen und Spaced Repetition behältst du den Stoff länger, statt ihn dreimal zu lesen und wieder zu vergessen.",
       ],
       cost: [
         "Verständlich, das ist die teuerste Art, Zeit zu verlieren.",
@@ -235,7 +235,7 @@ export const de = {
       price: [
         "Ein Preis, alles drin:",
         "{yearly} im Jahr, das sind rund {monthly} im Monat. Community und alle Workshops sind enthalten.",
-        "Dazu: Videoreihen, wöchentliche Live Events, Gastvorträge von Ärzt:innen, Prüfungssimulationen, Downloads und KI-Lernapp.",
+        "Dazu: Videoreihen, wöchentliche Live-Events, Gastvorträge von Ärzt:innen, Prüfungssimulationen, Downloads und KI-Lernapp.",
         "Anmeldung läuft sicher über Skool.",
       ],
       who: [
@@ -247,13 +247,13 @@ export const de = {
   },
 
   pageMethode: {
-    title: "Methode",
+    title: "Lernmethode fürs Medizinstudium: die 4 Säulen",
     description:
-      "Die Methode hinter medIQ lab: die vier Säulen des Studienerfolgs, Lernsystem, Prüfungsstrategie, Stress & Resilienz und Netzwerk, lernpsychologisch fundiert. Klüger lernen statt härter, in Deutschland und im Ausland.",
+      "Wie medIQ lab Abrufen statt Wiederlesen und verteiltes Wiederholen ins Medizinstudium bringt: Lernsystem, Prüfungsstrategie, Stress & Resilienz, Netzwerk.",
     intro: {
       eyebrow: "Die Methode",
       title: "Eine Methode mit Fundament, *kein Bauchgefühl.*",
-      lead: "medIQ lab ist keine Sammlung von Motivationssprüchen. Dahinter steht, wie Lernen nachweislich funktioniert, und wie du dir das im Medizinstudium konsequent zunutze machst.",
+      lead: "medIQ lab ist keine Sammlung von Motivationssprüchen. Dahinter steht, wie Lernen funktioniert, und wie du dir das im Medizinstudium konsequent zunutze machst.",
       ctaProgramm: "Programm ansehen",
     },
     problem: {
@@ -267,7 +267,7 @@ export const de = {
         { title: "Prüfungsangst & Blackouts", body: "Du kannst den Stoff eigentlich, aber unter Druck ist plötzlich alles weg." },
         { title: "Drohende Wiederholungsprüfungen", body: "Ein Fehlversuch, und das ganze Semester wackelt. Die Angst lernt mit." },
         { title: "Verlorene Semester & Lebenszeit", body: "Jedes verlorene Semester heißt: mehr Miete, mehr Lebenshaltungskosten, späterer Berufseinstieg." },
-        { title: "Hohe Studiengebühren im Ausland", body: "An Privat- und Auslands-Unis kostet ein Wiederholungsjahr schnell {lost}, zusätzlich." },
+        { title: "Hohe Studiengebühren im Ausland", body: "An Privat- und Auslands-Unis kostet ein Wiederholungsjahr zusätzlich schnell {lost}." },
       ],
       quote: "Das ist kein Talent-Problem. Es ist ein *Methoden-Problem*.",
       quoteSub: "Und Methoden kann man lernen, schneller, als du denkst.",
@@ -276,7 +276,7 @@ export const de = {
       eyebrow: "Die vier Säulen",
       title: "Dein Studienerfolg steht auf vier Säulen.",
       lead: "Lernsystem, Prüfungsstrategie, Stress & Resilienz und Netzwerk. Sie bilden die Grundlage für nachhaltigen Studienerfolg, und wir helfen dir, jede einzelne gezielt zu verbessern. Das ist der Unterschied zwischen härter lernen und klüger lernen.",
-      research: "Die Lernstrategie-Workshops stützen sich auf etablierte lernpsychologische Forschung, unter anderem zum Testing-Effekt (Karpicke & Roediger) und zum verteilten Lernen (Cepeda et al.).",
+      research: "Die Lernstrategie-Workshops stützen sich auf Studien zum Abrufen von Wissen ([Roediger & Karpicke 2006](https://doi.org/10.1111/j.1467-9280.2006.01693.x); [Karpicke & Roediger 2008](https://doi.org/10.1126/science.1152408)) und eine Metaanalyse zum verteilten Lernen ([Cepeda et al. 2006](https://doi.org/10.1037/0033-2909.132.3.354)).",
     },
     practice: {
       eyebrow: "In der Praxis",
@@ -299,13 +299,13 @@ export const de = {
   },
 
   pageProgramm: {
-    title: "Programm",
+    title: "Programm und Preis für Medizinstudierende",
     description:
-      "Die medIQ lab Mitgliedschaft für Medizinstudierende in Deutschland und im EU-Ausland: Workshop-Reihe, Videoreihen, wöchentliche Live Events, Downloads und KI-Lernapp, alles in einem Preis. Anmeldung und Inhalte laufen über Skool.",
+      "Workshops etwa 2× pro Semester, wöchentlich Study Together und Community-Café, mündliche Prüfungssimulation und Lernzettel in einer Jahresmitgliedschaft.",
     intro: {
       eyebrow: "Das Programm",
       title: "Dein vollständiges System, *vom Lernsystem bis zum Examen.*",
-      lead: "Eine Mitgliedschaft, alles drin: Workshop-Reihe, Videoreihen, wöchentliche Live Events wie Study Together und Community-Café, Gastvorträge von Ärzt:innen, mündliche Prüfungssimulationen, Downloads und unsere eigene KI-Lernapp. Für Medizinstudierende in Deutschland und im EU-Ausland, ob privat oder staatlich.",
+      lead: "Eine Mitgliedschaft, alles drin: Workshop-Reihe, Videoreihen, wöchentliche Live-Events wie Study Together und Community-Café, Gastvorträge von Ärzt:innen, mündliche Prüfungssimulationen, Downloads und unsere eigene KI-Lernapp. Für Medizinstudierende in Deutschland und im EU-Ausland, ob privat oder staatlich.",
       ctaMethod: "Erst die Methode ansehen",
     },
     vsl: {
@@ -317,7 +317,7 @@ export const de = {
     modules: {
       eyebrow: "Was du bekommst",
       title: "Alles, was in der Mitgliedschaft steckt",
-      lead: "So werden die vier Säulen konkret: Workshop-Reihe, Videoreihen, wöchentliche Live Events und fertige Downloads, dazu unsere eigene KI-Lernapp. Alles in einem Preis.",
+      lead: "So werden die vier Säulen konkret: Workshop-Reihe, Videoreihen, wöchentliche Live-Events und fertige Downloads, dazu unsere eigene KI-Lernapp. Alles in einem Preis.",
       imgHeart: "Anatomisches Herzmodell",
       imgMicroscope: "Mikroskop im Labor",
       appTitle: "Plus: unsere eigene KI-Lernapp",
@@ -336,7 +336,7 @@ export const de = {
         items: ["Lernstrategien, Lernapps & Optimierung des Studiums", "Stress & Resilienz", "Finanzen, Versicherungen & Co."],
       },
       {
-        title: "Live Events",
+        title: "Live-Events",
         sub: "Jede Woche",
         items: [
           "Study Together, mindestens 1× pro Woche",
@@ -365,7 +365,7 @@ export const de = {
       blurb: "Dein vollständiges System für ein ganzes Studienjahr. Community und alle Workshops sind enthalten, es gibt nichts dazuzukaufen.",
       perYear: "/ Jahr",
       perMonth: "Entspricht rund {monthly} im Monat.",
-      compare: "Zum Vergleich: Ein einziges verlorenes Semester kostet schnell ein Vielfaches an Miete, Lebenshaltung und verlorener Zeit. An Privat- und Auslands-Unis kommt ein Wiederholungsjahr von {lost} obendrauf. Die Mitgliedschaft rechnet sich schon, wenn sie dir ein einziges verlorenes Semester erspart.",
+      compare: "Zum Vergleich: Ein einziges verlorenes Semester kostet schnell ein Vielfaches an Miete, Lebenshaltung und verlorener Zeit. An Privat- und Auslands-Unis kostet ein Wiederholungsjahr außerdem schnell {lost}. Die Mitgliedschaft rechnet sich schon, wenn sie dir ein einziges verlorenes Semester erspart.",
       included: [
         "Zugang zur medIQ lab Community auf Skool",
         "Workshop-Reihe: Lernstrategien, Stress & Resilienz, Finanzen",
@@ -382,16 +382,16 @@ export const de = {
     },
     cta: {
       eyebrow: "Loslegen",
-      title: "Ein Preis, *alles drin.*",
+      title: "Bereit? *Dann rein in die Community.*",
       subtitle: "Anmeldung, Zahlung und alle Inhalte laufen sicher über Skool. Diese Seite informiert dich und leitet dich dorthin weiter.",
       secondary: "Offene Fragen? Zur FAQ",
     },
   },
 
   pageUeber: {
-    title: "Über uns",
+    title: "Über uns: von Medizinstudentinnen gegründet",
     description:
-      "Wir stellen uns vor: Faith und Hannah, zwei Medizinstudentinnen mit einer gemeinsamen Mission, das Medizinstudium strukturierter, effektiver und ein Stück stressfreier zu machen. Unsere Mission, unsere vier Säulen, unsere Prinzipien.",
+      "Faith und Hannah studieren Medizin im 4. Studienjahr und haben medIQ lab gegründet. Warum, für wen und nach welchen Prinzipien wir arbeiten.",
     intro: {
       eyebrow: "Wir stellen uns vor",
       title: "Studieren muss man *nicht alleine.*",
@@ -420,13 +420,13 @@ export const de = {
         file: "faith.jpg",
         year: "4. Studienjahr",
         subjects: ["Simulation Medicine", "Pathophysiologie"],
-        motivation: "Meine Motivation ist es, Studierende so zu unterstützen, dass möglichst wenige von ihnen durch Prüfungen fallen. Gerade im ersten Studienjahr testen viele mühsam verschiedene Ansätze aus. Wer früh die passende Lernstrategie findet, senkt die eigene Durchfallquote, und spart wertvolle Zeit, Geld und Nerven.",
+        motivation: "Meine Motivation ist es, Studierende so zu unterstützen, dass möglichst wenige von ihnen durch Prüfungen fallen. Gerade im ersten Studienjahr testen viele mühsam verschiedene Ansätze aus. Wer früh die passende Lernstrategie findet, fällt seltener durch und spart wertvolle Zeit, Geld und Nerven.",
       },
     ],
     mission: {
       eyebrow: "Unsere Mission",
       title: "Weniger verlorene Semester. Mehr sichere Abschlüsse.",
-      lead: "Jedes verlorene Semester kostet nicht nur Zeit, sondern Geld, Nerven und oft ein Stück Selbstvertrauen. An Privat- und Auslands-Unis kommen schnell Wiederholungsjahre von {lost} dazu. Das muss nicht sein.",
+      lead: "Jedes verlorene Semester kostet nicht nur Zeit, sondern Geld, Nerven und oft ein Stück Selbstvertrauen. An Privat- und Auslands-Unis kostet ein Wiederholungsjahr schnell {lost}. Das muss nicht sein.",
       points: [
         "Gemeinsam mit dir deinen eigenen Lernweg finden.",
         "Einen Raum schaffen, in dem ihr euch gegenseitig unterstützt und voneinander lernt.",
@@ -460,13 +460,13 @@ export const de = {
   },
 
   pageTeam: {
-    title: "Team",
+    title: "Team: die Gründerinnen Faith und Hannah",
     description:
-      "Die Menschen hinter medIQ lab: Faith und Hannah, Medizinstudentinnen und Gründerinnen, plus ein Team aus Coaching und Social Media, das dich durchs Medizinstudium begleitet, in Deutschland und im Ausland.",
+      "Die Gründerinnen Faith und Hannah, Coach Daniela sowie Jessi und Lisi aus dem Social-Media-Team: wer bei medIQ lab welche Aufgabe hat.",
     intro: {
       eyebrow: "Das Team",
       title: "Die Menschen hinter *medIQ lab.*",
-      lead: "Kein anonymes Programm, sondern ein Team, das selbst mitten im Medizinstudium steckt, weiß, wie es sich anfühlt, und dich mit Methode, Coaching und einer starken Community begleitet.",
+      lead: "Hinter medIQ lab stehen die Medizinstudentinnen Faith und Hannah. Unterstützt werden sie von Daniela für Entspannung und Coaching und von Jessi und Lisi für Social Media.",
     },
     faceEyebrow: "Das Gesicht von medIQ lab",
     teamEyebrow: "Dahinter",
@@ -489,9 +489,9 @@ export const de = {
   },
 
   pageFaq: {
-    title: "FAQ",
+    title: "FAQ: Kosten, Anmeldung und Ablauf",
     description:
-      "Antworten auf die häufigsten Fragen zu medIQ lab: Für wen es ist (Deutschland und EU-Ausland), wie Anmeldung und Zahlung über Skool laufen, was die Jahresmitgliedschaft kostet (399 €, alles inklusive), und was wir bewusst nicht versprechen.",
+      "Was medIQ lab kostet, wie die Anmeldung über Skool läuft, ob es einen Campus-Rabatt gibt und warum wir kein Bestehen garantieren: Antworten auf einen Blick.",
     intro: {
       eyebrow: "FAQ",
       title: "Was du noch wissen willst",
@@ -505,19 +505,19 @@ export const de = {
       },
       {
         q: "Funktioniert das auch, wenn ich in Deutschland studiere?",
-        a: "Ja, ausdrücklich. medIQ lab ist für beides gebaut. Die Methoden sind unabhängig von Standort und Curriculum, und Workshops, Live Events, Downloads und KI-Lernapp nutzt du online, egal ob du in Heidelberg, Wien oder Pécs studierst.",
+        a: "Ja, ausdrücklich. medIQ lab ist für beides gebaut. Die Methoden sind unabhängig von Standort und Curriculum, und Workshops, Live-Events, Downloads und KI-Lernapp nutzt du online, egal ob du in Heidelberg, Wien oder Pécs studierst.",
       },
       {
         q: "Was kostet die Mitgliedschaft?",
-        a: "{yearly} im Jahr, alles inklusive: Community, Workshop-Reihe, Videoreihen, wöchentliche Live Events wie Study Together und Community-Café, Gastvorträge, Prüfungssimulationen, Downloads und die KI-Lernapp. Es gibt keine versteckten Extras und keine Upsells.",
+        a: "{yearly} im Jahr, alles inklusive: Community, Workshop-Reihe, Videoreihen, wöchentliche Live-Events wie Study Together und Community-Café, Gastvorträge, Prüfungssimulationen, Downloads und die KI-Lernapp. Es gibt keine versteckten Extras und keine Upsells. Alle Formate im Detail findest du im [Programm der Mitgliedschaft](/programm/).",
       },
       {
         q: "Gibt es Rabatte oder eine Garantie?",
-        a: "Es gibt einen Campus-Rabatt, sprich uns dazu einfach in der Community oder über die Kontaktseite an. Eine Bestehens-Garantie gibt es nicht, weil sie niemand seriös geben kann.",
+        a: "Es gibt einen Campus-Rabatt, sprich uns dazu einfach in der Community oder über die [Kontaktseite](/kontakt/) an. Eine Bestehens-Garantie gibt es nicht, weil sie niemand seriös geben kann.",
       },
       {
         q: "Lohnt sich der Preis wirklich?",
-        a: "Rechne ehrlich gegen: Ein einziges verlorenes Semester kostet dich Monate an Miete und Lebenshaltung plus einen späteren Berufseinstieg. An Privat- und Auslands-Unis kommt ein Wiederholungsjahr von oft {lost} dazu. Gemessen daran sind {yearly} im Jahr eine Investition, die sich schon rechnet, wenn sie dir ein einziges verlorenes Semester erspart.",
+        a: "Rechne ehrlich gegen: Ein einziges verlorenes Semester kostet dich Monate an Miete und Lebenshaltung plus einen späteren Berufseinstieg. An Privat- und Auslands-Unis kostet ein Wiederholungsjahr zusätzlich schnell {lost}. Gemessen daran sind {yearly} im Jahr eine Investition, die sich schon rechnet, wenn sie dir ein einziges verlorenes Semester erspart.",
       },
       {
         q: "Wie laufen Anmeldung und Zahlung ab?",
@@ -525,7 +525,7 @@ export const de = {
       },
       {
         q: "Bekomme ich „garantiert bestehen“?",
-        a: "Nein, und jeder, der das verspricht, ist unseriös. Bestehen hängt von dir ab. Was wir liefern, ist ein erprobtes System und eine Community, die deine Chancen messbar verbessern, indem du klüger statt nur härter lernst.",
+        a: "Nein, und jeder, der das verspricht, ist unseriös. Bestehen hängt von dir ab. Wir liefern ein Lernsystem nach Prinzipien, die die Lernforschung gut untersucht hat, und eine Community, die dir hilft dranzubleiben.",
       },
     ],
     cta: {
@@ -537,8 +537,8 @@ export const de = {
   },
 
   pageKontakt: {
-    title: "Kontakt",
-    description: "Fragen zu medIQ lab, zur Methode oder zur Mitgliedschaft? Schreib uns, oder komm direkt in die Community auf Skool.",
+    title: "Kontakt: Fragen zur Mitgliedschaft",
+    description: "Schreib uns über das Formular oder an info@mediq-lab.de. Wir antworten meist innerhalb weniger Werktage, am schnellsten in der Community auf Skool.",
     intro: {
       eyebrow: "Kontakt",
       title: "Sprich mit uns, *bevor du dich entscheidest.*",

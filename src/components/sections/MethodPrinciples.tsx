@@ -3,6 +3,7 @@ import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { Stagger, StaggerItem } from "../ui/Motion";
 import { AnatomyBrain } from "../ui/Anatomy";
+import { Rich } from "@/i18n/Rich";
 
 /**
  * Die vier Säulen des Studienerfolgs (Lernsystem, Prüfungsstrategie,
@@ -52,7 +53,9 @@ export function MethodPrinciples({ t, pillars }: { t: Dict["pageMethode"]["princ
             ))}
           </Stagger>
           <Reveal delay={0.15}>
-            <p className="mt-8 max-w-2xl border-t border-line-onDark pt-6 text-sm leading-relaxed text-paper/50">{t.research}</p>
+            <p className="mt-8 max-w-2xl border-t border-line-onDark pt-6 text-sm leading-relaxed text-paper/50">
+              <Rich text={t.research} link="underline decoration-copper-300/60 underline-offset-4 transition-colors hover:text-copper-300" />
+            </p>
           </Reveal>
         </div>
       </Container>

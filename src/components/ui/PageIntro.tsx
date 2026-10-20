@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
-import { EkgLine } from "./Anatomy";
+import { EkgLine } from "./EkgLine";
 
 /**
  * Einheitlicher, edler Seiten-Kopf für Unterseiten. Schafft den Abstand zum

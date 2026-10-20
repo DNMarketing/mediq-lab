@@ -5,6 +5,7 @@ import { videoFor } from "@/lib/images";
 import type { Locale } from "@/i18n/config";
 import type { Dict } from "@/i18n/de";
 import { MedIcon } from "./MedIcon";
+import { Picture } from "./Picture";
 
 /**
  * Self-hosted Vorstellungsvideo (Hochformat). Lädt vor dem Klick NICHTS außer
@@ -41,11 +42,12 @@ export function VideoPlayer({ lang, t, className = "" }: { lang: Locale; t: Dict
           aria-label={t.play}
           className="absolute inset-0 h-full w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-inset"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          {/* lazy: auf dem Desktop ist der Hero-Container ausgeblendet, das Poster soll dort nicht laden */}
+          <Picture
             src={v.poster}
             alt={t.alt}
-            loading="eager"
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           />
           <span className="absolute inset-0 bg-gradient-to-t from-petrol-900/80 via-petrol-900/20 to-transparent" aria-hidden />

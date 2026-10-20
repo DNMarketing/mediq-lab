@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
 import { LOCALES, LOCALE_NAMES, localePath, stripLocale, type Locale } from "@/i18n/config";
@@ -34,6 +34,7 @@ export function LanguageSwitcher({
   const pathname = usePathname() || "/";
   const path = fixedPath ?? stripLocale(pathname).path;
   const [open, setOpen] = useState(false);
+  const menuId = useId();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -82,8 +83,8 @@ export function LanguageSwitcher({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        aria-haspopup="menu"
         aria-expanded={open}
+        aria-controls={menuId}
         aria-label={label}
         className={cn(
           "inline-flex items-center gap-2 rounded-card border border-copper-500/50 bg-copper-100/70 font-semibold text-copper-600 shadow-soft transition-all duration-200 hover:border-copper-500 hover:bg-copper-100 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper",
@@ -96,18 +97,17 @@ export function LanguageSwitcher({
           <path d="M6 9l6 6 6-6" />
         </svg>
       </button>
-      {/* Menü immer im HTML, damit Suchmaschinen die Sprachversionen über Links finden; geschlossen nur per CSS versteckt */}
+      {/* Disclosure: Liste immer im HTML (Crawler), geschlossen per CSS versteckt; Links normal per Tab erreichbar, wenn offen */}
       <ul
-        role="menu"
+        id={menuId}
         className={cn(
           "absolute right-0 top-[calc(100%+8px)] z-50 min-w-[11rem] overflow-hidden rounded-card border border-copper-500/30 bg-paper-light py-1 shadow-lift",
           !open && "hidden",
         )}
       >
         {LOCALES.map((l) => (
-          <li key={l} role="none">
+          <li key={l}>
             <a
-              role="menuitem"
               href={localePath(l, path)}
               hrefLang={l}
               lang={l}

@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { MobileCTABar } from "./MobileCTABar";
 import { MedIQChat } from "./MedIQChat";
+import { MotionProvider } from "./MotionProvider";
 
 /**
  * Gemeinsames HTML-Gerüst für beide Root-Layouts (Deutsch im Root, andere
@@ -32,11 +33,13 @@ export function RootShell({
         >
           {d.common.skip}
         </a>
-        <Header lang={lang} nav={d.nav} common={d.common} langPath={langPath} />
-        <main id="inhalt">{children}</main>
-        <Footer lang={lang} t={d.footer} nav={d.nav} />
-        <MobileCTABar lang={lang} t={d.mobileBar} join={d.common.join} />
-        <MedIQChat lang={lang} t={d.chat} join={d.common.join} money={d.money} />
+        <MotionProvider>
+          <Header lang={lang} nav={d.nav} common={d.common} langPath={langPath} />
+          <main id="inhalt">{children}</main>
+          <Footer lang={lang} t={d.footer} nav={d.nav} languageLabel={d.common.language} />
+          <MobileCTABar lang={lang} t={d.mobileBar} join={d.common.join} />
+          <MedIQChat lang={lang} t={d.chat} join={d.common.join} money={d.money} />
+        </MotionProvider>
       </body>
     </html>
   );

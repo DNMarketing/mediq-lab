@@ -6,7 +6,7 @@ import { Reveal } from "../ui/Reveal";
 import { CTAButton } from "../ui/CTAButton";
 import { Pill } from "../ui/Badge";
 import { MedIcon } from "../ui/MedIcon";
-import { EkgLine } from "../ui/Anatomy";
+import { EkgLine } from "../ui/EkgLine";
 
 export type CTAText = { eyebrow: string; title: string; subtitle: string; secondary: string };
 

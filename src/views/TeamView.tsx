@@ -8,13 +8,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Stagger, StaggerItem } from "@/components/ui/Motion";
 import { CTABand } from "@/components/sections/CTABand";
 import { spotsLabel } from "./HomeView";
+import { Picture } from "@/components/ui/Picture";
 
 function TeamCard({ name, role, file }: { name: string; role: string; file: string }) {
   return (
     <figure className="group h-full overflow-hidden rounded-card border border-line bg-paper-light shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:shadow-lift">
       <div className="relative aspect-[4/5] overflow-hidden bg-paper-sand">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Picture
           src={img("team/" + file)}
           alt={`${name}, ${role}, medIQ lab`}
           loading="lazy"

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { m, useReducedMotion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
@@ -25,7 +25,7 @@ export function Stagger({
   as?: "div" | "ul" | "ol" | "section";
 }) {
   const reduce = useReducedMotion();
-  const MotionTag = motion[as];
+  const MotionTag = m[as];
   const container: Variants = {
     hidden: {},
     show: {
@@ -59,7 +59,7 @@ export function StaggerItem({
   as?: "div" | "li" | "span";
 }) {
   const reduce = useReducedMotion();
-  const MotionTag = motion[as];
+  const MotionTag = m[as];
   const item: Variants = {
     hidden: reduce ? { opacity: 0 } : { opacity: 0, y },
     show: {

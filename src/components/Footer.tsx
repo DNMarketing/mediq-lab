@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { SKOOL_URL } from "@/lib/config";
-import { localeHref, type Locale } from "@/i18n/config";
+import { INSTAGRAM_URL, SKOOL_URL } from "@/lib/config";
+import { LOCALES, LOCALE_NAMES, localeHref, localePath, type Locale } from "@/i18n/config";
 import type { Dict } from "@/i18n/de";
 import { Container } from "./ui/Container";
 import { Logo } from "./Logo";
-import { EkgLine } from "./ui/Anatomy";
+import { EkgLine } from "./ui/EkgLine";
 
 const NAV: { key: keyof Dict["nav"]; path: string }[] = [
   { key: "methode", path: "/methode" },
@@ -15,7 +15,17 @@ const NAV: { key: keyof Dict["nav"]; path: string }[] = [
   { key: "kontakt", path: "/kontakt" },
 ];
 
-export function Footer({ lang, t, nav }: { lang: Locale; t: Dict["footer"]; nav: Dict["nav"] }) {
+export function Footer({
+  lang,
+  t,
+  nav,
+  languageLabel,
+}: {
+  lang: Locale;
+  t: Dict["footer"];
+  nav: Dict["nav"];
+  languageLabel: string;
+}) {
   const link = "text-sm text-ink-soft transition-colors hover:text-petrol-700";
   return (
     <footer data-mobilecta="hide" className="relative overflow-hidden border-t border-line bg-paper">
@@ -30,6 +40,14 @@ export function Footer({ lang, t, nav }: { lang: Locale; t: Dict["footer"]; nav:
             <Logo />
             <p className="mt-3 font-serif text-sm italic text-petrol-700">{t.tagline}</p>
             <p className="mt-4 leading-relaxed text-ink-soft">{t.blurb}</p>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer me" className={`${link} mt-4 inline-flex items-center gap-2`}>
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
+              </svg>
+              Instagram
+            </a>
           </div>
 
           <nav aria-label={t.pages} className="flex flex-col gap-3">
@@ -67,6 +85,14 @@ export function Footer({ lang, t, nav }: { lang: Locale; t: Dict["footer"]; nav:
 
         <div className="mt-14 flex flex-col gap-2 border-t border-line pt-6 text-xs text-ink-mute sm:flex-row sm:items-center sm:justify-between">
           <p>{t.rights}</p>
+          {/* Sprachversionen als echte Links im Server-HTML (Crawler, ohne JavaScript nutzbar) */}
+          <nav aria-label={languageLabel} className="flex flex-wrap gap-x-3 gap-y-1">
+            {LOCALES.map((l) => (
+              <a key={l} href={localePath(l, "/")} hrefLang={l} lang={l} aria-current={l === lang ? "true" : undefined} className="transition-colors hover:text-petrol-700">
+                {LOCALE_NAMES[l]}
+              </a>
+            ))}
+          </nav>
           <p>{t.disclaimer}</p>
         </div>
       </Container>

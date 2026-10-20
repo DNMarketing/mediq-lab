@@ -6,6 +6,9 @@
  */
 export const SKOOL_URL = "https://www.skool.com/med-iq-lab-9744/about";
 
+/** Instagram-Profil der Marke (Footer-Link, sameAs in JSON-LD). */
+export const INSTAGRAM_URL = "https://www.instagram.com/mediq.lab/";
+
 /** Kontakt-E-Mail (mit Bindestrich, lt. Kunde verbindlich). */
 export const CONTACT_EMAIL = "info@mediq-lab.de";
 

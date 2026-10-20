@@ -11,3 +11,32 @@
 # Kein SPA-Fallback ("/* /index.html 200"): Der statische Export erzeugt jede Route als
 # /pfad/index.html. Unbekannte Adressen liefern so out/404.html mit echtem Status 404
 # statt der Startseite mit 200 (Soft 404).
+
+# Netlify-Subdomain auf die Hauptdomain (kein zweites Exemplar der Website).
+# Deploy Previews haben andere Hosts (deploy-preview-NR--mediq-lab.netlify.app) und bleiben erreichbar.
+[[redirects]]
+  from = "https://mediq-lab.netlify.app/*"
+  to = "https://www.mediq-lab.de/:splat"
+  status = 301
+  force = true
+
+# Gehashte Build-Dateien ändern nie ihren Inhalt: dauerhaft im Browser cachen.
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# RSC-Datendateien (/index.txt usw.) nicht indexieren; Seiten selbst bleiben unberührt.
+[[headers]]
+  for = "/*.txt"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+# Grundlegende Sicherheits-Header für alle Antworten.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

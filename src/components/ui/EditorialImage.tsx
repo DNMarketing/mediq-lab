@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/cn";
+import { Picture } from "./Picture";
 
 type EditorialImageProps = {
   /** Lokaler Bildpfad aus `lib/images.ts` (self-hosted, siehe public/img). */
@@ -32,8 +33,7 @@ export function EditorialImage({
       {failed ? (
         <FallbackIllustration />
       ) : (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Picture
           src={src}
           alt={alt}
           loading={priority ? "eager" : "lazy"}

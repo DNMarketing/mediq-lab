@@ -1,7 +1,8 @@
 import { SPOTS_LEFT } from "@/lib/config";
 import { fill, type Locale } from "@/i18n/config";
 import { getDict } from "@/i18n";
-import { pageMetadata } from "@/lib/seo";
+import { homeGraph, pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { Hero } from "@/components/sections/Hero";
 import { ProblemTeaser } from "@/components/home/ProblemTeaser";
 import { MethodTeaser } from "@/components/home/MethodTeaser";
@@ -17,9 +18,11 @@ export function spotsLabel(lang: Locale): string | null {
 export function homeMeta(lang: Locale) {
   const d = getDict(lang);
   // Startseite: Titel ohne Template, kommt aus dem Root-Layout.
+  const base = pageMetadata(lang, "/", { title: d.meta.titleDefault, description: d.meta.description });
   return {
-    ...pageMetadata(lang, "/", { title: d.meta.titleDefault, description: d.meta.description }),
+    ...base,
     title: { absolute: d.meta.titleDefault },
+    openGraph: { ...base.openGraph, title: d.meta.ogTitle, description: d.meta.ogDescription },
   };
 }
 
@@ -28,6 +31,7 @@ export function HomeView({ lang }: { lang: Locale }) {
   const spots = spotsLabel(lang);
   return (
     <>
+      <JsonLd data={homeGraph(lang)} />
       <Hero lang={lang} t={d.hero} video={d.video} money={d.money} join={d.common.join} spotsLabel={spots} />
       <ProblemTeaser lang={lang} t={d.problemTeaser} money={d.money} />
       <MethodTeaser lang={lang} t={d.methodTeaser} pillars={d.pillars} />
