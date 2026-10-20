@@ -29,6 +29,8 @@ export function rootMetadata(lang: Locale): Metadata {
       locale: LOCALE_TAGS[lang].replace("-", "_"),
     },
     robots: { index: true, follow: true },
+    // Google Search Console, Property https://www.mediq-lab.de/ (Bestätigung per HTML-Tag)
+    verification: { google: "B-iuK58g4-ZkM_4X_UitervXJnl8RZ9lQL2S1o5BPOE" },
   };
 }
 
