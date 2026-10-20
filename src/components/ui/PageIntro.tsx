@@ -44,19 +44,19 @@ export function PageIntro({
               visual ? "lg:col-span-7" : centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl",
             )}
           >
-            <Reveal>
+            <Reveal fade={false}>
               <div className={cn("eyebrow", centered && "justify-center")}>
                 <span className="rule-copper" aria-hidden />
                 {eyebrow}
               </div>
             </Reveal>
-            <Reveal delay={0.06}>
+            <Reveal fade={false} delay={0.06}>
               <h1 className="mt-6 font-serif text-[2.15rem] font-medium leading-[1.08] tracking-[-0.015em] text-ink sm:text-[3.7rem] sm:leading-[1.05]">
                 {title}
               </h1>
             </Reveal>
             {lead && (
-              <Reveal delay={0.12}>
+              <Reveal fade={false} delay={0.12}>
                 <p
                   className={cn(
                     "mt-6 text-lg leading-relaxed text-ink-soft",
@@ -68,7 +68,7 @@ export function PageIntro({
               </Reveal>
             )}
             {actions && (
-              <Reveal delay={0.18}>
+              <Reveal fade={false} delay={0.18}>
                 <div
                   className={cn(
                     "mt-9 flex flex-col gap-3 sm:flex-row sm:items-center",

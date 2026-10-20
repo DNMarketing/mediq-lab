@@ -11,7 +11,7 @@ export const fr: Dict = {
     titleDefault: "medIQ lab : Apprendre plus efficacement. Réussir sereinement. Pour les étudiants en médecine en Allemagne et dans l'UE.",
     titleTemplate: "%s · medIQ lab",
     description:
-      "L'écosystème d'apprentissage pour les étudiants en médecine en Allemagne et dans l'UE : méthodes fondées sur la science, stratégie d'examen, notre propre appli d'apprentissage IA et une communauté qui vous porte tout au long des études. Un abonnement, tout inclus.",
+      "Méthode d'apprentissage pour étudiants en médecine en Allemagne et dans l'UE : stratégie d'examen, appli IA et communauté en un seul abonnement.",
     ogTitle: "medIQ lab : Apprendre plus efficacement. Réussir sereinement.",
     ogDescription:
       "Des études de médecine sur des bases scientifiques, en Allemagne et à l'étranger. Ateliers, fiches, appli IA et communauté dans un seul abonnement.",

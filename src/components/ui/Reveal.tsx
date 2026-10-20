@@ -9,6 +9,8 @@ type RevealProps = {
   delay?: number;
   /** Bewegungsrichtung beim Einblenden (dezent halten). */
   y?: number;
+  /** false = nur bewegen, nicht ausblenden (für Inhalte above the fold, sofort sichtbar). */
+  fade?: boolean;
   className?: string;
   as?: "div" | "section" | "li" | "span";
 };
@@ -22,17 +24,20 @@ export function Reveal({
   children,
   delay = 0,
   y = 16,
+  fade = true,
   className,
   as = "div",
 }: RevealProps) {
   const reduce = useReducedMotion();
   const MotionTag = motion[as];
+  const from = fade ? (reduce ? { opacity: 0 } : { opacity: 0, y }) : reduce ? false : { y };
+  const to = fade ? (reduce ? { opacity: 1 } : { opacity: 1, y: 0 }) : { y: 0 };
 
   return (
     <MotionTag
       className={className}
-      initial={reduce ? { opacity: 0 } : { opacity: 0, y }}
-      whileInView={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      initial={from}
+      whileInView={to}
       viewport={{ once: true, margin: "-60px" }}
       transition={{
         duration: 0.8,

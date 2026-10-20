@@ -15,7 +15,7 @@ export const de = {
     titleDefault: "medIQ lab: Effizienter lernen. Sicher bestehen. Für Medizinstudierende in DE & EU-Ausland.",
     titleTemplate: "%s · medIQ lab",
     description:
-      "Das Lern-Ökosystem für Medizinstudierende in Deutschland und im EU-Ausland: wissenschaftlich fundierte Lernmethoden, Prüfungsstrategie, eigene KI-Lernapp und eine Community, die dich durchs Studium trägt. Eine Mitgliedschaft, alles inklusive.",
+      "Lernsystem für Medizinstudierende in Deutschland und im EU-Ausland: fundierte Lernmethoden, Prüfungsstrategie, KI-Lernapp und Community in einer Mitgliedschaft.",
     ogTitle: "medIQ lab: Effizienter lernen. Sicher bestehen.",
     ogDescription:
       "Wissenschaftlich fundiert durchs Medizinstudium, in Deutschland und im Ausland. Workshops, Lernzettel, KI-Lernapp und Community in einer Mitgliedschaft.",

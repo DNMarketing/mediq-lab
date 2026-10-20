@@ -40,7 +40,8 @@ export function pageMetadata(
 ): Metadata {
   return {
     title: opts.title,
-    description: opts.description,
+    // undefined nicht durchreichen: würde die Description aus dem Root-Layout überschreiben
+    ...(opts.description ? { description: opts.description } : {}),
     alternates: alternatesFor(lang, path),
     ...(opts.noindex ? { robots: { index: false, follow: true } } : {}),
   };

@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  // Eigene 404-Seite trotz zwei Root-Layouts ((de) und [lang]): src/app/global-not-found.tsx
+  experimental: { globalNotFound: true },
 };
 
 export default nextConfig;

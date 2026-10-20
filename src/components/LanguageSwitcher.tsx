@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
-import { LOCALES, LOCALE_NAMES, localeHref, stripLocale, type Locale } from "@/i18n/config";
+import { LOCALES, LOCALE_NAMES, localePath, stripLocale, type Locale } from "@/i18n/config";
 
 const GlobeIcon = () => (
   <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -56,7 +56,7 @@ export function LanguageSwitcher({
         {LOCALES.map((l) => (
           <a
             key={l}
-            href={localeHref(l, path)}
+            href={localePath(l, path)}
             hrefLang={l}
             lang={l}
             aria-current={l === lang ? "true" : undefined}
@@ -93,35 +93,37 @@ export function LanguageSwitcher({
           <path d="M6 9l6 6 6-6" />
         </svg>
       </button>
-      {open && (
-        <ul
-          role="menu"
-          className="absolute right-0 top-[calc(100%+8px)] z-50 min-w-[11rem] overflow-hidden rounded-card border border-copper-500/30 bg-paper-light py-1 shadow-lift"
-        >
-          {LOCALES.map((l) => (
-            <li key={l} role="none">
-              <a
-                role="menuitem"
-                href={localeHref(l, path)}
-                hrefLang={l}
-                lang={l}
-                aria-current={l === lang ? "true" : undefined}
-                className={cn(
-                  "flex items-center justify-between px-4 py-2.5 text-sm transition-colors hover:bg-copper-100/60 hover:text-copper-600",
-                  l === lang ? "font-semibold text-copper-600" : "text-ink-soft",
-                )}
-              >
-                {LOCALE_NAMES[l]}
-                {l === lang && (
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M5 12l5 5L20 7" />
-                  </svg>
-                )}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+      {/* Menü immer im HTML, damit Suchmaschinen die Sprachversionen über Links finden; geschlossen nur per CSS versteckt */}
+      <ul
+        role="menu"
+        className={cn(
+          "absolute right-0 top-[calc(100%+8px)] z-50 min-w-[11rem] overflow-hidden rounded-card border border-copper-500/30 bg-paper-light py-1 shadow-lift",
+          !open && "hidden",
+        )}
+      >
+        {LOCALES.map((l) => (
+          <li key={l} role="none">
+            <a
+              role="menuitem"
+              href={localePath(l, path)}
+              hrefLang={l}
+              lang={l}
+              aria-current={l === lang ? "true" : undefined}
+              className={cn(
+                "flex items-center justify-between px-4 py-2.5 text-sm transition-colors hover:bg-copper-100/60 hover:text-copper-600",
+                l === lang ? "font-semibold text-copper-600" : "text-ink-soft",
+              )}
+            >
+              {LOCALE_NAMES[l]}
+              {l === lang && (
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M5 12l5 5L20 7" />
+                </svg>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

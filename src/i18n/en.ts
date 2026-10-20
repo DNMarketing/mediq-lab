@@ -11,7 +11,7 @@ export const en: Dict = {
     titleDefault: "medIQ lab: Study smarter. Pass with confidence. For medical students in Germany & across the EU.",
     titleTemplate: "%s · medIQ lab",
     description:
-      "The learning ecosystem for medical students in Germany and across the EU: evidence-based study methods, exam strategy, our own AI study app and a community that carries you through med school. One membership, everything included.",
+      "Study system for medical students in Germany and the EU: evidence-based methods, exam strategy, an AI study app and a community in one membership.",
     ogTitle: "medIQ lab: Study smarter. Pass with confidence.",
     ogDescription:
       "Evidence-based support through medical school, in Germany and abroad. Workshops, study sheets, AI study app and community in one membership.",

@@ -37,6 +37,12 @@ export function localeHref(lang: Locale, path: string): string {
   return `/${lang}${clean}` || `/${lang}`;
 }
 
+/** Wie localeHref, aber mit Schrägstrich am Ende (passend zu trailingSlash: true, ohne 301-Umweg). */
+export function localePath(lang: Locale, path: string): string {
+  const href = localeHref(lang, path);
+  return href.endsWith("/") ? href : `${href}/`;
+}
+
 /** Aus einem Pathname Sprache und sprachfreien Pfad ermitteln. */
 export function stripLocale(pathname: string): { lang: Locale; path: string } {
   const m = pathname.match(/^\/([a-z]{2})(\/|$)/);

@@ -15,6 +15,8 @@ export function RootShell({ lang, children }: { lang: Locale; children: React.Re
   return (
     <html lang={LOCALE_TAGS[lang]} className={`${serif.variable} ${sans.variable}`}>
       <body className="min-h-screen font-sans">
+        {/* Ohne JavaScript: Animationen nicht im Startzustand (unsichtbar) stehen lassen, FAQ-Antworten aufklappen */}
+        <noscript dangerouslySetInnerHTML={{ __html: '<style>[style*="opacity:0"]{opacity:1!important;transform:none!important}[style*="height:0"]{height:auto!important}</style>' }} />
         <a
           href="#inhalt"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-card focus:bg-petrol-700 focus:px-4 focus:py-2 focus:text-paper-light"

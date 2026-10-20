@@ -17,7 +17,10 @@ export function spotsLabel(lang: Locale): string | null {
 export function homeMeta(lang: Locale) {
   const d = getDict(lang);
   // Startseite: Titel ohne Template, kommt aus dem Root-Layout.
-  return { ...pageMetadata(lang, "/", { title: d.meta.titleDefault }), title: { absolute: d.meta.titleDefault } };
+  return {
+    ...pageMetadata(lang, "/", { title: d.meta.titleDefault, description: d.meta.description }),
+    title: { absolute: d.meta.titleDefault },
+  };
 }
 
 export function HomeView({ lang }: { lang: Locale }) {

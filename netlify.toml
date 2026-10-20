@@ -8,9 +8,6 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Saubere URLs / Fallback (statischer Export erzeugt /pfad/index.html)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
+# Kein SPA-Fallback ("/* /index.html 200"): Der statische Export erzeugt jede Route als
+# /pfad/index.html. Unbekannte Adressen liefern so out/404.html mit echtem Status 404
+# statt der Startseite mit 200 (Soft 404).

@@ -33,10 +33,10 @@ export function Hero({
     hidden: {},
     show: { transition: { staggerChildren: 0.09, delayChildren: 0.05 } },
   };
+  // Nur bewegen, nicht ausblenden: Text above the fold ist sofort sichtbar (LCP mobil)
   const item = {
-    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: 18 },
+    hidden: reduce ? {} : { y: 18 },
     show: {
-      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] },
     },
@@ -98,8 +98,8 @@ export function Hero({
 
             {/* Handy/Tablet: Vorstellungsvideo (Hochformat, self-hosted) */}
             <motion.div
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={reduce ? false : { y: 20 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="lg:hidden"
             >
