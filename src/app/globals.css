@@ -50,7 +50,7 @@
 
   /* Hängende Initiale / großes Zitat */
   .pull-quote {
-    @apply font-serif text-2xl font-medium leading-snug text-ink sm:text-3xl;
+    @apply font-display text-2xl font-semibold leading-snug text-ink sm:text-3xl;
   }
 
   /* Sanfter Bild-Rahmen im Editorial-Stil */
@@ -93,4 +93,19 @@
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.02em;
   }
+}
+
+/*
+ * Vollbild-Video: Im Player füllt das Hochformat-Video seinen Rahmen (object-cover).
+ * Im Vollbild würde das auf Querformat-Bildschirmen stark hineinzoomen und abschneiden,
+ * deshalb dort das ganze Bild zeigen. Getrennte Regeln, weil ein unbekannter
+ * Pseudo-Selektor sonst die ganze Regel ungültig macht (Safari: -webkit-full-screen).
+ */
+video:fullscreen {
+  object-fit: contain;
+  background: #000;
+}
+video:-webkit-full-screen {
+  object-fit: contain;
+  background: #000;
 }

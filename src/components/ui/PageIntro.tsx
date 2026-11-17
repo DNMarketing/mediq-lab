@@ -51,7 +51,7 @@ export function PageIntro({
               </div>
             </Reveal>
             <Reveal fade={false} delay={0.06}>
-              <h1 className="mt-6 font-serif text-[2.15rem] font-medium leading-[1.08] tracking-[-0.015em] text-ink sm:text-[3.7rem] sm:leading-[1.05]">
+              <h1 className="mt-6 font-display text-[2.15rem] font-semibold leading-[1.08] tracking-[-0.022em] text-ink sm:text-[3.7rem] sm:leading-[1.05]">
                 {title}
               </h1>
             </Reveal>

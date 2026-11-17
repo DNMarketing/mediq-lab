@@ -11,7 +11,7 @@ import { Picture } from "./Picture";
  * Self-hosted Vorstellungsvideo (Hochformat). Lädt vor dem Klick NICHTS außer
  * dem Poster (preload="none"), dann native Controls mit Ton. Rendition nach
  * Bildschirmbreite: unter 640px die 720er, sonst die 1080er. Sprachfassung
- * über `videoFor(lang)` (fällt auf Deutsch zurück, solange keine Übersetzung da ist).
+ * über `videoFor(lang)` (Deutsch auf /, sonst die englische Fassung).
  */
 export function VideoPlayer({ lang, t, className = "" }: { lang: Locale; t: Dict["video"]; className?: string }) {
   const v = videoFor(lang);
@@ -56,7 +56,7 @@ export function VideoPlayer({ lang, t, className = "" }: { lang: Locale; t: Dict
               <MedIcon name="play" className="ml-0.5 h-7 w-7" />
             </span>
           </span>
-          <span className="absolute right-4 top-4 rounded-full bg-petrol-900/60 px-2.5 py-1 text-xs text-paper-light backdrop-blur">
+          <span className="absolute right-4 top-4 rounded-full bg-petrol-900/75 px-2.5 py-1 text-xs text-paper-light">
             {mm}:{ss} {t.min}
           </span>
           <span className="absolute inset-x-0 bottom-0 px-5 pb-5 text-sm font-medium text-paper-light">{t.caption}</span>

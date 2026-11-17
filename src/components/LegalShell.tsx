@@ -20,14 +20,14 @@ export function LegalShell({
 }) {
   return (
     <Container className="max-w-3xl pt-24 pb-24 sm:pt-40 sm:pb-28">
-      <h1 className="font-serif text-[2.2rem] font-medium leading-[1.1] tracking-[-0.01em] text-ink sm:text-[3rem]">{title}</h1>
+      <h1 className="font-display text-[2.2rem] font-semibold leading-[1.1] tracking-[-0.018em] text-ink sm:text-[3rem]">{title}</h1>
       {notice && (
         <p className="mt-4 rounded-card border border-line bg-paper-light px-4 py-3 text-sm leading-relaxed text-ink-soft">{notice}</p>
       )}
       {seal && <div className="mt-8 flex justify-center sm:justify-start">{seal}</div>}
       <div
         lang="de"
-        className="mt-10 space-y-6 leading-relaxed text-ink-soft [&_h2]:mt-10 [&_h2]:font-serif [&_h2]:text-xl [&_h2]:font-medium [&_h2]:text-ink [&_h2]:mb-2 [&_h3]:mt-6 [&_h3]:font-medium [&_h3]:text-ink [&_h3]:mb-1 [&_h4]:mt-4 [&_h4]:font-medium [&_h4]:text-ink-soft [&_p]:mt-2 [&_ul]:mt-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_strong]:text-ink [&_a]:text-petrol-700 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-copper-600 [&_a]:break-words"
+        className="mt-10 space-y-6 leading-relaxed text-ink-soft [&_h2]:mt-10 [&_h2]:font-display [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-ink [&_h2]:mb-2 [&_h3]:mt-6 [&_h3]:font-semibold [&_h3]:text-ink [&_h3]:mb-1 [&_h4]:mt-4 [&_h4]:font-semibold [&_h4]:text-ink-soft [&_p]:mt-2 [&_ul]:mt-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_strong]:text-ink [&_a]:text-petrol-700 [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-copper-600 [&_a]:break-words"
       >
         {children}
       </div>

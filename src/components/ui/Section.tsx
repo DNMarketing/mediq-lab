@@ -77,7 +77,7 @@ export function SectionHeading({
       )}
       <h2
         className={cn(
-          "mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] sm:text-[2.6rem]",
+          "mt-5 font-display text-[2rem] font-semibold leading-[1.12] tracking-[-0.018em] sm:text-[2.6rem]",
           onDark ? "text-paper-light" : "text-ink",
         )}
       >

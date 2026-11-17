@@ -39,17 +39,23 @@ function videoSet(suffix: string, seconds: number): VideoSet {
 export const VIDEO = videoSet("", 86);
 
 /**
- * Sprachfassungen des Videos. Sobald z. B. die englische Fassung da ist:
- * Dateien `public/video/vorstellung-en-{1080,720}.mp4` + `public/img/vorstellung-en-poster.jpg`
- * ablegen und hier `en: videoSet("-en", <Sekunden>)` eintragen. Fehlt eine
- * Sprache, läuft das deutsche Video.
+ * Englische Fassung (46 s), Quelle: medIQ_lab_Vorstellungsvideo_EN_4K.mp4, transkodiert am 16.11.2026.
+ * Läuft auf allen nicht-deutschen Seiten (EN, FR, IT), solange es keine eigene Sprachfassung gibt.
+ */
+export const VIDEO_EN = videoSet("-en", 46);
+
+/**
+ * Eigene Sprachfassungen. Für eine neue Sprache (z. B. Französisch) Dateien
+ * `public/video/vorstellung-fr-{1080,720}.mp4` + `public/img/vorstellung-fr-poster.jpg`
+ * ablegen und hier `fr: videoSet("-fr", <Sekunden>)` eintragen.
  */
 const VIDEO_BY_LANG: Partial<Record<string, VideoSet>> = {
   de: VIDEO,
+  en: VIDEO_EN,
 };
 
 export function videoFor(lang: string): VideoSet {
-  return VIDEO_BY_LANG[lang] ?? VIDEO;
+  return VIDEO_BY_LANG[lang] ?? VIDEO_EN;
 }
 
 export const IMAGES = {
@@ -62,3 +68,22 @@ export const IMAGES = {
   /** Zugang/Community: lernende Gruppe. */
   community: img("community.jpg"),
 } as const;
+
+/**
+ * Screenshots der KI-Lernapp (Drive „App Screenshots", 13.11.2026), je Sprache.
+ * Deutsch für /, Englisch für alle anderen Sprachen (die App gibt es auf DE und EN).
+ */
+export const APP_SHOTS = ["weltkarte", "ki-hilfe", "fehler-arena", "statistik"] as const;
+export function appShot(name: (typeof APP_SHOTS)[number], lang: string): string {
+  return img(`app/${name}-${lang === "de" ? "de" : "en"}.jpg`);
+}
+
+/** Screenshots der Skool-Community (Drive „Skool Screenshots", Stand 13.11.2026). */
+export const COMMUNITY_SHOTS = {
+  kurse: img("community/kurse.jpg"),
+  eventsNov: img("community/events-november.jpg"),
+  eventsDez: img("community/events-dezember.jpg"),
+} as const;
+
+/** Gründerinnen-Foto für den Hero (Faith links, Hannah rechts, Arztkittel), eng zugeschnitten aus team/faith-hannah.jpg. */
+export const FOUNDERS_PHOTO = img("team/faith-hannah-hero.jpg");

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { INSTAGRAM_URL, SKOOL_URL } from "@/lib/config";
+import { APP_URL, INSTAGRAM_URL, SKOOL_URL } from "@/lib/config";
 import { LOCALES, LOCALE_NAMES, localeHref, localePath, type Locale } from "@/i18n/config";
 import type { Dict } from "@/i18n/de";
 import { Container } from "./ui/Container";
@@ -11,6 +11,7 @@ const NAV: { key: keyof Dict["nav"]; path: string }[] = [
   { key: "programm", path: "/programm" },
   { key: "team", path: "/team" },
   { key: "ueber", path: "/ueber" },
+  { key: "shop", path: "/shop" },
   { key: "faq", path: "/faq" },
   { key: "kontakt", path: "/kontakt" },
 ];
@@ -30,7 +31,7 @@ export function Footer({
   return (
     <footer data-mobilecta="hide" className="relative overflow-hidden border-t border-line bg-paper">
       {/* dezente EKG-Signatur als Markenelement */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 text-petrol-700/15" aria-hidden>
+      <div className="pointer-events-none absolute inset-x-0 top-3 text-petrol-700/15" aria-hidden>
         <EkgLine beats={8} strokeWidth={1.4} className="h-8" />
       </div>
 
@@ -38,7 +39,7 @@ export function Footer({
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div className="max-w-xs">
             <Logo />
-            <p className="mt-3 font-serif text-sm italic text-petrol-700">{t.tagline}</p>
+            <p className="mt-3 font-display text-sm font-semibold text-petrol-700">{t.tagline}</p>
             <p className="mt-4 leading-relaxed text-ink-soft">{t.blurb}</p>
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer me" className={`${link} mt-4 inline-flex items-center gap-2`}>
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
@@ -67,6 +68,9 @@ export function Footer({
             <Link href={localeHref(lang, "/programm")} className={link}>
               {t.programmPreise}
             </Link>
+            <a href={APP_URL} target="_blank" rel="noopener noreferrer" className={link}>
+              {nav.app} ↗
+            </a>
             <Link href={localeHref(lang, "/kontakt")} className={link}>
               {nav.kontakt}
             </Link>

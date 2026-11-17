@@ -23,14 +23,23 @@ export const NAV_LINKS = [
 ] as const;
 
 /**
- * Preis der Mitgliedschaft: EIN Produkt, 399 € jährlich, Community und alle
- * Workshops inklusive (lt. Gründerinnen, Stand 2026-09-30). Keine Monatsoption.
- * yearlyPerMonth ist nur die gerundete Einordnung (399/12 ≈ 33,25).
+ * Preis der Mitgliedschaft auf Skool: 34,99 € im Monat (lt. Kunde, E-Mail vom 13.11.2026).
+ * Ersetzt das frühere Jahresmodell (399 €). Anzeige-Texte stehen in `money` der Wörterbücher.
  */
 export const PRICING = {
-  yearly: "399",
-  yearlyPerMonth: "33",
+  monthly: "34.99",
+  lernplan: "49",
 } as const;
+
+/**
+ * KI-Lernapp (Flutter-Web-App der Gründerinnen). Subdomain app.mediq-lab.de ist geplant,
+ * DNS-Eintrag bei STRATO steht noch aus (Stand 15.11.2026).
+ */
+export const APP_URL = "https://app.mediq-lab.de";
+
+/** Cal.com-Termine (lt. Kunde, 13.11.2026). Infogespräch kostenlos, Lernplan 49 €. */
+export const CAL_INFO_URL = "https://cal.com/hannah-schlenker-rblxpn/individuelles-infogesprach";
+export const CAL_LERNPLAN_URL = "https://cal.com/hannah-schlenker-rblxpn/lernplan";
 
 /**
  * Verknappungs-Hinweis (Pill im Hero und im Abschluss-CTA), lt. Kunde gewünscht.

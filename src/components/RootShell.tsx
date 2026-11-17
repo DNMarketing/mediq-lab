@@ -1,4 +1,4 @@
-import { serif, sans } from "@/lib/fonts";
+import { display, logo, sans } from "@/lib/fonts";
 import { getDict, LOCALE_TAGS, type Locale } from "@/i18n";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
@@ -23,7 +23,7 @@ export function RootShell({
 }) {
   const d = getDict(lang);
   return (
-    <html lang={LOCALE_TAGS[lang]} className={`${serif.variable} ${sans.variable}`}>
+    <html lang={LOCALE_TAGS[lang]} className={`${display.variable} ${logo.variable} ${sans.variable}`}>
       <body className="min-h-screen font-sans">
         {/* Ohne JavaScript: Animationen nicht im Startzustand (unsichtbar) stehen lassen, FAQ-Antworten aufklappen */}
         <noscript dangerouslySetInnerHTML={{ __html: '<style>[style*="opacity:0"]{opacity:1!important;transform:none!important}[style*="height:0"]{height:auto!important}</style>' }} />

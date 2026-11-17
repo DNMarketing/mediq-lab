@@ -214,7 +214,7 @@ export function MedIQChat({ lang, t, join, money }: { lang: Locale; t: T; join: 
               </svg>
             </span>
             <div className="flex-1">
-              <p className="font-serif text-base font-medium leading-none">{t.name}</p>
+              <p className="font-display text-base font-semibold leading-none">{t.name}</p>
               <p className="mt-1 flex items-center gap-1.5 text-xs text-paper/70">
                 <span className="h-1.5 w-1.5 rounded-full bg-teal-400" /> {t.status}
               </p>

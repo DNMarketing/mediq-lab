@@ -1,14 +1,20 @@
-import { Fraunces, IBM_Plex_Sans } from "next/font/google";
+import { Fraunces, IBM_Plex_Sans, Schibsted_Grotesk } from "next/font/google";
 
-// Serif mit Charakter für Headlines
-export const serif = Fraunces({
+// Überschriften: Schibsted Grotesk (klar, eigenständig, ohne Vorlagen-Look). Variable Font, eine Datei.
+export const display = Schibsted_Grotesk({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-display",
   display: "swap",
-  style: ["normal", "italic"],
-  axes: ["opsz"],
-  // Nicht vorladen: Die zwei Fraunces-Dateien (~150 KB) konkurrierten mit der Fließtextschrift,
-  // die auf dem Handy das LCP-Element trägt. Optik unverändert (Fallback mit angepassten Metriken, dann Swap).
+});
+
+// Nur für die Wortmarke „medIQ“ (Logo, Cover): Fraunces aufrecht, wie auf den Skool-Kursbildern.
+// Nicht vorladen, damit sie nicht mit den Textschriften konkurriert.
+export const logo = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-logo",
+  display: "swap",
+  style: ["normal"],
+  weight: ["500"],
   preload: false,
 });
 

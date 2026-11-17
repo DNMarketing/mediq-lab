@@ -1,31 +1,37 @@
 "use client";
 
 import { m, useReducedMotion } from "framer-motion";
-import { SKOOL_URL } from "@/lib/config";
-import { fill, localeHref, type Locale } from "@/i18n/config";
+import { CAL_INFO_URL, SKOOL_URL } from "@/lib/config";
+import { FOUNDERS_PHOTO } from "@/lib/images";
+import { fill } from "@/i18n/config";
 import type { Dict } from "@/i18n/de";
 import { Rich } from "@/i18n/Rich";
 import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { Pill } from "../ui/Badge";
 import { MedIcon } from "../ui/MedIcon";
-import { AnatomyHeart } from "../ui/Anatomy";
 import { EkgLine } from "../ui/EkgLine";
-import { VideoPlayer } from "../ui/VideoPlayer";
+import { Picture } from "../ui/Picture";
 
+type Founder = { name: string; year: string };
+
+/**
+ * Startseiten-Hero: Faith & Hannah als Gesicht von medIQ lab.
+ * Foto (beide im Kittel) mit Namensschildern, daneben Headline und zwei Wege:
+ * kostenloses Infogespräch (niedrige Schwelle) und direkt in die Community.
+ */
 export function Hero({
-  lang,
   t,
-  video,
   money,
-  join,
+  common,
+  founders,
   spotsLabel,
 }: {
-  lang: Locale;
   t: Dict["hero"];
-  video: Dict["video"];
   money: Dict["money"];
-  join: string;
+  common: Dict["common"];
+  /** Reihenfolge wie auf dem Foto: Faith links, Hannah rechts. */
+  founders: Founder[];
   spotsLabel: string | null;
 }) {
   const reduce = useReducedMotion();
@@ -43,12 +49,63 @@ export function Hero({
     },
   };
 
+  const [left, right] = founders;
+
   return (
-    <section id="hero" className="relative overflow-hidden pt-24 pb-14 sm:pt-40 sm:pb-24">
+    <section id="hero" className="relative overflow-hidden pt-24 pb-12 sm:pt-36 sm:pb-20">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          {/* Foto: auf dem Handy zuerst, damit die Gesichter sofort da sind */}
+          <m.div
+            initial={reduce ? false : { y: 20 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="relative order-first lg:order-last lg:col-span-6"
+          >
+            <div className="glow-teal-bg pointer-events-none absolute -inset-10 -z-10" aria-hidden />
+            <figure className="relative mx-auto max-w-[23rem] sm:max-w-[28rem] lg:max-w-[36rem]">
+              {/* Feiner Kupfer-Bogen als Rahmen um das Foto */}
+              <div className="absolute -inset-x-3 -top-3 bottom-[18%] rounded-t-[999px] border border-copper-300/70" aria-hidden />
+              <div className="relative overflow-hidden rounded-b-card rounded-t-[999px]">
+                <Picture
+                  src={FOUNDERS_PHOTO}
+                  alt={t.imgAlt}
+                  decoding="async"
+                  width={862}
+                  height={699}
+                  className="aspect-[862/699] w-full object-cover object-top [mask-image:linear-gradient(to_bottom,black_82%,transparent)]"
+                />
+              </div>
+
+              {/* Namensschilder */}
+              {left && (
+                <figcaption className="absolute bottom-[14%] left-0 rounded-card border border-line bg-paper-light px-4 py-2.5 shadow-lift sm:left-[2%]">
+                  <span className="block font-display text-lg font-semibold leading-none text-ink">{left.name}</span>
+                  <span className="mt-1 block text-xs text-ink-soft">{left.year}</span>
+                </figcaption>
+              )}
+              {right && (
+                <figcaption className="absolute bottom-[22%] right-0 rounded-card border border-line bg-paper-light px-4 py-2.5 shadow-lift sm:right-[2%]">
+                  <span className="block font-display text-lg font-semibold leading-none text-ink">{right.name}</span>
+                  <span className="mt-1 block text-xs text-ink-soft">{right.year}</span>
+                </figcaption>
+              )}
+
+              {/* Sprung zum Vorstellungsvideo */}
+              <a
+                href="#kennenlernen"
+                className="group absolute -bottom-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-2.5 whitespace-nowrap rounded-full border border-line bg-paper-light py-1.5 pl-1.5 pr-4 text-sm font-medium text-ink shadow-soft transition-colors hover:border-petrol-700 hover:text-petrol-700"
+              >
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-petrol-700 text-paper-light transition-transform group-hover:scale-105">
+                  <MedIcon name="play" className="ml-0.5 h-3.5 w-3.5" />
+                </span>
+                {t.videoCta}
+              </a>
+            </figure>
+          </m.div>
+
           {/* Text */}
-          <m.div variants={container} initial="hidden" animate="show" className="lg:col-span-7">
+          <m.div variants={container} initial="hidden" animate="show" className="lg:col-span-6">
             {spotsLabel && (
               <m.div variants={item} className="mb-7">
                 <Pill>
@@ -68,7 +125,7 @@ export function Hero({
 
             <m.h1
               variants={item}
-              className="font-serif text-[2.15rem] font-medium leading-[1.06] tracking-[-0.015em] text-ink sm:text-[4rem] sm:leading-[1.04]"
+              className="font-display text-[2.1rem] font-semibold leading-[1.08] tracking-[-0.022em] text-ink sm:text-[3.4rem] sm:leading-[1.05]"
             >
               <Rich text={t.title} />
             </m.h1>
@@ -78,12 +135,12 @@ export function Hero({
             </m.p>
 
             <m.div variants={item} className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <CTAButton href={SKOOL_URL} size="lg">
-                {join}
+              <CTAButton href={CAL_INFO_URL} size="lg">
+                {common.infoCall}
                 <MedIcon name="arrowRight" className="h-4 w-4" />
               </CTAButton>
-              <CTAButton href={localeHref(lang, "/methode")} variant="secondary" size="lg" external={false}>
-                {t.ctaMethod}
+              <CTAButton href={SKOOL_URL} variant="secondary" size="lg">
+                {common.join}
                 <MedIcon name="arrowRight" className="h-4 w-4" />
               </CTAButton>
             </m.div>
@@ -92,58 +149,11 @@ export function Hero({
               {fill(t.note, money)}
             </m.p>
           </m.div>
-
-          {/* Visual: Handy = Video, Desktop = anatomisches Herz */}
-          <div className="relative lg:col-span-5">
-            <div className="glow-teal-bg pointer-events-none absolute -inset-8 -z-10" aria-hidden />
-
-            {/* Handy/Tablet: Vorstellungsvideo (Hochformat, self-hosted) */}
-            <m.div
-              initial={reduce ? false : { y: 20 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="lg:hidden"
-            >
-              <VideoPlayer lang={lang} t={video} className="mx-auto max-w-[20rem]" />
-            </m.div>
-
-            {/* Desktop: animiertes anatomisches Herz + EKG + Glas-Karte */}
-            <m.div
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="relative mx-auto hidden max-w-md lg:block"
-            >
-              <div className="relative aspect-square">
-                <div className="absolute inset-0 rounded-full border border-line" aria-hidden />
-                <div className="absolute inset-[8%] rounded-full border border-teal-300/40" aria-hidden />
-                <div className="absolute inset-[8%] rounded-full bg-paper-light/60 shadow-soft" aria-hidden />
-                <div className="absolute inset-[20%] text-petrol-700">
-                  <AnatomyHeart strokeWidth={1.7} />
-                </div>
-                <div className="absolute inset-x-[6%] top-[60%] text-petrol-700/70">
-                  <EkgLine beats={3} strokeWidth={1.4} className="h-12" />
-                </div>
-              </div>
-
-              <div className="absolute -bottom-4 -left-6 max-w-[14.5rem] rounded-card p-5 shadow-lift glass-card">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-card bg-teal-100 text-teal-600">
-                    <MedIcon name="repeat" className="h-5 w-5" />
-                  </span>
-                  <p className="font-serif text-base leading-tight text-ink">
-                    <Rich text={t.cardTitle} />
-                  </p>
-                </div>
-                <p className="mt-3 text-xs leading-relaxed text-ink-soft">{t.cardBody}</p>
-              </div>
-            </m.div>
-          </div>
         </div>
       </Container>
 
       {/* Signatur: EKG-Vitalkurve als Section-Abschluss */}
-      <div className="mt-16 text-petrol-700/50 sm:mt-24">
+      <div className="mt-16 text-petrol-700/50 sm:mt-20">
         <EkgLine beats={8} strokeWidth={1.5} className="h-16" />
       </div>
     </section>

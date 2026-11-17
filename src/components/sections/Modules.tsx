@@ -1,3 +1,4 @@
+import { APP_URL } from "@/lib/config";
 import { IMAGES } from "@/lib/images";
 import type { Dict } from "@/i18n/de";
 import { Section, Eyebrow } from "../ui/Section";
@@ -13,7 +14,16 @@ const FORMAT_ICONS: IconName[] = ["milestone", "play", "community", "structure"]
  * Was in der Mitgliedschaft steckt: die vier Formate aus dem Content-Plan
  * (Workshops, Videoreihen, Live Events, Downloads), plus KI-Lernapp als Extra.
  */
-export function Modules({ t, formats }: { t: Dict["pageProgramm"]["modules"]; formats: Dict["pageProgramm"]["formats"] }) {
+export function Modules({
+  t,
+  formats,
+  appCta,
+}: {
+  t: Dict["pageProgramm"]["modules"];
+  formats: Dict["pageProgramm"]["formats"];
+  /** Linktext zur KI-App (app.mediq-lab.de). */
+  appCta?: string;
+}) {
   return (
     <Section id="module" tone="paper">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -22,7 +32,7 @@ export function Modules({ t, formats }: { t: Dict["pageProgramm"]["modules"]; fo
           <div className="lg:sticky lg:top-28">
             <Reveal>
               <Eyebrow>{t.eyebrow}</Eyebrow>
-              <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">{t.title}</h2>
+              <h2 className="mt-5 font-display text-[2rem] font-semibold leading-[1.12] tracking-[-0.018em] text-ink sm:text-[2.6rem]">{t.title}</h2>
               <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">{t.lead}</p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -44,9 +54,9 @@ export function Modules({ t, formats }: { t: Dict["pageProgramm"]["modules"]; fo
                     <span className="flex h-12 w-12 items-center justify-center rounded-card border border-line bg-paper text-petrol-700 transition-colors group-hover:border-teal-400/40 group-hover:bg-teal-100 group-hover:text-teal-600">
                       <MedIcon name={FORMAT_ICONS[i]} className="h-6 w-6" />
                     </span>
-                    <span className="step-num font-serif text-sm text-ink-mute">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="step-num font-display text-sm text-ink-mute">{String(i + 1).padStart(2, "0")}</span>
                   </div>
-                  <h3 className="mt-5 font-serif text-xl font-medium text-ink">{p.title}</h3>
+                  <h3 className="mt-5 font-display text-xl font-semibold text-ink">{p.title}</h3>
                   <span className="mt-1 text-xs uppercase tracking-[0.16em] text-teal-600">{p.sub}</span>
                   <ul className="mt-4 space-y-2">
                     {p.items.map((it) => (
@@ -70,8 +80,19 @@ export function Modules({ t, formats }: { t: Dict["pageProgramm"]["modules"]; fo
                 <MedIcon name="repeat" className="h-6 w-6" />
               </span>
               <div>
-                <h3 className="font-serif text-xl font-medium text-ink">{t.appTitle}</h3>
+                <h3 className="font-display text-xl font-semibold text-ink">{t.appTitle}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{t.appBody}</p>
+                {appCta && (
+                  <a
+                    href={APP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-petrol-700 transition-colors hover:text-copper-600"
+                  >
+                    {appCta}
+                    <MedIcon name="arrowRight" className="h-3.5 w-3.5" />
+                  </a>
+                )}
               </div>
             </div>
           </Reveal>

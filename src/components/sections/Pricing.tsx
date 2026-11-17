@@ -8,7 +8,7 @@ import { CTAButton } from "../ui/CTAButton";
 import { MedIcon } from "../ui/MedIcon";
 import { EditorialImage } from "../ui/EditorialImage";
 
-/** Ein Produkt, alles inklusive (Jahresmitgliedschaft). */
+/** Ein Produkt, alles inklusive (Mitgliedschaft, monatlich über Skool). */
 export function Pricing({ t, money, join }: { t: Dict["pageProgramm"]["pricing"]; money: Dict["money"]; join: string }) {
   return (
     <Section id="zugang" tone="light">
@@ -29,15 +29,15 @@ export function Pricing({ t, money, join }: { t: Dict["pageProgramm"]["pricing"]
           <div className="relative p-8 sm:p-10">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <h3 className="font-serif text-2xl font-medium text-paper-light sm:text-3xl">{t.plan}</h3>
+                <h3 className="font-display text-2xl font-semibold text-paper-light sm:text-3xl">{t.plan}</h3>
                 <p className="mt-2 max-w-md text-sm text-paper/75">{t.blurb}</p>
               </div>
               <div className="shrink-0">
                 <div className="flex items-end gap-2">
-                  <span className="font-serif text-5xl font-medium text-paper-light">{money.yearly}</span>
-                  <span className="mb-2 text-sm text-paper/70">{t.perYear}</span>
+                  <span className="font-display text-5xl font-semibold text-paper-light">{money.monthly}</span>
+                  <span className="mb-2 text-sm text-paper/70">{t.per}</span>
                 </div>
-                <p className="mt-1 text-xs text-paper/60">{fill(t.perMonth, money)}</p>
+                <p className="mt-1 text-xs text-paper/60">{t.billing}</p>
               </div>
             </div>
 

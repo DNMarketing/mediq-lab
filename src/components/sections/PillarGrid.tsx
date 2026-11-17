@@ -15,7 +15,7 @@ export function PillarGrid({ pillars, className = "" }: { pillars: Dict["pillars
             <span className="flex h-12 w-12 items-center justify-center rounded-card border border-line bg-paper text-petrol-700 transition-colors group-hover:border-teal-400/40 group-hover:bg-teal-100 group-hover:text-teal-600">
               <MedIcon name={PILLAR_ICONS[i]} className="h-6 w-6" />
             </span>
-            <h3 className="mt-5 font-serif text-xl font-medium text-ink">{p.title}</h3>
+            <h3 className="mt-5 font-display text-xl font-semibold text-ink">{p.title}</h3>
             <span className="mt-1 text-xs uppercase tracking-[0.16em] text-teal-600">{p.sub}</span>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">{p.short}</p>
           </div>

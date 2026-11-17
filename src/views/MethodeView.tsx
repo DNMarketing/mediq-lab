@@ -89,9 +89,9 @@ export function MethodeView({ lang }: { lang: Locale }) {
                       <span className="flex h-12 w-12 items-center justify-center rounded-card border border-line bg-paper text-petrol-700 transition-colors group-hover:border-teal-400/40 group-hover:bg-teal-100 group-hover:text-teal-600">
                         <MedIcon name={PRACTICE_ICONS[i]} className="h-6 w-6" />
                       </span>
-                      <span className="step-num font-serif text-sm text-ink-mute">{String(i + 1).padStart(2, "0")}</span>
+                      <span className="step-num font-display text-sm text-ink-mute">{String(i + 1).padStart(2, "0")}</span>
                     </div>
-                    <h3 className="mt-5 font-serif text-xl font-medium text-ink">{p.title}</h3>
+                    <h3 className="mt-5 font-display text-xl font-semibold text-ink">{p.title}</h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{p.body}</p>
                   </div>
                 </StaggerItem>

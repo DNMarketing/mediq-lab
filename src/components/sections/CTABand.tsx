@@ -33,7 +33,7 @@ export function CTABand({
   return (
     <section data-mobilecta="hide" className="relative overflow-hidden bg-petrol-900 py-24 text-paper-light sm:py-32">
       <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-2/3" aria-hidden />
-      <div className="pointer-events-none absolute inset-x-0 top-0 text-teal-400/40">
+      <div className="pointer-events-none absolute inset-x-0 top-4 text-teal-400/40">
         <EkgLine beats={8} strokeWidth={1.4} className="h-10" />
       </div>
       <Container className="relative">
@@ -55,8 +55,8 @@ export function CTABand({
               </span>
             </div>
 
-            <h2 className="mt-5 font-serif text-[2.2rem] font-medium leading-[1.1] tracking-[-0.01em] text-paper-light sm:text-[3.2rem]">
-              <Rich text={t.title} em="italic text-copper-300" />
+            <h2 className="mt-5 font-display text-[2.2rem] font-semibold leading-[1.1] tracking-[-0.018em] text-paper-light sm:text-[3.2rem]">
+              <Rich text={t.title} em="text-copper-300" />
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-paper/75">{t.subtitle}</p>
 
