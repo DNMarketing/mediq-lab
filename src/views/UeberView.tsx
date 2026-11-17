@@ -41,7 +41,7 @@ export function UeberView({ lang }: { lang: Locale }) {
           <div className="lg:col-span-6">
             <Reveal delay={0.05}>
               <Eyebrow>{t.who.eyebrow}</Eyebrow>
-              <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.4rem]">{t.who.title}</h2>
+              <h2 className="mt-5 font-display text-[2rem] font-semibold leading-[1.12] tracking-[-0.018em] text-ink sm:text-[2.4rem]">{t.who.title}</h2>
               <div className="mt-5 max-w-2xl space-y-4 leading-relaxed text-ink-soft">
                 <p>{t.who.p1}</p>
                 <p>{t.who.p2}</p>
@@ -70,7 +70,7 @@ export function UeberView({ lang }: { lang: Locale }) {
                   />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-serif text-2xl font-medium text-ink">{f.name}</h3>
+                  <h3 className="font-display text-2xl font-semibold text-ink">{f.name}</h3>
                   <dl className="mt-3 space-y-1.5 text-sm text-ink-soft">
                     <div className="flex gap-2">
                       <dt className="shrink-0 font-medium text-ink">{t.labels.year}</dt>
@@ -105,7 +105,7 @@ export function UeberView({ lang }: { lang: Locale }) {
           <div className="lg:col-span-5">
             <Reveal>
               <Eyebrow>{t.mission.eyebrow}</Eyebrow>
-              <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">{t.mission.title}</h2>
+              <h2 className="mt-5 font-display text-[2rem] font-semibold leading-[1.12] tracking-[-0.018em] text-ink sm:text-[2.6rem]">{t.mission.title}</h2>
               <p className="mt-5 max-w-md leading-relaxed text-ink-soft">{fill(t.mission.lead, d.money)}</p>
             </Reveal>
           </div>
@@ -162,7 +162,7 @@ export function UeberView({ lang }: { lang: Locale }) {
                   <MedIcon name={VALUE_ICONS[i]} className="h-6 w-6" />
                 </span>
                 <div>
-                  <h3 className="font-serif text-xl font-medium text-ink">{v.title}</h3>
+                  <h3 className="font-display text-xl font-semibold text-ink">{v.title}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{v.body}</p>
                 </div>
               </div>

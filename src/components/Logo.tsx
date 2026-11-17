@@ -14,7 +14,7 @@ export function Logo({
   return (
     <span
       className={cn(
-        "font-serif text-[1.35rem] font-medium tracking-[-0.01em]",
+        "font-logo text-[1.35rem] font-medium tracking-[-0.01em]",
         onDark ? "text-paper-light" : "text-ink",
         className,
       )}

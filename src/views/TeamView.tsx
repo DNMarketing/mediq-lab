@@ -25,7 +25,7 @@ function TeamCard({ name, role, file, details }: { name: string; role: string; f
         />
       </div>
       <figcaption className="p-5">
-        <p className="font-serif text-xl font-medium text-ink">{name}</p>
+        <p className="font-display text-xl font-semibold text-ink">{name}</p>
         <p className="mt-1 text-sm leading-snug text-ink-soft">{role}</p>
         {details && (
           <>

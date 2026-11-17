@@ -86,9 +86,10 @@ const PATHS: Record<IconName, React.ReactNode> = {
       <path d="M8 17h4" />
     </>
   ),
+  // EKG-Schlag als saubere PQRST-Kurve (gleiche Form wie EkgLine)
   pulse: (
     <>
-      <path d="M2 12h4l2.5-6 4 13 3-9 1.5 2H22" />
+      <path d="M2 13h3c.6 0 .9-1.6 1.6-1.6S7.6 13 8.2 13h1.2l.6 1.2L11.4 5l1.5 12 .7-4H15c.7 0 1.1-2.2 2.1-2.2s1.3 2.2 2.1 2.2H22" />
     </>
   ),
   check: <path d="m4 12.5 5 5L20 6.5" />,

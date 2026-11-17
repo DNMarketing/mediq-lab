@@ -52,7 +52,7 @@ export function ProgrammView({ lang }: { lang: Locale }) {
       />
 
       <VSL lang={lang} t={t.vsl} video={d.video} join={d.common.join} />
-      <Modules t={t.modules} formats={t.formats} />
+      <Modules t={t.modules} formats={t.formats} appCta={d.common.toApp} />
       <Pricing t={t.pricing} money={d.money} join={d.common.join} />
 
       <CTABand lang={lang} t={t.cta} note={fill(d.cta.note, d.money)} join={d.common.join} spotsLabel={spotsLabel(lang)} secondaryPath="/faq" />

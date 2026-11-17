@@ -50,7 +50,7 @@ Deutsch liegt im Root (`/programm/`), Englisch/Französisch/Italienisch unter `/
 - **Texte ändern:** `src/i18n/de.ts` (Deutsch), `en.ts`, `fr.ts`, `it.ts`. Alle vier haben dieselbe Struktur; fehlt ein Schlüssel, bricht der Build mit einem TypeScript-Fehler (gewollt).
 - **Auszeichnung in Texten:** `*so*` = kursive Hervorhebung, `\n` = Zeilenumbruch, `{yearly}` / `{monthly}` / `{lost}` = Preise aus `money` derselben Sprache.
 - **Sprache hinzufügen:** `src/i18n/config.ts` → `LOCALES` + `LOCALE_NAMES` + `LOCALE_TAGS` ergänzen, `src/i18n/<xx>.ts` nach Vorlage anlegen, in `src/i18n/index.ts` registrieren. Routen entstehen automatisch.
-- **Video in anderer Sprache:** Dateien `public/video/vorstellung-en-1080.mp4`, `-720.mp4` und `public/img/vorstellung-en-poster.jpg` ablegen, dann in `src/lib/images.ts` bei `VIDEO_BY_LANG` die Zeile `en: videoSet("-en", <Sekunden>)` eintragen. Fehlt eine Sprache, läuft das deutsche Video.
+- **Video je Sprache:** Deutsch (86 s) läuft auf den deutschen Seiten, die englische Fassung (46 s, `public/video/vorstellung-en-*.mp4`, Poster `public/img/vorstellung-en-poster.jpg`) auf EN, FR und IT. Eigene Fassung für eine weitere Sprache: Dateien `vorstellung-<xx>-1080.mp4`, `-720.mp4` und `vorstellung-<xx>-poster.jpg` ablegen und in `src/lib/images.ts` bei `VIDEO_BY_LANG` die Zeile `<xx>: videoSet("-<xx>", <Sekunden>)` eintragen.
 - **Rechtstexte** (Impressum, Datenschutz) bleiben bewusst Deutsch; nicht-deutsche Seiten zeigen oben einen Hinweis (`legal.notice`).
 - Technik: `src/app/(de)/` und `src/app/[lang]/` sind zwei Root-Layouts mit gemeinsamer `RootShell`. Seiteninhalte liegen in `src/views/`, die Routen sind nur dünne Wrapper.
 

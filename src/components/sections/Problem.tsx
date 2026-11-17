@@ -16,7 +16,7 @@ export function Problem({ t, money }: { t: Dict["pageMethode"]["problem"]; money
           <div className="lg:sticky lg:top-28">
             <Reveal>
               <Eyebrow>{t.eyebrow}</Eyebrow>
-              <h2 className="mt-5 font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-ink sm:text-[2.6rem]">{t.title}</h2>
+              <h2 className="mt-5 font-display text-[2rem] font-semibold leading-[1.12] tracking-[-0.018em] text-ink sm:text-[2.6rem]">{t.title}</h2>
               <p className="mt-5 max-w-md text-[1.05rem] leading-relaxed text-ink-soft">{t.lead}</p>
             </Reveal>
             <Reveal delay={0.1}>
@@ -37,7 +37,7 @@ export function Problem({ t, money }: { t: Dict["pageMethode"]["problem"]; money
                     </svg>
                   </span>
                   <div>
-                    <h3 className="font-serif text-xl font-medium text-ink">{pain.title}</h3>
+                    <h3 className="font-display text-xl font-semibold text-ink">{pain.title}</h3>
                     <p className="mt-1.5 leading-relaxed text-ink-soft">{fill(pain.body, money)}</p>
                   </div>
                 </div>

@@ -39,7 +39,7 @@ export function MobileCTABar({ lang, t, join }: { lang: Locale; t: Dict["mobileB
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/95 pb-[max(0.7rem,env(safe-area-inset-bottom))] backdrop-blur-md transition-transform duration-300 md:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper pb-[max(0.7rem,env(safe-area-inset-bottom))] transition-transform duration-300 md:hidden ${
         hidden ? "pointer-events-none translate-y-full" : "translate-y-0"
       }`}
     >

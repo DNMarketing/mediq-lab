@@ -24,7 +24,7 @@ export function MethodPrinciples({ t, pillars }: { t: Dict["pageMethode"]["princ
             <span className="rule-copper bg-teal-400/80" aria-hidden />
             {t.eyebrow}
           </div>
-          <h2 className="mt-5 max-w-2xl font-serif text-[2rem] font-medium leading-[1.12] tracking-[-0.01em] text-paper-light sm:text-[2.7rem]">{t.title}</h2>
+          <h2 className="mt-5 max-w-2xl font-display text-[2rem] font-semibold leading-[1.12] tracking-[-0.018em] text-paper-light sm:text-[2.7rem]">{t.title}</h2>
           <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-paper/70">{t.lead}</p>
         </Reveal>
 
@@ -33,10 +33,10 @@ export function MethodPrinciples({ t, pillars }: { t: Dict["pageMethode"]["princ
             {pillars.map((p, i) => (
               <StaggerItem as="li" key={p.title}>
                 <div className="flex flex-col gap-4 border-t border-line-onDark py-8 sm:flex-row sm:gap-8">
-                  <span className="step-num font-serif text-3xl font-medium leading-none text-teal-300 sm:w-16">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="step-num font-display text-3xl font-semibold leading-none text-teal-300 sm:w-16">{String(i + 1).padStart(2, "0")}</span>
                   <div className="max-w-2xl">
                     <div className="flex flex-wrap items-baseline gap-x-3">
-                      <h3 className="font-serif text-xl font-medium text-paper-light sm:text-2xl">{p.title}</h3>
+                      <h3 className="font-display text-xl font-semibold text-paper-light sm:text-2xl">{p.title}</h3>
                       <span className="text-xs uppercase tracking-[0.18em] text-teal-300/80">{p.sub}</span>
                     </div>
                     <p className="mt-3 leading-relaxed text-paper/70">{p.body}</p>

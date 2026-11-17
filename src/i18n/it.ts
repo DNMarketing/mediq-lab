@@ -2,8 +2,8 @@ import type { Dict } from "./de";
 
 export const it: Dict = {
   money: {
-    yearly: "399 €",
-    monthly: "33 €",
+    monthly: "34,99 €",
+    lernplan: "49 €",
     lost: "da 10.000 a 20.000 €",
   },
 
@@ -26,6 +26,8 @@ export const it: Dict = {
     skip: "Vai al contenuto",
     language: "Lingua",
     spots: "Solo {spots} posti rimasti",
+    infoCall: "Colloquio conoscitivo gratuito",
+    toApp: "Vai all'app IA",
   },
 
   nav: {
@@ -35,6 +37,8 @@ export const it: Dict = {
     ueber: "Chi siamo",
     faq: "FAQ",
     kontakt: "Contatti",
+    shop: "Shop",
+    app: "App IA",
   },
 
   mobileBar: { programm: "Programma" },
@@ -54,25 +58,153 @@ export const it: Dict = {
   },
 
   hero: {
-    eyebrow: "Per studenti di medicina in Germania & all'estero",
-    title: "Studiare meglio.\nSuperare gli esami con sicurezza.\n*Nessun anno perso.*",
-    lead: "Un metodo di studio basato sulla ricerca, una strategia d'esame chiara, la nostra app IA e una community che ti sostiene. Perché nessun costoso anno di ripetizione ti rallenti, che tu studi in Germania o all'estero.",
-    ctaMethod: "Come funziona il metodo",
-    note: "Per studenti di medicina in Germania & nell'UE · {yearly} all'anno, tutto incluso · iscrizione tramite Skool",
-    cardTitle: "Metodo invece di\nimparare a memoria",
-    cardBody: "Richiamo attivo & ripetizione spaziata, fondati sulla psicologia dell'apprendimento.",
+    eyebrow: "Faith & Hannah · fondatrici di medIQ lab",
+    title: "Il sistema di studio per medicina\n*che avremmo voluto avere noi.*",
+    lead: "Siamo Faith e Hannah e studiamo medicina anche noi, al 4° anno. Con medIQ lab ottieni quello che a noi mancava all'inizio: un metodo di studio, una strategia d'esame, la nostra app IA e una community che ti sostiene. Che tu studi in Germania o in un altro Paese dell'UE.",
+    note: "Colloquio conoscitivo gratuito · community a {monthly} al mese tramite Skool",
+    imgAlt: "Faith (a sinistra) e Hannah (a destra), le fondatrici di medIQ lab, in camice con lo stetoscopio",
+    videoCta: "Conoscici nel video",
+  },
+
+  homeFounders: {
+    eyebrow: "Il volto di medIQ lab",
+    title: "Ciao, siamo *Faith e Hannah.*",
+    lead: "Due studentesse di medicina con una missione: rendere il percorso di medicina più strutturato, più efficace e un po' meno stressante. Nel video (in inglese) ti raccontiamo in meno di un minuto perché abbiamo fondato medIQ lab.",
+    quotes: [
+      { name: "Faith", text: "Chi trova presto la strategia di studio giusta viene bocciato meno spesso e si risparmia tempo, denaro e stress." },
+      { name: "Hannah", text: "Voglio darti esattamente gli strumenti che avrei voluto avere all'inizio dei miei studi." },
+    ],
+    cta: "Di più su di noi",
+  },
+
+  journey: {
+    eyebrow: "Come ti accompagniamo",
+    title: "In tre passi *verso il tuo sistema di studio.*",
+    subtitle:
+      "Prima guardiamo insieme a che punto sei. Poi studi con noi e con la community. E se vuoi, restiamo al tuo fianco ogni mese.",
+    step: "Fase",
+    optional: "Su richiesta",
+    steps: [
+      {
+        title: "Analisi della situazione",
+        body: "Nel colloquio conoscitivo gratuito vediamo a che punto sei: semestre, esami in arrivo e come hai studiato finora. Se vuoi, partendo da qui creiamo il tuo piano di studio personale.",
+        meta: "Colloquio gratuito · piano di studio {lernplan}",
+        cta: "Prenota il colloquio",
+      },
+      {
+        title: "Workshop & eventi live",
+        body: "Nella community metti in pratica il tuo piano: workshop su strategie di studio e resilienza, Study Together, quiz dal vivo e conferenze di medici ospiti. Dal vivo ogni settimana.",
+        meta: "{monthly} al mese tramite Skool",
+        cta: "Vai alla community",
+      },
+      {
+        title: "Check-up mensili",
+        body: "Una volta al mese guardiamo insieme il tuo piano: cosa funziona, dove ti blocchi, qual è il prossimo passo? Così il tuo sistema di studio resta aggiornato, anche quando inizia un nuovo semestre.",
+        meta: "Opzionale, chiedicelo durante il colloquio conoscitivo",
+        cta: "Chiedilo nel colloquio",
+      },
+    ],
+    lernplanCta: "Prenota il piano di studio",
+  },
+
+  appShowcase: {
+    eyebrow: "La nostra app di studio con IA",
+    title: "La tua materia come un percorso. *Prof. MedIQ ti spiega quando ti blocchi.*",
+    subtitle:
+      "La nostra app ti guida livello dopo livello attraverso ogni materia fino all'esame finale. Quello che sbagli finisce nell'arena degli errori (Error Arena), finché non ti resta in testa. In tedesco e in inglese.",
+    tabsLabel: "Funzioni dell'app",
+    tabs: [
+      {
+        label: "Percorso",
+        title: "Ogni materia come una mappa del mondo",
+        body: "Livello dopo livello fino all'esame finale. Prof. MedIQ ti mostra a che punto sei e cosa viene dopo.",
+        alt: "App medIQ lab: mappa del mondo di una materia con lezione ed esame finale",
+      },
+      {
+        label: "Spiegazioni IA",
+        title: "Spiegato come serve a te",
+        body: "Dopo ogni domanda puoi rileggere il materiale, fare altre domande o farti spiegare il contenuto con un'immagine, uno schema, un confronto, un trucco mnemonico o una storiella da ricordare.",
+        alt: "App medIQ lab: domanda con risposta corretta e aiuti IA come trucco mnemonico e storiella da ricordare",
+      },
+      {
+        label: "Arena errori",
+        title: "Colmare le lacune in modo mirato",
+        body: "Le domande sbagliate si raccolgono nell'arena degli errori. Solo quando le hai sconfitte tutte si sblocca l'esame finale.",
+        alt: "App medIQ lab: arena degli errori, tutti gli errori sconfitti, esame finale sbloccato",
+      },
+      {
+        label: "Progressi",
+        title: "I tuoi progressi a colpo d'occhio",
+        body: "Tempo di studio della settimana, serie di giorni consecutivi e percentuale di successo, più tutte le materie attive. In lega e nei duelli ti misuri con gli altri.",
+        alt: "App medIQ lab: statistiche con tempo di studio, serie di giorni, percentuale di successo e materie attive",
+      },
+    ],
+    features: ["Tedesco & inglese", "Scelta multipla & risposta aperta", "Lega & duelli"],
+    cta: "Vai all'app IA",
+  },
+
+  communityShowcase: {
+    eyebrow: "Uno sguardo alla community",
+    title: "Ecco com'è *dentro la community.*",
+    subtitle:
+      "Corsi, schemi e un calendario pieno di workshop, Study Together e quiz dal vivo. Tutto in un unico posto, su Skool.",
+    courses: {
+      title: "Aula",
+      body: "Un corso per iniziare, il planner del semestre e schemi di anatomia (in tedesco e in inglese) e di biochimica.",
+      alt: "Aula Skool della community medIQ lab con corsi come planner del semestre, schemi di anatomia e schemi di biochimica",
+    },
+    calendar: {
+      title: "Calendario",
+      body: "Workshop come Stress & resilienza o SOS Anatomia, Study Together regolari e quiz dal vivo, per esempio sull'ECG.",
+      alt1: "Calendario della community medIQ lab: workshop stress e resilienza, Study Together, workshop di anatomia",
+      alt2: "Calendario della community medIQ lab: quiz dal vivo sull'ECG, Study Together, workshop per studiare durante le feste",
+    },
+    caption: "Screenshot della community medIQ lab su Skool, aggiornati a novembre 2026.",
+    cta: "Entra nella community",
+  },
+
+  shopTeaser: {
+    eyebrow: "Novità nello shop · da dicembre",
+    title: "Anatomy *Survival Guide.*",
+    body: "Il nostro primo prodotto digitale, in tedesco e in inglese. Lasciaci la tua e-mail e ti avvisiamo appena è disponibile.",
+    cta: "Vai allo shop",
   },
 
   problemTeaser: {
     eyebrow: "Il problema",
     title: "Non è perché *studi troppo poco.*",
-    lead: "La maggior parte non fallisce per mancanza di impegno, ma per *mancanza di un sistema.*",
+    lead: "La maggior parte non fallisce per mancanza di impegno, ma per mancanza di un sistema. Tre sintomi che quasi ogni studente di medicina conosce.",
+    symptom: "Sintomo",
+    figure: "Fig.",
     pains: [
-      { lead: "Sommerso dalla quantità di materia", rest: ", e nessuno ti mostra cosa viene davvero chiesto all'esame." },
-      { lead: "Leggere, evidenziare, dimenticare", rest: ". L'impegno senza sistema svanisce." },
-      { lead: "Un tentativo fallito ha conseguenze", rest: ": un esame di recupero, più pressione e, nel peggiore dei casi, un anno di ripetizione, che in un'università privata o all'estero può costare facilmente {lost}." },
+      {
+        title: "Sommerso dalla quantità di materia",
+        body: "Migliaia di pagine, centinaia di lezioni, e nessuno ti mostra cosa viene davvero chiesto all'esame.",
+        caption: "Schema: la materia di un semestre e la parte che conta all'esame.",
+      },
+      {
+        title: "Leggere, evidenziare, dimenticare",
+        body: "Quello che ti limiti a leggere ed evidenziare dopo pochi giorni è in gran parte sparito. L'impegno senza sistema svanisce.",
+        caption: "Schema basato sulla curva dell'oblio di Hermann Ebbinghaus (1885).",
+      },
+      {
+        title: "Un tentativo fallito crea un effetto a catena",
+        body: "Prima l'esame di recupero, poi più pressione e, nel peggiore dei casi, un anno di ripetizione. In un'università privata o all'estero può costare facilmente {lost}.",
+        caption: "Come un singolo tentativo fallito può allargarsi.",
+      },
     ],
+    matrix: { all: "Materia del semestre", exam: "Cosa viene davvero chiesto" },
+    curve: {
+      retention: "Memoria",
+      start: "Giorno di studio",
+      exam: "Esame",
+      passive: "Solo leggere ed evidenziare",
+      spaced: "Ripassare con un sistema",
+    },
+    ripple: ["Un tentativo fallito", "Esame di recupero", "Più pressione", "Anno di ripetizione"],
+    diagnosis: "Diagnosi",
     quote: "Non un problema di talento. Un *problema di metodo.*",
+    quoteSub: "E un metodo si può imparare, più in fretta di quanto pensi.",
     cta: "Da dove nasce il problema",
   },
 
@@ -118,20 +250,20 @@ export const it: Dict = {
     eyebrow: "Cosa c'è in gioco",
     line1: "Un anno di ripetizione in un'università privata o all'estero può costare facilmente",
     value1: "{lost}.",
-    line2: "Un anno di medIQ lab:",
-    value2: "{yearly}.",
+    line2: "Un mese di medIQ lab:",
+    value2: "{monthly}.",
     text: "La domanda non è se puoi permetterti medIQ lab, ma se puoi permetterti un anno perso.",
   },
 
   offer: {
     eyebrow: "Come entrare",
     title: "Un prezzo, tutto incluso",
-    subtitle: "Niente pacchetti, niente upsell: un abbonamento annuale con community, workshop, serie video, eventi live settimanali, download e app IA.",
-    plan: "Abbonamento annuale",
+    subtitle: "Un abbonamento con community, workshop, serie video, eventi live settimanali, download e app IA.",
+    plan: "Abbonamento",
     badge: "Tutto incluso",
-    blurb: "La community e tutti i workshop, per un anno intero, un solo prezzo.",
-    perYear: "/ anno",
-    perMonth: "Equivale a circa {monthly} al mese.",
+    blurb: "La community e tutti i workshop, un solo prezzo al mese.",
+    per: "/ mese",
+    billing: "Pagamento mensile, sicuro tramite Skool.",
     included: [
       "Accesso alla community su Skool",
       "Serie di workshop, circa 2× a semestre",
@@ -143,6 +275,8 @@ export const it: Dict = {
     ],
     details: "Vedi tutti i dettagli",
     note: "Iscrizione & pagamento sicuri tramite Skool · nessun costo nascosto",
+    extra: "In più, se vuoi: la creazione del tuo piano di studio personale a {lernplan}.",
+    extraCta: "Prenota il piano di studio",
   },
 
   faqTeaser: {
@@ -151,11 +285,7 @@ export const it: Dict = {
     items: [
       {
         q: "Il prezzo vale davvero la pena?",
-        a: "Fai i conti onestamente: un semestre perso costa mesi di affitto e spese di vita, e in un'università privata o all'estero un anno di ripetizione può costare facilmente {lost}. In confronto, {yearly} all'anno si ripagano già se ti risparmiano un solo semestre perso.",
-      },
-      {
-        q: "Garantite che supererò l'esame?",
-        a: "No, e chiunque lo prometta non è serio. Superare l'esame dipende da te. Ti offriamo un sistema di studio basato su principi ben studiati dalla ricerca sull'apprendimento e una community che ti aiuta a non mollare.",
+        a: "Fai i conti onestamente: un semestre perso costa mesi di affitto e spese di vita, e in un'università privata o all'estero un anno di ripetizione può costare facilmente {lost}. In confronto, {monthly} al mese si ripagano già se ti risparmiano un solo semestre perso.",
       },
       {
         q: "Studio in Germania, fa al caso mio?",
@@ -163,7 +293,7 @@ export const it: Dict = {
       },
       {
         q: "Come funzionano iscrizione e pagamento?",
-        a: "Interamente e in sicurezza tramite Skool. Clicchi un pulsante, arrivi nella community medIQ lab e lì sottoscrivi l'abbonamento annuale. Questo sito non gestisce alcun pagamento.",
+        a: "Interamente e in sicurezza tramite Skool. Clicchi un pulsante, arrivi nella community medIQ lab e lì sottoscrivi l'abbonamento. Questo sito non gestisce alcun pagamento.",
       },
     ],
     all: "Tutte le domande & risposte",
@@ -173,12 +303,12 @@ export const it: Dict = {
     eyebrow: "medIQ lab",
     title: "Studia in modo più intelligente da oggi, *non più duro.*",
     subtitle: "Ogni semestre che metti al sicuro ora è tempo e denaro che non perdi. Entra nella community medIQ lab e costruisci il tuo sistema di studio con workshop, eventi live settimanali e schemi.",
-    note: "Iscrizione & pagamento sicuri tramite Skool · {yearly} all'anno, tutto incluso · nessun costo nascosto",
+    note: "Iscrizione & pagamento sicuri tramite Skool · {monthly} al mese, tutto incluso · nessun costo nascosto",
     secondary: "Programma & prezzi",
   },
 
   video: {
-    caption: "Capire in 90 secondi",
+    caption: "Video in inglese · meno di un minuto",
     play: "Riproduci il video di presentazione",
     alt: "Faith e Hannah presentano medIQ lab",
     unsupported: "Il tuo browser non può riprodurre questo video.",
@@ -221,13 +351,13 @@ export const it: Dict = {
       ],
       cost: [
         "Comprensibile, è il modo più costoso di perdere tempo.",
-        "Un anno di ripetizione in un'università privata o all'estero può costare facilmente {lost}. Un anno di medIQ lab: {yearly}, ed è pensato per risparmiarti proprio questo.",
+        "Un anno di ripetizione in un'università privata o all'estero può costare facilmente {lost}. medIQ lab costa {monthly} al mese ed è pensato per risparmiarti proprio questo.",
       ],
       price: [
         "Un prezzo, tutto incluso:",
-        "{yearly} all'anno, circa {monthly} al mese. Community e tutti i workshop sono inclusi.",
+        "{monthly} al mese. Community e tutti i workshop sono inclusi.",
         "In più: serie video, eventi live settimanali, conferenze di medici, simulazioni d'esame, download e app IA.",
-        "L'iscrizione avviene in sicurezza tramite Skool.",
+        "L'iscrizione avviene in sicurezza tramite Skool. Se vuoi, puoi aggiungere la creazione del tuo piano di studio personale a {lernplan}.",
       ],
       who: [
         "Per studenti di medicina in Germania e nell'UE, in università pubbliche o private, dal primo semestre fino agli esami finali.",
@@ -292,7 +422,7 @@ export const it: Dict = {
   pageProgramm: {
     title: "Programma e prezzo per studenti di medicina",
     description:
-      "Workshop circa due volte a semestre, Study Together e Community Café ogni settimana, simulazioni dell'orale e schemi in un abbonamento annuale.",
+      "Workshop circa due volte a semestre, Study Together e Community Café ogni settimana, simulazioni dell'orale e schemi in un unico abbonamento.",
     intro: {
       eyebrow: "Il programma",
       title: "Il tuo sistema completo, *dal sistema di studio agli esami finali.*",
@@ -300,9 +430,9 @@ export const it: Dict = {
       ctaMethod: "Scopri prima il metodo",
     },
     vsl: {
-      eyebrow: "90 secondi che valgono la pena",
+      eyebrow: "Meno di un minuto che vale la pena",
       title: "Faith e Hannah presentano medIQ lab",
-      subtitle: "In un minuto e mezzo scopri chi c'è dietro medIQ lab, cosa ti aspetta nella community e perché lo facciamo. Direttamente dalle fondatrici.",
+      subtitle: "In meno di un minuto (in inglese) scopri chi c'è dietro medIQ lab, cosa ti aspetta nella community e perché lo facciamo. Direttamente dalle fondatrici.",
       ctaAbout: "Di più su di noi",
     },
     modules: {
@@ -349,13 +479,13 @@ export const it: Dict = {
     pricing: {
       eyebrow: "Come entrare",
       title: "Un prezzo, tutto incluso",
-      subtitle: "Un abbonamento annuale con tutto ciò di cui hai bisogno: community e tutti i workshop inclusi. Iscrizione e pagamento sicuri tramite Skool.",
+      subtitle: "Un abbonamento con tutto ciò di cui hai bisogno: community e tutti i workshop inclusi. Iscrizione e pagamento sicuri tramite Skool.",
       imgAlt: "Gruppo di studenti in conversazione",
       badge: "Tutto incluso",
-      plan: "Abbonamento annuale",
-      blurb: "Il tuo sistema completo per un intero anno accademico. Community e tutti i workshop sono inclusi, non c'è nulla da aggiungere.",
-      perYear: "/ anno",
-      perMonth: "Equivale a circa {monthly} al mese.",
+      plan: "Abbonamento",
+      blurb: "Il tuo sistema completo, mese dopo mese. Community e tutti i workshop sono inclusi.",
+      per: "/ mese",
+      billing: "Pagamento mensile, sicuro tramite Skool.",
       compare: "Per confronto: un solo semestre perso può costare facilmente molto di più in affitto, spese di vita e tempo perso. In un'università privata o all'estero un anno di ripetizione può costare facilmente {lost} in più. L'abbonamento si ripaga già se ti risparmia un solo semestre perso.",
       included: [
         "Accesso alla community medIQ lab su Skool",
@@ -368,7 +498,7 @@ export const it: Dict = {
         "Planner del semestre, schemi & guida all'esame",
         "La nostra app di studio con IA",
       ],
-      ctaNote: "Annuale · sicuro tramite Skool · tutto incluso",
+      ctaNote: "Mensile · sicuro tramite Skool · tutto incluso",
       note: "Nota: tutti i contenuti, l'iscrizione e il pagamento passano da Skool. Questa pagina ti informa e ti indirizza lì.",
     },
     cta: {
@@ -482,11 +612,11 @@ export const it: Dict = {
   pageFaq: {
     title: "FAQ: costi, iscrizione e funzionamento",
     description:
-      "Quanto costa medIQ lab, come funziona l'iscrizione tramite Skool, se c'è uno sconto campus e perché non garantiamo il superamento degli esami.",
+      "Quanto costa medIQ lab, come funziona l'iscrizione tramite Skool, se c'è uno sconto campus e se funziona anche studiando in Germania.",
     intro: {
       eyebrow: "FAQ",
       title: "Domande frequenti su medIQ lab",
-      lead: "Le domande più frequenti su procedura, accesso, prezzi e su cosa medIQ lab può realisticamente offrire, con risposte oneste.",
+      lead: "Le domande più frequenti su procedura, accesso e prezzi, con risposte oneste.",
       ctaContact: "Non trovi la tua domanda? Contattaci",
     },
     items: [
@@ -500,23 +630,19 @@ export const it: Dict = {
       },
       {
         q: "Quanto costa l'abbonamento?",
-        a: "{yearly} all'anno, tutto incluso: community, serie di workshop, serie video, eventi live settimanali come Study Together e Community Café, conferenze, simulazioni d'esame, download e app IA. Nessun extra nascosto e nessun upsell. Trovi tutti i formati nel dettaglio nel [programma dell'abbonamento](/it/programm/).",
+        a: "{monthly} al mese, tutto incluso: community, serie di workshop, serie video, eventi live settimanali come Study Together e Community Café, conferenze, simulazioni d'esame, download e app IA. Non ci sono costi nascosti. Se vuoi, puoi aggiungere la creazione del tuo piano di studio personale a {lernplan}. Trovi tutti i formati nel dettaglio nel [programma dell'abbonamento](/it/programm/).",
       },
       {
-        q: "Ci sono sconti o una garanzia?",
-        a: "C'è uno sconto campus, chiedicelo semplicemente nella community o dalla [pagina contatti](/it/kontakt/). Non esiste una garanzia di superamento, perché nessuno può darla seriamente.",
+        q: "Ci sono sconti?",
+        a: "Sì, c'è uno sconto campus. Chiedicelo semplicemente nella community o dalla [pagina contatti](/it/kontakt/).",
       },
       {
         q: "Il prezzo vale davvero la pena?",
-        a: "Fai i conti onestamente: un solo semestre perso ti costa mesi di affitto e spese di vita più un ingresso più tardivo nel lavoro. In un'università privata o all'estero un anno di ripetizione può costare facilmente {lost} in più. In confronto, {yearly} all'anno sono un investimento che si ripaga già se ti risparmia un solo semestre perso.",
+        a: "Fai i conti onestamente: un solo semestre perso ti costa mesi di affitto e spese di vita più un ingresso più tardivo nel lavoro. In un'università privata o all'estero un anno di ripetizione può costare facilmente {lost} in più. In confronto, {monthly} al mese sono un investimento che si ripaga già se ti risparmia un solo semestre perso.",
       },
       {
         q: "Come funzionano iscrizione e pagamento?",
-        a: "Iscrizione e pagamento avvengono interamente e in sicurezza tramite Skool. Clicchi uno dei pulsanti, arrivi nella community medIQ lab su Skool e lì sottoscrivi l'abbonamento annuale. Questo sito non gestisce alcun pagamento.",
-      },
-      {
-        q: "Garantite che supererò l'esame?",
-        a: "No, e chiunque lo prometta non è serio. Superare l'esame dipende da te. Ti offriamo un sistema di studio basato su principi ben studiati dalla ricerca sull'apprendimento e una community che ti aiuta a non mollare.",
+        a: "Iscrizione e pagamento avvengono interamente e in sicurezza tramite Skool. Clicchi uno dei pulsanti, arrivi nella community medIQ lab su Skool e lì sottoscrivi l'abbonamento. Questo sito non gestisce alcun pagamento.",
       },
     ],
     cta: {
@@ -554,6 +680,76 @@ export const it: Dict = {
       message: "Messaggio",
       submit: "Invia messaggio",
       consent: "Inviando accetti il trattamento dei tuoi dati per la gestione della tua richiesta (vedi privacy).",
+    },
+  },
+
+  pageShop: {
+    title: "Shop: Anatomy Survival Guide e piano di studio",
+    description:
+      "L'Anatomy Survival Guide di medIQ lab esce a dicembre in tedesco e in inglese. In più: piano di studio personale e colloquio conoscitivo gratuito.",
+    intro: {
+      eyebrow: "Shop",
+      title: "Materiale di studio fatto da noi, *per i tuoi esami.*",
+      lead: "Prodotti digitali e supporto personale da Faith e Hannah. Si comincia con il nostro Anatomy Survival Guide.",
+    },
+    product: {
+      badge: "In uscita a dicembre 2026",
+      eyebrow: "Prodotto digitale",
+      name: "Anatomy Survival Guide",
+      lead: "Per molti l'anatomia è il primo grande ostacolo del percorso di medicina. Il nostro Survival Guide è pensato proprio per aiutarti a superarlo: compatto, in tedesco e in inglese, scritto da studentesse di medicina per studenti di medicina.",
+      coverLabel: "Anteprima della copertina",
+      langLabel: "Versione linguistica",
+      planned: "in arrivo",
+      langs: [
+        { code: "DE", label: "Deutsch", cover: "Anatomie", planned: false },
+        { code: "EN", label: "English", cover: "Anatomy", planned: false },
+        { code: "CZ", label: "Čeština", cover: "Anatomie", planned: true },
+      ],
+      facts: [
+        { k: "Formato", v: "Download digitale" },
+        { k: "Lingue", v: "Tedesco, inglese (ceco in arrivo)" },
+        { k: "Uscita", v: "Dicembre 2026" },
+        { k: "Prezzo", v: "comunicato al lancio" },
+      ],
+      contentsTitle: "Cosa contiene",
+      contentsNote: "Indice e pagine di esempio arriveranno appena la guida sarà pronta.",
+      buy: "Disponibile da dicembre",
+    },
+    waitlist: {
+      title: "Avvisami quando esce",
+      sub: "Ti mandiamo un'e-mail appena la guida è disponibile.",
+      honeypot: "Non compilare:",
+      email: "E-mail",
+      lang: "Versione linguistica",
+      submit: "Avvisami",
+      consent:
+        "Inviando accetti che salviamo il tuo indirizzo e-mail per informarti sull'uscita della guida (vedi privacy). Puoi revocare il consenso in qualsiasi momento.",
+    },
+    services: {
+      eyebrow: "Supporto personale",
+      title: "Preferisci lavorare *direttamente con noi?*",
+      subtitle: "Oltre ai prodotti digitali, ti seguiamo anche individualmente. Gli appuntamenti li prenoti direttamente nel nostro calendario.",
+      items: [
+        {
+          price: "gratuito",
+          title: "Colloquio conoscitivo individuale",
+          body: "Guardiamo insieme a che punto sei e cosa ti aiuterebbe di più in questo momento. Senza impegno.",
+          cta: "Scegli un orario",
+        },
+        {
+          price: "{lernplan}",
+          title: "Piano di studio personale",
+          body: "Creiamo con te il tuo piano di studio, su misura per i tuoi esami e la tua quotidianità.",
+          cta: "Prenota un appuntamento",
+        },
+        {
+          price: "{monthly} / mese",
+          title: "Community medIQ lab",
+          body: "Workshop, eventi live, schemi e scambio con altri studenti di medicina su Skool.",
+          cta: "Vai alla community",
+        },
+      ],
+      note: "Gli appuntamenti si prenotano tramite Cal.com, l'abbonamento passa da Skool.",
     },
   },
 

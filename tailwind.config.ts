@@ -58,8 +58,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        // Serif mit Charakter für Headlines
-        serif: ["var(--font-serif)", "Georgia", "serif"],
+        // Überschriften: Schibsted Grotesk
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        // Wortmarke „medIQ“ (Logo, Cover)
+        logo: ["var(--font-logo)", "Georgia", "serif"],
         // Seriöse, klare Sans für Fließtext
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
@@ -84,9 +86,16 @@ const config: Config = {
           from: { opacity: "0", transform: "translateY(14px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
-        // laufender Puls für die EKG-Signaturlinie
+        // laufender Puls für die EKG-Signaturlinie (Start/Ende setzt EkgLine je Linienlänge)
         "ekg-run": {
-          to: { strokeDashoffset: "-2400" },
+          from: { strokeDashoffset: "var(--ekg-from, 0)" },
+          to: { strokeDashoffset: "var(--ekg-to, -2400)" },
+        },
+        // Welle im Problem-Abschnitt („ein Fehlversuch zieht Kreise“)
+        "ripple-out": {
+          "0%": { transform: "scale(0.05)", opacity: "0.7" },
+          "80%": { opacity: "0.1" },
+          "100%": { transform: "scale(1)", opacity: "0" },
         },
         "pulse-soft": {
           "0%,100%": { opacity: "0.5" },
@@ -100,6 +109,7 @@ const config: Config = {
       animation: {
         "fade-up": "fade-up 0.7s cubic-bezier(0.21,0.47,0.32,0.98) both",
         "ekg-run": "ekg-run 4s linear infinite",
+        "ripple-out": "ripple-out 4.5s cubic-bezier(0.22,0.61,0.36,1) 2s infinite",
         "pulse-soft": "pulse-soft 3.5s ease-in-out infinite",
         "float-slow": "float-slow 7s ease-in-out infinite",
       },

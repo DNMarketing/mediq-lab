@@ -5,9 +5,14 @@ import { homeGraph, pageMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { Hero } from "@/components/sections/Hero";
 import { ProblemTeaser } from "@/components/home/ProblemTeaser";
+import { FoundersIntro } from "@/components/home/FoundersIntro";
+import { Journey } from "@/components/home/Journey";
+import { AppShowcase } from "@/components/home/AppShowcase";
+import { CommunityShowcase } from "@/components/home/CommunityShowcase";
 import { MethodTeaser } from "@/components/home/MethodTeaser";
 import { CostReframe } from "@/components/home/CostReframe";
 import { OfferTeaser } from "@/components/home/OfferTeaser";
+import { ShopTeaser } from "@/components/home/ShopTeaser";
 import { FaqTeaser } from "@/components/home/FaqTeaser";
 import { CTABand } from "@/components/sections/CTABand";
 
@@ -32,11 +37,23 @@ export function HomeView({ lang }: { lang: Locale }) {
   return (
     <>
       <JsonLd data={homeGraph(lang)} />
-      <Hero lang={lang} t={d.hero} video={d.video} money={d.money} join={d.common.join} spotsLabel={spots} />
+      {/* Reihenfolge (Entwurf Nov. 2026): Aufhänger, Problem, Faith & Hannah, Ablauf, App, Community, Methode, Preis */}
+      <Hero
+        t={d.hero}
+        money={d.money}
+        common={d.common}
+        founders={["Faith", "Hannah"].map((name) => ({ name, year: d.pageUeber.founders.find((f) => f.name === name)?.year ?? "" }))}
+        spotsLabel={spots}
+      />
       <ProblemTeaser lang={lang} t={d.problemTeaser} money={d.money} />
+      <FoundersIntro lang={lang} t={d.homeFounders} video={d.video} founders={d.pageUeber.founders} labels={d.pageUeber.labels} />
+      <Journey t={d.journey} money={d.money} />
+      <AppShowcase lang={lang} t={d.appShowcase} />
+      <CommunityShowcase t={d.communityShowcase} />
       <MethodTeaser lang={lang} t={d.methodTeaser} pillars={d.pillars} />
       <CostReframe t={d.cost} money={d.money} />
       <OfferTeaser lang={lang} t={d.offer} money={d.money} join={d.common.join} />
+      <ShopTeaser lang={lang} t={d.shopTeaser} product={d.pageShop.product} />
       <FaqTeaser lang={lang} t={d.faqTeaser} money={d.money} />
       <CTABand lang={lang} t={d.cta} note={fill(d.cta.note, d.money)} join={d.common.join} spotsLabel={spots} secondaryPath="/programm" />
     </>

@@ -52,7 +52,7 @@ function Line({ text, em, link }: { text: string; em: string; link: string }) {
 
 export function Rich({
   text,
-  em = "text-petrol-700 italic",
+  em = "text-petrol-700",
   link = "underline decoration-copper-500/50 underline-offset-4 transition-colors hover:text-petrol-700",
 }: {
   text: string;

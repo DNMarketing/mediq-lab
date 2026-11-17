@@ -40,7 +40,7 @@ export function KontaktView({ lang }: { lang: Locale }) {
                       <MedIcon name="community" className="h-6 w-6" />
                     </span>
                     <span>
-                      <span className="block font-serif text-lg font-medium text-ink">{t.community.title}</span>
+                      <span className="block font-display text-lg font-semibold text-ink">{t.community.title}</span>
                       <span className="mt-1 block text-sm leading-relaxed text-ink-soft">{t.community.body}</span>
                       <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-copper-600">
                         {t.community.cta}
@@ -54,7 +54,7 @@ export function KontaktView({ lang }: { lang: Locale }) {
                       <MedIcon name="exam" className="h-6 w-6" />
                     </span>
                     <span>
-                      <span className="block font-serif text-lg font-medium text-ink">{t.email.title}</span>
+                      <span className="block font-display text-lg font-semibold text-ink">{t.email.title}</span>
                       <span className="mt-1 block text-sm leading-relaxed text-ink-soft">{t.email.body}</span>
                       <span className="mt-2 block text-sm font-medium text-petrol-700">{CONTACT_EMAIL}</span>
                     </span>
@@ -84,7 +84,7 @@ export function KontaktView({ lang }: { lang: Locale }) {
                     </label>
                   </p>
 
-                  <h2 className="font-serif text-2xl font-medium text-ink">{t.form.title}</h2>
+                  <h2 className="font-display text-2xl font-semibold text-ink">{t.form.title}</h2>
                   <p className="mt-1.5 text-sm text-ink-soft">{t.form.sub}</p>
 
                   <div className="mt-6 grid gap-5 sm:grid-cols-2">

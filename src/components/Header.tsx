@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
-import { SKOOL_URL } from "@/lib/config";
+import { APP_URL, SKOOL_URL } from "@/lib/config";
 import { localeHref, stripLocale, type Locale } from "@/i18n/config";
 import type { Dict } from "@/i18n/de";
 import { CTAButton } from "./ui/CTAButton";
@@ -12,14 +12,28 @@ import { Container } from "./ui/Container";
 import { Logo } from "./Logo";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
+// Team steht im Footer und ist von „Über uns“ verlinkt; im Header Platz für Shop + KI-App.
 const NAV: { key: keyof Dict["nav"]; path: string }[] = [
   { key: "methode", path: "/methode" },
   { key: "programm", path: "/programm" },
-  { key: "team", path: "/team" },
   { key: "ueber", path: "/ueber" },
+  { key: "shop", path: "/shop" },
   { key: "faq", path: "/faq" },
   { key: "kontakt", path: "/kontakt" },
 ];
+
+/** Externer Link zur KI-App, mit Pfeil nach rechts oben. */
+function AppLink({ label, className }: { label: string; className?: string }) {
+  return (
+    <a href={APP_URL} target="_blank" rel="noopener noreferrer" className={className}>
+      {label}
+      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden>
+        <path d="M7 17 17 7" />
+        <path d="M9 7h8v8" />
+      </svg>
+    </a>
+  );
+}
 
 export function Header({
   lang,
@@ -53,8 +67,11 @@ export function Header({
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled || open ? "border-b border-line bg-paper/90 backdrop-blur-md" : "border-b border-transparent",
+        // Bewusst deckend statt backdrop-blur: ein Blur auf dem fixierten Header muss bei
+        // jedem Scroll-Frame neu berechnet werden und flackert in Chrome/Safari, sobald
+        // darunter Einblend-Animationen laufen.
+        "fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-300",
+        scrolled || open ? "border-line bg-paper" : "border-transparent bg-transparent",
       )}
     >
       <Container className="flex h-[72px] items-center justify-between">
@@ -62,7 +79,7 @@ export function Header({
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex" aria-label={common.mainNav}>
+        <nav className="hidden items-center gap-6 md:flex lg:gap-8" aria-label={common.mainNav}>
           {NAV.map((link) => {
             const active = isActive(link.path);
             return (
@@ -83,6 +100,10 @@ export function Header({
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
+          <AppLink
+            label={nav.app}
+            className="hidden items-center gap-1.5 rounded-card border border-line-strong px-3.5 py-2 text-sm font-medium text-ink transition-colors hover:border-petrol-700 hover:text-petrol-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 xl:inline-flex"
+          />
           <LanguageSwitcher lang={lang} label={common.language} fixedPath={langPath} />
           <CTAButton href={SKOOL_URL} size="md">
             {common.join}
@@ -123,6 +144,10 @@ export function Header({
                 {nav[link.key]}
               </Link>
             ))}
+            <AppLink
+              label={nav.app}
+              className="inline-flex items-center gap-1.5 rounded-card px-3 py-2.5 text-sm text-ink-soft transition-colors hover:bg-paper-sand hover:text-petrol-700"
+            />
             <div className="mt-3 border-t border-line px-3 pt-4">
               <LanguageSwitcher lang={lang} label={common.language} variant="chips" fixedPath={langPath} />
             </div>

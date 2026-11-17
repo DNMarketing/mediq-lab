@@ -8,7 +8,7 @@ import { Reveal } from "../ui/Reveal";
  * Jahrespreis der Mitgliedschaft. Ehrliches Argument statt erfundener Statistik.
  */
 export function CostReframe({ t, money }: { t: Dict["cost"]; money: Dict["money"] }) {
-  const h = "font-serif text-[1.9rem] font-medium leading-[1.18] tracking-[-0.01em] text-paper-light sm:text-[2.5rem]";
+  const h = "font-display text-[1.9rem] font-semibold leading-[1.18] tracking-[-0.018em] text-paper-light sm:text-[2.5rem]";
   return (
     <section className="relative overflow-hidden bg-petrol-900 py-20 text-paper-light sm:py-28">
       <div className="glow-teal-bg pointer-events-none absolute inset-x-0 top-0 h-2/3" aria-hidden />
